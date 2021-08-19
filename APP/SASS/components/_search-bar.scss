@@ -1,0 +1,51 @@
+.search-bar-form input {
+  width: 90%;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  background-color: $grey;
+  display: flex;
+  margin: auto;
+}
+
+.search-bar-form label {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0000007e;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 1.8rem;
+  transition: all 0.3s ease-in;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include bigPhone-and-higher {
+    padding-left: 4rem;
+  }
+  @include tablet-and-higher {
+    padding-left: 8rem;
+  }
+}
+
+.search-bar-form:focus-within label,
+.search-bar-form.active-input label {
+  top: -1.5rem;
+  padding-left: 1.8rem;
+  color: #f1f1f1;
+  @include bigPhone-and-higher {
+    padding-left: 4rem;
+  }
+  @include tablet-and-higher {
+    padding-left: 8rem;
+  }
+}
+
+.search-icon {
+  position: relative;
+  right: 10%;
+  width: 20px;
+}

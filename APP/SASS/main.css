@@ -13,6 +13,15 @@ html {
 
 body {
   font-family: "DM Sans", sans-serif;
+  max-width: 140rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
 }
 
 a {
@@ -25,10 +34,100 @@ li {
   list-style: none;
 }
 
+.search-bar-form input {
+  width: 90%;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  background-color: #e7e7e7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.search-bar-form label {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0000007e;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-left: 1.8rem;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 42.5rem) {
+  .search-bar-form label {
+    padding-left: 4rem;
+  }
+}
+
+@media screen and (min-width: 76.8rem) {
+  .search-bar-form label {
+    padding-left: 8rem;
+  }
+}
+
+.search-bar-form:focus-within label,
+.search-bar-form.active-input label {
+  top: -1.5rem;
+  padding-left: 1.8rem;
+  color: #f1f1f1;
+}
+
+@media screen and (min-width: 42.5rem) {
+  .search-bar-form:focus-within label,
+  .search-bar-form.active-input label {
+    padding-left: 4rem;
+  }
+}
+
+@media screen and (min-width: 76.8rem) {
+  .search-bar-form:focus-within label,
+  .search-bar-form.active-input label {
+    padding-left: 8rem;
+  }
+}
+
+.search-icon {
+  position: relative;
+  right: 10%;
+  width: 20px;
+}
+
 header {
   color: #d04f4f;
   text-align: center;
-  font-size: 2rem;
-  margin-top: 5%;
+  font-size: 1.5rem;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+header h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.search-bar-form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 105%;
+}
+
+@media screen and (min-width: 42.5rem) {
+  .search-bar-form {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

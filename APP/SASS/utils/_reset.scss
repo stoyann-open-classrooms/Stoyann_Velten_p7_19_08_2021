@@ -12,6 +12,10 @@ html {
 
 body {
   font-family: "DM Sans", sans-serif;
+  max-width: $page-max-width;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 a {

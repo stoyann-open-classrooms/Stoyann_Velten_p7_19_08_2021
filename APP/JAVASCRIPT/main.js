@@ -1,7 +1,9 @@
 import { RECIPES } from "./data/datas.js";
 import { Recipe } from "./class/Recipes.js";
 import { RecipesList } from "./class/RecipesList.js";
+import { inputAnim } from "./animations/inputAnim.js";
 
+inputAnim();
 console.log(RECIPES);
 
 const recipesList = new RecipesList();
