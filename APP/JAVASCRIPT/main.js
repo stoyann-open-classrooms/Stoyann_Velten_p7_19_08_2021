@@ -1,16 +1,11 @@
 import { RECIPES } from "./data/datas.js";
 import { DataFetcher } from "./class/DataFetcher.js";
-import { RecipesList } from "./class/RecipesList.js";
-import { inputAnim } from "./animations/inputAnim.js";
-
-inputAnim();
+import { MainPageBuilder } from "./class/mainPageBuilder.js";
 
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList();
 
-const searchBar = document.getElementById("search-bar");
-searchBar.addEventListener("input", (e) => {
-  console.log(searchBar.value.split(" "));
-});
+new MainPageBuilder(recipesList);
+new MainPageBuilder(recipesList).userRequest;
 
-console.log(recipesList);
+new MainPageBuilder(recipesList).inputAnim();
