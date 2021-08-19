@@ -18,4 +18,8 @@ export class Recipe {
     this.appliance = appliance;
     this.ustensils = ustensils;
   }
+
+  getIngredients() {
+    console.log(...this.ingredients);
+  }
 }

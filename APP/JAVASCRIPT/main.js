@@ -1,31 +1,16 @@
 import { RECIPES } from "./data/datas.js";
-import { Recipe } from "./class/Recipes.js";
+import { DataFetcher } from "./class/DataFetcher.js";
 import { RecipesList } from "./class/RecipesList.js";
 import { inputAnim } from "./animations/inputAnim.js";
 
 inputAnim();
-console.log(RECIPES);
 
-const recipesList = new RecipesList();
+const dataFetcher = new DataFetcher(RECIPES);
+const recipesList = dataFetcher.getRecipesList();
 
-RECIPES.forEach((recipe) => {
-  recipesList.addRecipe(
-    new Recipe(
-      recipe.id,
-      recipe.name,
-      recipe.servings,
-      recipe.ingredients,
-      recipe.time,
-      recipe.description,
-      recipe.appliance,
-      recipe.ustensils
-    )
-  );
-});
-
-recipesList.recipesList.forEach((recipe) => {
-  recipe.printCards;
-  recipe.printIngredientsList;
+const searchBar = document.getElementById("search-bar");
+searchBar.addEventListener("input", (e) => {
+  console.log(searchBar.value.split(" "));
 });
 
 console.log(recipesList);
