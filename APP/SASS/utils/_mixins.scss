@@ -1,0 +1,26 @@
+@mixin abs-center($top, $right, $bottom, $left, $x, $y) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: translate($x, $y);
+}
+
+@mixin bigPhone-and-higher {
+  @media screen and (min-width: $bigPhone) {
+    @content;
+  }
+}
+
+@mixin tablet-and-higher {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-and-higher {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
