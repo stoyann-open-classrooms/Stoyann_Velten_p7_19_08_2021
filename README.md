@@ -2,6 +2,8 @@
 
 ![Logo de Fisheye](/SRC/readmeCover.png)
 
+### Projet #7 formation [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+
 ### projet #7 :
 
 #### _Développez un algorithme de recherche en JavaScript_
