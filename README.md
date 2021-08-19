@@ -1,14 +1,18 @@
-### Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+#### Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
 ![Logo de Fisheye](/SRC/readmeCover.png)
 
-#### Projet #7/14 de la formation [développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+### Projet #7/14 de la formation [développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
-![Logo de Openclassrooms](/SRC/readmeCover-2.png)
+[![logo openclassrooms](/SRC/readmeCover-2.png)](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
-## _Développez un algorithme de recherche en JavaScript_
+# _Développez un algorithme de recherche en JavaScript_
+
+-
 
 ### status du projet: En cours
+
+-
 
 ### Le rendu de ce code est accessible sur cette [GitHub Page dédiée.](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p7_19_08_2021/)
 
