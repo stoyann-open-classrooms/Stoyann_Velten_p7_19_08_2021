@@ -1,8 +1,8 @@
-# Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+### Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
 ![Logo de Fisheye](/SRC/readmeCover.png)
 
-### Projet #7/14 de la formation [développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+#### Projet #7/14 de la formation [développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
 ![Logo de Openclassrooms](/SRC/readmeCover-2.png)
 
