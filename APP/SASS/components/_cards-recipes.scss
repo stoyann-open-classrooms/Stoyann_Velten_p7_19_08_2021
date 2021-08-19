@@ -1,0 +1,62 @@
+.card {
+  background-color: #e7e7e7;
+  height: 370px;
+  border-radius: $radius $radius;
+  cursor: pointer;
+  margin-bottom: 20px;
+  @include bigPhone-and-higher {
+    margin: 20px;
+    width: 360px;
+  }
+}
+
+.cards-cover {
+  img {
+    border-radius: $radius $radius 0 0;
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  .cards-title {
+    font-size: 1.6rem;
+    width: 80%;
+  }
+
+  .cards-header-time {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+.cards-main {
+  display: flex;
+  padding: 1rem;
+
+  ul {
+    width: 40%;
+    padding: 0 5% 0 0;
+  }
+
+  .ingredient-item {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 1rem;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
