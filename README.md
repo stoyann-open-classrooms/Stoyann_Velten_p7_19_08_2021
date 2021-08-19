@@ -10,7 +10,7 @@
 
 ### status du projet: En cours
 
-# Le rendu de ce code est accessible sur cette [GitHub Page dédiée.](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p7_19_08_2021/)
+### Le rendu de ce code est accessible sur cette [GitHub Page dédiée.](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p7_19_08_2021/)
 
 ### Livrables attendus
 
