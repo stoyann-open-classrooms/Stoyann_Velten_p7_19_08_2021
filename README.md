@@ -1,4 +1,4 @@
-#### Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
+## Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
 ![Logo de Fisheye](/SRC/readmeCover.png)
 
@@ -10,7 +10,7 @@
 
 -
 
-### status du projet: En cours
+### status du projet: 🛠️ En cours 🛠️
 
 -
 
@@ -18,8 +18,9 @@
 
 ### Livrables attendus
 
-Une [fiche d’investigation de fonctionnalité](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Cas+d%E2%80%99utilisation+%2303+Filtrer+les+recettes+dans+l%E2%80%99interface+utilisateur.pdf)
+➡️ Une [fiche d’investigation de fonctionnalité](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Cas+d%E2%80%99utilisation+%2303+Filtrer+les+recettes+dans+l%E2%80%99interface+utilisateur.pdf)
 sur l’algorithme de recherche (format PDF). Vous y intégrerez le choix de l'algorithme définitif en comparaison à l’autre algorithme de recherche développé.
-Un lien vers le repo GitHub du projet comprenant les deux branches avec les deux solutions différentes pour la recherche.
 
-L'integration de ce projet a été réalisée à partir d'une [maquette Figma.](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK/UI-Design-Les-Petits-Plats-FR?node-id=0%3A1)
+➡️ Un lien vers le repo GitHub du projet comprenant les deux branches avec les deux solutions différentes pour la recherche.
+
+👁️L'integration de ce projet a été réalisée à partir d'une [maquette Figma.](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK/UI-Design-Les-Petits-Plats-FR?node-id=0%3A1)
