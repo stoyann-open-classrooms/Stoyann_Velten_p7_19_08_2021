@@ -10,9 +10,13 @@
 
 -
 
-### status du projet: 🛠️ En cours 🛠️
+## status du projet: 🛠️ En cours 🛠️
 
--
+### La programmation orientée objet est utilisée
+
+# Plan de l'application :
+
+## ![Plan de Lapplication](/Doc/plan_app.png)
 
 ### Le rendu de ce code est accessible sur cette [GitHub Page dédiée.](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p7_19_08_2021/)
 

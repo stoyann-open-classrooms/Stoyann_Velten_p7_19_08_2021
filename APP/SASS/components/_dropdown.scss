@@ -1,18 +1,5 @@
-.filter {
-  margin-top: 50px;
-  display: flex;
-  margin-left: 2%;
-  width: 100%;
-}
-
 .dropdown-ingredients {
   @include dropdown($blue);
-}
-.dropdown-appareils {
-  @include dropdown($green);
-}
-.dropdown-ustensiles {
-  @include dropdown($orange);
 }
 
 .open-drop {
@@ -23,11 +10,7 @@
   border-radius: 5px;
 }
 
-.open-body {
-}
-.ul-ingredient,
-.ul-appareil,
-.ul-ustensile {
+.ul-ingredient {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -61,10 +44,4 @@
 
 #ingredient-inp {
   @include dropdown-input($blue);
-}
-#appareil-inp {
-  @include dropdown-input($green);
-}
-#ustensile-inp {
-  @include dropdown-input($orange);
 }

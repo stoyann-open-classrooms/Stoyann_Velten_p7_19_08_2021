@@ -10,31 +10,6 @@ new MainPageBuilder(recipesList).printPage();
 
 console.log(userInput);
 
-// const dropIngrOpenIcone = document.querySelector(".open-ingredient");
-// const openDropIngr = document.querySelector(".open-drop-ingredient");
-// console.log(dropIngrOpenIcone);
-
-// dropIngrOpenIcone.addEventListener("click", function (e) {
-//   console.log("ok");
-//   openDropIngr.style.display = "flex";
-// });
-
-function displayIngredientsList() {
-  const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
-  const dropIngredient = document.querySelector(".open-drop-ingredient");
-  const closeIngredient = document.querySelector(".close-ingredient");
-  const ul = document.querySelector(".ul-ingredient");
-
-  btnIngredients.addEventListener("click", (e) => {
-    dropIngredient.style.display = "flex";
-    btnIngredients.style.display = "none";
-    // document.body.classList.add("antiscroll");
-
-    closeIngredient.addEventListener("click", () => {
-      dropIngredient.style.display = "none";
-      btnIngredients.style.display = "flex";
-    });
-  });
-}
-displayIngredientsList();
-recipesList.getAllIngredients(recipesList);
+console.log(recipesList.getAllIngredients(recipesList));
+console.log(recipesList.getAllUstensils(recipesList));
+console.log(recipesList.getAllAppliance(recipesList));

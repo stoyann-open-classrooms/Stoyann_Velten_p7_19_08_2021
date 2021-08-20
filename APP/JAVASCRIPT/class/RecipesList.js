@@ -3,35 +3,30 @@ export class RecipesList {
     this.recipes = recipes;
   }
 
-  filterRecipes(input) {
-    let filterRecipes = [];
-    for (let recipe of this.recipes) {
-      filterRecipes.push(recipe.name);
-    }
-
-    return filterRecipes;
-  }
-  getAllIngredients(recipesList) {
-    const ul = document.querySelector(".ul-ingredient");
+  getAllIngredients() {
     let AllIngredients = [];
-    let localList = [];
-
-    // ul.innerHTML = "";
-
-    for (let i = 0; i < recipesList.length; i++) {
-      localList = recipesList[i].ingredients;
-
-      localList.forEach((element) => {
-        AllIngredients.push(element.ingredient);
-      });
-    }
-    AllIngredients = new Set(AllIngredients);
-    AllIngredients.forEach((el) => {
-      const li = document.createElement("li");
-      li.classList.add("ingredient-item");
-      li.textContent = el;
-      ul.append(li);
+    this.recipes.forEach((recipe) => {
+      for (let ingredient of recipe.ingredients) {
+        AllIngredients.push(ingredient.ingredient);
+      }
     });
-    return AllIngredients;
+    return new Set(AllIngredients);
+  }
+
+  getAllUstensils() {
+    let AllUstensils = [];
+    this.recipes.forEach((recipe) => {
+      for (let ustensil of recipe.ustensils) {
+        AllUstensils.push(ustensil);
+      }
+    });
+    return new Set(AllUstensils);
+  }
+  getAllAppliance() {
+    let AllAppliance = [];
+    this.recipes.forEach((recipe) => {
+      AllAppliance.push(recipe.appliance);
+    });
+    return new Set(AllAppliance);
   }
 }

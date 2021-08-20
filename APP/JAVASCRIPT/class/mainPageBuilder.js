@@ -1,7 +1,4 @@
 export class MainPageBuilder {
-  /**
-   * @param {RecipesList} recipesList
-   */
   constructor(recipesList) {
     this.recipesList = recipesList;
   }
@@ -34,8 +31,8 @@ export class MainPageBuilder {
 
     for (let i = 0; i < recipesList.recipes.length; i++) {
       cardsContainer.innerHTML += `
-      <a class="card">
-      <div class="cards-cover" id='${recipesList.recipes[i].id}'>
+      <a class="card" id='card-${recipesList.recipes[i].id}'>
+      <div class="cards-cover" >
           <img src="./SRC/images/${recipesList.recipes[i].id}.jpg" class="cover" alt="${recipesList.recipes[i].name}">
       </div>
       <div class="cards-content">
@@ -48,9 +45,9 @@ export class MainPageBuilder {
           </div>
           <div class="cards-main">
           <ul class = "ingredients-list" id='ingr-list-${recipesList.recipes[i].id}'  >
-          
+
           </ul>
-                <div class="cards-main-description">${recipesList.recipes[i].description}</div>  
+                <div class="cards-main-description">${recipesList.recipes[i].description}</div>
           </div>
       </div>
   </a>
@@ -79,9 +76,26 @@ export class MainPageBuilder {
       }
     }
   }
+  displayIngredientsList() {
+    const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
+    const dropIngredient = document.querySelector(".open-drop-ingredient");
+    const closeIngredient = document.querySelector(".close-ingredient");
+    const ul = document.querySelector(".ul-ingredient");
+
+    btnIngredients.addEventListener("click", (e) => {
+      dropIngredient.style.display = "flex";
+      btnIngredients.style.display = "none";
+
+      closeIngredient.addEventListener("click", () => {
+        dropIngredient.style.display = "none";
+        btnIngredients.style.display = "flex";
+      });
+    });
+  }
 
   printPage() {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
+    this.displayIngredientsList();
   }
 }

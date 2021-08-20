@@ -110,51 +110,8 @@ li {
   width: 20px;
 }
 
-.filter {
-  margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 2%;
-  width: 100%;
-}
-
 .dropdown-ingredients {
   background-color: #3282f7;
-  border-radius: 5px;
-  color: #ffffff;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-  margin-right: 50px;
-}
-
-.dropdown-appareils {
-  background-color: #68d9a4;
-  border-radius: 5px;
-  color: #ffffff;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-  margin-right: 50px;
-}
-
-.dropdown-ustensiles {
-  background-color: #ed6454;
   border-radius: 5px;
   color: #ffffff;
   text-align: center;
@@ -181,9 +138,7 @@ li {
   border-radius: 5px;
 }
 
-.ul-ingredient,
-.ul-appareil,
-.ul-ustensile {
+.ul-ingredient {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,9 +154,7 @@ li {
   overflow: hidden;
 }
 
-.ul-ingredient li,
-.ul-appareil li,
-.ul-ustensile li {
+.ul-ingredient li {
   width: 30%;
   line-height: 3rem;
   cursor: pointer;
@@ -254,56 +207,6 @@ li {
 }
 
 #ingredient-inp::placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#appareil-inp {
-  background-color: #68d9a4;
-  padding: 15px;
-  border: none;
-  outline: none;
-  color: #ffffff;
-  font-size: 1.7rem;
-}
-
-#appareil-inp::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#appareil-inp:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#appareil-inp::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#appareil-inp::placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#ustensile-inp {
-  background-color: #ed6454;
-  padding: 15px;
-  border: none;
-  outline: none;
-  color: #ffffff;
-  font-size: 1.7rem;
-}
-
-#ustensile-inp::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#ustensile-inp:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#ustensile-inp::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-#ustensile-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
