@@ -49,16 +49,37 @@ export class MainPageBuilder {
               </div>
           </div>
           <div class="cards-main">
-          <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <ul class = "ingredients-list" id='ingr-list-${recipesList.recipes[i].id}'  >
+          
           </ul>
                 <div class="cards-main-description">${recipesList.recipes[i].description}</div>  
           </div>
       </div>
   </a>
       `;
+      const ul = document.getElementById(
+        `ingr-list-${recipesList.recipes[i].id}`
+      );
+
+      for (let j = 0; j < recipesList.recipes[i].ingredients.length; j++) {
+        console.log(recipesList.recipes[i].ingredients[j].ingredient);
+        const liIngr = document.createElement("li");
+        liIngr.classList.add("ingredient-item");
+        liIngr.innerHTML = `
+        <span>${recipesList.recipes[i].ingredients[j].ingredient}</span>
+        `;
+        if (recipesList.recipes[i].ingredients[j].quantity != undefined) {
+          liIngr.innerHTML = `
+          <span>${recipesList.recipes[i].ingredients[j].ingredient} : </span> ${recipesList.recipes[i].ingredients[j].quantity}
+          `;
+        }
+        if (recipesList.recipes[i].ingredients[j].unit != undefined) {
+          liIngr.innerHTML = `
+          <span>${recipesList.recipes[i].ingredients[j].ingredient} : </span> ${recipesList.recipes[i].ingredients[j].quantity} ${recipesList.recipes[i].ingredients[j].unit}
+          `;
+        }
+        ul.append(liIngr);
+      }
     }
   }
 
