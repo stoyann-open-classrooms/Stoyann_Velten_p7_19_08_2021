@@ -141,8 +141,11 @@ li {
 }
 
 .card-header .cards-title {
-  font-size: 1.6rem;
-  width: 80%;
+  font-size: 1.5rem;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-header .cards-header-time {
@@ -164,6 +167,15 @@ li {
   display: -ms-flexbox;
   display: flex;
   padding: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cards-main .cards-main-description {
+  width: 60%;
+  overflow: hidden;
+  height: 80px;
 }
 
 .cards-main ul {
