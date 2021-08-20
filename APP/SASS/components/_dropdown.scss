@@ -1,6 +1,12 @@
 .dropdown-ingredients {
   @include dropdown($blue);
 }
+.dropdown-appareils {
+  @include dropdown($green);
+}
+.dropdown-ustensils {
+  @include dropdown($orange);
+}
 
 .open-drop {
   display: none;
@@ -9,7 +15,46 @@
   padding: 20px;
   border-radius: 5px;
 }
+.ul-ustensil {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  justify-content: flex-start;
+  height: 200px;
+  overflow: hidden;
 
+  .ust-item {
+    width: 30%;
+    margin-right: 5px;
+    line-height: 3rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.ul-appareil {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  justify-content: flex-start;
+  height: 200px;
+  overflow: hidden;
+
+  .appr-item {
+    width: 30%;
+    margin-right: 5px;
+    line-height: 3rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 .ul-ingredient {
   display: flex;
   width: 100%;
@@ -20,8 +65,9 @@
   height: 200px;
   overflow: hidden;
 
-  li {
+  .ingr-item {
     width: 30%;
+    margin-right: 5px;
     line-height: 3rem;
     cursor: pointer;
     white-space: nowrap;
@@ -48,6 +94,12 @@
 #ingredient-inp {
   @include dropdown-input($blue);
 }
+#appareil-inp {
+  @include dropdown-input($green);
+}
+#ustensil-inp {
+  @include dropdown-input($orange);
+}
 
 .scroller {
   width: auto;
@@ -55,19 +107,19 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-::-webkit-scrollbar {
-  width: 13px;
-  height: 13px;
-}
-::-webkit-scrollbar-thumb {
-  background: #3282f7;
-  border-radius: 9px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #b3afb3;
-}
-::-webkit-scrollbar-track {
-  background: $blue;
-  border-radius: 9px;
-  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-}
+// ::-webkit-scrollbar {
+//   width: 13px;
+//   height: 13px;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: #3282f7;
+//   border-radius: 9px;
+// }
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #b3afb3;
+// }
+// ::-webkit-scrollbar-track {
+//   background: $blue;
+//   border-radius: 9px;
+//   box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+// }

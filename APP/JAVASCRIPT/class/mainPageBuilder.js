@@ -76,13 +76,19 @@ export class MainPageBuilder {
       }
     }
   }
-  displayIngredientsList() {
+  displayIngredientsList(AllIngredients) {
     const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
     const dropIngredient = document.querySelector(".open-drop-ingredient");
     const closeIngredient = document.querySelector(".close-ingredient");
     const ul = document.querySelector(".ul-ingredient");
 
     ul.classList.add("scroller");
+    AllIngredients.forEach((ingr) => {
+      const li = document.createElement("li");
+      li.textContent = ingr;
+      li.classList.add("ingr-item");
+      ul.append(li);
+    });
 
     btnIngredients.addEventListener("click", (e) => {
       dropIngredient.style.display = "flex";
@@ -95,9 +101,59 @@ export class MainPageBuilder {
     });
   }
 
-  printPage() {
+  displayAppareilsList(AllAppareils) {
+    const btnAppareil = document.querySelector(".dropdown-btn-appareils");
+    const dropAppareil = document.querySelector(".open-drop-appareil");
+    const closeAppareil = document.querySelector(".close-appareil");
+    const ul = document.querySelector(".ul-appareil");
+
+    AllAppareils.forEach((ingr) => {
+      const li = document.createElement("li");
+      li.textContent = ingr;
+      li.classList.add("appr-item");
+      ul.append(li);
+    });
+
+    btnAppareil.addEventListener("click", (e) => {
+      dropAppareil.style.display = "flex";
+      btnAppareil.style.display = "none";
+
+      closeAppareil.addEventListener("click", () => {
+        dropAppareil.style.display = "none";
+        btnAppareil.style.display = "flex";
+      });
+    });
+  }
+
+  displayUstensilsList(AllUstensils) {
+    const btnUstensil = document.querySelector(".dropdown-btn-ustensils");
+    const dropUstensil = document.querySelector(".open-drop-ustensil");
+    const closeUstensil = document.querySelector(".close-ustensil");
+    const ul = document.querySelector(".ul-ustensil");
+
+    AllUstensils.forEach((ust) => {
+      const li = document.createElement("li");
+      li.textContent = ust;
+      li.classList.add("ust-item");
+      ul.append(li);
+    });
+
+    btnUstensil.addEventListener("click", (e) => {
+      dropUstensil.style.display = "flex";
+      btnUstensil.style.display = "none";
+
+      closeUstensil.addEventListener("click", () => {
+        dropUstensil.style.display = "none";
+        btnUstensil.style.display = "flex";
+      });
+    });
+  }
+
+  printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
-    this.displayIngredientsList();
+    this.displayIngredientsList(allIngredients);
+    this.displayAppareilsList(AllAppareils);
+    this.displayUstensilsList(AllUstensils);
   }
 }

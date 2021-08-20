@@ -6,7 +6,11 @@ const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList();
 const userInput = new MainPageBuilder(recipesList).userRequest;
 
-new MainPageBuilder(recipesList).printPage();
+new MainPageBuilder(recipesList).printPage(
+  recipesList.getAllIngredients(recipesList),
+  recipesList.getAllAppliance(recipesList),
+  recipesList.getAllUstensils(recipesList)
+);
 
 console.log(userInput);
 

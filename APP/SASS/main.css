@@ -127,6 +127,40 @@ li {
   margin-right: 50px;
 }
 
+.dropdown-appareils {
+  background-color: #68d9a4;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  margin-right: 50px;
+}
+
+.dropdown-ustensils {
+  background-color: #ed6454;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  margin-right: 50px;
+}
+
 .open-drop {
   display: none;
   -webkit-box-orient: vertical;
@@ -136,6 +170,58 @@ li {
   width: 680px;
   padding: 20px;
   border-radius: 5px;
+}
+
+.ul-ustensil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ul-ustensil .ust-item {
+  width: 30%;
+  margin-right: 5px;
+  line-height: 3rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ul-appareil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ul-appareil .appr-item {
+  width: 30%;
+  margin-right: 5px;
+  line-height: 3rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ul-ingredient {
@@ -154,8 +240,9 @@ li {
   overflow: hidden;
 }
 
-.ul-ingredient li {
+.ul-ingredient .ingr-item {
   width: 30%;
+  margin-right: 5px;
   line-height: 3rem;
   cursor: pointer;
   white-space: nowrap;
@@ -213,32 +300,61 @@ li {
   color: rgba(255, 255, 255, 0.52);
 }
 
+#appareil-inp {
+  background-color: #68d9a4;
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+#appareil-inp::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#appareil-inp:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#appareil-inp::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#appareil-inp::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#ustensil-inp {
+  background-color: #ed6454;
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+#ustensil-inp::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#ustensil-inp:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#ustensil-inp::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+#ustensil-inp::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
 .scroller {
   width: auto;
   height: 200px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  width: 13px;
-  height: 13px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3282f7;
-  border-radius: 9px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b3afb3;
-}
-
-::-webkit-scrollbar-track {
-  background: #3282f7;
-  border-radius: 9px;
-  -webkit-box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-          box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 }
 
 .card {
