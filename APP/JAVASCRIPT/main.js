@@ -13,7 +13,3 @@ new MainPageBuilder(recipesList).printPage(
 );
 
 console.log(userInput);
-
-console.log(recipesList.getAllIngredients(recipesList));
-console.log(recipesList.getAllUstensils(recipesList));
-console.log(recipesList.getAllAppliance(recipesList));

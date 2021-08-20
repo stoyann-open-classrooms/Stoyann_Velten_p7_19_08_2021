@@ -76,7 +76,7 @@ export class MainPageBuilder {
       }
     }
   }
-  displayIngredientsList(AllIngredients) {
+  displayIngredientsDrop(AllIngredients) {
     const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
     const dropIngredient = document.querySelector(".open-drop-ingredient");
     const closeIngredient = document.querySelector(".close-ingredient");
@@ -101,7 +101,7 @@ export class MainPageBuilder {
     });
   }
 
-  displayAppareilsList(AllAppareils) {
+  displayAppareilsDrop(AllAppareils) {
     const btnAppareil = document.querySelector(".dropdown-btn-appareils");
     const dropAppareil = document.querySelector(".open-drop-appareil");
     const closeAppareil = document.querySelector(".close-appareil");
@@ -125,15 +125,16 @@ export class MainPageBuilder {
     });
   }
 
-  displayUstensilsList(AllUstensils) {
+  displayUstensilsDrop(AllUstensils) {
     const btnUstensil = document.querySelector(".dropdown-btn-ustensils");
     const dropUstensil = document.querySelector(".open-drop-ustensil");
     const closeUstensil = document.querySelector(".close-ustensil");
     const ul = document.querySelector(".ul-ustensil");
+    ul.classList.add("scroller");
 
     AllUstensils.forEach((ust) => {
       const li = document.createElement("li");
-      li.textContent = ust;
+      li.innerHTML = ust;
       li.classList.add("ust-item");
       ul.append(li);
     });
@@ -152,8 +153,8 @@ export class MainPageBuilder {
   printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
-    this.displayIngredientsList(allIngredients);
-    this.displayAppareilsList(AllAppareils);
-    this.displayUstensilsList(AllUstensils);
+    this.displayIngredientsDrop(allIngredients);
+    this.displayAppareilsDrop(AllAppareils);
+    this.displayUstensilsDrop(AllUstensils);
   }
 }
