@@ -1,0 +1,70 @@
+.filter {
+  margin-top: 50px;
+  display: flex;
+  margin-left: 2%;
+  width: 100%;
+}
+
+.dropdown-ingredients {
+  @include dropdown($blue);
+}
+.dropdown-appareils {
+  @include dropdown($green);
+}
+.dropdown-ustensiles {
+  @include dropdown($orange);
+}
+
+.open-drop {
+  display: none;
+  flex-direction: column;
+  width: 680px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.open-body {
+}
+.ul-ingredient,
+.ul-appareil,
+.ul-ustensile {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  justify-content: center;
+  height: 200px;
+  overflow: hidden;
+
+  li {
+    width: 30%;
+    line-height: 3rem;
+    cursor: pointer;
+  }
+}
+
+.top {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+}
+.dropdown-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 170px;
+  height: 70px;
+  padding: 10px;
+  z-index: 99999;
+}
+
+#ingredient-inp {
+  @include dropdown-input($blue);
+}
+#appareil-inp {
+  @include dropdown-input($green);
+}
+#ustensile-inp {
+  @include dropdown-input($orange);
+}

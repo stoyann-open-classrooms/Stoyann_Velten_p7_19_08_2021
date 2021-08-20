@@ -1,0 +1,31 @@
+.tag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: $blue;
+  width: 107px;
+  //   max-width: auto;
+  height: 40px;
+  text-align: center;
+  color: white;
+  border-radius: $radius;
+  margin: 0 10px 0 0;
+  padding: 0.5rem;
+
+  .tag-txt {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    justify-self: flex-start;
+  }
+
+  .tag-icone {
+    margin-top: 4%;
+    i {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}

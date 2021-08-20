@@ -1,3 +1,45 @@
+@mixin dropdown($color) {
+  background-color: $color;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  margin-right: 50px;
+}
+
+@mixin dropdown-input($color) {
+  background-color: $color;
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.7rem;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.52);
+  }
+}
+@mixin tag($color) {
+  background-color: $color;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+@mixin dropdown-content($color) {
+  position: relative;
+  background-color: $color;
+  width: 650px;
+  height: 380px;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999999;
+  overflow: hidden;
+}
+
 @mixin abs-center($top, $right, $bottom, $left, $x, $y) {
   position: absolute;
   top: $top;

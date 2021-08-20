@@ -18,7 +18,7 @@ export class MainPageBuilder {
 
   inputAnim() {
     const searchBar = document.getElementById("search-bar");
-    console.log(searchBar);
+
     searchBar.addEventListener("input", function (e) {
       if (e.target.value !== "") {
         e.target.parentNode.classList.add("active-input");
@@ -33,8 +33,6 @@ export class MainPageBuilder {
     let htmlContent = ``;
 
     for (let i = 0; i < recipesList.recipes.length; i++) {
-      // htmlContent += new RecipeCard(recipesList.recipes[i], i).html;
-      console.log(recipesList.recipes[i]);
       cardsContainer.innerHTML += `
       <a class="card">
       <div class="cards-cover" id='${recipesList.recipes[i].id}'>
@@ -62,7 +60,6 @@ export class MainPageBuilder {
       );
 
       for (let j = 0; j < recipesList.recipes[i].ingredients.length; j++) {
-        console.log(recipesList.recipes[i].ingredients[j].ingredient);
         const liIngr = document.createElement("li");
         liIngr.classList.add("ingredient-item");
         liIngr.innerHTML = `
@@ -83,7 +80,8 @@ export class MainPageBuilder {
     }
   }
 
-  printCard() {
+  printPage() {
     this.cardsMaker(this.recipesList);
+    this.inputAnim();
   }
 }

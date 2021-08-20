@@ -1,7 +1,7 @@
 .search-bar-form {
   position: relative;
   display: flex;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   width: 105%;
   @include bigPhone-and-higher {
     width: 100%;
@@ -20,4 +20,21 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+.tags-container {
+  width: 100%;
+  padding: 0 0 0 4%;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.dropdowns-container {
+  display: flex;
+  // width: 100%;
+
+  display: flex;
+
+  width: 100%;
+  padding: 0 0 0 4%;
 }

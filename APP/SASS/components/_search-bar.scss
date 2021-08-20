@@ -17,17 +17,20 @@
   color: #0000007e;
   top: 50%;
   transform: translateY(-50%);
-  padding-left: 1.8rem;
+  padding-left: 3rem;
   transition: all 0.3s ease-in;
   width: 70%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   @include bigPhone-and-higher {
-    padding-left: 4rem;
+    padding-left: 5rem;
   }
   @include tablet-and-higher {
     padding-left: 8rem;
+  }
+  @include desktop-and-higher {
+    padding-left: 12rem;
   }
 }
 
