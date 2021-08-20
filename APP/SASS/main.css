@@ -158,6 +158,9 @@ li {
   width: 30%;
   line-height: 3rem;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .top {
@@ -208,6 +211,34 @@ li {
 
 #ingredient-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
+}
+
+.scroller {
+  width: auto;
+  height: 200px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3282f7;
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3afb3;
+}
+
+::-webkit-scrollbar-track {
+  background: #3282f7;
+  border-radius: 9px;
+  -webkit-box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+          box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 }
 
 .card {

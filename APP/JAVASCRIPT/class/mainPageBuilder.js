@@ -82,6 +82,8 @@ export class MainPageBuilder {
     const closeIngredient = document.querySelector(".close-ingredient");
     const ul = document.querySelector(".ul-ingredient");
 
+    ul.classList.add("scroller");
+
     btnIngredients.addEventListener("click", (e) => {
       dropIngredient.style.display = "flex";
       btnIngredients.style.display = "none";
