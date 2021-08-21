@@ -1,3 +1,5 @@
+import { keepOnlyLettersAndRemoveAccents } from "../utils/string.js";
+
 export class Recipe {
   constructor(
     id,
@@ -19,7 +21,11 @@ export class Recipe {
     this.ustensils = ustensils;
   }
 
-  getIngredients() {
-    console.log(...this.ingredients);
+  get applianceNameWithoutAccent() {
+    return keepOnlyLettersAndRemoveAccents(this.appliance);
+  }
+
+  get nameWithoutAccent() {
+    return keepOnlyLettersAndRemoveAccents(this.name);
   }
 }

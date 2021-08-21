@@ -9,7 +9,7 @@ export class MainPageBuilder {
       console.log({ userInput: searchBarInput.value.trim() });
     });
     return {
-      userInput: searchBarInput.value.trim(),
+      userInput: searchBarInput.value.trim().split(" "),
     };
   }
 
@@ -88,10 +88,15 @@ export class MainPageBuilder {
       li.textContent = ingr;
       li.classList.add("ingr-item");
       ul.append(li);
+      li.addEventListener("click", (e) => {
+        console.log(`${ingr}`);
+        li.classList.toggle("tag-selected");
+      });
     });
 
     btnIngredients.addEventListener("click", (e) => {
       dropIngredient.style.display = "flex";
+
       btnIngredients.style.display = "none";
 
       closeIngredient.addEventListener("click", () => {
@@ -136,6 +141,7 @@ export class MainPageBuilder {
       const li = document.createElement("li");
       li.innerHTML = ust;
       li.classList.add("ust-item");
+
       ul.append(li);
     });
 

@@ -1,3 +1,8 @@
+import {
+  keepOnlyLettersAndRemoveAccents,
+  capitalizeFirstChar,
+} from "../utils/string.js";
+
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
@@ -13,6 +18,20 @@ export class RecipesList {
     return new Set(AllIngredients);
   }
 
+  getAllAppliance() {
+    const appliances = new Set();
+
+    for (let recipe of this.recipes) {
+      appliances.add(capitalizeFirstChar(recipe.appliance));
+    }
+
+    return [...appliances];
+  }
+
+  filterRecipe(inp) {
+    console.log(inp);
+  }
+
   getAllUstensils() {
     let AllUstensils = [];
     this.recipes.forEach((recipe) => {
@@ -21,12 +40,5 @@ export class RecipesList {
       }
     });
     return new Set(AllUstensils);
-  }
-  getAllAppliance() {
-    let AllAppliance = [];
-    this.recipes.forEach((recipe) => {
-      AllAppliance.push(recipe.appliance);
-    });
-    return new Set(AllAppliance);
   }
 }

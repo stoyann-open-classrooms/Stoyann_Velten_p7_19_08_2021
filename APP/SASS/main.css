@@ -485,6 +485,11 @@ li {
   font-size: 2rem;
 }
 
+.tag-selected {
+  color: #57a6b3;
+  font-style: italic;
+}
+
 header {
   color: #d04f4f;
   text-align: center;

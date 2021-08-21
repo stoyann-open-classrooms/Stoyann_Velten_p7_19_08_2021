@@ -12,4 +12,14 @@ new MainPageBuilder(recipesList).printPage(
   recipesList.getAllUstensils(recipesList)
 );
 
-console.log(userInput);
+// console.log(userInput);
+console.log(recipesList.filterRecipe(userInput));
+
+let ingrItems = document.querySelectorAll(".ingr-item");
+let tagSelected = [];
+ingrItems.forEach((el) =>
+  el.addEventListener("click", () => {
+    tagSelected.push(el.textContent);
+    console.log(tagSelected);
+  })
+);
