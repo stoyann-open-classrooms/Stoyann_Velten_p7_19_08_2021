@@ -3,14 +3,19 @@ export class MainPageBuilder {
     this.recipesList = recipesList;
   }
 
+  // retourne un objet contenant un tableau avec les mots entrer dans le champ de recherche par l'uttilisateur
   get userRequest() {
+    let userInp = [];
     const searchBarInput = document.getElementById("search-bar");
     searchBarInput.addEventListener("input", function () {
-      console.log({ userInput: searchBarInput.value.trim() });
+      if (searchBarInput.value.length >= 3) {
+        userInp = [];
+        userInp.push(searchBarInput.value);
+      }
+
+      console.log(userInp);
+      return userInp;
     });
-    return {
-      userInput: searchBarInput.value.trim().split(" "),
-    };
   }
 
   inputAnim() {
@@ -89,7 +94,7 @@ export class MainPageBuilder {
       li.classList.add("ingr-item");
       ul.append(li);
       li.addEventListener("click", (e) => {
-        console.log(`${ingr}`);
+        // console.log(`${ingr}`);
         li.classList.toggle("tag-selected");
       });
     });
@@ -156,11 +161,35 @@ export class MainPageBuilder {
     });
   }
 
+  makeTags() {
+    let itemsIngr = document.querySelectorAll(".ingr-item");
+    const tagsContainer = document.querySelector(".tags-container");
+    itemsIngr.forEach((el) =>
+      el.addEventListener("click", () => {
+        console.log(el.textContent);
+        tagsContainer.innerHTML += `
+        <div class="tag">
+        <div class="tag-txt">${el.textContent}</div>
+        <span class="tag-icone"><i class="far fa-times-circle close-tag" aria-hidden="true"></i></span>
+    </div>
+        `;
+
+        const tag = document.querySelector(".tag");
+        const close = document.querySelector(".close-tag");
+        console.log(close);
+        close.addEventListener("click", (e) => {
+          tag.style.display = "none";
+        });
+      })
+    );
+  }
+
   printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
     this.displayAppareilsDrop(AllAppareils);
     this.displayUstensilsDrop(AllUstensils);
+    this.makeTags();
   }
 }

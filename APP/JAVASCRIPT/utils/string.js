@@ -1,5 +1,5 @@
 // retourne la chaine de caractére entrer en paramétres sans accent et en minuscule
-export function keepOnlyLettersAndRemoveAccents(string) {
+export function removeAccents(string) {
   return string
     .toLowerCase()
     .replace(/[.,;:!\?\*"()°]/g, "")

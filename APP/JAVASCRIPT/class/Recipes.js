@@ -1,4 +1,4 @@
-import { keepOnlyLettersAndRemoveAccents } from "../utils/string.js";
+import { removeAccents } from "../utils/string.js";
 
 export class Recipe {
   constructor(
@@ -21,11 +21,22 @@ export class Recipe {
     this.ustensils = ustensils;
   }
 
-  get applianceNameWithoutAccent() {
-    return keepOnlyLettersAndRemoveAccents(this.appliance);
+  // retourne une chaine de caractére : appareil de la recette sans accents
+  get applianceNoAccent() {
+    return removeAccents(this.appliance);
   }
 
-  get nameWithoutAccent() {
-    return keepOnlyLettersAndRemoveAccents(this.name);
+  // retourne une chaine de caractére : nom de la recette sans accents
+  get nameNoAccent() {
+    return removeAccents(this.name);
+  }
+  // retourne un tableau avec la liste des ingrédients de la recette sans accents
+  get ingredientsNoAccent() {
+    const ingredientsList = [];
+
+    for (let item of this.ingredients) {
+      ingredientsList.push(removeAccents(item.ingredient));
+    }
+    return ingredientsList;
   }
 }

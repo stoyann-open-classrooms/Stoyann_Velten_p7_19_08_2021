@@ -1,7 +1,4 @@
-import {
-  keepOnlyLettersAndRemoveAccents,
-  capitalizeFirstChar,
-} from "../utils/string.js";
+import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
 
 export class RecipesList {
   constructor(recipes) {
@@ -18,6 +15,7 @@ export class RecipesList {
     return new Set(AllIngredients);
   }
 
+  // retourne toute les appareils disponible (premiere lettre en majuscule) pour les afficher dans le dropdown associée
   getAllAppliance() {
     const appliances = new Set();
 
@@ -26,10 +24,6 @@ export class RecipesList {
     }
 
     return [...appliances];
-  }
-
-  filterRecipe(inp) {
-    console.log(inp);
   }
 
   getAllUstensils() {
