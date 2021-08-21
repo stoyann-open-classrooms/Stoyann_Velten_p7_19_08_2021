@@ -3,24 +3,9 @@ export class MainPageBuilder {
     this.recipesList = recipesList;
   }
 
-  // retourne un objet contenant un tableau avec les mots entrer dans le champ de recherche par l'uttilisateur
-  get userRequest() {
-    let userInp = [];
-    const searchBarInput = document.getElementById("search-bar");
-    searchBarInput.addEventListener("input", function () {
-      if (searchBarInput.value.length >= 3) {
-        userInp = [];
-        userInp.push(searchBarInput.value);
-      }
-
-      console.log(userInp);
-      return userInp;
-    });
-  }
-
+  // animation de l'input
   inputAnim() {
     const searchBar = document.getElementById("search-bar");
-
     searchBar.addEventListener("input", function (e) {
       if (e.target.value !== "") {
         e.target.parentNode.classList.add("active-input");
@@ -30,6 +15,7 @@ export class MainPageBuilder {
     });
   }
 
+  // créer et affiche les cards recettes du tableau de recette entrée en paramétre
   cardsMaker(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
     let htmlContent = ``;
@@ -81,22 +67,26 @@ export class MainPageBuilder {
       }
     }
   }
+
+  // créer et affiche le contenue du dropdown ingrédients
   displayIngredientsDrop(AllIngredients) {
     const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
     const dropIngredient = document.querySelector(".open-drop-ingredient");
     const closeIngredient = document.querySelector(".close-ingredient");
     const ul = document.querySelector(".ul-ingredient");
+    let index = 0;
 
     ul.classList.add("scroller");
     AllIngredients.forEach((ingr) => {
       const li = document.createElement("li");
       li.textContent = ingr;
       li.classList.add("ingr-item");
+      li.id = `ingr-item-${index}`;
       ul.append(li);
       li.addEventListener("click", (e) => {
-        // console.log(`${ingr}`);
         li.classList.toggle("tag-selected");
       });
+      index++;
     });
 
     btnIngredients.addEventListener("click", (e) => {
@@ -110,6 +100,8 @@ export class MainPageBuilder {
       });
     });
   }
+
+  // créer et affiche le contenue du dropdown Appareils
 
   displayAppareilsDrop(AllAppareils) {
     const btnAppareil = document.querySelector(".dropdown-btn-appareils");
@@ -134,6 +126,8 @@ export class MainPageBuilder {
       });
     });
   }
+
+  // créer et affiche le contenue du dropdown ustensiles
 
   displayUstensilsDrop(AllUstensils) {
     const btnUstensil = document.querySelector(".dropdown-btn-ustensils");
@@ -161,29 +155,38 @@ export class MainPageBuilder {
     });
   }
 
+  // créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {
     let itemsIngr = document.querySelectorAll(".ingr-item");
     const tagsContainer = document.querySelector(".tags-container");
+    let closeTag = [];
+
+    //  pour chaque items de la liste ingredients si un item est selectioner alors le tag associée s"affiche sur la page
+    let index = 0;
     itemsIngr.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el.textContent);
         tagsContainer.innerHTML += `
-        <div class="tag">
+        <div class="tag"  id= "tag-${index}">
         <div class="tag-txt">${el.textContent}</div>
-        <span class="tag-icone"><i class="far fa-times-circle close-tag" aria-hidden="true"></i></span>
+        <span class="tag-icone"><i class="far fa-times-circle " id= "close-tag-${index}" aria-hidden="true"></i></span>
     </div>
         `;
 
-        const tag = document.querySelector(".tag");
-        const close = document.querySelector(".close-tag");
-        console.log(close);
-        close.addEventListener("click", (e) => {
-          tag.style.display = "none";
-        });
+        const tag = document.getElementById(`tag-${index}`);
+        document
+          .getElementById(`close-tag-${index}`)
+          .addEventListener("click", (e) => {
+            tag.style.display = "none";
+          });
+
+        console.log(closeTag);
+        index++;
       })
     );
   }
 
+  //  affiche la page
   printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();

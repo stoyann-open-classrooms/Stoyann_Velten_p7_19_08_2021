@@ -4,7 +4,6 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList();
-const userInput = new MainPageBuilder(recipesList).userRequest;
 
 new MainPageBuilder(recipesList).printPage(
   recipesList.getAllIngredients(recipesList),
@@ -12,18 +11,21 @@ new MainPageBuilder(recipesList).printPage(
   recipesList.getAllUstensils(recipesList)
 );
 
-// let ingrItems = document.querySelectorAll(".ingr-item");
-// let tagSelected = [];
-// ingrItems.forEach((el) =>
-//   el.addEventListener("click", () => {
-//     tagSelected.push(el.textContent);
-//     console.log(tagSelected);
-//   })
-// );
-
 // log le nom de la recette 14 sans accents
 console.log(recipesList.recipes[14].nameNoAccent);
 // log les ingrédients de la recette 14 sans accents
 console.log(recipesList.recipes[14].ingredientsNoAccent);
 // log l'appliances de la recette 14 sans accents
 console.log(recipesList.recipes[14].applianceNoAccent);
+
+recipesList.filterRecipes(getRequest());
+
+// console.log(this.recipes);
+function getRequest() {
+  let userInp = [];
+  const searchBarInput = document.getElementById("search-bar");
+  searchBarInput.addEventListener("input", function () {
+    userInp.push(searchBarInput.value.toLowerCase().split(" "));
+  });
+  return userInp;
+}

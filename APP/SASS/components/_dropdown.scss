@@ -1,8 +1,10 @@
 .dropdown-ingredients {
   @include dropdown($blue);
+  margin-right: 10px;
 }
 .dropdown-appareils {
   @include dropdown($green);
+  margin-right: 10px;
 }
 .dropdown-ustensils {
   @include dropdown($orange);
@@ -86,7 +88,7 @@
   justify-content: space-around;
   align-items: center;
   width: 170px;
-  height: 70px;
+  max-height: 80px;
   padding: 10px;
   z-index: 99999;
 }
@@ -107,19 +109,3 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-// ::-webkit-scrollbar {
-//   width: 13px;
-//   height: 13px;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background: #3282f7;
-//   border-radius: 9px;
-// }
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #b3afb3;
-// }
-// ::-webkit-scrollbar-track {
-//   background: $blue;
-//   border-radius: 9px;
-//   box-shadow: inset 0px 0px 0px 0px #f0f0f0;
-// }

@@ -35,4 +35,11 @@ export class RecipesList {
     });
     return new Set(AllUstensils);
   }
+
+  filterRecipes(input) {
+    for (let recipe of this.recipes) {
+      console.log(recipe.nameNoAccent);
+    }
+    console.log(input);
+  }
 }
