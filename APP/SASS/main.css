@@ -251,7 +251,7 @@ li {
   border-radius: 5px;
 }
 
-.ul-ustensil {
+.ul-drop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,59 +267,7 @@ li {
   overflow: hidden;
 }
 
-.ul-ustensil .ust-item {
-  width: 30%;
-  margin-right: 5px;
-  line-height: 3rem;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.ul-appareil {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 20px;
-  text-align: left;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 200px;
-  overflow: hidden;
-}
-
-.ul-appareil .appr-item {
-  width: 30%;
-  margin-right: 5px;
-  line-height: 3rem;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.ul-ingredient {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 20px;
-  text-align: left;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 200px;
-  overflow: hidden;
-}
-
-.ul-ingredient .ingr-item {
+.ul-drop .item {
   width: 30%;
   margin-right: 5px;
   line-height: 3rem;

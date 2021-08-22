@@ -38,7 +38,7 @@ export class RecipesList {
 
   filterRecipes(input) {
     for (let recipe of this.recipes) {
-      console.log(recipe.nameNoAccent);
+      // console.log(recipe.nameNoAccent);
     }
     console.log(input);
   }
