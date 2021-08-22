@@ -6,15 +6,17 @@ export class MainPageBuilder {
     this.selectTag = [];
     this.value = [];
   }
+
   // get userRequest() {
   //   const searchBarInput = document.getElementById("search-bar");
 
   //   searchBarInput.addEventListener("input", (e) => {
-  //     this.value.push(searchBarInput.value);
   //     console.log({ userInput: this.value.splice(" ") });
   //   });
   // }
+
   // animation de l'input
+
   inputAnim() {
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", function (e) {

@@ -6,14 +6,29 @@ export class RecipesList {
     this.value = [];
   }
 
-  get userRequest() {
-    const searchBarInput = document.getElementById("search-bar");
+  // get userRequest() {
+  //   const searchBarInput = document.getElementById("search-bar");
 
-    searchBarInput.addEventListener("input", (e) => {
-      this.value.push(searchBarInput.value);
-      // console.log({ userInput: this.value.splice(" ") });
-    });
-  }
+  //   searchBarInput.addEventListener("input", (e) => {
+  //     const filters = {
+  //       value: searchBarInput.value,
+  //       selectTag: [],
+  //     };
+  //   });
+
+  //   // if (searchBarInput.length > 2) {
+  //   //   filters.value = searchBarInput.value;
+  //   //   console.log({ userInput: this.value.splice(" ") });
+  //   //       if (searchBarInput.keyCode = "entrée") {
+  //   //          filters.selectTag.push(searchBarInput.value),
+  //   //            searchBarInput.value = "",
+  //   //      }
+  //   //     }
+  //   //      return filters
+  //     //   });
+  //     // }
+  //   }
+  // }
 
   getAllIngredients() {
     let AllIngredients = [];
@@ -47,6 +62,10 @@ export class RecipesList {
   }
 
   filterRecipes() {
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("input", (e) => {
+      console.log(searchBar.value);
+    });
     let filterRecipes = [];
     for (let recipe of this.recipes) {
       if (recipe.name.includes("chocolat")) {
