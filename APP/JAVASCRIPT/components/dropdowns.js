@@ -32,17 +32,20 @@ export class Dropdown {
     this.span = span;
   }
 
+  addTag() {
+    this.dataset.selected = this.dataset.selected == "true" ? "false" : "true";
+  }
+
   createList() {
     this.ulDrop.classList.add("scroller");
     this.ulDrop.classList.add("ul-drop");
     this.itemsList.forEach((ingr) => {
       const li = document.createElement("li");
+      li.setAttribute("data-selected", "false");
       li.textContent = ingr;
       li.classList.add("item");
       this.ulDrop.append(li);
-      li.addEventListener("click", (e) => {
-        li.classList.toggle("tag-selected");
-      });
+      li.addEventListener("click", this.addTag);
     });
   }
   openDrop() {
