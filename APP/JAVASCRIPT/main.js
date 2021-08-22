@@ -4,7 +4,6 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
-let userRequest = recipesList.userRequest;
 
 function getUserRequest() {
   const searchBar = document.getElementById("search-bar");
@@ -17,6 +16,7 @@ function getUserRequest() {
     request.string = searchBar.value;
     const filteredRecipes = recipesList.filterRecipes(request);
   });
+  return request;
 }
 getUserRequest();
 new MainPageBuilder(recipesList).printPage(
@@ -35,10 +35,10 @@ new MainPageBuilder(recipesList).printPage(
 // console.log(this.recipes);
 // console.log(request);
 
-console.log(userRequest);
-recipesList.callback((mavar) => {
-  //   console.log(mavar);
-});
+// console.log(userRequest);
+// recipesList.callback((mavar) => {
+//   //   console.log(mavar);
+// });
 // const searchBarInput = document.getElementById("search-bar");
 
 // searchBarInput.addEventListener("input", (e) => {

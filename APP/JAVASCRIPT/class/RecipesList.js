@@ -1,34 +1,10 @@
 import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
-
+// import { Request } from "./Request.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
     this.value = [];
   }
-
-  // get userRequest() {
-  //   const searchBarInput = document.getElementById("search-bar");
-
-  //   searchBarInput.addEventListener("input", (e) => {
-  //     const filters = {
-  //       value: searchBarInput.value,
-  //       selectTag: [],
-  //     };
-  //   });
-
-  //   // if (searchBarInput.length > 2) {
-  //   //   filters.value = searchBarInput.value;
-  //   //   console.log({ userInput: this.value.splice(" ") });
-  //   //       if (searchBarInput.keyCode = "entrée") {
-  //   //          filters.selectTag.push(searchBarInput.value),
-  //   //            searchBarInput.value = "",
-  //   //      }
-  //   //     }
-  //   //      return filters
-  //     //   });
-  //     // }
-  //   }
-  // }
 
   getAllIngredients() {
     let AllIngredients = [];
@@ -72,12 +48,13 @@ export class RecipesList {
       }
     }
     console.log(filteredRecipes);
+    return filteredRecipes;
   }
 
-  // fonction callBAck test
-  callback(cb) {
-    this.recipes.forEach((el) => {
-      cb(el.name);
-    });
-  }
+  //   // fonction callBAck test
+  //   callback(cb) {
+  //     this.recipes.forEach((el) => {
+  //       cb(el.name);
+  //     });
+  //   }
 }
