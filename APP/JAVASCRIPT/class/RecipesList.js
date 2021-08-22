@@ -1,4 +1,5 @@
 import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
+
 // import { Request } from "./Request.js";
 export class RecipesList {
   constructor(recipes) {
@@ -38,9 +39,10 @@ export class RecipesList {
   }
 
   filterRecipes(filter) {
-    let filteredRecipes = [];
+    let filteredRecipes = this.recipes;
     if (filter.string.length >= 3) {
-      // console.log(filter.string);
+      console.log(filter.string);
+
       for (let recipe of this.recipes) {
         if (recipe.name.toLowerCase().includes(filter.string)) {
           filteredRecipes.push(recipe);
@@ -48,16 +50,16 @@ export class RecipesList {
       }
     }
     if (filteredRecipes.length === 0) {
-      // console.log(
-      //   `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
-      //   pommes", "poisson", ect...`
-      // );
+      console.log(
+        `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
+        pommes", "poisson", ect...`
+      );
     } else if (filteredRecipes.length >= 1) {
       console.log(
         `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
       );
-      console.table(filteredRecipes);
     }
+    console.table(filteredRecipes);
 
     return filteredRecipes;
   }

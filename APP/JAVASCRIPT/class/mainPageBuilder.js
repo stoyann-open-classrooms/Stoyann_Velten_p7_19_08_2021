@@ -3,10 +3,30 @@ import { Dropdown } from "../components/dropdowns.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
-    this.selectTag = [];
-    this.value = [];
+    this.tagSelected = [];
   }
 
+  get UserRequest() {
+    const searchBar = document.getElementById("search-bar");
+    const ingrList = document.getElementById("ingredient-list").childNodes;
+
+    let request = {
+      string: "",
+      filters: [],
+    };
+
+    searchBar.addEventListener("input", (e) => {
+      request.string = searchBar.value;
+      console.log(request);
+    });
+    ingrList.forEach((el) =>
+      el.addEventListener("click", () => {
+        request.filters.push(el.textContent);
+        console.log(request);
+      })
+    );
+    return request;
+  }
   // animation de l'input
 
   inputAnim() {
@@ -21,52 +41,52 @@ export class MainPageBuilder {
   }
 
   // créer et affiche les cards recettes du tableau de recette entrée en paramétre
-  cardsMaker(recipesList) {
+  cardsMaker() {
     const cardsContainer = document.querySelector(".cards-container");
 
     let htmlContent = ``;
 
-    for (let i = 0; i < recipesList.recipes.length; i++) {
+    for (let i = 0; i < this.recipesList.recipes.length; i++) {
       cardsContainer.innerHTML += `
-        <a class="card" id='card-${recipesList.recipes[i].id}'>
+        <a class="card" id='card-${this.recipesList.recipes[i].id}'>
         <div class="cards-cover" >
-            <img src="./SRC/images/${recipesList.recipes[i].id}.jpg" class="cover" alt="${recipesList.recipes[i].name}">
+            <img src="./SRC/images/${this.recipesList.recipes[i].id}.jpg" class="cover" alt="${this.recipesList.recipes[i].name}">
         </div>
         <div class="cards-content">
             <div class="card-header">
-                <h2 class="cards-title">${recipesList.recipes[i].name}</h2>
+                <h2 class="cards-title">${this.recipesList.recipes[i].name}</h2>
                 <div class="cards-header-time">
                     <img src="./SRC/SVG/icone-time.svg" class="time-icone" alt="">
-                    <p class="time-txt">${recipesList.recipes[i].time}MIN</p>
+                    <p class="time-txt">${this.recipesList.recipes[i].time}MIN</p>
                 </div>
             </div>
             <div class="cards-main">
-            <ul class = "ingredients-list" id='ingr-list-${recipesList.recipes[i].id}'  >
+            <ul class = "ingredients-list" id='ingr-list-${this.recipesList.recipes[i].id}'  >
 
             </ul>
-                  <div class="cards-main-description">${recipesList.recipes[i].description}</div>
+                  <div class="cards-main-description">${this.recipesList.recipes[i].description}</div>
             </div>
         </div>
     </a>
         `;
       const ul = document.getElementById(
-        `ingr-list-${recipesList.recipes[i].id}`
+        `ingr-list-${this.recipesList.recipes[i].id}`
       );
 
-      for (let j = 0; j < recipesList.recipes[i].ingredients.length; j++) {
+      for (let j = 0; j < this.recipesList.recipes[i].ingredients.length; j++) {
         const liIngr = document.createElement("li");
         liIngr.classList.add("ingredient-item");
         liIngr.innerHTML = `
-          <span>${recipesList.recipes[i].ingredients[j].ingredient}</span>
+          <span>${this.recipesList.recipes[i].ingredients[j].ingredient}</span>
           `;
-        if (recipesList.recipes[i].ingredients[j].quantity != undefined) {
+        if (this.recipesList.recipes[i].ingredients[j].quantity != undefined) {
           liIngr.innerHTML = `
-            <span>${recipesList.recipes[i].ingredients[j].ingredient} : </span> ${recipesList.recipes[i].ingredients[j].quantity}
+            <span>${this.recipesList.recipes[i].ingredients[j].ingredient} : </span> ${this.recipesList.recipes[i].ingredients[j].quantity}
             `;
         }
-        if (recipesList.recipes[i].ingredients[j].unit != undefined) {
+        if (this.recipesList.recipes[i].ingredients[j].unit != undefined) {
           liIngr.innerHTML = `
-            <span>${recipesList.recipes[i].ingredients[j].ingredient} : </span> ${recipesList.recipes[i].ingredients[j].quantity} ${recipesList.recipes[i].ingredients[j].unit}
+            <span>${this.recipesList.recipes[i].ingredients[j].ingredient} : </span> ${this.recipesList.recipes[i].ingredients[j].quantity} ${this.recipesList.recipes[i].ingredients[j].unit}
             `;
         }
         ul.append(liIngr);
@@ -84,28 +104,25 @@ export class MainPageBuilder {
   }
 
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
-  // makeTags() {
-  //   let item = document.querySelectorAll(".item");
-  //   const tagsContainer = document.querySelector(".tags-container");
-  //   let tagSelected = [];
-  //   item.forEach((el) =>
-  //     el.addEventListener("click", () => {
-  //       console.log(el.textContent);
-  //       tagsContainer.innerHTML += `
-  //       <div class="tag">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
-  //       `;
-  //       tagSelected.push(el.textContent);
-  //       tagSelected = new Set(tagSelected);
-  //     })
-  //   );
-  //   console.log(tagSelected);
-  // }
+  makeTags() {
+    let item = document.querySelectorAll(".item");
+    const tagsContainer = document.querySelector(".tags-container");
+
+    item.forEach((el) =>
+      el.addEventListener("click", () => {
+        tagsContainer.innerHTML += `
+        <div class="tag">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
+        `;
+      })
+    );
+    // console.log(tagSelected);
+  }
 
   //  affiche la page
   printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
-    // this.makeTags();
+    this.makeTags();
   }
 }
