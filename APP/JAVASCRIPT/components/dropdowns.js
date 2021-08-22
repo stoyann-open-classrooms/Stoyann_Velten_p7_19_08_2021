@@ -30,9 +30,10 @@ export class Dropdown {
     this.dropInp = dropInp;
     this.icone = icone;
     this.span = span;
+    this.tagSelected = [];
   }
 
-  addTag() {
+  addDataAttributes() {
     this.dataset.selected = this.dataset.selected == "true" ? "false" : "true";
   }
 
@@ -45,7 +46,7 @@ export class Dropdown {
       li.textContent = ingr;
       li.classList.add("item");
       this.ulDrop.append(li);
-      li.addEventListener("click", this.addTag);
+      li.addEventListener("click", this.addDataAttributes);
     });
   }
   openDrop() {

@@ -83,42 +83,29 @@ export class MainPageBuilder {
     new Dropdown(AllIngredients, ul, inp, icone, span).printDrop();
   }
 
-  // créer et affiche un tag si un item de la liste ingredients est sélèctioner
-  makeTags() {
-    let item = document.querySelectorAll(".item");
-    const tagsContainer = document.querySelector(".tags-container");
-
-    //  pour chaque items de la liste ingredients si un item est selectioner alors le tag associée s"affiche sur la page
-    let index = 0;
-    item.forEach((el) =>
-      el.addEventListener("click", () => {
-        console.log(el.textContent);
-
-        tagsContainer.innerHTML += `
-        <div class="tag"  id= "tag-${index}">
-        <div class="tag-txt">${el.textContent}</div>
-        <span class="tag-icone"><i class="far fa-times-circle " id= "close-tag-${index}" aria-hidden="true"></i></span>
-    </div>
-        `;
-
-        const tag = document.getElementById(`tag-${index}`);
-        document
-          .getElementById(`close-tag-${index}`)
-          .addEventListener("click", (e) => {
-            tag.style.display = "none";
-          });
-
-        index++;
-      })
-    );
-  }
+  //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
+  // makeTags() {
+  //   let item = document.querySelectorAll(".item");
+  //   const tagsContainer = document.querySelector(".tags-container");
+  //   let tagSelected = [];
+  //   item.forEach((el) =>
+  //     el.addEventListener("click", () => {
+  //       console.log(el.textContent);
+  //       tagsContainer.innerHTML += `
+  //       <div class="tag">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
+  //       `;
+  //       tagSelected.push(el.textContent);
+  //       tagSelected = new Set(tagSelected);
+  //     })
+  //   );
+  //   console.log(tagSelected);
+  // }
 
   //  affiche la page
   printPage(allIngredients, AllAppareils, AllUstensils) {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
-
-    this.makeTags();
+    // this.makeTags();
   }
 }
