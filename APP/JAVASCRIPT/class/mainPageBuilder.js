@@ -7,24 +7,6 @@ export class MainPageBuilder {
     this.value = [];
   }
 
-  // get userRequest() {
-  //   const searchBarInput = document.getElementById("search-bar");
-
-  //   searchBarInput.addEventListener("input", (e) => {
-  //     console.log({ userInput: this.value.splice(" ") });
-  //   });
-  // }
-  // getUserRequest() {
-  //   const searchBar = document.getElementById("search-bar");
-  //   let tab = {
-  //     string: "",
-  //     filters: [],
-  //   };
-  //   searchBar.addEventListener("input", (e) => {
-  //     tab.string = searchBar.value;
-  //     const filteredRecipes = recipesList.filterRecipes(tab);
-  //   });
-  // }
   // animation de l'input
 
   inputAnim() {
@@ -94,47 +76,11 @@ export class MainPageBuilder {
 
   // créer et affiche le contenue du dropdown ingrédients
   displayIngredientsDrop(AllIngredients) {
-    const dropIngredient = document.querySelector(".open-drop-ingredient");
-    const closeIngredient = document.querySelector(".close-ingredient");
-    const btnIngredients = document.querySelector(".dropdown-btn-ingredients");
-    const ul = document.querySelector(".ul-ingredient");
-    new Dropdown(
-      AllIngredients,
-      btnIngredients,
-      dropIngredient,
-      closeIngredient,
-      ul
-    ).printDrop();
-  }
-
-  displayAppareilsDrop(AllAppareils) {
-    const btnAppareil = document.querySelector(".dropdown-btn-appareils");
-    const dropAppareil = document.querySelector(".open-drop-appareil");
-    const closeAppareil = document.querySelector(".close-appareil");
-    const ul = document.querySelector(".ul-appareil");
-    new Dropdown(
-      AllAppareils,
-      btnAppareil,
-      dropAppareil,
-      closeAppareil,
-      ul
-    ).printDrop();
-  }
-
-  // créer et affiche le contenue du dropdown ustensiles
-
-  displayUstensilsDrop(AllUstensils) {
-    const btnUstensil = document.querySelector(".dropdown-btn-ustensils");
-    const dropUstensil = document.querySelector(".open-drop-ustensil");
-    const closeUstensil = document.querySelector(".close-ustensil");
-    const ul = document.querySelector(".ul-ustensil");
-    new Dropdown(
-      AllUstensils,
-      btnUstensil,
-      dropUstensil,
-      closeUstensil,
-      ul
-    ).printDrop();
+    const ul = document.getElementById("ingredient-list");
+    const inp = document.getElementById("ingredient-inp");
+    const icone = document.getElementById("dropdown-ingredient-icon");
+    const span = document.querySelector(".ingr-span");
+    new Dropdown(AllIngredients, ul, inp, icone, span).printDrop();
   }
 
   // créer et affiche un tag si un item de la liste ingredients est sélèctioner
@@ -172,8 +118,7 @@ export class MainPageBuilder {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
-    this.displayAppareilsDrop(AllAppareils);
-    this.displayUstensilsDrop(AllUstensils);
+
     this.makeTags();
   }
 }

@@ -1,24 +1,20 @@
 .dropdown-ingredients {
   @include dropdown($blue);
   margin-right: 10px;
+  label {
+    display: flex;
+  }
 }
-.dropdown-appareils {
-  @include dropdown($green);
+.dropdown-appareil {
+  @include dropdown($orange);
   margin-right: 10px;
 }
 .dropdown-ustensils {
-  @include dropdown($orange);
-}
-
-.open-drop {
-  display: none;
-  flex-direction: column;
-  width: 600px;
-  padding: 20px;
-  border-radius: 5px;
+  @include dropdown($green);
+  margin-right: 10px;
 }
 .ul-drop {
-  display: flex;
+  display: none;
   width: 100%;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -37,34 +33,32 @@
     text-overflow: ellipsis;
   }
 }
-.top {
-  display: flex;
-  height: 30px;
-  justify-content: space-between;
-}
-.dropdown-btn {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 170px;
-  max-height: 80px;
-  padding: 10px;
-  z-index: 99999;
-}
 
 #ingredient-inp {
   @include dropdown-input($blue);
+  display: none;
 }
 #appareil-inp {
-  @include dropdown-input($green);
-}
-#ustensil-inp {
   @include dropdown-input($orange);
+  display: none;
 }
-
+#ustensils-inp {
+  @include dropdown-input($green);
+  display: none;
+}
 .scroller {
   width: auto;
   height: 200px;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
+
+.close {
+  display: flex;
+}
+.active {
+  display: flex;
+}
+// .pasive {
+//   display: none;
+// }

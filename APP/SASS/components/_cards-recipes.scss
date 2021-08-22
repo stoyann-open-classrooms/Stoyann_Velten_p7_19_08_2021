@@ -3,7 +3,7 @@
   height: 370px;
   border-radius: $radius $radius;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 20px 0;
   @include bigPhone-and-higher {
     margin: 20px;
     width: 360px;

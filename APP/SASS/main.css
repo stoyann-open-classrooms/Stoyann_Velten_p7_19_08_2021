@@ -186,70 +186,82 @@ li {
 }
 
 .dropdown-ingredients {
-  background-color: #3282f7;
-  border-radius: 5px;
-  color: #ffffff;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-  margin-right: 10px;
-}
-
-.dropdown-appareils {
-  background-color: #68d9a4;
-  border-radius: 5px;
-  color: #ffffff;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-  margin-right: 10px;
-}
-
-.dropdown-ustensils {
-  background-color: #ed6454;
-  border-radius: 5px;
-  color: #ffffff;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.8rem;
-}
-
-.open-drop {
-  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 600px;
-  padding: 20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #3282f7;
   border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  padding: 20px;
+  margin-right: 10px;
 }
 
-.ul-drop {
+.dropdown-ingredients label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.dropdown-appareil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #ed6454;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  padding: 20px;
+  margin-right: 10px;
+}
+
+.dropdown-ustensils {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #68d9a4;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  padding: 20px;
+  margin-right: 10px;
+}
+
+.ul-drop {
+  display: none;
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -272,31 +284,6 @@ li {
   text-overflow: ellipsis;
 }
 
-.top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 30px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.dropdown-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 170px;
-  max-height: 80px;
-  padding: 10px;
-  z-index: 99999;
-}
-
 #ingredient-inp {
   background-color: #3282f7;
   padding: 15px;
@@ -304,6 +291,7 @@ li {
   outline: none;
   color: #ffffff;
   font-size: 1.7rem;
+  display: none;
 }
 
 #ingredient-inp::-webkit-input-placeholder {
@@ -323,12 +311,13 @@ li {
 }
 
 #appareil-inp {
-  background-color: #68d9a4;
+  background-color: #ed6454;
   padding: 15px;
   border: none;
   outline: none;
   color: #ffffff;
   font-size: 1.7rem;
+  display: none;
 }
 
 #appareil-inp::-webkit-input-placeholder {
@@ -347,28 +336,29 @@ li {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensil-inp {
-  background-color: #ed6454;
+#ustensils-inp {
+  background-color: #68d9a4;
   padding: 15px;
   border: none;
   outline: none;
   color: #ffffff;
   font-size: 1.7rem;
+  display: none;
 }
 
-#ustensil-inp::-webkit-input-placeholder {
+#ustensils-inp::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensil-inp:-ms-input-placeholder {
+#ustensils-inp:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensil-inp::-ms-input-placeholder {
+#ustensils-inp::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensil-inp::placeholder {
+#ustensils-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
@@ -377,6 +367,18 @@ li {
   height: 200px;
   overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+.close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .result-msg {
@@ -415,7 +417,7 @@ li {
   height: 370px;
   border-radius: 1rem 1rem;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 @media screen and (min-width: 42.5rem) {
@@ -632,8 +634,7 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  overflow: hidden;
-  padding: 0 0 0 4%;
+  margin: 0 0 0 4%;
 }
 
 .result-msg-container {

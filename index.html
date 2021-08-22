@@ -45,58 +45,30 @@
     <!-- ************** Dropdowns **************  -->
 
     <div class="dropdowns-container">
-
-        <div>
-            <div class="dropdown-ingredients dropdown">
-                <div class="dropdown-btn dropdown-btn-ingredients">
-                    <div class="drop-title">Ingredients</div>
-                    <span><i class="fas fa-chevron-down open-ingredient"></i></span>
-                </div>
-                <div class="open-drop open-drop-ingredient">
-                    <div class="top">
-                        <input focus type="text" id="ingredient-inp" class="drop-input"
-                            placeholder="Rechercher un ingrédient...">
-                        <span><i class="fas fa-chevron-up close-ingredient"></i></span>
-                    </div>
-                    <div class="open-body">
-                        <ul class="ul-ingredient"></ul>
-                    </div>
-                </div>
-            </div>
+        <div class="dropdown dropdown-ingredients">
+            <label id="dropdown-ingredient-label" for="ingredient-inp">
+                <span class="ingr-span">Ingrédients</span>
+                <input type="text" id="ingredient-inp" placeholder="Rechercher un ingrédient" />
+                <i class="fas fa-chevron-down" id="dropdown-ingredient-icon"></i>
+            </label>
+            <ul class="ul" id="ingredient-list" data-filter="ingredient"></ul>
         </div>
-        <div class="dropdown-appareils dropdown">
-            <div class="dropdown-btn dropdown-btn-appareils">
-                <div class="drop-title">Appareils</div>
-                <span><i class="fas fa-chevron-down open-appareil"></i></span>
-            </div>
-            <div class="open-drop open-drop-appareil">
-                <div class="top">
-                    <input focus type="text" id="appareil-inp" class="drop-input"
-                        placeholder="Rechercher un appareil...">
-                    <span><i class="fas fa-chevron-up close-appareil"></i></span>
-                </div>
-                <div class="open-body">
-                    <ul class="ul-appareil"></ul>
-                </div>
-            </div>
+        <div class="dropdown dropdown-appareil">
+            <label id="dropdown-appareil-label" for="ingredient-inp">
+                <span>Appareils</span>
+                <input type="text" id="appareil-inp" placeholder="Rechercher un Appareils" />
+                <i class="fas fa-chevron-down" id="dropdown-appareil-icon"></i>
+            </label>
+            <ul class="ul" id="appareil-list" data-filter="apparei"></ul>
         </div>
-        <div class="dropdown-ustensils dropdown">
-            <div class="dropdown-btn dropdown-btn-ustensils">
-                <div class="drop-title">Ustensiles</div>
-                <span><i class="fas fa-chevron-down open-ustensil"></i></span>
-            </div>
-            <div class="open-drop open-drop-ustensil">
-                <div class="top">
-                    <input focus type="text" id="ustensil-inp" class="drop-input"
-                        placeholder="Rechercher un appareil...">
-                    <span><i class="fas fa-chevron-up close-ustensil"></i></span>
-                </div>
-                <div class="open-body">
-                    <ul class="ul-ustensil"></ul>
-                </div>
-            </div>
+        <div class="dropdown dropdown-ustensils">
+            <label id="dropdown-ustensils-label" for="ingredient-inp">
+                <span>Ustensiles</span>
+                <input type="text" id="ustensils-inp" placeholder="Rechercher un Ustensile" />
+                <i class="fas fa-chevron-down" id="dropdown-ustensils-icon"></i>
+            </label>
+            <ul class="ul" id="ustensils-list" data-filter="ustensils"></ul>
         </div>
-
     </div>
 
     <main class="cards-container"></main>
