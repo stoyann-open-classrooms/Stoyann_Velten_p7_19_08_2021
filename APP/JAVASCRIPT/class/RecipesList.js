@@ -63,14 +63,17 @@ export class RecipesList {
 
   filterRecipes() {
     const searchBar = document.getElementById("search-bar");
+    let tab = [];
     searchBar.addEventListener("input", (e) => {
-      console.log(searchBar.value);
+      console.log();
+      tab.push(searchBar.value);
     });
+    console.log(tab);
     let filterRecipes = [];
     for (let recipe of this.recipes) {
       if (recipe.name.includes("chocolat")) {
         filterRecipes.push(recipe);
-        console.log(recipe);
+        // console.log(recipe);
       }
     }
     return (filterRecipes = RecipesList);
