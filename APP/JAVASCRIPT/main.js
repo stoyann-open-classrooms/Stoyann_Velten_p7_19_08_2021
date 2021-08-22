@@ -5,6 +5,20 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 let userRequest = recipesList.userRequest;
+
+function getUserRequest() {
+  const searchBar = document.getElementById("search-bar");
+  let request = {
+    string: "",
+    filters: [],
+  };
+
+  searchBar.addEventListener("input", (e) => {
+    request.string = searchBar.value;
+    const filteredRecipes = recipesList.filterRecipes(request);
+  });
+}
+getUserRequest();
 new MainPageBuilder(recipesList).printPage(
   recipesList.getAllIngredients(recipesList),
   recipesList.getAllAppliance(recipesList),
@@ -17,8 +31,6 @@ new MainPageBuilder(recipesList).printPage(
 // console.log(recipesList.recipes[14].ingredientsNoAccent);
 // // log l'appliances de la recette 14 sans accents
 // console.log(recipesList.recipes[14].applianceNoAccent);
-
-recipesList.filterRecipes();
 
 // console.log(this.recipes);
 // console.log(request);

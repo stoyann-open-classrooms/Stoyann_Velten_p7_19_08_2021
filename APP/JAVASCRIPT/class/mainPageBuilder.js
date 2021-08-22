@@ -14,7 +14,17 @@ export class MainPageBuilder {
   //     console.log({ userInput: this.value.splice(" ") });
   //   });
   // }
-
+  // getUserRequest() {
+  //   const searchBar = document.getElementById("search-bar");
+  //   let tab = {
+  //     string: "",
+  //     filters: [],
+  //   };
+  //   searchBar.addEventListener("input", (e) => {
+  //     tab.string = searchBar.value;
+  //     const filteredRecipes = recipesList.filterRecipes(tab);
+  //   });
+  // }
   // animation de l'input
 
   inputAnim() {
@@ -131,13 +141,13 @@ export class MainPageBuilder {
   makeTags() {
     let item = document.querySelectorAll(".item");
     const tagsContainer = document.querySelector(".tags-container");
-    let closeTag = [];
 
     //  pour chaque items de la liste ingredients si un item est selectioner alors le tag associée s"affiche sur la page
     let index = 0;
     item.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el.textContent);
+
         tagsContainer.innerHTML += `
         <div class="tag"  id= "tag-${index}">
         <div class="tag-txt">${el.textContent}</div>
@@ -152,7 +162,6 @@ export class MainPageBuilder {
             tag.style.display = "none";
           });
 
-        console.log(closeTag);
         index++;
       })
     );

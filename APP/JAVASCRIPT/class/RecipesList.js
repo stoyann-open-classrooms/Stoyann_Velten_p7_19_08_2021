@@ -61,22 +61,17 @@ export class RecipesList {
     return new Set(AllUstensils);
   }
 
-  filterRecipes() {
-    const searchBar = document.getElementById("search-bar");
-    let tab = [];
-    searchBar.addEventListener("input", (e) => {
-      console.log();
-      tab.push(searchBar.value);
-    });
-    console.log(tab);
-    let filterRecipes = [];
-    for (let recipe of this.recipes) {
-      if (recipe.name.includes("chocolat")) {
-        filterRecipes.push(recipe);
-        // console.log(recipe);
+  filterRecipes(filter) {
+    let filteredRecipes = [];
+    if (filter.string.length >= 3) {
+      console.log(filter.string);
+      for (let recipe of this.recipes) {
+        if (recipe.name.toLowerCase().includes(filter.string)) {
+          filteredRecipes.push(recipe);
+        }
       }
     }
-    return (filterRecipes = RecipesList);
+    console.log(filteredRecipes);
   }
 
   // fonction callBAck test
