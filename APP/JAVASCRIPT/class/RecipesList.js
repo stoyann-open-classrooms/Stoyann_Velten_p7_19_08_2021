@@ -47,7 +47,18 @@ export class RecipesList {
         }
       }
     }
-    console.log(filteredRecipes);
+    if (filteredRecipes.length === 0) {
+      console.log(
+        `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
+        pommes", "poisson", ect...`
+      );
+    } else if (filteredRecipes.length >= 1) {
+      console.log(
+        `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
+      );
+    }
+    console.table(filteredRecipes);
+
     return filteredRecipes;
   }
 

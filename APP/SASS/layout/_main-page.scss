@@ -41,8 +41,8 @@
 
 .result-msg-container {
   display: none;
-  display: flex;
+  // opacity: 0;
 
   justify-content: center;
-  animation: opacity 0.6s ease-in;
+  // animation: opacity 0.6s ease-in forwards;
 }
