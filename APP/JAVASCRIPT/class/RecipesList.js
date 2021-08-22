@@ -3,6 +3,16 @@ import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
+    this.value = [];
+  }
+
+  get userRequest() {
+    const searchBarInput = document.getElementById("search-bar");
+
+    searchBarInput.addEventListener("input", (e) => {
+      this.value.push(searchBarInput.value);
+      // console.log({ userInput: this.value.splice(" ") });
+    });
   }
 
   getAllIngredients() {
@@ -36,10 +46,21 @@ export class RecipesList {
     return new Set(AllUstensils);
   }
 
-  filterRecipes(input) {
+  filterRecipes() {
+    let filterRecipes = [];
     for (let recipe of this.recipes) {
-      // console.log(recipe.nameNoAccent);
+      if (recipe.name.includes("chocolat")) {
+        filterRecipes.push(recipe);
+        console.log(recipe);
+      }
     }
-    console.log(input);
+    return (filterRecipes = RecipesList);
+  }
+
+  // fonction callBAck test
+  callback(cb) {
+    this.recipes.forEach((el) => {
+      cb(el.name);
+    });
   }
 }

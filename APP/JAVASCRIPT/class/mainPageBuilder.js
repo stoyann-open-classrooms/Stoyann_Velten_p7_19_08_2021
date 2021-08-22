@@ -3,8 +3,17 @@ import { Dropdown } from "../components/dropdowns.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
+    this.selectTag = [];
+    this.value = [];
   }
+  // get userRequest() {
+  //   const searchBarInput = document.getElementById("search-bar");
 
+  //   searchBarInput.addEventListener("input", (e) => {
+  //     this.value.push(searchBarInput.value);
+  //     console.log({ userInput: this.value.splice(" ") });
+  //   });
+  // }
   // animation de l'input
   inputAnim() {
     const searchBar = document.getElementById("search-bar");
@@ -118,13 +127,13 @@ export class MainPageBuilder {
 
   // créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {
-    let itemsIngr = document.querySelectorAll(".ingr-item");
+    let item = document.querySelectorAll(".item");
     const tagsContainer = document.querySelector(".tags-container");
     let closeTag = [];
 
     //  pour chaque items de la liste ingredients si un item est selectioner alors le tag associée s"affiche sur la page
     let index = 0;
-    itemsIngr.forEach((el) =>
+    item.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el.textContent);
         tagsContainer.innerHTML += `

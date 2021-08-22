@@ -28,7 +28,6 @@ export class Dropdown {
     this.contentDrop = contentDrop;
     this.closeDrop = closeDrop;
     this.ulDrop = ulDrop;
-    console.log(itemsList);
   }
 
   createList() {
@@ -38,7 +37,6 @@ export class Dropdown {
       const li = document.createElement("li");
       li.textContent = ingr;
       li.classList.add("item");
-
       this.ulDrop.append(li);
       li.addEventListener("click", (e) => {
         li.classList.toggle("tag-selected");
@@ -47,6 +45,7 @@ export class Dropdown {
   }
   openDrop() {
     this.btn.addEventListener("click", (e) => {
+      console.log(e.target);
       this.contentDrop.style.display = "flex";
       this.btn.style.display = "none";
     });

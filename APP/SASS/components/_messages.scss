@@ -1,0 +1,23 @@
+.result-msg {
+  background-color: #d04f4fbd;
+  width: 85%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: $radius;
+  color: whitesmoke;
+  padding: 20px;
+  font-weight: bold;
+  div {
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+  }
+
+  i {
+    display: block;
+    font-size: 2rem;
+  }
+}
