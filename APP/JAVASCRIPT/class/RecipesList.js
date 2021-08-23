@@ -11,7 +11,7 @@ export class RecipesList {
   getAllIngredients() {
     const AllIngredients = new Set();
     for (let recipe of this.recipes) {
-      console.log(recipe);
+      // console.log(recipe);
       for (let i = 0; i < recipe.ingredients.length; i++) {
         AllIngredients.add(
           capitalizeFirstChar(recipe.ingredients[i].ingredient)
@@ -36,7 +36,7 @@ export class RecipesList {
     const AllUstensils = new Set();
 
     for (let recipe of this.recipes) {
-      console.log(recipe);
+      // console.log(recipe);
       AllUstensils.add(capitalizeFirstChar(recipe.ustensils));
     }
 

@@ -15,4 +15,4 @@ let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
 console.log(userRequest);
 
-console.log(recipesList.getAllIngredients());
+// console.log(recipesList.getAllIngredients());

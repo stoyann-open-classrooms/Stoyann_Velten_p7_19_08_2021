@@ -31,11 +31,22 @@ export class Dropdown {
     this.icone = icone;
     this.span = span;
     this.tagSelected = [];
+    this.clicked = function (events) {
+      this.dropInp.classList.toggle("active");
+      this.span.classList.toggle("pasive");
+      this.ulDrop.classList.toggle("close");
+      this.icone.classList.toggle("fa-chevton-down");
+      this.icone.classList.toggle("fa-chevron-up");
+    };
+    this.clickHandler = this.clicked.bind(this);
   }
 
+  //  si un item d'une liste est cliquer alors data-selected passe a true
   addDataAttributes() {
     this.dataset.selected = this.dataset.selected == "true" ? "false" : "true";
   }
+
+  // creer la liste du dropdown associée
 
   createList() {
     this.ulDrop.classList.add("scroller");
@@ -49,36 +60,13 @@ export class Dropdown {
       li.addEventListener("click", this.addDataAttributes);
     });
   }
+
   openDrop() {
-    // this.icone.oneclick = (e) => {
-    //
-    //   e.preventDefault();
-    //
-    // };
-    this.icone.addEventListener("click", (e) => {
-      console.log(e);
-      this.dropInp.classList.toggle("active");
-      this.span.classList.toggle("pasive");
-      this.ulDrop.classList.toggle("close");
-      this.icone.classList.toggle("fa-chevton-down");
-      this.icone.classList.toggle("fa-chevron-up");
-    });
-    //   this.btn.addEventListener("click", (e) => {
-    //     console.log(e);
-    //     this.contentDrop.style.display = "flex";
-    //     this.btn.style.display = "none";
-    //   });
+    this.icone.addEventListener("click", this.clickHandler);
   }
-  // close() {
-  //   this.closeDrop.addEventListener("click", () => {
-  //     this.contentDrop.style.display = "none";
-  //     this.btn.style.display = "flex";
-  //   });
-  // }
 
   printDrop() {
     this.createList();
     this.openDrop();
-    // this.close();
   }
 }

@@ -38,6 +38,8 @@
   transform: translate($x, $y);
 }
 
+// ===================== responsive =====================
+
 @mixin bigPhone-and-higher {
   @media screen and (min-width: $bigPhone) {
     @content;
