@@ -4,17 +4,21 @@ import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
+    this.filterRecipes = [];
     this.value = [];
   }
 
   getAllIngredients() {
-    let AllIngredients = [];
-    this.recipes.forEach((recipe) => {
-      for (let ingredient of recipe.ingredients) {
-        AllIngredients.push(ingredient.ingredient);
+    const AllIngredients = new Set();
+    for (let recipe of this.recipes) {
+      console.log(recipe);
+      for (let i = 0; i < recipe.ingredients.length; i++) {
+        AllIngredients.add(
+          capitalizeFirstChar(recipe.ingredients[i].ingredient)
+        );
       }
-    });
-    return new Set(AllIngredients);
+    }
+    return [...AllIngredients];
   }
 
   // retourne toute les appareils disponible (premiere lettre en majuscule) pour les afficher dans le dropdown associée
@@ -29,37 +33,36 @@ export class RecipesList {
   }
 
   getAllUstensils() {
-    let AllUstensils = [];
-    this.recipes.forEach((recipe) => {
-      for (let ustensil of recipe.ustensils) {
-        AllUstensils.push(ustensil);
-      }
-    });
-    return new Set(AllUstensils);
+    const AllUstensils = new Set();
+
+    for (let recipe of this.recipes) {
+      console.log(recipe);
+      AllUstensils.add(capitalizeFirstChar(recipe.ustensils));
+    }
+
+    return [...AllUstensils];
   }
 
   filterRecipes(filter) {
-    let filteredRecipes = this.recipes;
     if (filter.string.length >= 3) {
-      console.log(filter.string);
-
       for (let recipe of this.recipes) {
         if (recipe.name.toLowerCase().includes(filter.string)) {
-          filteredRecipes.push(recipe);
+          console.log(recipe);
+          this.filteredRecipes.push(recipe);
         }
       }
     }
-    if (filteredRecipes.length === 0) {
+    if (this.filteredRecipes.length === 0) {
       console.log(
         `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
         pommes", "poisson", ect...`
       );
-    } else if (filteredRecipes.length >= 1) {
+    } else if (this.filteredRecipes.length >= 1) {
       console.log(
         `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
       );
     }
-    console.table(filteredRecipes);
+    // console.table(filteredRecipes);
 
     return filteredRecipes;
   }

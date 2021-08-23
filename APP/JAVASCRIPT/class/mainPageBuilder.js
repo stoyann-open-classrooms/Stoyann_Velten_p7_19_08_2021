@@ -17,12 +17,12 @@ export class MainPageBuilder {
 
     searchBar.addEventListener("input", (e) => {
       request.string = searchBar.value;
-      console.log(request);
+      // console.log(request);
     });
     ingrList.forEach((el) =>
       el.addEventListener("click", () => {
         request.filters.push(el.textContent);
-        console.log(request);
+        // console.log(request);
       })
     );
     return request;

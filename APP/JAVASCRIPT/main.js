@@ -12,5 +12,7 @@ new MainPageBuilder(recipesList).printPage(
 );
 
 let userRequest = new MainPageBuilder(recipesList).UserRequest;
+
 console.log(userRequest);
-recipesList.filterRecipes(userRequest);
+
+console.log(recipesList.getAllIngredients());
