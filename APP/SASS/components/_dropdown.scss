@@ -3,6 +3,7 @@
   margin-right: 10px;
   label {
     display: flex;
+    text-align: center;
   }
 }
 .dropdown-appareil {
@@ -17,7 +18,7 @@
   display: none;
   width: 100%;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-left: 2%;
   text-align: left;
   justify-content: flex-start;
   height: 200px;
@@ -34,7 +35,7 @@
   }
 }
 
-#ingredient-inp {
+.ingr-inp {
   @include dropdown-input();
   display: none;
 }
@@ -58,7 +59,16 @@
 }
 .active {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-// .pasive {
-//   display: none;
+.pasive {
+  display: none;
+}
+
+.resize {
+  width: 100%;
+}
+// .ingr-span {
+//   margin-right: 5%;
 // }

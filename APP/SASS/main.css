@@ -215,7 +215,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.6rem;
-  padding: 20px;
+  padding: 15px;
   margin-right: 10px;
 }
 
@@ -223,6 +223,7 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
 .dropdown-appareil {
@@ -243,7 +244,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.6rem;
-  padding: 20px;
+  padding: 15px;
   margin-right: 10px;
 }
 
@@ -265,7 +266,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.6rem;
-  padding: 20px;
+  padding: 15px;
   margin-right: 10px;
 }
 
@@ -274,7 +275,7 @@ li {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 20px;
+  margin-left: 2%;
   text-align: left;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -293,7 +294,7 @@ li {
   text-overflow: ellipsis;
 }
 
-#ingredient-inp {
+.ingr-inp {
   padding: 15px;
   border: none;
   outline: none;
@@ -302,19 +303,19 @@ li {
   display: none;
 }
 
-#ingredient-inp::-webkit-input-placeholder {
+.ingr-inp::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ingredient-inp:-ms-input-placeholder {
+.ingr-inp:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ingredient-inp::-ms-input-placeholder {
+.ingr-inp::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ingredient-inp::placeholder {
+.ingr-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
@@ -385,6 +386,18 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.pasive {
+  display: none;
+}
+
+.resize {
+  width: 100%;
 }
 
 .result-msg {

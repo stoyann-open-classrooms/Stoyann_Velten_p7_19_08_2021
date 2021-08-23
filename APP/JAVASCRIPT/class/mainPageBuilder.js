@@ -100,7 +100,8 @@ export class MainPageBuilder {
     const inp = document.getElementById("ingredient-inp");
     const icone = document.getElementById("dropdown-ingredient-icon");
     const span = document.querySelector(".ingr-span");
-    new Dropdown(AllIngredients, ul, inp, icone, span).printDrop();
+    const label = document.getElementById("dropdown-ingredient-label");
+    new Dropdown(AllIngredients, ul, inp, icone, span, label).printDrop();
   }
 
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner

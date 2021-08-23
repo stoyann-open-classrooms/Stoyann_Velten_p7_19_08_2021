@@ -1,35 +1,11 @@
-// ++++++++++++++++++++++++ EXAMPLES UTTILISATION DE BIND ++++++++++++++++++++++++
-
-// class Mouser {
-//   constructor () {
-//     this.counter = 0
-//     this.clicked = function (event) {
-//       this.counter ++
-//       console.log('clicks:', this.counter)
-//       if (this.counter >= 10) this.remove()
-//     }
-//     // save the click handler so it can be used in multiple places
-//     this.clickHandler = this.clicked.bind(this);
-//     window.addEventListener('click', this.clickHandler)
-//   }
-
-//   remove () {
-//     console.log('Removing click listener') // this line runs ..
-//     window.removeEventListener('click', this.clickHandler)
-//   }
-// }
-
-// var mouse = new Mouser()
-
-// =============================================================================================
-
 export class Dropdown {
-  constructor(itemsList, ulDrop, dropInp, icone, span) {
+  constructor(itemsList, ulDrop, dropInp, icone, span, label) {
     this.itemsList = itemsList;
     this.ulDrop = ulDrop;
     this.dropInp = dropInp;
     this.icone = icone;
     this.span = span;
+    this.label = label;
     this.tagSelected = [];
     this.clicked = function (events) {
       this.dropInp.classList.toggle("active");
@@ -37,6 +13,7 @@ export class Dropdown {
       this.ulDrop.classList.toggle("close");
       this.icone.classList.toggle("fa-chevton-down");
       this.icone.classList.toggle("fa-chevron-up");
+      this.label.classList.add("resize");
     };
     this.clickHandler = this.clicked.bind(this);
   }
