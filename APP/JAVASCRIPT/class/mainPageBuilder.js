@@ -111,7 +111,7 @@ export class MainPageBuilder {
     item.forEach((el) =>
       el.addEventListener("click", () => {
         tagsContainer.innerHTML += `
-        <div class="tag">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
+        <div class="tag ingredients" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
         `;
       })
     );

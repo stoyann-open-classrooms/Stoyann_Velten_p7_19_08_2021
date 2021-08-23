@@ -1,16 +1,16 @@
 .dropdown-ingredients {
-  @include dropdown($blue);
+  @include dropdown();
   margin-right: 10px;
   label {
     display: flex;
   }
 }
 .dropdown-appareil {
-  @include dropdown($orange);
+  @include dropdown();
   margin-right: 10px;
 }
 .dropdown-ustensils {
-  @include dropdown($green);
+  @include dropdown();
   margin-right: 10px;
 }
 .ul-drop {
@@ -35,15 +35,15 @@
 }
 
 #ingredient-inp {
-  @include dropdown-input($blue);
+  @include dropdown-input();
   display: none;
 }
 #appareil-inp {
-  @include dropdown-input($orange);
+  @include dropdown-input();
   display: none;
 }
 #ustensils-inp {
-  @include dropdown-input($green);
+  @include dropdown-input();
   display: none;
 }
 .scroller {

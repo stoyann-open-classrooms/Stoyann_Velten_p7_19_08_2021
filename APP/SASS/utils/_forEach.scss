@@ -1,0 +1,7 @@
+$categories: ingredients $blue, ustensils $green, appareils $orange;
+
+@each $category in $categories {
+  .#{nth($category,1)} {
+    background-color: nth($category, 2);
+  }
+}

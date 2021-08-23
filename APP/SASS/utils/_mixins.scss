@@ -1,8 +1,7 @@
-@mixin dropdown($color) {
+@mixin dropdown() {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  background-color: $color;
   border-radius: 5px;
   color: #ffffff;
   text-align: center;
@@ -11,8 +10,7 @@
   padding: 20px;
 }
 
-@mixin dropdown-input($color) {
-  background-color: $color;
+@mixin dropdown-input() {
   padding: 15px;
   border: none;
   outline: none;
