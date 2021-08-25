@@ -97,13 +97,30 @@ export class MainPageBuilder {
   // créer et affiche le contenue du dropdown ingrédients
   displayIngredientsDrop(AllIngredients) {
     const ul = document.getElementById("ingredient-list");
-    const inp = document.getElementById("ingredient-inp");
+    const inp = document.querySelector(".ingr-inp");
     const icone = document.getElementById("dropdown-ingredient-icon");
     const span = document.querySelector(".ingr-span");
     const label = document.getElementById("dropdown-ingredient-label");
     new Dropdown(AllIngredients, ul, inp, icone, span, label).printDrop();
   }
 
+  displayAppareilsDrop(AllAppareils) {
+    const ul = document.getElementById("appareil-list");
+    const inp = document.querySelector(".app-inp");
+    const icone = document.getElementById("dropdown-appareil-icon");
+    const span = document.querySelector(".app-span");
+    const label = document.getElementById("dropdown-appareil-label");
+    new Dropdown(AllAppareils, ul, inp, icone, span, label).printDrop();
+  }
+
+  displayUstensilsDrop(AllUstensils) {
+    const ul = document.getElementById("ustensils-list");
+    const inp = document.querySelector(".ust-inp");
+    const icone = document.getElementById("dropdown-ustensils-icon");
+    const span = document.querySelector(".ust-span");
+    const label = document.getElementById("dropdown-ustensil-label");
+    new Dropdown(AllUstensils, ul, inp, icone, span, label).printDrop();
+  }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {
     let item = document.querySelectorAll(".item");
@@ -124,6 +141,8 @@ export class MainPageBuilder {
     this.cardsMaker(this.recipesList);
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
+    this.displayAppareilsDrop(AllAppareils);
+    this.displayUstensilsDrop(AllUstensils);
     this.makeTags();
   }
 }

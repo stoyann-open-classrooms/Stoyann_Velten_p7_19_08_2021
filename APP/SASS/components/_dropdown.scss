@@ -9,10 +9,18 @@
 .dropdown-appareil {
   @include dropdown();
   margin-right: 10px;
+  label {
+    display: flex;
+    text-align: center;
+  }
 }
 .dropdown-ustensils {
   @include dropdown();
   margin-right: 10px;
+  label {
+    display: flex;
+    text-align: center;
+  }
 }
 .ul-drop {
   display: none;
@@ -39,11 +47,11 @@
   @include dropdown-input();
   display: none;
 }
-#appareil-inp {
+.app-inp {
   @include dropdown-input();
   display: none;
 }
-#ustensils-inp {
+.ust-inp {
   @include dropdown-input();
   display: none;
 }

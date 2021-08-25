@@ -36,10 +36,11 @@ export class RecipesList {
     const AllUstensils = new Set();
 
     for (let recipe of this.recipes) {
+      for (let i = 0; i < recipe.ustensils.length; i++) {
+        AllUstensils.add(capitalizeFirstChar(recipe.ustensils[i]));
+      }
       // console.log(recipe);
-      AllUstensils.add(capitalizeFirstChar(recipe.ustensils));
     }
-
     return [...AllUstensils];
   }
 

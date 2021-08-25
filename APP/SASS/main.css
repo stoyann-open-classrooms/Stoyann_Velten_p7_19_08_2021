@@ -248,6 +248,13 @@ li {
   margin-right: 10px;
 }
 
+.dropdown-appareil label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
 .dropdown-ustensils {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,6 +275,13 @@ li {
   font-size: 1.6rem;
   padding: 15px;
   margin-right: 10px;
+}
+
+.dropdown-ustensils label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
 }
 
 .ul-drop {
@@ -319,7 +333,7 @@ li {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#appareil-inp {
+.app-inp {
   padding: 15px;
   border: none;
   outline: none;
@@ -328,23 +342,23 @@ li {
   display: none;
 }
 
-#appareil-inp::-webkit-input-placeholder {
+.app-inp::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#appareil-inp:-ms-input-placeholder {
+.app-inp:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#appareil-inp::-ms-input-placeholder {
+.app-inp::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#appareil-inp::placeholder {
+.app-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensils-inp {
+.ust-inp {
   padding: 15px;
   border: none;
   outline: none;
@@ -353,19 +367,19 @@ li {
   display: none;
 }
 
-#ustensils-inp::-webkit-input-placeholder {
+.ust-inp::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensils-inp:-ms-input-placeholder {
+.ust-inp:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensils-inp::-ms-input-placeholder {
+.ust-inp::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
-#ustensils-inp::placeholder {
+.ust-inp::placeholder {
   color: rgba(255, 255, 255, 0.52);
 }
 
