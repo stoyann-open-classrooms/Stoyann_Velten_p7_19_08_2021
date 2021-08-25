@@ -4,15 +4,12 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
+let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
 new MainPageBuilder(recipesList).printPage(
   recipesList.getAllIngredients(recipesList),
   recipesList.getAllAppliance(recipesList),
   recipesList.getAllUstensils(recipesList)
 );
-
-let userRequest = new MainPageBuilder(recipesList).UserRequest;
-
-console.log(userRequest);
 
 // console.log(recipesList.getAllIngredients());

@@ -4,9 +4,14 @@
   border-radius: $radius $radius;
   cursor: pointer;
   margin: 20px 0;
+  transition: all 0.3s 0s ease-in-out;
   @include bigPhone-and-higher {
     margin: 20px;
     width: 360px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 

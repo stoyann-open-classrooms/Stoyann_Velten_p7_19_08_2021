@@ -44,27 +44,30 @@ export class RecipesList {
   }
 
   filterRecipes(filter) {
-    if (filter.string.length >= 3) {
-      for (let recipe of this.recipes) {
-        if (recipe.name.toLowerCase().includes(filter.string)) {
-          console.log(recipe);
-          this.filteredRecipes.push(recipe);
-        }
-      }
-    }
-    if (this.filteredRecipes.length === 0) {
-      console.log(
-        `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
-        pommes", "poisson", ect...`
-      );
-    } else if (this.filteredRecipes.length >= 1) {
-      console.log(
-        `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
-      );
-    }
-    // console.table(filteredRecipes);
+    console.log("test");
+    console.log(filter);
 
-    return filteredRecipes;
+    for (let recipe of this.recipes) {
+      //   if (recipe.name.toLowerCase().includes(filter.string)) {
+      console.log(recipe);
+      //     this.filteredRecipes.push(recipe);
+    }
+
+    //   console.log(filteredRecipes);
+    // }
+    // if (this.filteredRecipes.length === 0) {
+    //   console.log(
+    //     `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
+    //     pommes", "poisson", ect...`
+    //   );
+    // } else if (this.filteredRecipes.length >= 1) {
+    //   console.log(
+    //     `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
+    //   );
+    // }
+    // // console.table(filteredRecipes);
+
+    // return filteredRecipes;
   }
 
   //   // fonction callBAck test
