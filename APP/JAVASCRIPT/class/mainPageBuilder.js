@@ -110,6 +110,7 @@ export class MainPageBuilder {
     const span = document.querySelector(".app-span");
     const label = document.getElementById("dropdown-appareil-label");
     const drop = document.querySelector(".dropdown-appareil");
+
     new Dropdown(AllAppareils, ul, inp, icone, span, label, drop).printDrop();
   }
 
@@ -120,6 +121,7 @@ export class MainPageBuilder {
     const span = document.querySelector(".ust-span");
     const label = document.getElementById("dropdown-ustensils-label");
     const drop = document.querySelector(".dropdown-ustensils");
+
     new Dropdown(AllUstensils, ul, inp, icone, span, label, drop).printDrop();
   }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner

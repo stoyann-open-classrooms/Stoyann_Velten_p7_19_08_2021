@@ -15,5 +15,5 @@ new MainPageBuilder(recipesList).printPage(
 // console.log(recipesList.getAllIngredients());
 console.log(
   "%crecherches realisée en...",
-  "color: blue; font-family:sans-serif; font-size: 20px;font-weight:bolder"
+  "color: red; font-family:sans-serif; font-size: 20px;font-weight:bolder"
 );
