@@ -218,6 +218,7 @@ li {
   padding: 15px;
   max-width: 30%;
   margin-right: 10px;
+  position: absolute;
 }
 
 .dropdown-ingredients label {
@@ -247,6 +248,8 @@ li {
   font-size: 1.6rem;
   padding: 15px;
   max-width: 30%;
+  position: absolute;
+  left: 200px;
   margin-right: 10px;
 }
 
@@ -277,6 +280,8 @@ li {
   font-size: 1.6rem;
   padding: 15px;
   max-width: 30%;
+  position: absolute;
+  left: 400px;
   margin-right: 10px;
 }
 
@@ -415,6 +420,10 @@ li {
 
 .resize {
   width: 100%;
+}
+
+.index {
+  z-index: 99999;
 }
 
 .result-msg {
@@ -592,7 +601,7 @@ header {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 3%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 @media screen and (min-width: 42.5rem) {
@@ -620,8 +629,7 @@ header h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-bottom: 2.5rem;
   width: 100%;
 }
 
@@ -641,7 +649,7 @@ header h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 @media screen and (min-width: 42.5rem) {
@@ -677,7 +685,8 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  margin: 0 0 0 4%;
+  position: relative;
+  margin-left: 4%;
 }
 
 .result-msg-container {

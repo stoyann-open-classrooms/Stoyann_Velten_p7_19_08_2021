@@ -1,5 +1,6 @@
 export class Dropdown {
-  constructor(itemsList, ulDrop, dropInp, icone, span, label) {
+  constructor(itemsList, ulDrop, dropInp, icone, span, label, drop) {
+    this.drop = drop;
     this.itemsList = itemsList;
     this.ulDrop = ulDrop;
     this.dropInp = dropInp;
@@ -7,17 +8,17 @@ export class Dropdown {
     this.span = span;
     this.label = label;
     this.tagSelected = [];
-    this.clicked = function (events) {
-      this.dropInp.classList.toggle("active");
-      this.span.classList.toggle("pasive");
-      this.ulDrop.classList.toggle("close");
-      this.icone.classList.toggle("fa-chevton-down");
-      this.icone.classList.toggle("fa-chevron-up");
-      this.label.classList.add("resize");
-    };
-    this.clickHandler = this.clicked.bind(this);
   }
 
+  clicked(events) {
+    this.dropInp.classList.toggle("active");
+    this.span.classList.toggle("pasive");
+    this.ulDrop.classList.toggle("close");
+    this.icone.classList.toggle("fa-chevton-down");
+    this.icone.classList.toggle("fa-chevron-up");
+    this.label.classList.add("resize");
+    this.drop.classList.toggle("index");
+  }
   //  si un item d'une liste est cliquer alors data-selected passe a true
   addDataAttributes() {
     this.dataset.selected = this.dataset.selected == "true" ? "false" : "true";
@@ -39,7 +40,10 @@ export class Dropdown {
   }
 
   openDrop() {
-    this.icone.addEventListener("click", this.clickHandler);
+    this.icone.addEventListener("click", (e) => {
+      console.log("test");
+      this.clicked(e);
+    });
   }
 
   printDrop() {

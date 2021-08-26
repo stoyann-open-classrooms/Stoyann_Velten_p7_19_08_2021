@@ -3,7 +3,7 @@ import { Dropdown } from "../components/dropdowns.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
-    this.tagSelected = [];
+    this.requestData = {};
   }
 
   get UserRequest() {
@@ -17,15 +17,13 @@ export class MainPageBuilder {
 
     searchBar.addEventListener("input", (e) => {
       request.string = searchBar.value;
-      // console.log(request);
     });
     ingrList.forEach((el) =>
       el.addEventListener("click", () => {
         request.filters.push(el.textContent);
-        // console.log(request);
       })
     );
-    return request;
+    return (this.requestData = this.request);
   }
   // animation de l'input
 
@@ -101,7 +99,8 @@ export class MainPageBuilder {
     const icone = document.getElementById("dropdown-ingredient-icon");
     const span = document.querySelector(".ingr-span");
     const label = document.getElementById("dropdown-ingredient-label");
-    new Dropdown(AllIngredients, ul, inp, icone, span, label).printDrop();
+    const drop = document.querySelector(".dropdown-ingredients");
+    new Dropdown(AllIngredients, ul, inp, icone, span, label, drop).printDrop();
   }
 
   displayAppareilsDrop(AllAppareils) {
@@ -110,7 +109,8 @@ export class MainPageBuilder {
     const icone = document.getElementById("dropdown-appareil-icon");
     const span = document.querySelector(".app-span");
     const label = document.getElementById("dropdown-appareil-label");
-    new Dropdown(AllAppareils, ul, inp, icone, span, label).printDrop();
+    const drop = document.querySelector(".dropdown-appareil");
+    new Dropdown(AllAppareils, ul, inp, icone, span, label, drop).printDrop();
   }
 
   displayUstensilsDrop(AllUstensils) {
@@ -118,8 +118,9 @@ export class MainPageBuilder {
     const inp = document.querySelector(".ust-inp");
     const icone = document.getElementById("dropdown-ustensils-icon");
     const span = document.querySelector(".ust-span");
-    const label = document.getElementById("dropdown-ustensil-label");
-    new Dropdown(AllUstensils, ul, inp, icone, span, label).printDrop();
+    const label = document.getElementById("dropdown-ustensils-label");
+    const drop = document.querySelector(".dropdown-ustensils");
+    new Dropdown(AllUstensils, ul, inp, icone, span, label, drop).printDrop();
   }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {

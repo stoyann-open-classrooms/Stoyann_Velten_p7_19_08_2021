@@ -1,6 +1,7 @@
 .dropdown-ingredients {
   @include dropdown();
   margin-right: 10px;
+  position: absolute;
   label {
     display: flex;
     text-align: center;
@@ -8,14 +9,19 @@
 }
 .dropdown-appareil {
   @include dropdown();
+  position: absolute;
+  left: 200px;
   margin-right: 10px;
   label {
     display: flex;
     text-align: center;
   }
 }
+
 .dropdown-ustensils {
   @include dropdown();
+  position: absolute;
+  left: 400px;
   margin-right: 10px;
   label {
     display: flex;
@@ -77,6 +83,11 @@
 .resize {
   width: 100%;
 }
+
+.index {
+  z-index: 99999;
+}
+
 // .ingr-span {
 //   margin-right: 5%;
 // }

@@ -5,7 +5,7 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 let userRequest = new MainPageBuilder(recipesList).UserRequest;
-
+console.log(userRequest);
 new MainPageBuilder(recipesList).printPage(
   recipesList.getAllIngredients(recipesList),
   recipesList.getAllAppliance(recipesList),
