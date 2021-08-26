@@ -23,7 +23,8 @@ export class MainPageBuilder {
         request.filters.push(el.textContent);
       })
     );
-    return (this.requestData = this.request);
+    this.requestData = request;
+    return this.requestData;
   }
   // animation de l'input
 

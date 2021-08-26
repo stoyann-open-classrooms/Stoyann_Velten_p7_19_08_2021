@@ -4,7 +4,6 @@ export class Cards {
     this.cardId = cardsId;
   }
 
-  ingredientCards() {}
   get card() {
     return `
     <a class="card" id='card-'>

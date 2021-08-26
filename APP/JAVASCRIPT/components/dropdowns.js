@@ -41,7 +41,6 @@ export class Dropdown {
 
   openDrop() {
     this.icone.addEventListener("click", (e) => {
-      console.log("test");
       this.clicked(e);
     });
   }

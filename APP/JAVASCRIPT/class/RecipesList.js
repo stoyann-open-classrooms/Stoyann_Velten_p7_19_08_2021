@@ -1,11 +1,9 @@
 import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
 
-// import { Request } from "./Request.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
-    this.filterRecipes = [];
-    this.value = [];
+    this.filteredRecipes = [];
   }
 
   getAllIngredients() {
@@ -44,37 +42,16 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
-  filterRecipes(filter) {
-    console.log("test");
-    console.log(filter);
+  filterRecipe(userRequest) {
+    let search = removeAccents(userRequest.string);
 
-    for (let recipe of this.recipes) {
-      //   if (recipe.name.toLowerCase().includes(filter.string)) {
-      console.log(recipe);
-      //     this.filteredRecipes.push(recipe);
-    }
+    let filteredRecipes = this.recipes.filter(function (recipe) {
+      if (recipe.nameNoAccent.includes(search)) {
+        return recipe;
+      }
+    });
+    this.recipes = filteredRecipes;
 
-    //   console.log(filteredRecipes);
-    // }
-    // if (this.filteredRecipes.length === 0) {
-    //   console.log(
-    //     `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
-    //     pommes", "poisson", ect...`
-    //   );
-    // } else if (this.filteredRecipes.length >= 1) {
-    //   console.log(
-    //     `${filteredRecipes.length} recette(s) trouvés avec vos critére de recherche`
-    //   );
-    // }
-    // // console.table(filteredRecipes);
-
-    // return filteredRecipes;
+    return this.recipes;
   }
-
-  //   // fonction callBAck test
-  //   callback(cb) {
-  //     this.recipes.forEach((el) => {
-  //       cb(el.name);
-  //     });
-  //   }
 }
