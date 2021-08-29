@@ -4,7 +4,6 @@ import { Cards } from "../components/cards.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
-    this.requestData = {};
   }
 
   get UserRequest() {
@@ -27,8 +26,12 @@ export class MainPageBuilder {
     this.requestData = request;
     return this.requestData;
   }
-  // animation de l'input
 
+  getSortedRecipesList() {
+    return this.recipesList.filterRecipe(this.UserRequest);
+  }
+
+  // animation de l'input
   inputAnim() {
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", function (e) {
@@ -40,17 +43,15 @@ export class MainPageBuilder {
     });
   }
 
-  // créer et affiche les cards recettes du tableau de recette entrée en paramétre
-  cardsMaker() {
+  printCard() {
     const cardsContainer = document.querySelector(".cards-container");
 
     let htmlContent = ``;
 
     for (let i = 0; i < this.recipesList.recipes.length; i++) {
       htmlContent += new Cards(this.recipesList.recipes[i], i).card;
-
-      cardsContainer.innerHTML = htmlContent;
     }
+    cardsContainer.innerHTML = htmlContent;
   }
 
   // créer et affiche le contenue du dropdown ingrédients
@@ -99,14 +100,32 @@ export class MainPageBuilder {
     );
     // console.log(tagSelected);
   }
-
+  searchBarRs() {
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("input", (e) => {
+      let SortedRecipes;
+      if (searchBar.value.length >= 3) {
+        SortedRecipes = this.getSortedRecipesList();
+        // console.log(SortedRecipes);
+        // console.log();
+        console.log(
+          `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
+          "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
+        );
+      } else {
+        SortedRecipes = this.recipesList;
+      }
+      this.printCard();
+    });
+  }
   //  affiche la page
   printPage(allIngredients, AllAppareils, AllUstensils) {
-    this.cardsMaker(this.recipesList);
+    this.printCard();
     this.inputAnim();
     this.displayIngredientsDrop(allIngredients);
     this.displayAppareilsDrop(AllAppareils);
     this.displayUstensilsDrop(AllUstensils);
     this.makeTags();
+    this.searchBarRs();
   }
 }

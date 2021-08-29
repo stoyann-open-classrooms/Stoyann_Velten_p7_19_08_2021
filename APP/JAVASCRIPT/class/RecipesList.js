@@ -3,7 +3,6 @@ import { removeAccents, capitalizeFirstChar } from "../utils/string.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
-    this.filteredRecipes = [];
   }
 
   getAllIngredients() {
@@ -47,11 +46,10 @@ export class RecipesList {
 
     let filteredRecipes = this.recipes.filter(function (recipe) {
       if (recipe.nameNoAccent.includes(search)) {
+        console.log(recipe.nameNoAccent);
         return recipe;
       }
     });
-    this.recipes = filteredRecipes;
-
-    return this.recipes;
+    return filteredRecipes;
   }
 }

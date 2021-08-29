@@ -8,22 +8,26 @@ export class Cards {
     for (let ingredient of this.recipe.ingredients) {
       let li = document.createElement("li");
       li.classList.add("ingredient-item");
-      li.innerHTML = `
-      <span>${ingredient}</span>
-    `;
+
       if (ingredient.quantity != undefined) {
-        li.innerHTML = `
-      <span>${ingredient} : </span> ${ingredient.quantity}
+        li = `
+      <li><span>${ingredient.ingredient} : </span> ${ingredient.quantity}</li>
       `;
       }
       if (ingredient.unit != undefined) {
-        li.innerHTML = `
-      <span>${ingredient} : </span> ${ingredient.quantity} ${ingredient.unit}
+        li = `
+        <li><span>${ingredient.ingredient} : </span> ${ingredient.quantity} ${ingredient.unit}</li>
       `;
+      } else {
+        li = `
+        <li> <span>${ingredient.ingredient}</span></li>
+     `;
       }
 
       // console.log(li);
+      htmlContent += li;
     }
+    return htmlContent;
   }
 
   get card() {
