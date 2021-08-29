@@ -61,8 +61,13 @@
     padding: 0 5% 0 0;
   }
 
+  .ingredients-list {
+    height: 90px;
+    overflow: hidden;
+  }
   .ingredient-item {
     font-weight: 500;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

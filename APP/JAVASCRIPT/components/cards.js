@@ -11,16 +11,16 @@ export class Cards {
 
       if (ingredient.quantity != undefined) {
         li = `
-      <li><span>${ingredient.ingredient} : </span> ${ingredient.quantity}</li>
+      <li class = "ingredient-item"><span>${ingredient.ingredient} : </span> ${ingredient.quantity}</li>
       `;
       }
       if (ingredient.unit != undefined) {
         li = `
-        <li><span>${ingredient.ingredient} : </span> ${ingredient.quantity} ${ingredient.unit}</li>
+        <li  class = "ingredient-item" ><span>${ingredient.ingredient} : </span> ${ingredient.quantity} ${ingredient.unit}</li>
       `;
       } else {
         li = `
-        <li> <span>${ingredient.ingredient}</span></li>
+        <li  class = "ingredient-item" > <span>${ingredient.ingredient}</span></li>
      `;
       }
 

@@ -540,6 +540,11 @@ li {
   padding: 0 5% 0 0;
 }
 
+.cards-main .ingredients-list {
+  height: 90px;
+  overflow: hidden;
+}
+
 .cards-main .ingredient-item {
   font-weight: 500;
   white-space: nowrap;
