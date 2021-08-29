@@ -1,4 +1,5 @@
 import { Dropdown } from "../components/dropdowns.js";
+import { Cards } from "../components/cards.js";
 
 export class MainPageBuilder {
   constructor(recipesList) {
@@ -46,50 +47,9 @@ export class MainPageBuilder {
     let htmlContent = ``;
 
     for (let i = 0; i < this.recipesList.recipes.length; i++) {
-      cardsContainer.innerHTML += `
-        <a class="card" id='card-${this.recipesList.recipes[i].id}'>
-        <div class="cards-cover" >
-            <img src="./SRC/images/${this.recipesList.recipes[i].id}.jpg" class="cover" alt="${this.recipesList.recipes[i].name}">
-        </div>
-        <div class="cards-content">
-            <div class="card-header">
-                <h2 class="cards-title">${this.recipesList.recipes[i].name}</h2>
-                <div class="cards-header-time">
-                    <img src="./SRC/SVG/icone-time.svg" class="time-icone" alt="">
-                    <p class="time-txt">${this.recipesList.recipes[i].time}MIN</p>
-                </div>
-            </div>
-            <div class="cards-main">
-            <ul class = "ingredients-list" id='ingr-list-${this.recipesList.recipes[i].id}'  >
+      htmlContent += new Cards(this.recipesList.recipes[i], i).card;
 
-            </ul>
-                  <div class="cards-main-description">${this.recipesList.recipes[i].description}</div>
-            </div>
-        </div>
-    </a>
-        `;
-      const ul = document.getElementById(
-        `ingr-list-${this.recipesList.recipes[i].id}`
-      );
-
-      for (let j = 0; j < this.recipesList.recipes[i].ingredients.length; j++) {
-        const liIngr = document.createElement("li");
-        liIngr.classList.add("ingredient-item");
-        liIngr.innerHTML = `
-          <span>${this.recipesList.recipes[i].ingredients[j].ingredient}</span>
-          `;
-        if (this.recipesList.recipes[i].ingredients[j].quantity != undefined) {
-          liIngr.innerHTML = `
-            <span>${this.recipesList.recipes[i].ingredients[j].ingredient} : </span> ${this.recipesList.recipes[i].ingredients[j].quantity}
-            `;
-        }
-        if (this.recipesList.recipes[i].ingredients[j].unit != undefined) {
-          liIngr.innerHTML = `
-            <span>${this.recipesList.recipes[i].ingredients[j].ingredient} : </span> ${this.recipesList.recipes[i].ingredients[j].quantity} ${this.recipesList.recipes[i].ingredients[j].unit}
-            `;
-        }
-        ul.append(liIngr);
-      }
+      cardsContainer.innerHTML = htmlContent;
     }
   }
 
