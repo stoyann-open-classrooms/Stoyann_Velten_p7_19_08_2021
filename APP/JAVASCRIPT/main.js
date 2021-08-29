@@ -5,11 +5,8 @@ import { MainPageBuilder } from "./class/mainPageBuilder.js";
 const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 
-new MainPageBuilder(recipesList).printPage(
-  recipesList.getAllIngredients(recipesList),
-  recipesList.getAllAppliance(recipesList),
-  recipesList.getAllUstensils(recipesList)
-);
+new MainPageBuilder(recipesList).printPage();
+
 // let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
 // const searchBar = document.getElementById("search-bar");

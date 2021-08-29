@@ -1,12 +1,14 @@
+import { removeAccents } from "../utils/string.js";
 import { Dropdown } from "../components/dropdowns.js";
 import { Cards } from "../components/cards.js";
 
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
+    // this.requestData = {};
   }
 
-  get UserRequest() {
+  UserRequest() {
     const searchBar = document.getElementById("search-bar");
     const ingrList = document.getElementById("ingredient-list").childNodes;
 
@@ -17,18 +19,21 @@ export class MainPageBuilder {
 
     searchBar.addEventListener("input", (e) => {
       request.string = searchBar.value;
+      console.log(request.string);
     });
     ingrList.forEach((el) =>
       el.addEventListener("click", () => {
         request.filters.push(el.textContent);
       })
     );
-    this.requestData = request;
-    return this.requestData;
+    // this.requestData = request;
+
+    return request;
   }
 
-  getSortedRecipesList() {
-    return this.recipesList.filterRecipe(this.UserRequest);
+  getSortedRecipesList(request) {
+    console.log(request);
+    return this.recipesList.recipes;
   }
 
   // animation de l'input
@@ -43,13 +48,13 @@ export class MainPageBuilder {
     });
   }
 
-  printCard() {
+  printCard(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
 
     let htmlContent = ``;
 
-    for (let i = 0; i < this.recipesList.recipes.length; i++) {
-      htmlContent += new Cards(this.recipesList.recipes[i], i).card;
+    for (let i = 0; i < recipesList.length; i++) {
+      htmlContent += new Cards(recipesList[i], i).card;
     }
     cardsContainer.innerHTML = htmlContent;
   }
@@ -105,7 +110,7 @@ export class MainPageBuilder {
     searchBar.addEventListener("input", (e) => {
       let SortedRecipes;
       if (searchBar.value.length >= 3) {
-        SortedRecipes = this.getSortedRecipesList();
+        SortedRecipes = this.getSortedRecipesList(this.UserRequest().string);
         // console.log(SortedRecipes);
         // console.log();
         console.log(
@@ -115,17 +120,20 @@ export class MainPageBuilder {
       } else {
         SortedRecipes = this.recipesList;
       }
-      this.printCard();
+      // this.printCard(SortedRecipes);
+      this.printCard(SortedRecipes);
+
+      return SortedRecipes;
     });
   }
   //  affiche la page
-  printPage(allIngredients, AllAppareils, AllUstensils) {
-    this.printCard();
-    this.inputAnim();
-    this.displayIngredientsDrop(allIngredients);
-    this.displayAppareilsDrop(AllAppareils);
-    this.displayUstensilsDrop(AllUstensils);
-    this.makeTags();
+  printPage() {
     this.searchBarRs();
+    this.printCard(this.recipesList.recipes);
+    this.inputAnim();
+    this.displayIngredientsDrop(this.recipesList.getAllIngredients());
+    this.displayAppareilsDrop(this.recipesList.getAllAppliance());
+    this.displayUstensilsDrop(this.recipesList.getAllUstensils());
+    this.makeTags();
   }
 }

@@ -41,15 +41,15 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
-  filterRecipe(userRequest) {
-    let search = removeAccents(userRequest.string);
+  // filterRecipe(userRequest) {
+  //   let search = removeAccents(userRequest.string);
+  //   console.log(search);
 
-    let filteredRecipes = this.recipes.filter(function (recipe) {
-      if (recipe.nameNoAccent.includes(search)) {
-        console.log(recipe.nameNoAccent);
-        return recipe;
-      }
-    });
-    return filteredRecipes;
-  }
+  //   let filteredRecipes = this.recipes.filter(function (recipe) {
+  //     if (recipe.nameNoAccent.includes(search)) {
+  //       return recipe;
+  //     }
+  //   });
+  //   return filteredRecipes;
+  // }
 }
