@@ -57,13 +57,23 @@ export class MainPageBuilder {
 
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
-
+    const resultMsg = document.querySelector(".result-msg-container");
+    const resultMsgDiv = document.querySelector(".result-msg");
+    let resultMsgTxt = document.querySelector(".result-img-txt");
     let htmlContent = ``;
-
-    for (let i = 0; i < recipesList.length; i++) {
-      htmlContent += new Cards(recipesList[i], i).card;
+    if (recipesList.length > 0) {
+      for (let i = 0; i < recipesList.length; i++) {
+        htmlContent += new Cards(recipesList[i], i).card;
+      }
+      cardsContainer.innerHTML = htmlContent;
+      resultMsgTxt.innerHTML = `${recipesList.length} recette(s)  trouvé correspondant a vos critéres`;
+      resultMsgDiv.style.backgroundColor = "#68d9a4";
+    } else if (recipesList.length === 0) {
+      resultMsg.style.display = "flex";
+      resultMsgTxt.innerHTML = `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
+      pommes", "poisson", ect...`;
+      resultMsgDiv.style.backgroundColor = "#d04f4fbd";
     }
-    cardsContainer.innerHTML = htmlContent;
   }
 
   // créer et affiche le contenue du dropdown ingrédients

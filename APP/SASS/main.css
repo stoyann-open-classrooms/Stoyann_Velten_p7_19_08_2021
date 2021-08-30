@@ -424,7 +424,6 @@ li {
 }
 
 .result-msg {
-  background-color: #d04f4fbd;
   width: 85%;
   height: 50px;
   display: -webkit-box;
@@ -693,6 +692,7 @@ header h1 {
 
 .result-msg-container {
   display: none;
+  margin-bottom: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
