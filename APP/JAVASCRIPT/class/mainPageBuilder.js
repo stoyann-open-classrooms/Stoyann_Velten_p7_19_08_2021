@@ -5,7 +5,7 @@ import { Cards } from "../components/cards.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
-    // this.requestData = {};
+    this.requestData = {};
   }
 
   UserRequest() {
@@ -19,21 +19,25 @@ export class MainPageBuilder {
 
     searchBar.addEventListener("input", (e) => {
       request.string = searchBar.value;
-      console.log(request.string);
+      // console.log(request.string);
     });
     ingrList.forEach((el) =>
       el.addEventListener("click", () => {
         request.filters.push(el.textContent);
       })
     );
-    // this.requestData = request;
+    this.requestData = request;
 
-    return request;
+    return this.requestData;
   }
 
   getSortedRecipesList(request) {
-    console.log(request);
-    return this.recipesList.recipes;
+    console.log(this.requestData.string);
+    let sortRecipe = this.recipesList.recipes.filter((recipe) =>
+      recipe.name.includes(this.requestData.string)
+    );
+    console.log(sortRecipe);
+    return sortRecipe;
   }
 
   // animation de l'input
@@ -93,17 +97,35 @@ export class MainPageBuilder {
   }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {
-    let item = document.querySelectorAll(".item");
+    const ingrList = document.getElementById("ingredient-list").childNodes;
+    const appList = document.getElementById("appareil-list").childNodes;
+    const ustList = document.getElementById("ustensils-list").childNodes;
+
+    console.log(ingrList);
     const tagsContainer = document.querySelector(".tags-container");
 
-    item.forEach((el) =>
+    ingrList.forEach((el) =>
       el.addEventListener("click", () => {
         tagsContainer.innerHTML += `
         <div class="tag ingredients" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
         `;
       })
     );
-    // console.log(tagSelected);
+    appList.forEach((el) =>
+      el.addEventListener("click", () => {
+        tagsContainer.innerHTML += `
+      <div class="tag appareils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
+      `;
+      })
+    );
+
+    ustList.forEach((el) =>
+      el.addEventListener("click", () => {
+        tagsContainer.innerHTML += `
+    <div class="tag ustensils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
+    `;
+      })
+    );
   }
   searchBarRs() {
     const searchBar = document.getElementById("search-bar");
@@ -111,7 +133,7 @@ export class MainPageBuilder {
       let SortedRecipes;
       if (searchBar.value.length >= 3) {
         SortedRecipes = this.getSortedRecipesList(this.UserRequest().string);
-        // console.log(SortedRecipes);
+        console.log(SortedRecipes);
         // console.log();
         console.log(
           `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
