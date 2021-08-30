@@ -18,7 +18,6 @@ export class RecipesList {
     return [...AllIngredients];
   }
 
-  // retourne toute les appareils disponible (premiere lettre en majuscule) pour les afficher dans le dropdown associée
   getAllAppliance() {
     const appliances = new Set();
 
@@ -40,16 +39,4 @@ export class RecipesList {
     }
     return [...AllUstensils];
   }
-
-  // filterRecipe(userRequest) {
-  //   let search = removeAccents(userRequest.string);
-  //   console.log(search);
-
-  //   let filteredRecipes = this.recipes.filter(function (recipe) {
-  //     if (recipe.nameNoAccent.includes(search)) {
-  //       return recipe;
-  //     }
-  //   });
-  //   return filteredRecipes;
-  // }
 }

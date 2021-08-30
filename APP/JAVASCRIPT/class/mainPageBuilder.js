@@ -9,29 +9,6 @@ export class MainPageBuilder {
     this.tagSelected = [];
   }
 
-  // UserRequest() {
-  //   const searchBar = document.getElementById("search-bar");
-  //   const ingrList = document.getElementById("ingredient-list").childNodes;
-
-  //   let request = {
-  //     string: "",
-  //     filters: [],
-  //   };
-
-  //   searchBar.addEventListener("input", (e) => {
-  //     request.string = searchBar.value;
-  //     // console.log(request.string);
-  //   });
-  //   ingrList.forEach((el) =>
-  //     el.addEventListener("click", () => {
-  //       request.filters.push(el.textContent);
-  //     })
-  //   );
-  //   this.requestData = request;
-
-  //   return this.requestData;
-  // }
-
   getSortedRecipesList() {
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", (e) => {
@@ -121,7 +98,6 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
         <div class="tag ingredients" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
         `;
-        // console.log(this.tagSelected);
       })
     );
     appList.forEach((el) =>
@@ -129,7 +105,6 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
       <div class="tag appareils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
       `;
-        // console.log(this.tagSelected);
       })
     );
 
@@ -138,8 +113,6 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
     <div class="tag ustensils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
     `;
-
-        // console.log(this.tagSelected);
       })
     );
     return this.tagSelected;
@@ -172,7 +145,7 @@ export class MainPageBuilder {
       } else {
         SortedRecipes = this.recipesList;
       }
-      // this.printCard(SortedRecipes);
+
       this.printCard(SortedRecipes);
 
       return SortedRecipes;
