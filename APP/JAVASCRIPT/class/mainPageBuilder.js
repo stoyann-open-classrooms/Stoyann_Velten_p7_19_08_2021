@@ -5,39 +5,42 @@ import { Cards } from "../components/cards.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
-    this.requestData = {};
+    this.sortRecipe = [];
   }
 
-  UserRequest() {
-    const searchBar = document.getElementById("search-bar");
-    const ingrList = document.getElementById("ingredient-list").childNodes;
+  // UserRequest() {
+  //   const searchBar = document.getElementById("search-bar");
+  //   const ingrList = document.getElementById("ingredient-list").childNodes;
 
-    let request = {
-      string: "",
-      filters: [],
-    };
+  //   let request = {
+  //     string: "",
+  //     filters: [],
+  //   };
+
+  //   searchBar.addEventListener("input", (e) => {
+  //     request.string = searchBar.value;
+  //     // console.log(request.string);
+  //   });
+  //   ingrList.forEach((el) =>
+  //     el.addEventListener("click", () => {
+  //       request.filters.push(el.textContent);
+  //     })
+  //   );
+  //   this.requestData = request;
+
+  //   return this.requestData;
+  // }
+
+  getSortedRecipesList() {
+    const searchBar = document.getElementById("search-bar");
 
     searchBar.addEventListener("input", (e) => {
-      request.string = searchBar.value;
-      // console.log(request.string);
+      this.sortRecipe = this.recipesList.recipes.filter((recipe) =>
+        recipe.name.includes(searchBar.value)
+      );
+      console.log(this.sortRecipe);
     });
-    ingrList.forEach((el) =>
-      el.addEventListener("click", () => {
-        request.filters.push(el.textContent);
-      })
-    );
-    this.requestData = request;
-
-    return this.requestData;
-  }
-
-  getSortedRecipesList(request) {
-    console.log(this.requestData.string);
-    let sortRecipe = this.recipesList.recipes.filter((recipe) =>
-      recipe.name.includes(this.requestData.string)
-    );
-    console.log(sortRecipe);
-    return sortRecipe;
+    return this.sortRecipe;
   }
 
   // animation de l'input
@@ -101,7 +104,6 @@ export class MainPageBuilder {
     const appList = document.getElementById("appareil-list").childNodes;
     const ustList = document.getElementById("ustensils-list").childNodes;
 
-    console.log(ingrList);
     const tagsContainer = document.querySelector(".tags-container");
 
     ingrList.forEach((el) =>
@@ -132,7 +134,7 @@ export class MainPageBuilder {
     searchBar.addEventListener("input", (e) => {
       let SortedRecipes;
       if (searchBar.value.length >= 3) {
-        SortedRecipes = this.getSortedRecipesList(this.UserRequest().string);
+        SortedRecipes = this.getSortedRecipesList();
         console.log(SortedRecipes);
         // console.log();
         console.log(
