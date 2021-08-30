@@ -435,7 +435,7 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: 1rem;
   color: whitesmoke;
   padding: 20px;
@@ -692,7 +692,7 @@ header h1 {
 
 .result-msg-container {
   display: none;
-  margin-bottom: 50px;
+  margin-bottom: 3rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

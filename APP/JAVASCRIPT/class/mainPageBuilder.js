@@ -6,6 +6,7 @@ export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
     this.sortRecipe = [];
+    this.tagSelected = [];
   }
 
   // UserRequest() {
@@ -33,7 +34,6 @@ export class MainPageBuilder {
 
   getSortedRecipesList() {
     const searchBar = document.getElementById("search-bar");
-
     searchBar.addEventListener("input", (e) => {
       this.sortRecipe = this.recipesList.recipes.filter((recipe) =>
         recipe.name.includes(searchBar.value)
@@ -70,8 +70,8 @@ export class MainPageBuilder {
       resultMsgDiv.style.backgroundColor = "#68d9a4";
     } else if (recipesList.length === 0) {
       resultMsg.style.display = "flex";
-      resultMsgTxt.innerHTML = `Aucune recette ne correspond à vos critères... Vous pouvez chercher "tarte aux
-      pommes", "poisson", ect...`;
+      resultMsgTxt.innerHTML = `Aucune recette ne correspond à vos critères... <br/>
+       Vous pouvez chercher "tarte aux pommes", "poisson", ect.`;
       resultMsgDiv.style.backgroundColor = "#d04f4fbd";
     }
   }
@@ -121,6 +121,7 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
         <div class="tag ingredients" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
         `;
+        // console.log(this.tagSelected);
       })
     );
     appList.forEach((el) =>
@@ -128,6 +129,7 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
       <div class="tag appareils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
       `;
+        // console.log(this.tagSelected);
       })
     );
 
@@ -136,8 +138,24 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
     <div class="tag ustensils" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
     `;
+
+        // console.log(this.tagSelected);
       })
     );
+    return this.tagSelected;
+  }
+
+  getTagsSelected() {
+    const item = document.querySelectorAll(".item");
+    item.forEach((el) =>
+      el.addEventListener("click", () => {
+        console.log(el);
+        this.tagSelected.push(el.textContent);
+        el.classList.add("tag-selected");
+      })
+    );
+    console.log(this.tagSelected);
+    return this.tagSelected;
   }
   searchBarRs() {
     const searchBar = document.getElementById("search-bar");
@@ -169,5 +187,6 @@ export class MainPageBuilder {
     this.displayAppareilsDrop(this.recipesList.getAllAppliance());
     this.displayUstensilsDrop(this.recipesList.getAllUstensils());
     this.makeTags();
+    this.getTagsSelected();
   }
 }
