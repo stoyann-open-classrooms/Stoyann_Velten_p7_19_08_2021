@@ -39,4 +39,7 @@ export class Recipe {
     }
     return ingredientsList;
   }
+  get descriptionNoAccent() {
+    return removeAccents(this.description);
+  }
 }

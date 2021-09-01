@@ -15,7 +15,7 @@ export class MainPageBuilder {
       this.sortRecipe = this.recipesList.recipes.filter((recipe) =>
         recipe.name.includes(searchBar.value)
       );
-      console.log(this.sortRecipe);
+      // console.log(this.sortRecipe);
     });
     return this.sortRecipe;
   }
@@ -53,16 +53,26 @@ export class MainPageBuilder {
     }
   }
 
-  // créer et affiche le contenue du dropdown ingrédients
+  // créer et affiche le contenu du dropdown ingrédients
   displayIngredientsDrop(AllIngredients) {
     const ul = document.getElementById("ingredient-list");
-    const inp = document.querySelector(".ingr-inp");
     const icone = document.getElementById("dropdown-ingredient-icon");
     const span = document.querySelector(".ingr-span");
     const label = document.getElementById("dropdown-ingredient-label");
+    const inp = document.getElementById("ingredient-inp");
     const drop = document.querySelector(".dropdown-ingredients");
-    new Dropdown(AllIngredients, ul, inp, icone, span, label, drop).printDrop();
+    const dropIngr = new Dropdown(
+      AllIngredients,
+      ul,
+      inp,
+      icone,
+      span,
+      label,
+      drop
+    ).printDrop();
+    return dropIngr;
   }
+  // créer et affiche le contenu du dropdown Apareils
 
   displayAppareilsDrop(AllAppareils) {
     const ul = document.getElementById("appareil-list");
@@ -74,6 +84,7 @@ export class MainPageBuilder {
 
     new Dropdown(AllAppareils, ul, inp, icone, span, label, drop).printDrop();
   }
+  // créer et affiche le contenu du dropdown Ustensils
 
   displayUstensilsDrop(AllUstensils) {
     const ul = document.getElementById("ustensils-list");
@@ -98,6 +109,7 @@ export class MainPageBuilder {
         tagsContainer.innerHTML += `
         <div class="tag ingredients" >${el.textContent}<i class="far fa-times-circle close-tag"></i></div>
         `;
+        this.closeTag();
       })
     );
     appList.forEach((el) =>
@@ -115,19 +127,28 @@ export class MainPageBuilder {
     `;
       })
     );
+
     return this.tagSelected;
   }
+  closeTag() {
+    const tag = document.querySelectorAll(".tag");
 
+    tag.forEach((tag) => {
+      const close = document.querySelector(".close-tag");
+      close.addEventListener("click", () => {
+        tag.style.display = "none";
+      });
+    });
+  }
   getTagsSelected() {
     const item = document.querySelectorAll(".item");
     item.forEach((el) =>
       el.addEventListener("click", () => {
-        console.log(el);
         this.tagSelected.push(el.textContent);
         el.classList.add("tag-selected");
       })
     );
-    console.log(this.tagSelected);
+
     return this.tagSelected;
   }
   searchBarRs() {
@@ -137,7 +158,7 @@ export class MainPageBuilder {
       if (searchBar.value.length >= 3) {
         SortedRecipes = this.getSortedRecipesList();
         console.log(SortedRecipes);
-        // console.log();
+
         console.log(
           `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
           "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
@@ -151,6 +172,7 @@ export class MainPageBuilder {
       return SortedRecipes;
     });
   }
+
   //  affiche la page
   printPage() {
     this.searchBarRs();
@@ -160,6 +182,7 @@ export class MainPageBuilder {
     this.displayAppareilsDrop(this.recipesList.getAllAppliance());
     this.displayUstensilsDrop(this.recipesList.getAllUstensils());
     this.makeTags();
+    this.closeTag();
     this.getTagsSelected();
   }
 }

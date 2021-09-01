@@ -1,3 +1,4 @@
+import { removeAccents } from "../utils/string.js";
 export class Dropdown {
   constructor(itemsList, ulDrop, dropInp, icone, span, label, drop) {
     this.drop = drop;
@@ -8,6 +9,7 @@ export class Dropdown {
     this.span = span;
     this.label = label;
     this.tagSelected = [];
+    this.inpValue = this.inpValue;
   }
 
   clicked(events) {
@@ -44,9 +46,16 @@ export class Dropdown {
       this.clicked(e);
     });
   }
-
+  getRequestInp() {
+    this.dropInp.addEventListener("input", (e) => {
+      this.inpValue = removeAccents(this.dropInp.value);
+      console.log(this.inpValue);
+      return this.inpValue;
+    });
+  }
   printDrop() {
     this.createList();
     this.openDrop();
+    this.getRequestInp();
   }
 }
