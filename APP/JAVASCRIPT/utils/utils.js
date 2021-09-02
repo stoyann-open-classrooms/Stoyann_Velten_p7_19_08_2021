@@ -1,6 +1,22 @@
 export class Utils {
   static sayHello() {
     console.log("hello");
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("input", (e) => {
+      console.log(searchBar.value);
+    });
+  }
+  static test() {
+    let tagSelected = [];
+    const item = document.querySelectorAll(".item");
+    item.forEach((el) =>
+      el.addEventListener("click", () => {
+        tagSelected.push(el.textContent);
+        el.classList.add("tag-selected");
+      })
+    );
+    console.log(tagSelected);
+    return tagSelected;
   }
 
   static removeAccents(string) {

@@ -6,9 +6,9 @@ import { Utils } from "./utils/utils.js";
 const dataFetcher = new DataFetcher(RECIPES);
 
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
-
 new MainPageBuilder(recipesList).printPage();
-
+Utils.sayHello();
+Utils.test();
 // let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
 // const searchBar = document.getElementById("search-bar");

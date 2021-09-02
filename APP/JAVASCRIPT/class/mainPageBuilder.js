@@ -1,6 +1,7 @@
 import { removeAccents } from "../utils/string.js";
 import { Dropdown } from "../components/dropdowns.js";
 import { Cards } from "../components/cards.js";
+import { Utils } from "../utils/utils.js";
 
 export class MainPageBuilder {
   constructor(recipesList) {
