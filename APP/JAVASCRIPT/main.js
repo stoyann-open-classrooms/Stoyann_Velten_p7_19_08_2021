@@ -8,7 +8,11 @@ const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 new MainPageBuilder(recipesList).printPage();
 Utils.sayHello();
-Utils.test();
+console.log(recipesList);
+for (let recipe of recipesList.recipes) {
+  console.log(recipe.stringifyRecipes);
+  console.log(recipe.nameNoAccent);
+}
 // let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
 // const searchBar = document.getElementById("search-bar");

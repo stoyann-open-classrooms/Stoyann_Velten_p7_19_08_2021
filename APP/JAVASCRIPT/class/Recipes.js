@@ -42,4 +42,7 @@ export class Recipe {
   get descriptionNoAccent() {
     return removeAccents(this.description);
   }
+  get stringifyRecipes() {
+    return removeAccents(JSON.stringify(this));
+  }
 }
