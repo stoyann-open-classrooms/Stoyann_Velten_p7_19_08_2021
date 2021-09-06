@@ -86,11 +86,13 @@ export class MainPageBuilder {
     new Dropdown(AllUstensils, ul, inp, icone, span, label, drop).printDrop();
   }
 
-  sortIngr(inpVal) {
-    const ingrList = document.getElementById("ingredient-list").childNodes;
-    ingrList.forEach((el) => {
-      // el.setAttribute("data-selected", "true");
-      // console.log(el);
+  sortIngr(AllIngredients) {
+    AllIngredients.forEach((el) => {
+      if (el.includes(Utils.getFilterRequest)) {
+        console.log(el);
+        AllIngredients.push(el);
+      }
+      return AllIngredients;
     });
   }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
@@ -160,6 +162,6 @@ export class MainPageBuilder {
     this.makeTags();
     this.closeTag();
     this.getTagsSelected();
-    this.sortIngr("Chocolat");
+    this.sortIngr(this.recipesList.getAllIngredients());
   }
 }

@@ -7,6 +7,15 @@ export class Utils {
   //     return searchBarVal;
   //   });
   // }
+  static getFilterRequest() {
+    const searchBar = document.getElementById("ingredient-inp");
+    let inpValue;
+    searchBar.addEventListener("input", (e) => {
+      inpValue = removeAccents(searchBar.value);
+      console.log(inpValue);
+    });
+    return inpValue;
+  }
 
   static removeAccents(string) {
     return string

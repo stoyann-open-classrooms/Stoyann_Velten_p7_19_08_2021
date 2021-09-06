@@ -7,6 +7,8 @@ export class RecipesList {
 
   getAllIngredients() {
     const AllIngredients = new Set();
+    const search = document.getElementById("ingredient-inp");
+
     for (let recipe of this.recipes) {
       for (let i = 0; i < recipe.ingredients.length; i++) {
         AllIngredients.add(
@@ -14,6 +16,7 @@ export class RecipesList {
         );
       }
     }
+
     return [...AllIngredients];
   }
 
@@ -41,39 +44,24 @@ export class RecipesList {
 
   makeRecipesListToDisplay() {
     const searchBar = document.getElementById("search-bar");
-    console.log("here function sort recipes");
     let sortedRecipe = [];
-
     searchBar.addEventListener("input", (e) => {
       console.log(searchBar.value);
-      this.recipes.forEach((recipe) => {
-        // console.log(recipe.stringifyRecipes);
-        if (searchBar.value.length >= 3) {
-          if (recipe.stringifyRecipes.includes(searchBar.value)) {
-            console.log(recipe);
-            sortedRecipe.push(recipe);
-          }
-        }
-      });
-      console.log(
-        `%c${sortedRecipe.length} recette(s)  trouvé correspondant a vos critéres`,
-        "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
-      );
+
+      if (searchBar.value.length >= 3) {
+        sortedRecipe = this.recipes.filter((recipe) => {
+          return recipe.stringifyRecipes.includes(
+            Utils.removeAccents(searchBar.value)
+          );
+        });
+        console.log(
+          `%c${sortedRecipe.length} recette(s)  trouvé correspondant a vos critéres`,
+          "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
+        );
+        console.table(sortedRecipe);
+        return (this.recipes = sortedRecipe);
+      }
     });
-
-    //   if (Utils.sayHello.length >= 3) {
-    //     console.log("nghrfgre");
-    //     SortedRecipes = this.getSortedRecipesList();
-    //     console.log(SortedRecipes);
-
-    //     console.log(
-    //       `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
-    //       "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
-    //     );
-    //   } else {
-    //     SortedRecipes = this.recipesList;
-    //   }
-
     return this.recipes;
   }
 }
