@@ -1,10 +1,12 @@
 export class Utils {
-  static sayHello() {
-    const searchBar = document.getElementById("search-bar");
-    searchBar.addEventListener("input", (e) => {
-      console.log(searchBar.value);
-    });
-  }
+  // static userRequest() {
+  //   const searchBar = document.getElementById("search-bar");
+  //   let searchBarVal;
+  //   searchBar.addEventListener("input", (e) => {
+  //     searchBarVal = searchBar.value;
+  //     return searchBarVal;
+  //   });
+  // }
 
   static removeAccents(string) {
     return string

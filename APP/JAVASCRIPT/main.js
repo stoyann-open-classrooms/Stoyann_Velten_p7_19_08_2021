@@ -7,24 +7,10 @@ const dataFetcher = new DataFetcher(RECIPES);
 
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 new MainPageBuilder(recipesList).printPage();
-Utils.sayHello();
-console.log(recipesList);
-for (let recipe of recipesList.recipes) {
-  console.log(recipe.stringifyRecipes);
-  console.log(recipe.nameNoAccent);
-}
+
 // let userRequest = new MainPageBuilder(recipesList).UserRequest;
 
-// const searchBar = document.getElementById("search-bar");
-// searchBar.addEventListener("input", (e) => {
-//   if (searchBar.value.length >= 3) {
-//     console.log(recipesList.filterRecipe(userRequest));
-//     console.log();
-//     console.log(
-//       `%c${
-//         recipesList.filterRecipe(userRequest).length
-//       } recette(s)  trouvé correspondant a vos critéres`,
-//       "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
-//     );
-//   }
+// Utils.userRequest();
+// recipesList.recipes.forEach((element) => {
+//   element.stringifyRecipes;
 // });

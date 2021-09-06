@@ -39,22 +39,41 @@ export class RecipesList {
 
   // Ici la fonction pour retourner le tableau de recette demander par l uttilisateur
 
-  makeRecipesListToDisplay(userRequest) {
-    let SortedRecipes;
-    if (userRequest.value.length >= 3) {
-      SortedRecipes = this.getSortedRecipesList();
-      console.log(SortedRecipes);
+  makeRecipesListToDisplay() {
+    const searchBar = document.getElementById("search-bar");
+    console.log("here function sort recipes");
+    let sortedRecipe = [];
 
+    searchBar.addEventListener("input", (e) => {
+      console.log(searchBar.value);
+      this.recipes.forEach((recipe) => {
+        // console.log(recipe.stringifyRecipes);
+        if (searchBar.value.length >= 3) {
+          if (recipe.stringifyRecipes.includes(searchBar.value)) {
+            console.log(recipe);
+            sortedRecipe.push(recipe);
+          }
+        }
+      });
       console.log(
-        `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
+        `%c${sortedRecipe.length} recette(s)  trouvé correspondant a vos critéres`,
         "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
       );
-    } else {
-      SortedRecipes = this.recipesList;
-    }
+    });
 
-    this.printCard(SortedRecipes);
+    //   if (Utils.sayHello.length >= 3) {
+    //     console.log("nghrfgre");
+    //     SortedRecipes = this.getSortedRecipesList();
+    //     console.log(SortedRecipes);
 
-    return SortedRecipes;
+    //     console.log(
+    //       `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
+    //       "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
+    //     );
+    //   } else {
+    //     SortedRecipes = this.recipesList;
+    //   }
+
+    return this.recipes;
   }
 }

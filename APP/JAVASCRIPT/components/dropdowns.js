@@ -56,6 +56,6 @@ export class Dropdown {
   printDrop() {
     this.createList();
     this.openDrop();
-    this.getRequestInp();
+    // this.getRequestInp();
   }
 }

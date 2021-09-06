@@ -1,4 +1,3 @@
-import { removeAccents } from "../utils/string.js";
 import { Dropdown } from "../components/dropdowns.js";
 import { Cards } from "../components/cards.js";
 import { Utils } from "../utils/utils.js";
@@ -8,17 +7,6 @@ export class MainPageBuilder {
     this.recipesList = recipesList;
     this.sortRecipe = [];
     this.tagSelected = [];
-  }
-
-  getSortedRecipesList() {
-    const searchBar = document.getElementById("search-bar");
-    searchBar.addEventListener("input", (e) => {
-      this.sortRecipe = this.recipesList.recipes.filter((recipe) =>
-        recipe.name.includes(searchBar.value)
-      );
-      // console.log(this.sortRecipe);
-    });
-    return this.sortRecipe;
   }
 
   // animation de l'input
@@ -97,6 +85,14 @@ export class MainPageBuilder {
 
     new Dropdown(AllUstensils, ul, inp, icone, span, label, drop).printDrop();
   }
+
+  sortIngr(inpVal) {
+    const ingrList = document.getElementById("ingredient-list").childNodes;
+    ingrList.forEach((el) => {
+      // el.setAttribute("data-selected", "true");
+      // console.log(el);
+    });
+  }
   //  créer et affiche un tag si un item de la liste ingredients est sélèctioner
   makeTags() {
     const ingrList = document.getElementById("ingredient-list").childNodes;
@@ -152,32 +148,11 @@ export class MainPageBuilder {
 
     return this.tagSelected;
   }
-  searchBarRs() {
-    const searchBar = document.getElementById("search-bar");
-    searchBar.addEventListener("input", (e) => {
-      let SortedRecipes;
-      if (searchBar.value.length >= 3) {
-        SortedRecipes = this.getSortedRecipesList();
-        console.log(SortedRecipes);
-
-        console.log(
-          `%c${SortedRecipes.length} recette(s)  trouvé correspondant a vos critéres`,
-          "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
-        );
-      } else {
-        SortedRecipes = this.recipesList;
-      }
-
-      this.printCard(SortedRecipes);
-
-      return SortedRecipes;
-    });
-  }
 
   //  affiche la page
   printPage() {
-    this.searchBarRs();
-    this.printCard(this.recipesList.recipes);
+    this.printCard(this.recipesList.makeRecipesListToDisplay());
+
     this.inputAnim();
     this.displayIngredientsDrop(this.recipesList.getAllIngredients());
     this.displayAppareilsDrop(this.recipesList.getAllAppliance());
@@ -185,5 +160,6 @@ export class MainPageBuilder {
     this.makeTags();
     this.closeTag();
     this.getTagsSelected();
+    this.sortIngr("Chocolat");
   }
 }
