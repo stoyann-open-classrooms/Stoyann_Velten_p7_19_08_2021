@@ -58,6 +58,29 @@
     color: white;
     cursor: pointer;
   }
+  .list {
+    position: absolute;
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    top: 40px;
+    right: 0;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    padding: 4px;
+    background-color: $color;
+    height: 200px;
+    overflow: hidden;
+
+    li {
+      width: 30%;
+      font-size: 1.4rem;
+      margin-left: 2rem;
+      text-align: start;
+      line-height: 2.3rem;
+    }
+  }
 }
 // ===================== responsive =====================
 

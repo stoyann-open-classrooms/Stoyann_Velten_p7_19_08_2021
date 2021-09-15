@@ -1,24 +1,53 @@
 // import { Dropdown } from "../components/dropdowns.js";
 import { Cards } from "../components/cards.js";
+import { Dropdown } from "../components/dropdowns.js";
 import { Utils } from "../utils/utils.js";
 
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
   }
-
-  // animation de l'input
-  inputAnim() {
-    const searchBar = document.getElementById("search-bar");
-    searchBar.addEventListener("input", function (e) {
-      if (e.target.value !== "") {
-        e.target.parentNode.classList.add("active-input");
-      } else if (e.target.value === "") {
-        e.target.parentNode.classList.remove("active-input");
-      }
-    });
+  displayIngrDrop(itemList) {
+    const btn = document.querySelector(".btn-drop-ingr");
+    const dropdown = document.querySelector(".dropdown.ingr");
+    const icone = document.querySelector(".icone-ingr");
+    const ul = document.querySelector(".list-ingr");
+    const dropIngr = new Dropdown(
+      btn,
+      dropdown,
+      icone,
+      ul,
+      itemList
+    ).printDrop();
   }
 
+  displayAppDrop(itemList) {
+    const btn = document.querySelector(".btn-drop-app");
+    const dropdown = document.querySelector(".dropdown.app");
+    const icone = document.querySelector(".icone-app");
+    const ul = document.querySelector(".list-app");
+    const dropIngr = new Dropdown(
+      btn,
+      dropdown,
+      icone,
+      ul,
+      itemList
+    ).printDrop();
+  }
+
+  displayUstDrop(itemList) {
+    const btn = document.querySelector(".btn-drop-ust");
+    const dropdown = document.querySelector(".dropdown.ust");
+    const icone = document.querySelector(".icone-ust");
+    const ul = document.querySelector(".list-ust");
+    const dropIngr = new Dropdown(
+      btn,
+      dropdown,
+      icone,
+      ul,
+      itemList
+    ).printDrop();
+  }
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".card-container");
     const resultMsg = document.querySelector(".result-msg-container");
@@ -41,49 +70,6 @@ export class MainPageBuilder {
     }
   }
 
-  // // créer et affiche le contenu du dropdown ingrédients
-  // displayIngredientsDrop(AllIngredients) {
-  //   const ul = document.getElementById("ingredient-list");
-  //   const icone = document.getElementById("dropdown-ingredient-icon");
-  //   const span = document.querySelector(".ingr-span");
-  //   const label = document.getElementById("dropdown-ingredient-label");
-  //   const inp = document.getElementById("ingredient-inp");
-  //   const drop = document.querySelector(".dropdown-ingredients");
-  //   const dropIngr = new Dropdown(
-  //     AllIngredients,
-  //     ul,
-  //     inp,
-  //     icone,
-  //     span,
-  //     label,
-  //     drop
-  //   ).printDrop();
-  //   return dropIngr;
-  // }
-  // // créer et affiche le contenu du dropdown Apareils
-
-  // displayAppareilsDrop(AllAppareils) {
-  //   const ul = document.getElementById("appareil-list");
-  //   const inp = document.querySelector(".app-inp");
-  //   const icone = document.getElementById("dropdown-appareil-icon");
-  //   const span = document.querySelector(".app-span");
-  //   const label = document.getElementById("dropdown-appareil-label");
-  //   const drop = document.querySelector(".dropdown-appareil");
-
-  //   new Dropdown(AllAppareils, ul, inp, icone, span, label, drop).printDrop();
-  // }
-  // // créer et affiche le contenu du dropdown Ustensils
-
-  // displayUstensilsDrop(AllUstensils) {
-  //   const ul = document.getElementById("ustensils-list");
-  //   const inp = document.querySelector(".ust-inp");
-  //   const icone = document.getElementById("dropdown-ustensils-icon");
-  //   const span = document.querySelector(".ust-span");
-  //   const label = document.getElementById("dropdown-ustensils-label");
-  //   const drop = document.querySelector(".dropdown-ustensils");
-
-  //   new Dropdown(AllUstensils, ul, inp, icone, span, label, drop).printDrop();
-  // }
   getRequest() {
     const searchBarInput = document.getElementById("search-bar");
     let request = "";
@@ -99,7 +85,6 @@ export class MainPageBuilder {
     console.log(ingredientItems);
     ingredientItems.forEach((el) =>
       el.addEventListener("click", () => {
-        // console.log(el);
         let contentTag = el.textContent;
         let tag = `  <div class="tag">${contentTag}<i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
@@ -111,9 +96,8 @@ export class MainPageBuilder {
     this.printCard(this.recipesList.recipes);
     this.getRequest();
     this.createTags();
-    this.inputAnim();
-    // this.displayIngredientsDrop(this.recipesList.getAllIngredients());
-    // this.displayAppareilsDrop(this.recipesList.getAllAppliance());
-    // this.displayUstensilsDrop(this.recipesList.getAllUstensils());
+    this.displayIngrDrop(this.recipesList.getAllIngredients());
+    this.displayAppDrop(this.recipesList.getAllAppliance());
+    this.displayUstDrop(this.recipesList.getAllUstensils());
   }
 }

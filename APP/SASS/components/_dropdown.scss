@@ -1,34 +1,26 @@
 // @includes
 .dropdown-ingr {
   @include dropdown($blue);
-
-  .list {
-    position: absolute;
-    display: none;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    top: 40px;
-    right: 0;
-    border-radius: 5px;
-    width: 100%;
-    color: white;
-    padding: 4px;
-    background-color: $blue;
-    height: 200px;
-    overflow: hidden;
-
-    li {
-      width: 30%;
-      font-size: 1.4rem;
-      margin-left: 2rem;
-      text-align: start;
-      line-height: 2.3rem;
-    }
-  }
 }
 .dropdown-app {
   @include dropdown($green);
 }
 .dropdown-ust {
   @include dropdown($orange);
+}
+.active {
+  h3 {
+    display: none;
+  }
+  i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  input {
+    display: flex;
+  }
+  .list {
+    display: flex;
+  }
+  flex: 0.8;
 }

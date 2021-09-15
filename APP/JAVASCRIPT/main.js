@@ -12,3 +12,20 @@ new MainPageBuilder(recipesList).printPage();
 // recipesList.recipes.forEach((element) => {
 //   element.stringifyRecipes;
 // });
+// Animation des cards au scrool
+// function openDrop() {
+//     console.log(this.btn);
+//     this.btn.innerHTML = `<i class="icone fas fa-chevron-down"></i>`;
+//     this.btn.addEventListener("click", () => {
+//       this.dropdown.classList.toggle("active");
+//       this.btn.innerHTML = `<i class="icone fas fa-chevron-up"></i>`;
+//     });
+//   }
+const btnsDrop = document.querySelectorAll(".btn-drop");
+console.log(btnsDrop);
+
+btnsDrop.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    document.querySelector(".dropdown-app").classList.toggle("active");
+  })
+);
