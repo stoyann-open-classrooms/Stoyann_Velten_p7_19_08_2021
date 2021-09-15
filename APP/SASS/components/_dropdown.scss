@@ -1,102 +1,34 @@
-.dropdown-ingredients {
-  @include dropdown();
-  position: absolute;
-  label {
-    display: flex;
-    text-align: center;
-  }
-}
-.dropdown-appareil {
-  @include dropdown();
-  position: absolute;
-  left: 140px;
-  label {
-    display: flex;
-    text-align: center;
-  }
-}
+// @includes
+.dropdown-ingr {
+  @include dropdown($blue);
 
-.dropdown-ustensils {
-  @include dropdown();
-  position: absolute;
-  left: 268px;
-  label {
-    display: flex;
-    text-align: center;
-  }
-}
-.ul-drop {
-  display: none;
-  width: 100%;
-  flex-wrap: wrap;
-  margin-left: 2%;
-  text-align: left;
-  justify-content: flex-start;
-  height: 200px;
-  overflow: hidden;
-
-  .item {
-    width: 30%;
-    margin-right: 5px;
-    line-height: 3rem;
-    cursor: pointer;
-    white-space: nowrap;
+  .list {
+    position: absolute;
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    top: 40px;
+    right: 0;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    padding: 4px;
+    background-color: $blue;
+    height: 200px;
     overflow: hidden;
-    text-overflow: ellipsis;
+
+    li {
+      width: 30%;
+      font-size: 1.4rem;
+      margin-left: 2rem;
+      text-align: start;
+      line-height: 2.3rem;
+    }
   }
 }
-
-.ingr-inp {
-  @include dropdown-input();
-  display: none;
+.dropdown-app {
+  @include dropdown($green);
 }
-.app-inp {
-  @include dropdown-input();
-  display: none;
+.dropdown-ust {
+  @include dropdown($orange);
 }
-.ust-inp {
-  @include dropdown-input();
-  display: none;
-}
-.scroller {
-  width: auto;
-  height: 200px;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
-
-.close {
-  display: flex;
-}
-.active {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.pasive {
-  display: none;
-}
-
-.resize {
-  width: 100%;
-}
-
-.index {
-  z-index: 99999;
-}
-
-// .ingr-span {
-//   margin-right: 5%;
-// }
-
-// .dropdowns-mask {
-//   display: none;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-//   background: rgba($color: rgb(107, 107, 107), $alpha: 0.7);
-//   overflow: hidden;
-//   z-index: 100;
-// }

@@ -1,81 +1,59 @@
 .card {
-  background-color: #e7e7e7;
-  height: 370px;
-  border-radius: $radius $radius;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.3s 0s ease-in-out;
-  @include bigPhone-and-higher {
-    margin: 20px;
-    width: 360px;
-  }
-
-  &:hover {
-    transform: scale(1.1);
-  }
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 320px;
 }
-
-.cards-cover {
-  img {
-    border-radius: $radius $radius 0 0;
-    height: 20rem;
-    width: 100%;
-    object-fit: cover;
-  }
+.card-title {
+  width: 70%;
+  font-size: 1rem;
 }
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-
-  .cards-title {
-    font-size: 1.5rem;
-    width: 70%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .cards-header-time {
-    display: flex;
-    align-items: center;
-    font-size: 1.3rem;
-    img {
-      margin-right: 5px;
-    }
-  }
+  height: 200px;
 }
-.cards-main {
+
+.card-header img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: white;
+  padding: 10px;
+}
+.content-top {
   display: flex;
-  padding: 1rem;
-  justify-content: center;
-  .cards-main-description {
-    width: 60%;
-    overflow: hidden;
-    height: 80px;
-  }
+  align-items: center;
+  justify-content: space-between;
+}
 
-  ul {
-    width: 40%;
-    padding: 0 5% 0 0;
-  }
+.content-body {
+  display: flex;
 
-  .ingredients-list {
-    height: 90px;
-    overflow: hidden;
-  }
-  .ingredient-item {
-    font-weight: 500;
+  padding: 10px;
+}
+.ingredient-list {
+  list-style-type: none;
+  width: 80%;
+  padding: 5px 0;
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 0.6rem;
+  text-align: left;
+}
 
-    font-size: 1rem;
-
-    span {
-      font-weight: 600;
-    }
-  }
+.card-title {
+  height: 20px;
+  margin: 0;
+}
+.time {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.card-excerpt {
+  color: black;
+  width: 100%;
+  font-size: 0.6rem;
+  padding: 10px;
 }

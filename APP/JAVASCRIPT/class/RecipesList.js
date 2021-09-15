@@ -40,28 +40,27 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
-  // Ici la fonction pour retourner le tableau de recette demander par l uttilisateur
+  filterRecipe(inp) {
+    let sortedRecipes = [];
+    console.log(inp);
 
-  makeRecipesListToDisplay() {
-    const searchBar = document.getElementById("search-bar");
-    let sortedRecipe = [];
-    searchBar.addEventListener("input", (e) => {
-      console.log(searchBar.value);
+    if (inp.length >= 3) {
+      sortedRecipes = this.recipes.filter((recipe) =>
+        recipe.stringifyRecipes.includes(inp)
+      );
+    }
 
-      if (searchBar.value.length >= 3) {
-        sortedRecipe = this.recipes.filter((recipe) => {
-          return recipe.stringifyRecipes.includes(
-            Utils.removeAccents(searchBar.value)
-          );
-        });
-        console.log(
-          `%c${sortedRecipe.length} recette(s)  trouvé correspondant a vos critéres`,
-          "color: red; font-family:sans-serif; font-size: 15px;font-weight:bolder"
-        );
-        console.table(sortedRecipe);
-        return (this.recipes = sortedRecipe);
-      }
-    });
-    return this.recipes;
+    if (inp.length > 0) {
+    }
+
+    if (sortedRecipes.length === 0) {
+      const noResults = `
+            <div class="no-results">
+            <p>Aucune recette ne correspond à votre critère...</p>
+            <p>Vous pouvez chercher 'tarte au pommes', 'poisson', ect.</p>
+        </div>
+            `;
+    }
+    return sortedRecipes;
   }
 }

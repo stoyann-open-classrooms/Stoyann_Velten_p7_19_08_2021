@@ -1,22 +1,4 @@
 export class Utils {
-  // static userRequest() {
-  //   const searchBar = document.getElementById("search-bar");
-  //   let searchBarVal;
-  //   searchBar.addEventListener("input", (e) => {
-  //     searchBarVal = searchBar.value;
-  //     return searchBarVal;
-  //   });
-  // }
-  static getFilterRequest() {
-    const searchBar = document.getElementById("ingredient-inp");
-    let inpValue;
-    searchBar.addEventListener("input", (e) => {
-      inpValue = removeAccents(searchBar.value);
-      console.log(inpValue);
-    });
-    return inpValue;
-  }
-
   static removeAccents(string) {
     return string
       .toLowerCase()
@@ -34,5 +16,14 @@ export class Utils {
   // retourne la chaine de caractére entrer en paramétres avec la premiere letres en majuscule
   static capitalizeFirstChar(str) {
     return str[0].toUpperCase() + str.slice(1);
+  }
+  static userRequest() {
+    const searchBarInput = document.getElementById("search-bar");
+    let request = "";
+    searchBarInput.addEventListener("input", (e) => {
+      console.log(searchBarInput.value);
+      request = searchBarInput.value;
+    });
+    return request;
   }
 }

@@ -1,49 +1,42 @@
-.search-bar-form {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-
-  width: 100%;
-  @include bigPhone-and-higher {
-    width: 100%;
-  }
-}
-
-.cards-container {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 6rem;
-
-  @include bigPhone-and-higher {
+.container-global {
+  margin: 3% 3%;
+  header {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    padding-top: 10px;
+
+    h1 {
+      color: $primary;
+      margin-top: 5px;
+      font-size: 3rem;
+    }
   }
-}
-.tags-container {
-  width: 100%;
-  padding: 0 0 0 4%;
-  display: flex;
-  margin: auto;
-  margin-bottom: 20px;
-}
+  .result-msg-container {
+    display: none;
+    // opacity: 0;
+    margin: 1rem 0;
+    justify-content: center;
+    // animation: opacity 0.6s ease-in forwards;
+  }
 
-.dropdowns-container {
-  display: flex;
-  width: 100%;
-  position: relative;
-  margin-left: 4%;
-}
+  .input-container {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+  }
+  .dropdowns-container {
+    margin: 1rem 0;
+    display: flex;
+  }
 
-.result-msg-container {
-  display: none;
-  // opacity: 0;
-  margin-bottom: 3rem;
-  justify-content: center;
-  // animation: opacity 0.6s ease-in forwards;
+  .card-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
 }

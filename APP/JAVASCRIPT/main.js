@@ -8,8 +8,6 @@ const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 new MainPageBuilder(recipesList).printPage();
 
-// let userRequest = new MainPageBuilder(recipesList).UserRequest;
-
 // Utils.userRequest();
 // recipesList.recipes.forEach((element) => {
 //   element.stringifyRecipes;
