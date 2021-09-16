@@ -532,9 +532,17 @@ li {
   margin: 1.3rem auto;
 }
 
+.card:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
 .card-title {
   width: 70%;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-header {
@@ -576,7 +584,7 @@ li {
   list-style-type: none;
   width: 80%;
   padding: 5px 0;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   text-align: left;
 }
 
@@ -586,14 +594,19 @@ li {
 }
 
 .time {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
+}
+
+.time i {
+  margin-right: 0.5rem;
 }
 
 .card-excerpt {
   color: black;
   width: 100%;
-  font-size: 0.6rem;
+  font-size: 1.3rem;
+  font-size: 0.9rem;
   padding: 10px;
 }
 
