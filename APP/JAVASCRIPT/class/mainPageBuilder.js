@@ -74,7 +74,7 @@ export class MainPageBuilder {
     const searchBarInput = document.getElementById("search-bar");
     let request = "";
     searchBarInput.addEventListener("input", (e) => {
-      request = searchBarInput.value;
+      request = searchBarInput.value.toLowerCase();
       this.printCard(this.recipesList.filterRecipe(request));
       console.log(request);
     });

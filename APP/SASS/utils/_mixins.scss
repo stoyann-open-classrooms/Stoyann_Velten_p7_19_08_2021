@@ -79,6 +79,10 @@
       margin-left: 2rem;
       text-align: start;
       line-height: 2.3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
     }
   }
 }

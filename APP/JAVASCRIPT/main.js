@@ -8,24 +8,26 @@ const dataFetcher = new DataFetcher(RECIPES);
 const recipesList = dataFetcher.getRecipesList(dataFetcher);
 new MainPageBuilder(recipesList).printPage();
 
-// Utils.userRequest();
-// recipesList.recipes.forEach((element) => {
-//   element.stringifyRecipes;
-// });
-// Animation des cards au scrool
-// function openDrop() {
-//     console.log(this.btn);
-//     this.btn.innerHTML = `<i class="icone fas fa-chevron-down"></i>`;
-//     this.btn.addEventListener("click", () => {
-//       this.dropdown.classList.toggle("active");
-//       this.btn.innerHTML = `<i class="icone fas fa-chevron-up"></i>`;
-//     });
-//   }
-const btnsDrop = document.querySelectorAll(".btn-drop");
-console.log(btnsDrop);
+const btnIngr = document.querySelector(".btn-drop-ingr");
 
-btnsDrop.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    document.querySelector(".dropdown-app").classList.toggle("active");
-  })
-);
+btnIngr.addEventListener("click", () => {
+  document.querySelector(".dropdown-ingr").classList.toggle("active");
+});
+
+const btnApp = document.querySelector(".btn-drop-app");
+
+btnApp.addEventListener("click", () => {
+  document.querySelector(".dropdown-app").classList.toggle("active");
+});
+
+const btnUst = document.querySelector(".btn-drop-ust");
+const closeInfo = document.querySelector(".fa-times-circle");
+const containerInfo = document.querySelector(".result-msg-container");
+
+btnUst.addEventListener("click", () => {
+  document.querySelector(".dropdown-ust").classList.toggle("active");
+});
+
+closeInfo.addEventListener("click", () => {
+  containerInfo.style.display = "none";
+});
