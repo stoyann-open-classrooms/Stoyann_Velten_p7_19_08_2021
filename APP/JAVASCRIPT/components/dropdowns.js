@@ -13,7 +13,6 @@ export class Dropdown {
     this.itemList.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = item;
-      li.classList.add("item");
       this.ul.append(li);
     });
   }

@@ -1,6 +1,6 @@
 // ajoute dynamiquement les couleurs des tags et dropdowns
 
-$categories: ingredients $blue, ustensils $green, appareils $orange;
+$categories: ingredients $blue, appareils $green, ustensiles $orange;
 
 @each $category in $categories {
   .#{nth($category,1)} {

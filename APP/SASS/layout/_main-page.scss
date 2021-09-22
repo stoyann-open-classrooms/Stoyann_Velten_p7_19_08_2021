@@ -14,6 +14,11 @@
       font-size: 3rem;
     }
   }
+
+  .tags-container {
+    display: flex;
+    margin: 2rem 0;
+  }
   .result-msg-container {
     display: none;
     // opacity: 0;

@@ -38,11 +38,11 @@ li {
   background-color: #3282f7;
 }
 
-.ustensils {
+.appareils {
   background-color: #68d9a4;
 }
 
-.appareils {
+.ustensiles {
   background-color: #ed6454;
 }
 
@@ -687,6 +687,13 @@ li {
   color: #d04f4f;
   margin-top: 5px;
   font-size: 3rem;
+}
+
+.container-global .tags-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0;
 }
 
 .container-global .result-msg-container {

@@ -19,6 +19,8 @@ export class MainPageBuilder {
       ul,
       itemList
     ).printDrop();
+    let ingrItems = document.querySelectorAll(".list-ingr > li");
+    ingrItems.forEach((item) => item.classList.add("item-ingr"));
   }
 
   displayAppDrop(itemList) {
@@ -33,6 +35,8 @@ export class MainPageBuilder {
       ul,
       itemList
     ).printDrop();
+    let appItems = document.querySelectorAll(".list-app > li");
+    appItems.forEach((item) => item.classList.add("item-app"));
   }
 
   displayUstDrop(itemList) {
@@ -47,6 +51,8 @@ export class MainPageBuilder {
       ul,
       itemList
     ).printDrop();
+    let ustItems = document.querySelectorAll(".list-ust > li");
+    ustItems.forEach((item) => item.classList.add("item-ust"));
   }
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".card-container");
@@ -80,13 +86,31 @@ export class MainPageBuilder {
     });
   }
   createTags() {
-    let ingredientItems = document.querySelectorAll(".item");
+    let appItems = document.querySelectorAll(".list-app > li");
+    let ingrItems = document.querySelectorAll(".list-ingr > li");
+    let ustItems = document.querySelectorAll(".list-ust > li");
+
     const containerTags = document.querySelector(".tags-container");
-    console.log(ingredientItems);
-    ingredientItems.forEach((el) =>
+
+    appItems.forEach((el) =>
       el.addEventListener("click", () => {
-        let contentTag = el.textContent;
-        let tag = `  <div class="tag">${contentTag}<i class="far fa-times-circle close-tag"></i></div>`;
+        console.log(el);
+        let tag = `  <div class="tag appareils">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        containerTags.innerHTML += tag;
+      })
+    );
+
+    ingrItems.forEach((el) =>
+      el.addEventListener("click", () => {
+        console.log(el);
+        let tag = `  <div class="tag ingredients">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        containerTags.innerHTML += tag;
+      })
+    );
+    ustItems.forEach((el) =>
+      el.addEventListener("click", () => {
+        console.log(el);
+        let tag = `  <div class="tag ustensiles">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
       })
     );
@@ -95,9 +119,9 @@ export class MainPageBuilder {
   printPage() {
     this.printCard(this.recipesList.recipes);
     this.getRequest();
-    this.createTags();
     this.displayIngrDrop(this.recipesList.getAllIngredients());
     this.displayAppDrop(this.recipesList.getAllAppliance());
     this.displayUstDrop(this.recipesList.getAllUstensils());
+    this.createTags();
   }
 }
