@@ -97,7 +97,7 @@ export class MainPageBuilder {
     appItems.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el);
-        let tag = `<div class="tag appareils">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        let tag = `<div class="tag appareils"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
         this.closeTags();
       })
@@ -106,7 +106,7 @@ export class MainPageBuilder {
     ingrItems.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el);
-        let tag = `  <div class="tag ingredients">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        let tag = `  <div class="tag ingredients"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
         this.closeTags();
       })
@@ -114,7 +114,7 @@ export class MainPageBuilder {
     ustItems.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el);
-        let tag = `  <div class="tag ustensiles">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        let tag = `  <div class="tag ustensiles"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
         this.closeTags();
       })

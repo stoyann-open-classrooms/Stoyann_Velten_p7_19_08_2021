@@ -631,31 +631,32 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.3rem;
-  width: 107px;
+  font-size: 1.2rem;
+  position: relative;
+  width: 120px;
   height: 40px;
-  text-align: center;
   color: white;
   border-radius: 1rem;
   margin: 0 10px 0 0;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 .tag .tag-txt {
+  position: absolute;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 70%;
+  left: 6%;
   justify-self: flex-start;
 }
 
-.tag .tag-icone {
-  margin-top: 4%;
-}
-
-.tag .tag-icone i {
+.tag i {
+  position: absolute;
   text-align: center;
   font-size: 2rem;
+  right: 5%;
+  cursor: pointer;
 }
 
 .tag-selected {

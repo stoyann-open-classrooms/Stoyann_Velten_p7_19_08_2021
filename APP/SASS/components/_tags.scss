@@ -2,31 +2,34 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  position: relative;
   // background-color: $green;
-  width: 107px;
+  width: 120px;
   //   max-width: auto;
   height: 40px;
-  text-align: center;
+
   color: white;
   border-radius: $radius;
   margin: 0 10px 0 0;
-  padding: 0.5rem;
+  padding: 0.7rem;
 
   .tag-txt {
+    position: absolute;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 70%;
+    left: 6%;
     justify-self: flex-start;
   }
 
-  .tag-icone {
-    margin-top: 4%;
-    i {
-      text-align: center;
-      font-size: 2rem;
-    }
+  i {
+    position: absolute;
+    text-align: center;
+    font-size: 2rem;
+    right: 5%;
+    cursor: pointer;
   }
 }
 
