@@ -665,6 +665,7 @@ li {
 
 .container-global {
   margin: 3% 3%;
+  position: relative;
 }
 
 .container-global header {
@@ -698,15 +699,19 @@ li {
 
 .container-global .result-msg-container {
   display: none;
+  position: absolute;
+  width: 100%;
   margin: 1rem 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-animation: opacity 0.6s ease-in forwards;
+          animation: opacity 0.6s ease-in forwards;
 }
 
 .container-global .input-container {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 7rem;
   position: relative;
 }
 

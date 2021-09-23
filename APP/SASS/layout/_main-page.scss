@@ -1,5 +1,6 @@
 .container-global {
   margin: 3% 3%;
+  position: relative;
   header {
     width: 100%;
     display: flex;
@@ -21,15 +22,16 @@
   }
   .result-msg-container {
     display: none;
-    // opacity: 0;
+    position: absolute;
+    width: 100%;
     margin: 1rem 0;
     justify-content: center;
-    // animation: opacity 0.6s ease-in forwards;
+    animation: opacity 0.6s ease-in forwards;
   }
 
   .input-container {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 7rem;
     position: relative;
   }
   .dropdowns-container {

@@ -66,8 +66,6 @@ export class MainPageBuilder {
         htmlContent += new Cards(recipesList[i], i).card;
       }
       cardsContainer.innerHTML = htmlContent;
-      resultMsgTxt.innerHTML = `${recipesList.length} recette(s)  trouvé correspondant a vos critéres`;
-      resultMsgDiv.style.backgroundColor = "#68d9a4";
     } else if (recipesList.length === 0) {
       resultMsg.style.display = "flex";
       resultMsgTxt.innerHTML = `Aucune recette ne correspond à vos critères... <br/>
@@ -81,8 +79,12 @@ export class MainPageBuilder {
     let request = "";
     searchBarInput.addEventListener("input", (e) => {
       request = searchBarInput.value.toLowerCase();
-      this.printCard(this.recipesList.filterRecipe(request));
-      console.log(request);
+      if (request.length >= 3) {
+        this.printCard(this.recipesList.filterRecipe(request));
+        console.log(request);
+      } else {
+        document.querySelector(".result-msg-container").style.display = "none";
+      }
     });
   }
   createTags() {
@@ -95,8 +97,9 @@ export class MainPageBuilder {
     appItems.forEach((el) =>
       el.addEventListener("click", () => {
         console.log(el);
-        let tag = `  <div class="tag appareils">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
+        let tag = `<div class="tag appareils">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.closeTags();
       })
     );
 
@@ -105,6 +108,7 @@ export class MainPageBuilder {
         console.log(el);
         let tag = `  <div class="tag ingredients">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.closeTags();
       })
     );
     ustItems.forEach((el) =>
@@ -112,9 +116,12 @@ export class MainPageBuilder {
         console.log(el);
         let tag = `  <div class="tag ustensiles">${el.textContent}<i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.closeTags();
       })
     );
   }
+
+  closeTags() {}
   //  affiche la page
   printPage() {
     this.printCard(this.recipesList.recipes);
