@@ -17,13 +17,4 @@ export class Utils {
   static capitalizeFirstChar(str) {
     return str[0].toUpperCase() + str.slice(1);
   }
-  static userRequest() {
-    const searchBarInput = document.getElementById("search-bar");
-    let request = "";
-    searchBarInput.addEventListener("input", (e) => {
-      console.log(searchBarInput.value);
-      request = searchBarInput.value;
-    });
-    return request;
-  }
 }

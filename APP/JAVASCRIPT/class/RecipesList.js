@@ -42,7 +42,6 @@ export class RecipesList {
 
   filterRecipe(inp) {
     let sortedRecipes = [];
-    console.log(inp);
 
     if (inp.length >= 3) {
       sortedRecipes = this.recipes.filter((recipe) =>

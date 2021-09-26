@@ -6,6 +6,20 @@ import { Utils } from "../utils/utils.js";
 export class MainPageBuilder {
   constructor(recipesList) {
     this.recipesList = recipesList;
+    this.tagSelecteed = [];
+    this.userRequest = {
+      searchBarValue: "",
+      tagSelecteed: [],
+    };
+  }
+  getuserRequest() {
+    const searchBar = document.getElementById("search-bar");
+
+    searchBar.addEventListener("input", () => {
+      this.userRequest.searchBarValue = Utils.removeAccents(searchBar.value);
+      console.log(this.userRequest);
+      return this.userRequest;
+    });
   }
   displayIngrDrop(itemList) {
     const btn = document.querySelector(".btn-drop-ingr");
@@ -58,9 +72,9 @@ export class MainPageBuilder {
     const cardsContainer = document.querySelector(".card-container");
     const resultMsg = document.querySelector(".result-msg-container");
     const resultMsgDiv = document.querySelector(".result-msg");
+
     let resultMsgTxt = document.querySelector(".result-img-txt");
     let htmlContent = ``;
-
     if (recipesList.length > 0) {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
@@ -76,12 +90,12 @@ export class MainPageBuilder {
 
   getRequest() {
     const searchBarInput = document.getElementById("search-bar");
-    let request = "";
+
     searchBarInput.addEventListener("input", (e) => {
-      request = searchBarInput.value.toLowerCase();
-      if (request.length >= 3) {
-        this.printCard(this.recipesList.filterRecipe(request));
-        console.log(request);
+      if (this.userRequest.searchBarValue.length >= 3) {
+        this.printCard(
+          this.recipesList.filterRecipe(this.userRequest.searchBarValue)
+        );
       } else {
         document.querySelector(".result-msg-container").style.display = "none";
       }
@@ -96,39 +110,51 @@ export class MainPageBuilder {
 
     appItems.forEach((el) =>
       el.addEventListener("click", () => {
-        console.log(el);
         let tag = `<div class="tag appareils"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
+
         this.closeTags();
+        this.filterTags();
       })
     );
 
     ingrItems.forEach((el) =>
       el.addEventListener("click", () => {
-        console.log(el);
         let tag = `  <div class="tag ingredients"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
+
         this.closeTags();
+        this.filterTags();
       })
     );
     ustItems.forEach((el) =>
       el.addEventListener("click", () => {
-        console.log(el);
         let tag = `  <div class="tag ustensiles"> <p class="tag-txt">${el.textContent}</p><i class="far fa-times-circle close-tag"></i></div>`;
         containerTags.innerHTML += tag;
+        this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
+
         this.closeTags();
+        this.filterTags();
       })
     );
+  }
+  filterTags() {
+    console.log(this.userRequest);
   }
 
   closeTags() {}
   //  affiche la page
   printPage() {
     this.printCard(this.recipesList.recipes);
+    this.filterTags();
     this.getRequest();
     this.displayIngrDrop(this.recipesList.getAllIngredients());
     this.displayAppDrop(this.recipesList.getAllAppliance());
     this.displayUstDrop(this.recipesList.getAllUstensils());
     this.createTags();
+
+    this.getuserRequest();
   }
 }
