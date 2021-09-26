@@ -79,6 +79,7 @@ export class MainPageBuilder {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
       }
+
       cardsContainer.innerHTML = htmlContent;
     } else if (recipesList.length === 0) {
       resultMsg.style.display = "flex";
