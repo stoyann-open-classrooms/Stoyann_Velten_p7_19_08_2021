@@ -39,21 +39,31 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
+  createListToDisplay() {
+    const ul = document.querySelector(".list-ingr");
+    ul.innerHTML = "";
+    this.getAllIngredients().forEach((el) => {
+      const li = document.createElement("li");
+      li.textContent = el;
+      console.log(li);
+      ul.append(li);
+    });
+  }
   filterRecipe(request) {
-    let sortedRecipes = [];
-
+    // let sortedRecipes = [];
     if (request.searchBarValue.length >= 3) {
-      sortedRecipes = this.recipes.filter((recipe) =>
+      this.recipes = this.recipes.filter((recipe) =>
         recipe.stringifyRecipes.includes(request.searchBarValue)
       );
-    } else if (request.tagSelecteed.length >= 0) {
-      console.log("ok");
-      sortedRecipes = this.recipes.filter((recipe) =>
+    } else if (request.tagSelecteed.length > 0) {
+      this.recipes = this.recipes.filter((recipe) =>
         recipe.stringifyRecipes.includes(request.tagSelecteed)
       );
     }
+    this.createListToDisplay();
+    console.log(this.getAllIngredients());
 
-    if (sortedRecipes.length === 0) {
+    if (this.recipes.length === 0) {
       const noResults = `
             <div class="no-results">
             <p>Aucune recette ne correspond à votre critère...</p>
@@ -61,6 +71,6 @@ export class RecipesList {
         </div>
             `;
     }
-    return sortedRecipes;
+    return this.recipes;
   }
 }

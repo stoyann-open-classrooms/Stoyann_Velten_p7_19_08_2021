@@ -245,7 +245,7 @@ li {
   color: white;
   padding: 4px;
   background-color: #3282f7;
-  height: 200px;
+  max-height: 200px;
   overflow: hidden;
 }
 
@@ -351,7 +351,7 @@ li {
   color: white;
   padding: 4px;
   background-color: #68d9a4;
-  height: 200px;
+  max-height: 200px;
   overflow: hidden;
 }
 
@@ -457,7 +457,7 @@ li {
   color: white;
   padding: 4px;
   background-color: #ed6454;
-  height: 200px;
+  max-height: 200px;
   overflow: hidden;
 }
 

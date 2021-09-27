@@ -70,7 +70,7 @@
     color: white;
     padding: 4px;
     background-color: $color;
-    height: 200px;
+    max-height: 200px;
     overflow: hidden;
 
     li {
