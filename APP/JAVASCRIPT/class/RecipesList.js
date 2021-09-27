@@ -7,7 +7,6 @@ export class RecipesList {
 
   getAllIngredients() {
     const AllIngredients = new Set();
-    const search = document.getElementById("ingredient-inp");
 
     for (let recipe of this.recipes) {
       for (let i = 0; i < recipe.ingredients.length; i++) {
@@ -40,16 +39,18 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
-  filterRecipe(inp) {
+  filterRecipe(request) {
     let sortedRecipes = [];
 
-    if (inp.length >= 3) {
+    if (request.searchBarValue.length >= 3) {
       sortedRecipes = this.recipes.filter((recipe) =>
-        recipe.stringifyRecipes.includes(inp)
+        recipe.stringifyRecipes.includes(request.searchBarValue)
       );
-    }
-
-    if (inp.length > 0) {
+    } else if (request.tagSelecteed.length >= 0) {
+      console.log("ok");
+      sortedRecipes = this.recipes.filter((recipe) =>
+        recipe.stringifyRecipes.includes(request.tagSelecteed)
+      );
     }
 
     if (sortedRecipes.length === 0) {

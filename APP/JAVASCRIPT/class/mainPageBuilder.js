@@ -42,7 +42,7 @@ export class MainPageBuilder {
     const dropdown = document.querySelector(".dropdown.app");
     const icone = document.querySelector(".icone-app");
     const ul = document.querySelector(".list-app");
-    const dropIngr = new Dropdown(
+    this.dropIngr = new Dropdown(
       btn,
       dropdown,
       icone,
@@ -89,19 +89,18 @@ export class MainPageBuilder {
     }
   }
 
-  getRequest() {
+  inputFilterRecipes() {
     const searchBarInput = document.getElementById("search-bar");
 
     searchBarInput.addEventListener("input", (e) => {
       if (this.userRequest.searchBarValue.length >= 3) {
-        this.printCard(
-          this.recipesList.filterRecipe(this.userRequest.searchBarValue)
-        );
+        this.printCard(this.recipesList.filterRecipe(this.userRequest));
       } else {
         document.querySelector(".result-msg-container").style.display = "none";
       }
     });
   }
+
   createTags() {
     let appItems = document.querySelectorAll(".list-app > li");
     let ingrItems = document.querySelectorAll(".list-ingr > li");
@@ -115,7 +114,6 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
 
-        this.closeTags();
         this.filterTags();
       })
     );
@@ -126,7 +124,6 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
 
-        this.closeTags();
         this.filterTags();
       })
     );
@@ -136,21 +133,24 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.userRequest.tagSelecteed.push(Utils.removeAccents(el.textContent));
 
-        this.closeTags();
         this.filterTags();
       })
     );
   }
   filterTags() {
     console.log(this.userRequest);
+    if (this.userRequest.tagSelecteed.length > 0) {
+      console.log("ok");
+      this.printCard(this.recipesList.filterRecipe(this.userRequest));
+    }
   }
 
-  closeTags() {}
   //  affiche la page
   printPage() {
     this.printCard(this.recipesList.recipes);
     this.filterTags();
-    this.getRequest();
+    this.inputFilterRecipes();
+
     this.displayIngrDrop(this.recipesList.getAllIngredients());
     this.displayAppDrop(this.recipesList.getAllAppliance());
     this.displayUstDrop(this.recipesList.getAllUstensils());
