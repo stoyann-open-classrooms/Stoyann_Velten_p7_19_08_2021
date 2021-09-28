@@ -73,9 +73,11 @@ export class RecipesList {
         recipe.stringifyRecipes.includes(request.searchBarValue)
       );
     } else if (request.tagSelecteed.length > 0) {
-      this.recipes = this.recipes.filter((recipe) =>
-        recipe.stringifyRecipes.includes(request.tagSelecteed)
-      );
+      request.tagSelecteed.forEach((tag) => {
+        this.recipes = this.recipes.filter((recipe) =>
+          recipe.stringifyRecipes.includes(tag)
+        );
+      });
     }
     this.createListToDisplay();
 

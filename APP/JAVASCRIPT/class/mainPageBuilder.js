@@ -21,31 +21,6 @@ export class MainPageBuilder {
     });
   }
 
-  displayIngrDrop(itemList) {
-    const btn = document.querySelector(".btn-drop-ingr");
-    const dropdown = document.querySelector(".dropdown.ingr");
-    const icone = document.querySelector(".icone-ingr");
-    const ul = document.querySelector(".list-ingr");
-    const dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-  }
-
-  displayAppDrop(itemList) {
-    const btn = document.querySelector(".btn-drop-app");
-    const dropdown = document.querySelector(".dropdown.app");
-    const icone = document.querySelector(".icone-app");
-    const ul = document.querySelector(".list-app");
-    this.dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-  }
-
-  displayUstDrop(itemList) {
-    const btn = document.querySelector(".btn-drop-ust");
-    const dropdown = document.querySelector(".dropdown.ust");
-    const icone = document.querySelector(".icone-ust");
-    const ul = document.querySelector(".list-ust");
-    const dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-
-    this.recipesList.createListToDisplay();
-  }
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".card-container");
     const resultMsg = document.querySelector(".result-msg-container");
@@ -133,10 +108,7 @@ export class MainPageBuilder {
     this.printCard(this.recipesList.recipes);
     this.filterTags();
     this.inputFilterRecipes();
-
-    this.displayIngrDrop();
-    this.displayAppDrop();
-    this.displayUstDrop();
+    this.recipesList.createListToDisplay();
 
     this.getuserRequest();
     this.createTags();
