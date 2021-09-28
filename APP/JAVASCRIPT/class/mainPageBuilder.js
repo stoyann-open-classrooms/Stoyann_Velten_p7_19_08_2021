@@ -20,26 +20,13 @@ export class MainPageBuilder {
       return this.userRequest;
     });
   }
-  // createItemListToDisplay() {
-  //   const ulIngr = document.querySelector(".list-ingr");
-  //   const ingrList = this.recipesList.getAllIngredients();
-  //   ingrList.forEach((el) => {
-  //     let li = document.createElement("li");
-  //     li.textContent = el;
-  //     ulIngr.append(li);
-  //     li.classList.add("item-ingr");
-  //   });
-  //   console.log(ingrList);
-  // }
+
   displayIngrDrop(itemList) {
     const btn = document.querySelector(".btn-drop-ingr");
     const dropdown = document.querySelector(".dropdown.ingr");
     const icone = document.querySelector(".icone-ingr");
     const ul = document.querySelector(".list-ingr");
     const dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-    // .printDrop();
-    // let ingrItems = document.querySelectorAll(".list-ingr > li");
-    // ingrItems.forEach((item) => item.classList.add("item-ingr"));
   }
 
   displayAppDrop(itemList) {
@@ -48,9 +35,6 @@ export class MainPageBuilder {
     const icone = document.querySelector(".icone-app");
     const ul = document.querySelector(".list-app");
     this.dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-    // .printDrop();
-    // let appItems = document.querySelectorAll(".list-app > li");
-    // appItems.forEach((item) => item.classList.add("item-app"));
   }
 
   displayUstDrop(itemList) {
@@ -59,9 +43,7 @@ export class MainPageBuilder {
     const icone = document.querySelector(".icone-ust");
     const ul = document.querySelector(".list-ust");
     const dropIngr = new Dropdown(btn, dropdown, icone, ul, itemList);
-    // .printDrop();
-    // let ustItems = document.querySelectorAll(".list-ust > li");
-    // ustItems.forEach((item) => item.classList.add("item-ust"));
+
     this.recipesList.createListToDisplay();
   }
   printCard(recipesList) {
@@ -77,6 +59,7 @@ export class MainPageBuilder {
       }
 
       cardsContainer.innerHTML = htmlContent;
+
       // this.createItemListToDisplay();
     } else if (recipesList.length === 0) {
       resultMsg.style.display = "flex";
@@ -141,6 +124,8 @@ export class MainPageBuilder {
     if (this.userRequest.tagSelecteed.length > 0) {
       this.printCard(this.recipesList.filterRecipe(this.userRequest));
     }
+
+    this.createTags();
   }
 
   //  affiche la page
@@ -152,8 +137,8 @@ export class MainPageBuilder {
     this.displayIngrDrop();
     this.displayAppDrop();
     this.displayUstDrop();
-    this.createTags();
 
     this.getuserRequest();
+    this.createTags();
   }
 }

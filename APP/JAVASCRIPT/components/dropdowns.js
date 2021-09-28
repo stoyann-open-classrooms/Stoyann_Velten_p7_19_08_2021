@@ -9,15 +9,15 @@ export class Dropdown {
     this.itemList = itemList;
   }
 
-  createList() {
-    this.itemList.forEach((item) => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      this.ul.append(li);
-    });
-  }
+  // createList() {
+  //   this.itemList.forEach((item) => {
+  //     const li = document.createElement("li");
+  //     li.textContent = item;
+  //     this.ul.append(li);
+  //   });
+  // }
 
-  printDrop() {
-    this.createList();
-  }
+  // printDrop() {
+  //   this.createList();
+  // }
 }

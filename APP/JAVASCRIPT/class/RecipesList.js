@@ -7,6 +7,7 @@ export class RecipesList {
 
   getAllIngredients() {
     const AllIngredients = new Set();
+    const input = document.getElementById("input-ingr");
 
     for (let recipe of this.recipes) {
       for (let i = 0; i < recipe.ingredients.length; i++) {
@@ -40,15 +41,31 @@ export class RecipesList {
   }
 
   createListToDisplay() {
-    const ul = document.querySelector(".list-ingr");
-    ul.innerHTML = "";
+    const ulIngr = document.querySelector(".list-ingr");
+    const ulApp = document.querySelector(".list-app");
+    const ulUst = document.querySelector(".list-ust");
+
+    ulIngr.innerHTML = "";
+    ulApp.innerHTML = "";
+    ulUst.innerHTML = "";
     this.getAllIngredients().forEach((el) => {
       const li = document.createElement("li");
       li.textContent = el;
-      console.log(li);
-      ul.append(li);
+      ulIngr.append(li);
+    });
+
+    this.getAllAppliance().forEach((el) => {
+      const li = document.createElement("li");
+      li.textContent = el;
+      ulApp.append(li);
+    });
+    this.getAllUstensils().forEach((el) => {
+      const li = document.createElement("li");
+      li.textContent = el;
+      ulUst.append(li);
     });
   }
+
   filterRecipe(request) {
     // let sortedRecipes = [];
     if (request.searchBarValue.length >= 3) {
@@ -61,7 +78,6 @@ export class RecipesList {
       );
     }
     this.createListToDisplay();
-    console.log(this.getAllIngredients());
 
     if (this.recipes.length === 0) {
       const noResults = `
@@ -71,6 +87,7 @@ export class RecipesList {
         </div>
             `;
     }
+
     return this.recipes;
   }
 }
