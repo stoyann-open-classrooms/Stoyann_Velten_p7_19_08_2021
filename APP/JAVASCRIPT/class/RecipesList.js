@@ -67,21 +67,21 @@ export class RecipesList {
   }
 
   filterRecipe(request) {
-    // let sortedRecipes = [];
-    if (request.searchBarValue.length >= 3) {
-      this.recipes = this.recipes.filter((recipe) =>
-        recipe.stringifyRecipes.includes(request.searchBarValue)
-      );
-      if (request.searchBarValue.length === 0) {
-        this.recipes = this.recipes;
-      }
-    } else if (request.tagSelecteed.length > 0) {
-      request.tagSelecteed.forEach((tag) => {
-        this.recipes = this.recipes.filter((recipe) =>
-          recipe.stringifyRecipes.includes(tag)
-        );
-      });
-    }
+    // // let sortedRecipes = [];
+    // if (request.searchBarValue.length >= 3) {
+    //   this.recipes = this.recipes.filter((recipe) =>
+    //     recipe.stringifyRecipes.includes(request.searchBarValue)
+    //   );
+    //   if (request.searchBarValue.length === 0) {
+    //     this.recipes = this.recipes;
+    //   }
+    // } else if (request.tagSelecteed.length > 0) {
+    //   request.tagSelecteed.forEach((tag) => {
+    //     this.recipes = this.recipes.filter((recipe) =>
+    //       recipe.stringifyRecipes.includes(tag)
+    //     );
+    //   });
+    // }
     this.createListToDisplay();
 
     if (this.recipes.length === 0) {
