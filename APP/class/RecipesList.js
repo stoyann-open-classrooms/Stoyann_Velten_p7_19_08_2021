@@ -37,11 +37,17 @@ export class RecipesList {
   }
 
   search(request) {
-    let sortedRecipes = [];
     console.log(request);
-    sortedRecipes = this.recipes.filter((el) => {
-      el.name.includes(request.userInput);
+    let sortedRecipes = [];
+    sortedRecipes = this.recipes.filter(function (recipe) {
+      if (recipe.name.includes(request.userInput)) {
+        return true;
+      } else {
+        return false;
+      }
     });
-    console.log(sortedRecipes);
+    console.table(sortedRecipes);
+    this.recipes = sortedRecipes;
+    return this.recipes;
   }
 }

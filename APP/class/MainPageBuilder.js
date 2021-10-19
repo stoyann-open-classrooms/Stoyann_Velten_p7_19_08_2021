@@ -104,13 +104,16 @@ export class MainPageBuilder {
   listenerInput() {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", () => {
-      this.getRecipesListToDisplay();
+      if (this.getUserRequest().userInput.length > 2) {
+        this.getRecipesListToDisplay();
+      }
     });
   }
 
   getRecipesListToDisplay() {
     const request = this.getUserRequest();
     this.recipesList.search(request);
+    this.printCard(this.recipesList.search(this.getUserRequest()));
   }
 
   printPage() {
