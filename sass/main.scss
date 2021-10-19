@@ -1,0 +1,53 @@
+@import "./utils/variables";
+@import "./utils/reset";
+@import "./utils/mixins";
+@import "./layout";
+@import "./components/searchBar";
+@import "./components/tags";
+@import "./components/cards";
+.header-logo {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  h1 {
+    color: $primary;
+  }
+}
+
+.dropdown-Ingredients {
+  @include dropdown($blue);
+}
+.dropdown-Appareils {
+  @include dropdown($green);
+}
+.dropdown-Ustensiles {
+  @include dropdown($orange);
+}
+.active {
+  h3 {
+    display: none;
+  }
+  i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  input {
+    display: flex;
+  }
+  .list {
+    display: flex;
+  }
+  flex: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8888;
+}
+
+.overlay-active {
+  display: block;
+}

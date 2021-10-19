@@ -1,0 +1,32 @@
+.tag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  position: relative;
+  background-color: $green;
+  width: 100px;
+  color: white;
+  height: 35px;
+  border-radius: $radius;
+  margin: 0 1rem 0 0;
+  padding: 0.7rem;
+
+  .tag-txt {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    left: 6%;
+    justify-self: flex-start;
+  }
+
+  button {
+    position: absolute;
+    text-align: center;
+    font-size: 1.4rem;
+    right: 5%;
+    cursor: pointer;
+  }
+}

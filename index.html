@@ -8,73 +8,54 @@
     <meta name="description" content=" Une petite faim ? Rechercher parmis nos recettes et regalez-vous!" />
     <link rel=" shortcut icon" href="./SRC/fav-icon.png" type="image/x-icon" />
     <title>Les petits plats</title>
-    <link rel="stylesheet" href="./APP/SASS/main.css">
     <script src="https://kit.fontawesome.com/6edb39c88a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./sass/main.css">
 </head>
 
 <body>
+    <div class="overlay"></div>
+    <div class="site-content">
 
-    <div class="container-global">
+
+        <!-- header -->
+
         <header>
-            <a href="./index.html">
+            <a href="./index.html" class="header-logo">
                 <img src="./SRC/SVG/logo.svg" alt="">
+                <h1>Les petits plats</h1>
             </a>
-            <h1>Les petits plats</h1>
-            <h2>test branch</h2>
-            <h2>test branch2</h2>
-
         </header>
 
-        <div class="result-msg-container">
-            <div class="result-msg">
-                <div class="result-img-txt"></div>
-                <span id="close-msg"><i class="far fa-times-circle" aria-hidden="true"></i></span>
+        <!-- barre de recherche principal -->
+        <form class="search-bar-container">
+
+            <label for="recherche">Rechercher un ingrédient, appareil, ustensiles ou une recette</label>
+            <input type="text" id="recherche">
+            <i class="fas fa-search"></i>
+        </form>
+
+        <!-- tags selecteed -->
+
+        <div class="container-tags">
+            <div class="tag">
+                <p class="tag-txt">Chocolat au lait</p><button><i class="far fa-times-circle close-tag"></i></button>
+            </div>
+            <div class="tag">
+                <p class="tag-txt">Chocolat</p><button><i class="far fa-times-circle close-tag"></i></button>
             </div>
         </div>
-        <div class="input-container">
-            <label for="search-bar">Rechercher un ingrédient,appareil,ustensiles ou une recette</label>
-            <i class="fas fa-search"></i>
-            <input type="text" id="search-bar">
-        </div>
 
-        <!-- ************** Tags container **************  -->
-
-        <div class="tags-container"></div>
-
-        <!-- ************** Dropdowns **************  -->
-
-
+        <!-- dropdowns -->
         <div class="dropdowns-container">
 
-            <div class="dropdown-ingr ">
-                <h3>Ingrédients</h3>
-                <input type="text" class="input" id="input-ingr" placeholder="Recherche un ingrédient">
-                <button class="btn-drop btn-drop-ingr"><i class="icone icone-ingr fas fa-chevron-down"></i></button>
-
-                <ul class="list list-ingr"></ul>
-            </div>
-            <div class="dropdown-app ">
-                <h3>Appareils</h3>
-                <input type="text" class="input" id="input-app" placeholder="Recherche un Appareils">
-                <button class="btn-drop btn-drop-app"><i class="icone icone-app fas fa-chevron-down"></i></button>
-
-                <ul class="list list-app"></ul>
-            </div>
-            <div class="dropdown-ust">
-                <h3>Ustensiles</h3>
-                <input type="text" class="input" id="input-ust" placeholder="Recherche un Ustensiles">
-                <button class="btn-drop btn-drop-ust"><i class="icone fas fa-chevron-down"></i></button>
-
-                <ul class="list list-ust"></ul>
-            </div>
         </div>
-
-        <!-- ************** cards container **************  -->
-
-        <main class="card-container"></main>
-
+        <main class="cards-container"></main>
     </div>
-    <script src="./APP/JAVASCRIPT/main.js" type="module"></script>
+
+
+
+
+    <script src="./APP/main.js" type="module"></script>
 </body>
 
 </html>

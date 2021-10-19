@@ -1,0 +1,30 @@
+.search-bar-container input {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  background-color: $grey;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.search-bar-container label {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #333;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 8px;
+  transition: all 0.3s ease-in;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  text-overflow: ellipsis;
+}
+
+.search-bar-container:focus-within label,
+.search-bar-container.active-input label {
+  top: -15px;
+  padding-left: 5px;
+  color: #f1f1f1;
+}
