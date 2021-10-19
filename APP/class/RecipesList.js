@@ -1,3 +1,4 @@
+import { Utils } from "../utils/utils.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
@@ -37,15 +38,17 @@ export class RecipesList {
   }
 
   search(request) {
-    console.log(request);
     let sortedRecipes = [];
     sortedRecipes = this.recipes.filter(function (recipe) {
-      if (recipe.name.includes(request.userInput)) {
+      if (
+        recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
+      ) {
         return true;
       } else {
         return false;
       }
     });
+
     console.table(sortedRecipes);
     this.recipes = sortedRecipes;
     return this.recipes;

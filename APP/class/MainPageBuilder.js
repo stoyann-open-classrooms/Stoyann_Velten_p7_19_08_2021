@@ -19,10 +19,7 @@ export class MainPageBuilder {
 
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
-    const resultMsg = document.querySelector(".result-msg-container");
-    const resultMsgDiv = document.querySelector(".result-msg");
 
-    let resultMsgTxt = document.querySelector(".result-img-txt");
     let htmlContent = ``;
     if (recipesList.length > 0) {
       for (let i = 0; i < recipesList.length; i++) {
@@ -30,13 +27,6 @@ export class MainPageBuilder {
       }
 
       cardsContainer.innerHTML = htmlContent;
-
-      // this.createItemListToDisplay();
-    } else if (recipesList.length === 0) {
-      resultMsg.style.display = "flex";
-      resultMsgTxt.innerHTML = `Aucune recette ne correspond à vos critères... <br/>
-       Vous pouvez chercher "tarte aux pommes", "poisson", ect.`;
-      resultMsgDiv.style.backgroundColor = "#d04f4fbd";
     }
   }
   printDropdown() {
@@ -96,7 +86,6 @@ export class MainPageBuilder {
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener("click", () => {
         this.tagSelecteed.push(items[i].innerHTML.toLowerCase());
-        this.getRecipesListToDisplay();
       });
     }
   }
