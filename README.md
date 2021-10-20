@@ -16,6 +16,8 @@
 
 # Plan de l'application :
 
+## ![Fiche investigation fonctionamitées #1](/Doc/algorigramme.jpg)
+
 ## ![Plan de Lapplication](/Doc/plan_app.png)
 
 ### Le rendu de ce code est accessible sur cette [GitHub Page dédiée.](https://stoyann-open-classrooms.github.io/Stoyann_Velten_p7_19_08_2021/)
