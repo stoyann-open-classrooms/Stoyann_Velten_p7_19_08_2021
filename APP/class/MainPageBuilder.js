@@ -1,4 +1,3 @@
-import { Utils } from "../utils/Utils.js";
 import { searchBarInp } from "../components/searchBar.js";
 import { Cards } from "../components/Cards.js";
 import { Dropdown } from "../components/dropdowns.js";
