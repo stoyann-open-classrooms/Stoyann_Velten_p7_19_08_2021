@@ -31,7 +31,7 @@ export class MainPageBuilder {
   }
   printDropdown() {
     const dropContainer = document.querySelector(".dropdowns-container");
-
+    dropContainer.innerHTML = "";
     this.sort.forEach((el) => {
       if (el === "Ingredients") {
         dropContainer.innerHTML += new Dropdown(
@@ -103,6 +103,7 @@ export class MainPageBuilder {
     const request = this.getUserRequest();
     this.recipesList.search(request);
     this.printCard(this.recipesList.search(this.getUserRequest()));
+    this.printDropdown();
   }
 
   printPage() {
