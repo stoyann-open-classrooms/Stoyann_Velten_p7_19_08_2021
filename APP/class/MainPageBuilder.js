@@ -1,4 +1,4 @@
-import { Utils } from "../utils/utils.js";
+import { Utils } from "../utils/Utils.js";
 import { searchBarInp } from "../components/searchBar.js";
 import { Cards } from "../components/Cards.js";
 import { Dropdown } from "../components/dropdowns.js";
@@ -83,9 +83,15 @@ export class MainPageBuilder {
 
   listenerItemsDrop() {
     let items = document.querySelectorAll(".items");
+    let containerTags = document.querySelector(".container-tags");
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener("click", () => {
         this.tagSelecteed.push(items[i].innerHTML.toLowerCase());
+        items[i].classList.add("active-tags");
+        let tag = `  <div class="tag">
+        <p class="tag-txt">${items[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+    </div>`;
+        containerTags.innerHTML += tag;
       });
     }
   }
@@ -101,9 +107,11 @@ export class MainPageBuilder {
 
   getRecipesListToDisplay() {
     const request = this.getUserRequest();
+
     this.recipesList.search(request);
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
+    this.listenerItemsDrop();
   }
 
   printPage() {

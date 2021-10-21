@@ -625,4 +625,8 @@ header {
 .overlay-active {
   display: block;
 }
+
+.active-tags {
+  opacity: 0.3;
+}
 /*# sourceMappingURL=main.css.map */
