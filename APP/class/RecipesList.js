@@ -1,4 +1,4 @@
-import { Utils } from "../utils/utils.js";
+import { Utils } from "../utils/Utils.js";
 export class RecipesList {
   constructor(recipes) {
     this.recipes = recipes;
