@@ -51,6 +51,7 @@ export class RecipesList {
 
     console.table(sortedRecipes);
     this.recipes = sortedRecipes;
+
     return this.recipes;
   }
 }
