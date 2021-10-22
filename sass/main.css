@@ -40,6 +40,18 @@ button {
   cursor: pointer;
 }
 
+.ingredients {
+  background-color: #3282f7;
+}
+
+.appareils {
+  background-color: #68d9a4;
+}
+
+.ustensils {
+  background-color: #ed6454;
+}
+
 .site-content {
   height: 100vh;
   width: 100vw;
@@ -144,7 +156,6 @@ header {
           align-items: center;
   font-size: 1.2rem;
   position: relative;
-  background-color: #68d9a4;
   width: 100px;
   color: white;
   height: 35px;
@@ -628,5 +639,38 @@ header {
 
 .active-tags {
   opacity: 0.3;
+}
+
+.message {
+  background-color: #e7e7e7;
+  width: 100%;
+  color: #d04f4f;
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.message .message-txt {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message .message-exp {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.message button {
+  color: #333;
+  position: absolute;
+  top: 13%;
+  right: 3%;
+}
+
+.message button i {
+  font-weight: bolder;
+  font-size: 2rem;
 }
 /*# sourceMappingURL=main.css.map */

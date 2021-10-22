@@ -1,0 +1,9 @@
+// ajoute dynamiquement les couleurs des tags et dropdowns
+
+$categories: ingredients $blue, appareils $green, ustensils $orange;
+
+@each $category in $categories {
+  .#{nth($category,1)} {
+    background-color: nth($category, 2);
+  }
+}

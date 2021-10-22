@@ -24,9 +24,15 @@ export class MainPageBuilder {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
       }
-
-      cardsContainer.innerHTML = htmlContent;
+    } else {
+      htmlContent = `   
+      <div class="message">
+        <p class="message-txt">Aucune recette ne correpond à votre critère...</p>
+        <p class="message-exp">Vous pouvez chercher " tartes aux pommes ", " poisson ", ect.</p>
+      <button><i class="far fa-times-circle close-tag"></i></button>
+      </div>`;
     }
+    cardsContainer.innerHTML = htmlContent;
   }
   printDropdown() {
     const dropContainer = document.querySelector(".dropdowns-container");
@@ -81,14 +87,38 @@ export class MainPageBuilder {
   }
 
   listenerItemsDrop() {
-    let items = document.querySelectorAll(".items");
+    let itemsIngr = document.querySelectorAll(".items-Ingredients");
+    let itemsAppr = document.querySelectorAll(".items-Appareils");
+    let itemsUst = document.querySelectorAll(".items-Ustensiles");
     let containerTags = document.querySelector(".container-tags");
-    for (let i = 0; i < items.length; i++) {
-      items[i].addEventListener("click", () => {
-        this.tagSelecteed.push(items[i].innerHTML.toLowerCase());
-        items[i].classList.add("active-tags");
-        let tag = `  <div class="tag">
-        <p class="tag-txt">${items[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+
+    for (let i = 0; i < itemsIngr.length; i++) {
+      itemsIngr[i].addEventListener("click", () => {
+        this.tagSelecteed.push(itemsIngr[i].innerHTML.toLowerCase());
+        itemsIngr[i].classList.add("active-tags");
+        let tag = `  <div class="tag  ingredients">
+        <p class="tag-txt">${itemsIngr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+    </div>`;
+        containerTags.innerHTML += tag;
+      });
+    }
+
+    for (let i = 0; i < itemsAppr.length; i++) {
+      itemsAppr[i].addEventListener("click", () => {
+        this.tagSelecteed.push(itemsAppr[i].innerHTML.toLowerCase());
+        itemsAppr[i].classList.add("active-tags");
+        let tag = `  <div class="tag  appareils">
+        <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+    </div>`;
+        containerTags.innerHTML += tag;
+      });
+    }
+    for (let i = 0; i < itemsUst.length; i++) {
+      itemsUst[i].addEventListener("click", () => {
+        this.tagSelecteed.push(itemsUst[i].innerHTML.toLowerCase());
+        itemsUst[i].classList.add("active-tags");
+        let tag = `  <div class="tag  ustensils">
+        <p class="tag-txt">${itemsUst[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
       });
@@ -108,6 +138,7 @@ export class MainPageBuilder {
     const request = this.getUserRequest();
 
     this.recipesList.search(request);
+    this.recipesList.searchByTags(request);
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
     this.listenerItemsDrop();

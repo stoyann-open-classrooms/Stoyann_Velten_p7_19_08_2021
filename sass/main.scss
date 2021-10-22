@@ -1,6 +1,7 @@
 @import "./utils/variables";
 @import "./utils/reset";
 @import "./utils/mixins";
+@import "./utils/foreach";
 @import "./layout";
 @import "./components/searchBar";
 @import "./components/tags";
@@ -53,4 +54,34 @@
 }
 .active-tags {
   opacity: 0.3;
+}
+
+.message {
+  background-color: $grey;
+  width: 100%;
+  color: $primary;
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+
+  .message-txt {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .message-exp {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  button {
+    color: #333;
+    position: absolute;
+    top: 13%;
+    right: 3%;
+    i {
+      font-weight: bolder;
+      font-size: 2rem;
+    }
+  }
 }
