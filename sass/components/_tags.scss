@@ -4,7 +4,7 @@
   align-items: center;
   font-size: 1.2rem;
   position: relative;
-
+  animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   width: 100px;
   color: white;
   height: 35px;

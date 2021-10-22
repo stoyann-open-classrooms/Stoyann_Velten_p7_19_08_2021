@@ -130,6 +130,8 @@ export class MainPageBuilder {
     searchBar.addEventListener("input", () => {
       if (this.getUserRequest().userInput.length > 2) {
         this.getRecipesListToDisplay();
+      } else {
+        this.printCard(this.recipesList.recipes);
       }
     });
   }
@@ -138,7 +140,7 @@ export class MainPageBuilder {
     const request = this.getUserRequest();
 
     this.recipesList.search(request);
-    this.recipesList.searchByTags(request);
+
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
     this.listenerItemsDrop();

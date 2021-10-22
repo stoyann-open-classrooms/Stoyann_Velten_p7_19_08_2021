@@ -49,8 +49,8 @@ export class RecipesList {
       }
     });
 
-    this.recipes = sortedRecipes;
+    // this.recipes = sortedRecipes;
 
-    return this.recipes;
+    return sortedRecipes;
   }
 }

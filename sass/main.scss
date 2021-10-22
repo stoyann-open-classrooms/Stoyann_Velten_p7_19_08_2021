@@ -2,6 +2,7 @@
 @import "./utils/reset";
 @import "./utils/mixins";
 @import "./utils/foreach";
+@import "./utils/animations";
 @import "./layout";
 @import "./components/searchBar";
 @import "./components/tags";
@@ -64,6 +65,7 @@
   padding: 1rem;
   border-radius: 10px;
   margin-top: 2rem;
+  animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   .message-txt {
     font-size: 2.2rem;
