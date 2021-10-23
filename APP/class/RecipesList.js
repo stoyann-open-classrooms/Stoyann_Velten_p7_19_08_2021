@@ -39,18 +39,42 @@ export class RecipesList {
 
   search(request) {
     let sortedRecipes = [];
-    sortedRecipes = this.recipes.filter(function (recipe) {
+    // sortedRecipes = this.recipes.filter(function (recipe) {
+    //   if (
+    //     recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
+    //   ) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+    for (let i = 0; i < this.recipes.length; i++) {
       if (
-        recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
+        this.recipes[i].stringifyRecipes.includes(
+          Utils.removeAccents(request.userInput)
+        )
       ) {
-        return true;
-      } else {
-        return false;
+        sortedRecipes.push(this.recipes[i]);
       }
-    });
+    }
+    this.recipes = sortedRecipes;
+    return this.recipes;
+  }
+  searchByTags(request) {
+    let sortedRecipes = [];
 
-    // this.recipes = sortedRecipes;
-
-    return sortedRecipes;
+    console.log(request);
+    for (let i = 0; i < this.recipes.length; i++) {
+      if (
+        this.recipes[i].stringifyRecipes.includes(
+          Utils.removeAccents(request.tags)
+        )
+      ) {
+        sortedRecipes.push(this.recipes[i]);
+      }
+    }
+    console.log(sortedRecipes);
+    this.recipes = sortedRecipes;
+    return this.recipes;
   }
 }

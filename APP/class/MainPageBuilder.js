@@ -68,6 +68,12 @@ export class MainPageBuilder {
         .querySelector(".dropdown-Ingredients")
         .classList.toggle("active");
       overlay.classList.toggle("overlay-active");
+      const ingrInput = document.getElementById("input-Ingredients");
+      console.log(ingrInput);
+      ingrInput.addEventListener("input", () => {
+        let inputIngrValue = ingrInput.value;
+        console.log(inputIngrValue);
+      });
     });
     btnDropUst.addEventListener("click", () => {
       document.querySelector(".dropdown-Ustensiles").classList.toggle("active");
@@ -100,6 +106,7 @@ export class MainPageBuilder {
         <p class="tag-txt">${itemsIngr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
+        this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
       });
     }
 
@@ -111,6 +118,7 @@ export class MainPageBuilder {
         <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
+        this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
@@ -121,6 +129,7 @@ export class MainPageBuilder {
         <p class="tag-txt">${itemsUst[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
+        this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
       });
     }
   }
@@ -130,8 +139,6 @@ export class MainPageBuilder {
     searchBar.addEventListener("input", () => {
       if (this.getUserRequest().userInput.length > 2) {
         this.getRecipesListToDisplay();
-      } else {
-        this.printCard(this.recipesList.recipes);
       }
     });
   }
@@ -140,6 +147,7 @@ export class MainPageBuilder {
     const request = this.getUserRequest();
 
     this.recipesList.search(request);
+    // this.recipesList.searchByTags(request);
 
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
