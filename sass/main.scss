@@ -26,6 +26,7 @@
   @include dropdown($orange);
 }
 .active {
+  z-index: 999999;
   h3 {
     display: none;
   }
@@ -49,7 +50,7 @@
   display: none;
   width: 100vw;
   height: 100vh;
-  z-index: 8888;
+  z-index: 999998;
 }
 
 .overlay-active {

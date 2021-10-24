@@ -3,9 +3,11 @@
   margin: 2rem auto;
   border-radius: 10px;
   overflow: hidden;
-  max-width: 310px;
+  width: 310px;
   height: 320px;
-
+  @include bigPhone-and-lower {
+    width: 100%;
+  }
   &:active {
     transform: scale(0.98);
   }

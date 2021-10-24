@@ -1,7 +1,7 @@
 // ===================== responsive =====================
 
-@mixin bigPhone-and-higher {
-  @media screen and (min-width: $bigPhone) {
+@mixin bigPhone-and-lower {
+  @media screen and (max-width: $bigPhone) {
     @content;
   }
 }

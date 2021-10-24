@@ -28,7 +28,8 @@ export class Dropdown {
     }" placeholder="Recherche un ${this.type}">
     <button class="btn-drop btn-drop-${
       this.type
-    }"><i class="icone icone-ingr fas fa-chevron-down"></i></button>
+    }"><i class="icone icone-ingr fas fa-chevron-down"
+    }"></i></button>
 
     <ul class="list list-${this.type} " >${this.listDropdown()}</ul>
 </div>

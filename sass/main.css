@@ -153,6 +153,15 @@ header {
   display: flex;
 }
 
+@media screen and (max-width: 40.5rem) {
+  .dropdowns-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .cards-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,8 +253,14 @@ header {
   margin: 2rem auto;
   border-radius: 10px;
   overflow: hidden;
-  max-width: 310px;
+  width: 310px;
   height: 320px;
+}
+
+@media screen and (max-width: 40.5rem) {
+  .card {
+    width: 100%;
+  }
 }
 
 .card:active {
@@ -651,6 +666,7 @@ header {
 }
 
 .active {
+  z-index: 999999;
   -webkit-box-flex: 0.8;
       -ms-flex: 0.8;
           flex: 0.8;
@@ -688,7 +704,7 @@ header {
   display: none;
   width: 100vw;
   height: 100vh;
-  z-index: 8888;
+  z-index: 999998;
 }
 
 .overlay-active {
