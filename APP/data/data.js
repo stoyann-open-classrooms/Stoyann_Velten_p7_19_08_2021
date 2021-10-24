@@ -1837,6 +1837,7 @@ export const RECIPES = [
   {
     id: 51,
     name: "Confiture d'igname mauve",
+    altText: "Une verrine de confiture d'igname mauve",
     servings: 4,
     ingredients: [
       {
@@ -1873,6 +1874,7 @@ export const RECIPES = [
   {
     id: 52,
     name: "Rilletes de porc 'fin' faciles",
+    altText: "Un pot de rillettes de porc et des toast  a pret a être manger",
     servings: 12,
     ingredients: [
       {
@@ -1886,7 +1888,7 @@ export const RECIPES = [
         unit: "cl",
       },
       {
-        ingredient: "Graiise d'oie",
+        ingredient: "Graise d'oie",
         quantity: 150,
         unit: "g",
       },
@@ -1915,6 +1917,7 @@ export const RECIPES = [
   {
     id: 53,
     name: "Steak de thon aux épices",
+    altText: "Steak de thon aux épices tout juste découper",
     servings: 4,
     ingredients: [
       {

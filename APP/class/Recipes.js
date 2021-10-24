@@ -4,6 +4,7 @@ export class Recipe {
   constructor(
     id,
     name,
+    altTxt,
     servings,
     ingredients,
     time,
@@ -13,6 +14,7 @@ export class Recipe {
   ) {
     this.id = id;
     this.name = name;
+    this.altTxt = altTxt;
     this.servings = servings;
     this.ingredients = ingredients;
     this.time = time;

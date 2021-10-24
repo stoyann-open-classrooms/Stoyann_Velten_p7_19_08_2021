@@ -14,6 +14,7 @@ export class DataFetcher {
         new Recipe(
           recipe.id,
           recipe.name,
+          recipe.altText,
           recipe.servings,
           recipe.ingredients,
           recipe.time,

@@ -37,7 +37,7 @@ export class Cards {
                   <div class="card-header">
                   <img src="./SRC/images/${
                     this.recipe.id
-                  }.jpg" class="cover" alt="">
+                  }.jpg" class="cover" alt="${this.recipe.altTxt}">
                   
                   </div>
                   <div class="card-content">
