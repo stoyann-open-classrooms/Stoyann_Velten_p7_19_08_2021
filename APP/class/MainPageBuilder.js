@@ -68,12 +68,6 @@ export class MainPageBuilder {
         .querySelector(".dropdown-Ingredients")
         .classList.toggle("active");
       overlay.classList.toggle("overlay-active");
-      const ingrInput = document.getElementById("input-Ingredients");
-      console.log(ingrInput);
-      ingrInput.addEventListener("input", () => {
-        let inputIngrValue = ingrInput.value;
-        console.log(inputIngrValue);
-      });
     });
     btnDropUst.addEventListener("click", () => {
       document.querySelector(".dropdown-Ustensiles").classList.toggle("active");
@@ -107,6 +101,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
+        this.printDropdown();
       });
     }
 
@@ -119,6 +114,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
+        this.printDropdown();
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
@@ -130,6 +126,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
+        this.printDropdown();
       });
     }
   }

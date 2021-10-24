@@ -6,7 +6,6 @@ export class RecipesList {
 
   getAllIngredients() {
     const AllIngredients = new Set();
-    const input = document.getElementById("input-ingr");
 
     for (let recipe of this.recipes) {
       for (let i = 0; i < recipe.ingredients.length; i++) {
