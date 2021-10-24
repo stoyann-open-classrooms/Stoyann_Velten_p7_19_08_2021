@@ -9,6 +9,14 @@
 header {
   display: flex;
   justify-content: center;
+  .header-logo {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    h1 {
+      color: $primary;
+    }
+  }
 }
 
 .search-bar-container {
@@ -20,10 +28,10 @@ header {
     position: absolute;
     color: #333;
     top: 50%;
-    right: 0;
+    right: 2%;
     transform: translateY(-50%);
     padding-right: 8px;
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 }
 

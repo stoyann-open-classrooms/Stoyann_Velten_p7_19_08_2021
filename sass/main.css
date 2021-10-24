@@ -120,6 +120,23 @@ header {
           justify-content: center;
 }
 
+header .header-logo {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header-logo h1 {
+  color: #d04f4f;
+}
+
 .search-bar-container {
   width: 100%;
   margin: 2rem 0;
@@ -133,11 +150,11 @@ header {
   position: absolute;
   color: #333;
   top: 50%;
-  right: 0;
+  right: 2%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   padding-right: 8px;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 .container-tags {
@@ -177,6 +194,7 @@ header {
 
 .search-bar-container input {
   width: 100%;
+  height: 5rem;
   padding: 1rem;
   outline: none;
   border: none;
@@ -206,169 +224,6 @@ header {
   top: -15px;
   padding-left: 5px;
   color: #f1f1f1;
-}
-
-.tag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.2rem;
-  position: relative;
-  -webkit-animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  width: 100px;
-  color: white;
-  height: 35px;
-  border-radius: 1rem;
-  margin: 0 1rem 0 0;
-  padding: 0.7rem;
-}
-
-.tag .tag-txt {
-  position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 70%;
-  left: 6%;
-  justify-self: flex-start;
-}
-
-.tag button {
-  position: absolute;
-  text-align: center;
-  font-size: 1.4rem;
-  right: 5%;
-  cursor: pointer;
-}
-
-.card {
-  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  margin: 2rem auto;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 310px;
-  height: 320px;
-}
-
-@media screen and (max-width: 40.5rem) {
-  .card {
-    width: 100%;
-  }
-}
-
-.card:active {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-}
-
-.card-title {
-  width: 70%;
-  font-size: 1.3rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card-header {
-  height: 200px;
-}
-
-.card-header img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.card-content {
-  background-color: white;
-  padding: 10px;
-}
-
-.content-top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.content-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.ingredient-list {
-  list-style-type: none;
-  width: 60%;
-  padding: 5px 0;
-  font-size: 0.8rem;
-  text-align: left;
-}
-
-.card-title {
-  height: 20px;
-  margin: 0;
-}
-
-.time {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.time i {
-  margin-right: 0.5rem;
-}
-
-.card-excerpt {
-  color: black;
-  width: 90%;
-  margin-top: 5px;
-  font-size: 1rem;
-  position: relative;
-  height: 70px;
-  overflow: hidden;
-}
-
-.card-excerpt::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
-  width: 100%;
-  height: 3.2em;
-}
-
-.header-logo {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header-logo h1 {
-  color: #d04f4f;
 }
 
 .dropdown-Ingredients {
@@ -726,8 +581,192 @@ header {
   display: block;
 }
 
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  position: relative;
+  -webkit-animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  width: 100px;
+  color: white;
+  height: 35px;
+  border-radius: 1rem;
+  margin: 0 1rem 0 0;
+  padding: 0.7rem;
+}
+
+.tag .tag-txt {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 70%;
+  left: 6%;
+  justify-self: flex-start;
+}
+
+.tag button {
+  position: absolute;
+  text-align: center;
+  font-size: 1.4rem;
+  right: 5%;
+  cursor: pointer;
+}
+
 .active-tags {
   opacity: 0.3;
+}
+
+.card {
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 310px;
+  height: 320px;
+}
+
+@media screen and (max-width: 40.5rem) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.card-title {
+  width: 70%;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-header {
+  height: 200px;
+}
+
+.card-header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: white;
+  padding: 10px;
+}
+
+.content-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ingredient-list {
+  list-style-type: none;
+  width: 70%;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  text-align: left;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+}
+
+.ingredient-list::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+  width: 100%;
+  height: 3.2em;
+}
+
+.ingredient-list .ingredient-item {
+  margin-bottom: 2%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  text-overflow: ellipsis;
+}
+
+.card-title {
+  height: 20px;
+  margin: 0;
+}
+
+.time {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.time i {
+  margin-right: 0.5rem;
+}
+
+.card-excerpt {
+  color: black;
+  width: 90%;
+  margin-top: 5px;
+  font-size: 1rem;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+}
+
+.card-excerpt::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+  width: 100%;
+  height: 3.2em;
 }
 
 .message {
@@ -763,20 +802,5 @@ header {
 .message button i {
   font-weight: bolder;
   font-size: 2rem;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-  border-radius: 1rem;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */

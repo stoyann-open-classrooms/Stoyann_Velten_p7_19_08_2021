@@ -1,0 +1,40 @@
+.dropdown-Ingredients {
+  @include dropdown($blue);
+}
+.dropdown-Appareils {
+  @include dropdown($green);
+}
+.dropdown-Ustensiles {
+  @include dropdown($orange);
+}
+.active {
+  z-index: 999999;
+  h3 {
+    display: none;
+  }
+  i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  input {
+    display: flex;
+  }
+  .list {
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  flex: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999998;
+}
+
+.overlay-active {
+  display: block;
+}
