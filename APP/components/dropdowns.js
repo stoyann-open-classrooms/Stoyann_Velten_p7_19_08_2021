@@ -30,7 +30,7 @@ export class Dropdown {
       this.type
     }"><i class="icone icone-ingr fas fa-chevron-down"></i></button>
 
-    <ul class="list list-${this.type}">${this.listDropdown()}</ul>
+    <ul class="list list-${this.type} " >${this.listDropdown()}</ul>
 </div>
 `;
   }

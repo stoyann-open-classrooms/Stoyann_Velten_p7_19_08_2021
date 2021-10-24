@@ -679,6 +679,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -730,5 +732,20 @@ header {
 .message button i {
   font-weight: bolder;
   font-size: 2rem;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */
