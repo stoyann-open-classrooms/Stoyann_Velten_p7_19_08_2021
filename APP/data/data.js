@@ -1926,7 +1926,7 @@ export const RECIPES = [
         unit: "de 150 g",
       },
       {
-        ingredient: "tomates cerises en grappe",
+        ingredient: "tomates cerises",
         quantity: 250,
         unit: "g",
       },
@@ -1960,7 +1960,7 @@ export const RECIPES = [
         unit: "cuillère à soupe",
       },
       {
-        ingredient: "bouquet de coriandre fraiche",
+        ingredient: "bouquet de coriandre",
         quantity: 1,
       },
     ],
