@@ -38,24 +38,30 @@ export class RecipesList {
 
   search(request) {
     let sortedRecipes = [];
-    // sortedRecipes = this.recipes.filter(function (recipe) {
-    //   if (
-    //     recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
-    //   ) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // });
-    for (let i = 0; i < this.recipes.length; i++) {
+
+    sortedRecipes = this.recipes.filter(function (recipe) {
       if (
-        this.recipes[i].stringifyRecipes.includes(
-          Utils.removeAccents(request.userInput)
-        )
+        recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
       ) {
-        sortedRecipes.push(this.recipes[i]);
+        return true;
+      } else {
+        return false;
       }
-    }
+    });
+    // // //  ================ version 2 algorythmes  ================
+
+    //   for (let i = 0; i < this.recipes.length; i++) {
+    //     if (
+    //       this.recipes[i].stringifyRecipes.includes(
+    //         Utils.removeAccents(request.userInput)
+    //       )
+    //     ) {
+    //       sortedRecipes.push(this.recipes[i]);
+    //     }
+    //   }
+
+    return sortedRecipes;
+
     this.recipes = sortedRecipes;
     return this.recipes;
   }

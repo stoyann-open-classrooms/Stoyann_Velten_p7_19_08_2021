@@ -133,9 +133,12 @@ export class MainPageBuilder {
 
   listenerInput() {
     const searchBar = document.getElementById("recherche");
-    searchBar.addEventListener("input", () => {
-      if (this.getUserRequest().userInput.length > 2) {
+    searchBar.addEventListener("keydown", () => {
+      if (this.getUserRequest().userInput.length >= 2) {
         this.getRecipesListToDisplay();
+      } else {
+        this.printCard(this.recipesList.recipes);
+        this.printDropdown();
       }
     });
   }
