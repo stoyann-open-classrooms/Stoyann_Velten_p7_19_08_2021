@@ -102,6 +102,7 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
+        this.listenerItemsDrop();
       });
     }
 
@@ -115,6 +116,7 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
+        this.listenerItemsDrop();
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
@@ -127,6 +129,7 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
+        this.listenerItemsDrop();
       });
     }
   }
@@ -152,6 +155,11 @@ export class MainPageBuilder {
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
     this.listenerItemsDrop();
+  }
+
+  closeTags() {
+    let tags = document.querySelectorAll(".tag-txt");
+    console.log(tags);
   }
 
   printPage() {
