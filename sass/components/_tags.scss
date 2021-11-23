@@ -22,12 +22,11 @@
     justify-self: flex-start;
   }
 
-  button {
+  .closeBtn {
     position: absolute;
     text-align: center;
     font-size: 1.4rem;
     right: 5%;
-    cursor: pointer;
   }
 }
 

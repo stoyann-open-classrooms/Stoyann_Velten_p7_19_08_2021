@@ -627,12 +627,11 @@ header .header-logo h1 {
   justify-self: flex-start;
 }
 
-.tag button {
+.tag .closeBtn {
   position: absolute;
   text-align: center;
   font-size: 1.4rem;
   right: 5%;
-  cursor: pointer;
 }
 
 .active-tags {

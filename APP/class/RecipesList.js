@@ -67,8 +67,8 @@ export class RecipesList {
   }
   searchByTags(request) {
     let sortedRecipes = [];
-
     console.log(request);
+
     for (let i = 0; i < this.recipes.length; i++) {
       if (
         this.recipes[i].stringifyRecipes.includes(
@@ -78,8 +78,7 @@ export class RecipesList {
         sortedRecipes.push(this.recipes[i]);
       }
     }
+    return sortedRecipes;
     console.log(sortedRecipes);
-    this.recipes = sortedRecipes;
-    return this.recipes;
   }
 }

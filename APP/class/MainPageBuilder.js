@@ -12,7 +12,7 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     return {
       userInput: searchBar.value.trim(),
-      tags: this.tagSelecteed.join(),
+      tags: this.tagSelecteed.join("  "),
     };
   }
 
@@ -23,6 +23,7 @@ export class MainPageBuilder {
     if (recipesList.length > 0) {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
+        this.printDropdown();
       }
     } else {
       htmlContent = `   
@@ -32,6 +33,7 @@ export class MainPageBuilder {
       <button><i class="far fa-times-circle close-tag"></i></button>
       </div>`;
     }
+
     cardsContainer.innerHTML = htmlContent;
   }
   printDropdown() {
@@ -87,6 +89,7 @@ export class MainPageBuilder {
   }
 
   listenerItemsDrop() {
+    const request = this.getUserRequest();
     let itemsIngr = document.querySelectorAll(".items-Ingredients");
     let itemsAppr = document.querySelectorAll(".items-Appareils");
     let itemsUst = document.querySelectorAll(".items-Ustensiles");
@@ -96,13 +99,15 @@ export class MainPageBuilder {
       itemsIngr[i].addEventListener("click", () => {
         this.tagSelecteed.push(itemsIngr[i].innerHTML.toLowerCase());
         itemsIngr[i].classList.add("active-tags");
-        let tag = `  <div class="tag  ingredients">
-        <p class="tag-txt">${itemsIngr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+        let tag = `  <div class="tag  ingredients" id="ingredients-${i}">
+        <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
         this.listenerItemsDrop();
+
+        this.closeTags();
       });
     }
 
@@ -110,26 +115,30 @@ export class MainPageBuilder {
       itemsAppr[i].addEventListener("click", () => {
         this.tagSelecteed.push(itemsAppr[i].innerHTML.toLowerCase());
         itemsAppr[i].classList.add("active-tags");
-        let tag = `  <div class="tag  appareils">
-        <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+        let tag = `  <div class="tag  appareils" id="apparreil-${i}">
+        <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button class="closeBtn" id="apparreil-${i}" ><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
         this.listenerItemsDrop();
+
+        this.closeTags();
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
       itemsUst[i].addEventListener("click", () => {
         this.tagSelecteed.push(itemsUst[i].innerHTML.toLowerCase());
         itemsUst[i].classList.add("active-tags");
-        let tag = `  <div class="tag  ustensils">
-        <p class="tag-txt">${itemsUst[i].innerHTML}</p><button><i class="far fa-times-circle close-tag"></i></button>
+        let tag = `  <div class="tag  ustensils" id="ustensils-${i}">
+        <p class="tag-txt" >${itemsUst[i].innerHTML}</p><button class="closeBtn" id="ustensils-${i}"><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
         this.printDropdown();
+
         this.listenerItemsDrop();
+        this.closeTags();
       });
     }
   }
@@ -150,16 +159,26 @@ export class MainPageBuilder {
     const request = this.getUserRequest();
 
     this.recipesList.search(request);
-    // this.recipesList.searchByTags(request);
 
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
     this.listenerItemsDrop();
+    this.recipesList.search(request);
   }
 
   closeTags() {
-    let tags = document.querySelectorAll(".tag-txt");
-    console.log(tags);
+    let tags = document.querySelectorAll(".tag");
+
+    let closeTag = document.querySelectorAll(".tag button");
+    tags.forEach((el) =>
+      el.addEventListener("click", () => {
+        for (let i = 0; i < closeTag.length; i++) {
+          if (closeTag[i].id === el.id) {
+            el.style.display = "none";
+          }
+        }
+      })
+    );
   }
 
   printPage() {
