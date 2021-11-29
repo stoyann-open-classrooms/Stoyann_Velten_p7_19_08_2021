@@ -8,6 +8,7 @@ export class MainPageBuilder {
     this.recipesList = recipesList;
     this.tagSelecteed = [];
   }
+  // return l'objet avec la demande utilisateurs
   getUserRequest() {
     const searchBar = document.getElementById("recherche");
     return {
@@ -16,6 +17,7 @@ export class MainPageBuilder {
     };
   }
 
+  // affiche les cards recette sur la page ou messages erreur
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
 
@@ -23,7 +25,7 @@ export class MainPageBuilder {
     if (recipesList.length > 0) {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
-        this.printDropdown();
+        // this.printDropdown();
       }
     } else {
       htmlContent = `   
@@ -36,6 +38,7 @@ export class MainPageBuilder {
 
     cardsContainer.innerHTML = htmlContent;
   }
+  // affiche les dropdowns sur la page
   printDropdown() {
     const dropContainer = document.querySelector(".dropdowns-container");
     dropContainer.innerHTML = "";
@@ -59,6 +62,8 @@ export class MainPageBuilder {
     });
     this.eventDrop();
   }
+
+  // ajout evenement dropdowns open
   eventDrop() {
     const btnDropIngr = document.querySelector(".btn-drop-Ingredients");
     const btnDropApp = document.querySelector(".btn-drop-Appareils");
@@ -89,7 +94,6 @@ export class MainPageBuilder {
   }
 
   listenerItemsDrop() {
-    const request = this.getUserRequest();
     let itemsIngr = document.querySelectorAll(".items-Ingredients");
     let itemsAppr = document.querySelectorAll(".items-Appareils");
     let itemsUst = document.querySelectorAll(".items-Ustensiles");
@@ -104,8 +108,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
-        this.printDropdown();
-        this.listenerItemsDrop();
+        // this.printDropdown();
 
         this.closeTags();
       });
@@ -120,8 +123,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
-        this.printDropdown();
-        this.listenerItemsDrop();
+        // this.printDropdown();
 
         this.closeTags();
       });
@@ -135,9 +137,8 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
         this.printCard(this.recipesList.searchByTags(this.getUserRequest()));
-        this.printDropdown();
+        // this.printDropdown();
 
-        this.listenerItemsDrop();
         this.closeTags();
       });
     }
@@ -150,7 +151,7 @@ export class MainPageBuilder {
         this.getRecipesListToDisplay();
       } else {
         this.printCard(this.recipesList.recipes);
-        this.printDropdown();
+        // this.printDropdown();
       }
     });
   }
@@ -162,7 +163,7 @@ export class MainPageBuilder {
 
     this.printCard(this.recipesList.search(this.getUserRequest()));
     this.printDropdown();
-    this.listenerItemsDrop();
+    // this.listenerItemsDrop();
     this.recipesList.search(request);
   }
 
@@ -175,6 +176,8 @@ export class MainPageBuilder {
         for (let i = 0; i < closeTag.length; i++) {
           if (closeTag[i].id === el.id) {
             el.style.display = "none";
+            console.log(el.innerText);
+            console.log(this.tagSelecteed);
           }
         }
       })

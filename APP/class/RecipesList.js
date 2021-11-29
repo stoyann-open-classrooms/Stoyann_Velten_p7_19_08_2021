@@ -60,9 +60,13 @@ export class RecipesList {
     //     }
     //   }
 
-    return sortedRecipes;
+    // return sortedRecipes;
 
     this.recipes = sortedRecipes;
+    this.getAllAppliance();
+    this.getAllIngredients();
+    this.getAllUstensils();
+
     return this.recipes;
   }
   searchByTags(request) {
@@ -78,7 +82,11 @@ export class RecipesList {
         sortedRecipes.push(this.recipes[i]);
       }
     }
-    return sortedRecipes;
+    this.recipes = sortedRecipes;
+    this.getAllAppliance();
+    this.getAllIngredients();
+    this.getAllUstensils();
+    return this.recipes;
     console.log(sortedRecipes);
   }
 }
