@@ -636,6 +636,7 @@ header .header-logo h1 {
 
 .active-tags {
   opacity: 0.3;
+  pointer-events: none;
 }
 
 .card {
