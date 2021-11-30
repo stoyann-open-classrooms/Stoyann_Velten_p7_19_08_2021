@@ -1,3 +1,5 @@
+import { Utils } from "../utils/Utils.js";
+
 import { searchBarInp } from "../components/searchBar.js";
 import { Cards } from "../components/Cards.js";
 import { Dropdown } from "../components/dropdowns.js";
@@ -13,7 +15,7 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     return {
       userInput: searchBar.value.trim(),
-      tags: this.tagSelecteed.join("  "),
+      tags: Utils.removeAccents(this.tagSelecteed.join(" ")),
     };
   }
 
@@ -25,7 +27,8 @@ export class MainPageBuilder {
     if (recipesList.length > 0) {
       for (let i = 0; i < recipesList.length; i++) {
         htmlContent += new Cards(recipesList[i], i).card;
-        // this.printDropdown();
+        this.printDropdown();
+        this.listenerItemsDrop();
       }
     } else {
       htmlContent = `   
@@ -69,13 +72,20 @@ export class MainPageBuilder {
     const btnDropApp = document.querySelector(".btn-drop-Appareils");
     const btnDropUst = document.querySelector(".btn-drop-Ustensiles");
     const overlay = document.querySelector(".overlay");
-
+    const inpIngr = document.getElementById("input-Ingredients");
+    const inpApp = document.getElementById("input-Appareils");
+    const inpUst = document.getElementById("input-Ustensiles");
     btnDropIngr.addEventListener("click", () => {
       document
         .querySelector(".dropdown-Ingredients")
         .classList.toggle("active");
       overlay.classList.toggle("overlay-active");
     });
+
+    inpIngr.addEventListener("input", (e) => {
+      console.log(inpIngr.value);
+    });
+
     btnDropUst.addEventListener("click", () => {
       document.querySelector(".dropdown-Ustensiles").classList.toggle("active");
       overlay.classList.toggle("overlay-active");
@@ -83,6 +93,12 @@ export class MainPageBuilder {
     btnDropApp.addEventListener("click", () => {
       document.querySelector(".dropdown-Appareils").classList.toggle("active");
       overlay.classList.toggle("overlay-active");
+    });
+    inpApp.addEventListener("input", (e) => {
+      console.log(inpApp.value);
+    });
+    inpUst.addEventListener("input", (e) => {
+      console.log(inpUst.value);
     });
 
     overlay.addEventListener("click", () => {
