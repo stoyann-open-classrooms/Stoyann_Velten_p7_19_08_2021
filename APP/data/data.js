@@ -455,7 +455,7 @@ export const RECIPES = [
     time: 40,
     description:
       "Éplucher les fruits et les couper en morceaux, les mettre dans une casserole en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
-    appliance: "Casserole",
+    appliance: "casserole",
     ustensils: ["couteau", "économe"],
   },
   {
@@ -1508,7 +1508,7 @@ export const RECIPES = [
     time: 20,
     description:
       "Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélanger délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
-    appliance: "Casserole",
+    appliance: "casserole",
     ustensils: ["fouet", "spatule", "verres"],
   },
   {
@@ -1613,7 +1613,7 @@ export const RECIPES = [
     time: 15,
     description:
       "Mélanger la farine et le beurre fondu en ajoutant le lait peu à peu. Ajouter le sucre après la cuisson. Bien mélanger. Ajouter le chocolat en morceaux et laisser chauffer 8 minutes en mélangeant avec une cuillère en bois. Mettre dans des verres",
-    appliance: "Casserole",
+    appliance: "casserole",
     ustensils: ["cuillère en bois"],
   },
   {

@@ -23,7 +23,6 @@ export class Recipe {
     this.ustensils = ustensils;
   }
   get stringifyRecipes() {
-    // console.log(removeAccents(JSON.stringify(this, null, "\t")));
     return Utils.removeAccents(JSON.stringify(this, null, " \t"));
   }
 }

@@ -24,7 +24,6 @@ export class Cards {
            `;
       }
 
-      // console.log(li);
       htmlContent += li;
     }
     return htmlContent;

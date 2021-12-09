@@ -18,6 +18,7 @@ export class RecipesList {
 
   getAllAppliance() {
     const appliances = new Set();
+
     for (let recipe of this.recipes) {
       appliances.add(recipe.appliance);
     }
@@ -37,53 +38,32 @@ export class RecipesList {
   }
 
   search(request) {
+    console.log(request);
     let sortedRecipes = [];
-
-    sortedRecipes = this.recipes.filter(function (recipe) {
-      if (
-        recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput))
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    // // //  ================ version 2 algorythmes  ================
-
-    //   for (let i = 0; i < this.recipes.length; i++) {
-    //     if (
-    //       this.recipes[i].stringifyRecipes.includes(
-    //         Utils.removeAccents(request.userInput)
-    //       )
-    //     ) {
-    //       sortedRecipes.push(this.recipes[i]);
-    //     }
-    //   }
-
-    // return sortedRecipes;
-
-    this.recipes = sortedRecipes;
-    this.getAllAppliance();
-    this.getAllIngredients();
-    this.getAllUstensils();
-
-    return this.recipes;
-  }
-  searchByTags(request) {
-    let sortedRecipes = [];
-    console.log(request.tags);
 
     for (let i = 0; i < this.recipes.length; i++) {
-      if (this.recipes[i].stringifyRecipes.includes(request.tags)) {
-        sortedRecipes.push(this.recipes[i]);
+      // console.log(this.recipes[i]);
+      if (
+        this.recipes[i].stringifyRecipes.includes(
+          Utils.removeAccents(request.userInput)
+        )
+      ) {
+        if (
+          this.recipes[i].stringifyRecipes.includes(
+            Utils.removeAccents(request.tags)
+          )
+        )
+          sortedRecipes.push(this.recipes[i]);
       }
     }
-    this.recipes = sortedRecipes;
+    // callback();
+
     this.getAllAppliance();
     this.getAllIngredients();
     this.getAllUstensils();
 
+    this.recipes = sortedRecipes;
+
     return this.recipes;
-    console.log(sortedRecipes);
   }
 }

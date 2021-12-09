@@ -6,14 +6,16 @@ export class Dropdown {
 
   listDropdown() {
     let htmlContent = ``;
+    let v = 0;
     for (let item of this.dropList) {
       let li = document.createElement("li");
 
       li = `
-            <li class = "items items-${this.type}">${item}</li>
+            <li class = "items items-${this.type}" id="item-${v}">${item}</li>
             `;
 
       htmlContent += li;
+      v++;
     }
     return htmlContent;
   }
