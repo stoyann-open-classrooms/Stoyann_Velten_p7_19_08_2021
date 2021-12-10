@@ -4,7 +4,28 @@ export class RecipesList {
     this.recipes = recipes;
     this.Allrecipes = recipes;
   }
+  // appInp() {
+  //   let inpVal = document.getElementById("input-Appareils");
 
+  //   inpVal.addEventListener("input", (e) => {
+  //     if (inpVal.value.length > 0) {
+  //       let tab = this.recipesList.getAllAppliance();
+  //       console.log("il faut trier les appareils maitenant !");
+  //       console.log(this.recipesList.getAllAppliance());
+  //       let result = this.recipesList
+  //         .getAllAppliance()
+  //         .filter((item) =>
+  //           Utils.removeAccents(item).includes(
+  //             Utils.removeAccents(inpVal.value)
+  //           )
+  //         );
+  //       console.log(tab);
+
+  //       console.log(result);
+  //       return result;
+  //     }
+  //   });
+  // }
   getAllIngredients() {
     const AllIngredients = new Set();
 

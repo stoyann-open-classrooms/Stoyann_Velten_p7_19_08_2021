@@ -110,18 +110,18 @@ export class MainPageBuilder {
         itemsIngr[i].classList.add("active-tags");
         let tag = `  <div class="tag   ingredients" id=${itemsIngr[i].id}">
         <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
-    </div>`;
+        </div>`;
         containerTags.innerHTML += tag;
-        this.printCard(this.recipesList.search(this.getUserRequest()));
         this.printDropdown();
         this.listenerItemsDrop();
+        this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
 
     for (let i = 0; i < itemsAppr.length; i++) {
       itemsAppr[i].addEventListener("click", () => {
         this.tagSelecteed.push(Utils.removeAccents(itemsAppr[i].innerHTML));
-
+        itemsAppr[i].classList.add("active-tags");
         let tag = `  <div class="tag  appareils" id="apparreil-${i}">
         <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button class="closeBtn" id="apparreil-${i}" ><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
