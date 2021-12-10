@@ -14,8 +14,8 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     return {
       userInput: searchBar.value.trim(),
-      tags: this.tagSelecteed.join("").trim(),
-      // tags: this.tagSelecteed,
+      tags: this.tagSelecteed.join(" ").trim(),
+      // sortedRecipes.push(this.recipes[i]);
     };
   }
 
@@ -30,6 +30,9 @@ export class MainPageBuilder {
     }
 
     cardsContainer.innerHTML = htmlContent;
+    if (recipesList.length === 0) {
+      console.log("pas de recette");
+    }
   }
 
   // affiche les dropdowns sur la page
@@ -119,7 +122,6 @@ export class MainPageBuilder {
       itemsAppr[i].addEventListener("click", () => {
         this.tagSelecteed.push(Utils.removeAccents(itemsAppr[i].innerHTML));
 
-        itemsAppr[i].classList.add("active-tags");
         let tag = `  <div class="tag  appareils" id="apparreil-${i}">
         <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button class="closeBtn" id="apparreil-${i}" ><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
@@ -150,15 +152,13 @@ export class MainPageBuilder {
 
     console.log(request);
     searchBar.addEventListener("input", (e) => {
-      if (e.target.value.length >= 2) {
-        console.log(this.getUserRequest());
+      console.log(this.getUserRequest());
 
-        this.printCard(this.recipesList.search(this.getUserRequest()));
-        this.printDropdown();
-        this.listenerItemsDrop();
+      this.printCard(this.recipesList.search(this.getUserRequest()));
+      this.printDropdown();
+      this.listenerItemsDrop();
 
-        // return this.recipesList;
-      }
+      // return this.recipesList;
     });
   }
 
