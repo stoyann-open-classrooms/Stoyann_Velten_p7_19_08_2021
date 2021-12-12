@@ -14,8 +14,8 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     return {
       userInput: searchBar.value.trim(),
+      // tags: this.tagSelecteed,
       tags: this.tagSelecteed.join(" ").trim(),
-      // sortedRecipes.push(this.recipes[i]);
     };
   }
 
@@ -35,43 +35,12 @@ export class MainPageBuilder {
     }
   }
 
-  // affiche les dropdowns sur la page
-  printDropdown() {
-    const dropContainer = document.querySelector(".dropdowns-container");
-    dropContainer.innerHTML = "";
-
-    this.sort.forEach((el) => {
-      if (el === "Ingredients") {
-        dropContainer.innerHTML += new Dropdown(
-          this.recipesList.getAllIngredients(),
-          el
-        ).dropdown;
-      } else if (el === "Ustensiles") {
-        dropContainer.innerHTML += new Dropdown(
-          this.recipesList.getAllUstensils(),
-          el
-        ).dropdown;
-      } else {
-        dropContainer.innerHTML += new Dropdown(
-          this.recipesList.getAllAppliance(),
-          el
-        ).dropdown;
-      }
-    });
-    this.eventDrop();
-    this.closeTags();
-    this.appInp();
-    this.ingrInp();
-    this.ustInp();
-  }
-
   // ouverture et fermeture des dropdowns
   eventDrop() {
     const btnDropIngr = document.querySelector(".btn-drop-Ingredients");
     const btnDropApp = document.querySelector(".btn-drop-Appareils");
     const btnDropUst = document.querySelector(".btn-drop-Ustensiles");
     const overlay = document.querySelector(".overlay");
-    const inpApp = document.getElementById("input-Appareils");
     const inpUst = document.getElementById("input-Ustensiles");
     btnDropIngr.addEventListener("click", () => {
       document
@@ -158,7 +127,7 @@ export class MainPageBuilder {
       this.printDropdown();
       this.listenerItemsDrop();
 
-      // return this.recipesList;
+      //  return this.recipesList;
     });
   }
 
@@ -177,46 +146,49 @@ export class MainPageBuilder {
       })
     );
   }
+  // affiche les dropdowns sur la page
+  printDropdown() {
+    const dropContainer = document.querySelector(".dropdowns-container");
 
-  appInp() {
+    dropContainer.innerHTML = "";
+
+    this.sort.forEach((el) => {
+      if (el === "Ingredients") {
+        dropContainer.innerHTML += new Dropdown(
+          this.recipesList.getAllIngredients(),
+          el
+        ).dropdown;
+      } else if (el === "Ustensiles") {
+        dropContainer.innerHTML += new Dropdown(
+          this.recipesList.getAllUstensils(),
+          el
+        ).dropdown;
+        console.log(this.recipesList.getAllAppliance());
+      } else {
+        dropContainer.innerHTML += new Dropdown(
+          this.recipesList.getAllAppliance(),
+          el
+        ).dropdown;
+      }
+    });
+    this.eventDrop();
+    this.sortAppliances(this.recipesList.getAllAppliance());
+    // this.appInp(this.recipesList.getAllAppliance());
+    this.closeTags();
+    // this.ingrInp();
+  }
+
+  sortAppliances(list) {
     let inpVal = document.getElementById("input-Appareils");
 
     inpVal.addEventListener("input", (e) => {
       if (inpVal.value.length > 0) {
-        let tab = this.recipesList.getAllAppliance();
-        console.log("il faut trier les appareils maitenant !");
         console.log(this.recipesList.getAllAppliance());
-        let result = this.recipesList
-          .getAllAppliance()
-          .filter((item) =>
-            Utils.removeAccents(item).includes(
-              Utils.removeAccents(inpVal.value)
-            )
-          );
-        console.log(tab);
-
+        let result = list.filter((item) =>
+          Utils.removeAccents(item).includes(Utils.removeAccents(inpVal.value))
+        );
+        // console.log(this.recipesList.getAllAppliance());
         console.log(result);
-        return result;
-      }
-    });
-  }
-  ingrInp() {
-    let inpVal = document.getElementById("input-Ingredients");
-
-    inpVal.addEventListener("input", (e) => {
-      console.log(inpVal.value);
-      console.log("ici la fonction pour trier la liste d'ingredients");
-      if (inpVal.value.length > 0) {
-        const result = this.recipesList
-          .getAllIngredients()
-          .filter((item) =>
-            Utils.removeAccents(item).includes(
-              Utils.removeAccents(inpVal.value)
-            )
-          );
-        console.log(result);
-        return result;
-      } else {
       }
     });
   }
@@ -225,21 +197,21 @@ export class MainPageBuilder {
     let inpVal = document.getElementById("input-Ustensiles");
 
     inpVal.addEventListener("input", (e) => {
-      console.log(inpVal.value);
-
-      if (inpVal.value.length > 0) {
-        console.log(this.recipesList.getAllUstensils());
-        const result = this.recipesList
-          .getAllUstensils()
-          .filter((item) =>
-            Utils.removeAccents(item).includes(
-              Utils.removeAccents(inpVal.value)
-            )
-          );
-        console.log(result);
-        return result;
-      } else {
-      }
+      // console.log(inpVal.value);
+      // if (inpVal.value.length > 0) {
+      //   console.log(this.recipesList.getAllUstensils());
+      //   const result = this.recipesList
+      //     .getAllUstensils()
+      //     .filter((item) =>
+      //       Utils.removeAccents(item).includes(
+      //         Utils.removeAccents(inpVal.value)
+      //       )
+      //     );
+      //   console.log(result);
+      //   return result;
+      // } else {
+      // }
+      return inpVal.value;
     });
   }
 
