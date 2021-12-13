@@ -790,10 +790,11 @@ header .header-logo h1 {
 .message .message-exp {
   text-align: center;
   font-size: 1.4rem;
+  width: 100%;
 }
 
 .message button {
-  color: #333;
+  color: #d04f4f;
   position: absolute;
   top: 13%;
   right: 3%;

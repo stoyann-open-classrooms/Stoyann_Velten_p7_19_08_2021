@@ -29,10 +29,17 @@ export class MainPageBuilder {
       htmlContent += new Cards(recipesList[i], i).card;
     }
 
-    cardsContainer.innerHTML = htmlContent;
     if (recipesList.length === 0) {
-      console.log("pas de recette");
+      htmlContent = `<div class="message">
+      <p class="message-txt">Aucune recette ne correspond à votre critère… </p>
+      <p class="message-exp">vous pouvez
+      chercher « tarte aux pommes », « poisson », etc.</p>
+      
+    <button id ="close-msg"> <i class="far fa-window-close"></i></button>
+
+      </div>`;
     }
+    cardsContainer.innerHTML = htmlContent;
   }
 
   // ouverture et fermeture des dropdowns
@@ -143,6 +150,8 @@ export class MainPageBuilder {
 
         el.style.display = "none";
         console.log(request.includes(el.children[0].innerText));
+
+        console.log(request);
       })
     );
   }

@@ -16,9 +16,10 @@
   .message-exp {
     text-align: center;
     font-size: 1.4rem;
+    width: 100%;
   }
   button {
-    color: #333;
+    color: $primary;
     position: absolute;
     top: 13%;
     right: 3%;

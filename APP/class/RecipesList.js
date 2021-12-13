@@ -41,7 +41,7 @@ export class RecipesList {
   search(request) {
     console.log(request);
     let sortedRecipes = [];
-
+    // input recherche
     if (request.userInput.length > 2) {
       for (let i = 0; i < this.recipes.length; i++) {
         if (
