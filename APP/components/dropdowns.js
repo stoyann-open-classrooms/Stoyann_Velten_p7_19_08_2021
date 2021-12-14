@@ -7,6 +7,7 @@ export class Dropdown {
   listDropdown() {
     let htmlContent = ``;
     let v = 0;
+
     for (let item of this.dropList) {
       let li = document.createElement("li");
 
@@ -17,6 +18,7 @@ export class Dropdown {
       htmlContent += li;
       v++;
     }
+
     return htmlContent;
   }
 

@@ -172,7 +172,7 @@ export class MainPageBuilder {
           this.recipesList.getAllUstensils(),
           el
         ).dropdown;
-        console.log(this.recipesList.getAllAppliance());
+        // console.log(this.recipesList.getAllAppliance());
       } else {
         dropContainer.innerHTML += new Dropdown(
           this.recipesList.getAllAppliance(),
@@ -189,40 +189,55 @@ export class MainPageBuilder {
 
   sortAppliances(list) {
     let inpVal = document.getElementById("input-Appareils");
+    let sortedList = [];
 
-    inpVal.addEventListener("input", (e) => {
+    inpVal.addEventListener("keydown", (e) => {
       if (inpVal.value.length > 0) {
-        console.log(this.recipesList.getAllAppliance());
-        let result = list.filter((item) =>
-          Utils.removeAccents(item).includes(Utils.removeAccents(inpVal.value))
-        );
-        // console.log(this.recipesList.getAllAppliance());
-        console.log(result);
+        sortedList = list.filter((item) => {
+          console.log(Utils.removeAccents(item));
+        });
+        return (list = sortedList);
+      } else {
+        console.log("refresh");
+        return list;
       }
     });
+
+    return list;
+    // let list = document.querySelectorAll(".items-Appareils");
+    // let result = "";
+    // inpVal.addEventListener("input", (e) => {
+    //   if (inpVal.value.length > 1) {
+    //     for (let i = 0; i < list.length; i++) {
+    //       console.log(
+    //         Utils.removeAccents(list[i].innerText).includes(inpVal.value)
+    //       );
+    //     }
+    //   }
+    // });
   }
 
-  ustInp() {
-    let inpVal = document.getElementById("input-Ustensiles");
+  // ustInp() {
+  //   let inpVal = document.getElementById("input-Ustensiles");
 
-    inpVal.addEventListener("input", (e) => {
-      // console.log(inpVal.value);
-      // if (inpVal.value.length > 0) {
-      //   console.log(this.recipesList.getAllUstensils());
-      //   const result = this.recipesList
-      //     .getAllUstensils()
-      //     .filter((item) =>
-      //       Utils.removeAccents(item).includes(
-      //         Utils.removeAccents(inpVal.value)
-      //       )
-      //     );
-      //   console.log(result);
-      //   return result;
-      // } else {
-      // }
-      return inpVal.value;
-    });
-  }
+  //   inpVal.addEventListener("input", (e) => {
+  //     // console.log(inpVal.value);
+  //     // if (inpVal.value.length > 0) {
+  //     //   console.log(this.recipesList.getAllUstensils());
+  //     //   const result = this.recipesList
+  //     //     .getAllUstensils()
+  //     //     .filter((item) =>
+  //     //       Utils.removeAccents(item).includes(
+  //     //         Utils.removeAccents(inpVal.value)
+  //     //       )
+  //     //     );
+  //     //   console.log(result);
+  //     //   return result;
+  //     // } else {
+  //     // }
+  //     return inpVal.value;
+  //   });
+  // }
 
   printPage() {
     this.printCard(this.recipesList.recipes);

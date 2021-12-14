@@ -17,7 +17,7 @@ export class RecipesList {
     return [...AllIngredients];
   }
 
-  getAllAppliance() {
+  getAllAppliance(inp) {
     const appliances = new Set();
 
     for (let recipe of this.recipes) {
@@ -39,9 +39,27 @@ export class RecipesList {
   }
 
   search(request) {
-    console.log(request);
     let sortedRecipes = [];
-    // input recherche
+
+    if (request.tags.length > 0) {
+      for (let i = 0; i < this.recipes.length; i++) {
+        if (
+          this.recipes[i].stringifyRecipes.includes(
+            Utils.removeAccents(request.tags)
+          )
+        ) {
+          sortedRecipes.push(this.recipes[i]);
+        }
+      }
+
+      this.recipes = sortedRecipes;
+      this.getAllAppliance();
+      this.getAllIngredients();
+      this.getAllUstensils();
+
+      return this.recipes;
+    }
+
     if (request.userInput.length > 2) {
       for (let i = 0; i < this.recipes.length; i++) {
         if (
@@ -61,29 +79,59 @@ export class RecipesList {
       this.recipes = sortedRecipes;
 
       return this.recipes;
-    } else if (request.tags.length > 0) {
-      for (let i = 0; i < this.recipes.length; i++) {
-        if (
-          this.recipes[i].stringifyRecipes.includes(
-            Utils.removeAccents(request.tags)
-          )
-        ) {
-          sortedRecipes.push(this.recipes[i]);
-        }
-      }
-      // callback();
-
-      this.getAllAppliance();
-      this.getAllIngredients();
-      this.getAllUstensils();
-
-      this.recipes = sortedRecipes;
-
-      return this.recipes;
-    } else if (request.userInput === "" && request.tags === "") {
+    } else if (request.userInput.length <= 2 && request.tags === "") {
       this.recipes = this.Allrecipes;
 
       return this.recipes;
     }
   }
+
+  // search(request) {
+  //   console.log(request);
+  //   let sortedRecipes = [];
+  //   // input recherche
+  //   if (request.userInput.length > 2) {
+  //     for (let i = 0; i < this.recipes.length; i++) {
+  //       if (
+  //         this.recipes[i].stringifyRecipes.includes(
+  //           Utils.removeAccents(request.userInput)
+  //         )
+  //       ) {
+  //         sortedRecipes.push(this.recipes[i]);
+  //       }
+  //     }
+  //     // callback();
+
+  //     this.getAllAppliance();
+  //     this.getAllIngredients();
+  //     this.getAllUstensils();
+
+  //     this.recipes = sortedRecipes;
+
+  //     return this.recipes;
+  //   } else if (request.tags.length > 0) {
+  //     for (let i = 0; i < this.recipes.length; i++) {
+  //       if (
+  //         this.recipes[i].stringifyRecipes.includes(
+  //           Utils.removeAccents(request.tags)
+  //         )
+  //       ) {
+  //         sortedRecipes.push(this.recipes[i]);
+  //       }
+  //     }
+  //     // callback();
+
+  //     this.getAllAppliance();
+  //     this.getAllIngredients();
+  //     this.getAllUstensils();
+
+  //     this.recipes = sortedRecipes;
+
+  //     return this.recipes;
+  //   } else if (request.userInput === "" && request.tags === "") {
+  //     this.recipes = this.Allrecipes;
+
+  //     return this.recipes;
+  //   }
+  // }
 }
