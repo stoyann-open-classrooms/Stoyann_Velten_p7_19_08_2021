@@ -41,6 +41,8 @@ export class RecipesList {
   search(request) {
     let sortedRecipes = [];
 
+    // console.log(request.tags.split(" "));
+
     if (request.tags.length > 0) {
       for (let i = 0; i < this.recipes.length; i++) {
         if (
@@ -85,53 +87,4 @@ export class RecipesList {
       return this.recipes;
     }
   }
-
-  // search(request) {
-  //   console.log(request);
-  //   let sortedRecipes = [];
-  //   // input recherche
-  //   if (request.userInput.length > 2) {
-  //     for (let i = 0; i < this.recipes.length; i++) {
-  //       if (
-  //         this.recipes[i].stringifyRecipes.includes(
-  //           Utils.removeAccents(request.userInput)
-  //         )
-  //       ) {
-  //         sortedRecipes.push(this.recipes[i]);
-  //       }
-  //     }
-  //     // callback();
-
-  //     this.getAllAppliance();
-  //     this.getAllIngredients();
-  //     this.getAllUstensils();
-
-  //     this.recipes = sortedRecipes;
-
-  //     return this.recipes;
-  //   } else if (request.tags.length > 0) {
-  //     for (let i = 0; i < this.recipes.length; i++) {
-  //       if (
-  //         this.recipes[i].stringifyRecipes.includes(
-  //           Utils.removeAccents(request.tags)
-  //         )
-  //       ) {
-  //         sortedRecipes.push(this.recipes[i]);
-  //       }
-  //     }
-  //     // callback();
-
-  //     this.getAllAppliance();
-  //     this.getAllIngredients();
-  //     this.getAllUstensils();
-
-  //     this.recipes = sortedRecipes;
-
-  //     return this.recipes;
-  //   } else if (request.userInput === "" && request.tags === "") {
-  //     this.recipes = this.Allrecipes;
-
-  //     return this.recipes;
-  //   }
-  // }
 }

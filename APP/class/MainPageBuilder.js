@@ -14,7 +14,6 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     return {
       userInput: searchBar.value.trim(),
-      // tags: this.tagSelecteed,
       tags: this.tagSelecteed.join(" ").trim(),
     };
   }
@@ -83,7 +82,6 @@ export class MainPageBuilder {
       itemsIngr[i].addEventListener("click", () => {
         this.tagSelecteed.push(Utils.removeAccents(itemsIngr[i].innerHTML));
 
-        itemsIngr[i].classList.add("active-tags");
         let tag = `  <div class="tag   ingredients" id=${itemsIngr[i].id}">
         <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
         </div>`;
@@ -120,13 +118,14 @@ export class MainPageBuilder {
         this.listenerItemsDrop();
       });
     }
+    console.log(this.getUserRequest());
   }
 
   listenerInput() {
     const searchBar = document.getElementById("recherche");
     let request = this.getUserRequest();
 
-    console.log(request);
+    // console.log(request);
     searchBar.addEventListener("input", (e) => {
       console.log(this.getUserRequest());
 
@@ -146,12 +145,13 @@ export class MainPageBuilder {
     let closeTag = document.querySelectorAll(".tag button");
     tags.forEach((el) =>
       el.addEventListener("click", () => {
+        // console.log(Utils.removeAccents(el.children[0].innerHTML));
         console.log(Utils.removeAccents(el.children[0].innerHTML));
-
         el.style.display = "none";
-        console.log(request.includes(el.children[0].innerText));
-
-        console.log(request);
+        // request.includes(el.children[0].innerText);
+        if (request.includes(Utils.removeAccents(el.children[0].innerHTML))) {
+          console.log("ok");
+        }
       })
     );
   }
@@ -181,63 +181,57 @@ export class MainPageBuilder {
       }
     });
     this.eventDrop();
-    this.sortAppliances(this.recipesList.getAllAppliance());
+    this.sortItemApp(this.recipesList.getAllAppliance());
+    this.sortItemUst(this.recipesList.getAllUstensils());
+    this.sortItemIng(this.recipesList.getAllIngredients());
     // this.appInp(this.recipesList.getAllAppliance());
     this.closeTags();
-    // this.ingrInp();
   }
 
-  sortAppliances(list) {
+  sortItemIng(list) {
+    let inpVal = document.getElementById("input-Ingredients");
+    let sortedList = [];
+    inpVal.addEventListener("keydown", (e) => {
+      sortedList = list.filter((item) => {
+        if (Utils.removeAccents(item).includes(inpVal.value)) {
+          return true;
+        }
+      });
+
+      console.log(sortedList);
+      return sortedList;
+    });
+  }
+
+  sortItemUst(list) {
+    let inpVal = document.getElementById("input-Ustensiles");
+    let sortedList = [];
+    inpVal.addEventListener("keydown", (e) => {
+      sortedList = list.filter((item) => {
+        if (Utils.removeAccents(item).includes(inpVal.value)) {
+          return true;
+        }
+      });
+
+      console.log(sortedList);
+      return sortedList;
+    });
+  }
+
+  sortItemApp(list) {
     let inpVal = document.getElementById("input-Appareils");
     let sortedList = [];
-
     inpVal.addEventListener("keydown", (e) => {
-      if (inpVal.value.length > 0) {
-        sortedList = list.filter((item) => {
-          console.log(Utils.removeAccents(item));
-        });
-        return (list = sortedList);
-      } else {
-        console.log("refresh");
-        return list;
-      }
+      sortedList = list.filter((item) => {
+        if (Utils.removeAccents(item).includes(inpVal.value)) {
+          return true;
+        }
+      });
+
+      console.log(sortedList);
+      return sortedList;
     });
-
-    return list;
-    // let list = document.querySelectorAll(".items-Appareils");
-    // let result = "";
-    // inpVal.addEventListener("input", (e) => {
-    //   if (inpVal.value.length > 1) {
-    //     for (let i = 0; i < list.length; i++) {
-    //       console.log(
-    //         Utils.removeAccents(list[i].innerText).includes(inpVal.value)
-    //       );
-    //     }
-    //   }
-    // });
   }
-
-  // ustInp() {
-  //   let inpVal = document.getElementById("input-Ustensiles");
-
-  //   inpVal.addEventListener("input", (e) => {
-  //     // console.log(inpVal.value);
-  //     // if (inpVal.value.length > 0) {
-  //     //   console.log(this.recipesList.getAllUstensils());
-  //     //   const result = this.recipesList
-  //     //     .getAllUstensils()
-  //     //     .filter((item) =>
-  //     //       Utils.removeAccents(item).includes(
-  //     //         Utils.removeAccents(inpVal.value)
-  //     //       )
-  //     //     );
-  //     //   console.log(result);
-  //     //   return result;
-  //     // } else {
-  //     // }
-  //     return inpVal.value;
-  //   });
-  // }
 
   printPage() {
     this.printCard(this.recipesList.recipes);

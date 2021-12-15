@@ -12,7 +12,7 @@ export class Dropdown {
       let li = document.createElement("li");
 
       li = `
-            <li class = "items items-${this.type}" id="item-${v}">${item}</li>
+            <li  class = "items items-${this.type}" id="item-${v}">${item}</li>
             `;
 
       htmlContent += li;
