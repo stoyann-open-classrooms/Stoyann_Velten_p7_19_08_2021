@@ -12,9 +12,16 @@ export class MainPageBuilder {
   // return l'objet avec la demande de l'utilisateur
   getUserRequest() {
     const searchBar = document.getElementById("recherche");
+    const searchIngr = document.getElementById("input-Ingredients");
+    const searchAppr = document.getElementById("input-Appareils");
+    const searchUst = document.getElementById("input-Ustensiles");
+
     return {
       userInput: searchBar.value.trim(),
       tags: this.tagSelecteed.join(" ").trim(),
+      inputIngr: searchIngr.value.trim(),
+      inputAppr: searchAppr.value.trim(),
+      inputUst: searchUst.value.trim(),
     };
   }
 
@@ -33,21 +40,71 @@ export class MainPageBuilder {
       <p class="message-txt">Aucune recette ne correspond à votre critère… </p>
       <p class="message-exp">vous pouvez
       chercher « tarte aux pommes », « poisson », etc.</p>
-      
-    <button id ="close-msg"> <i class="far fa-window-close"></i></button>
+
+    <button  id ="close-msg"> <i class="far fa-window-close"></i></button>
 
       </div>`;
     }
     cardsContainer.innerHTML = htmlContent;
   }
+  sortItem(list, input, ul) {
+    let allli = document.querySelectorAll(".items-Ingredients");
+    // console.log(li);
+
+    console.log(input);
+
+    let sortedList = [];
+
+    for (let i = 0; i < list.length; i++) {
+      if (
+        Utils.removeAccents(list[i].innerHTML).includes(
+          Utils.removeAccents(input)
+        )
+      ) {
+        sortedList.push(list[i]);
+      }
+    }
+
+    if (input.length > 0) {
+      ul.innerHTML = "";
+      for (let i = 0; i < sortedList.length; i++) {
+        ul.append(sortedList[i]);
+      }
+    } else {
+      ul.innerHTML = "";
+      for (let i = 0; i < list.length; i++) {
+        ul.append(list[i]);
+      }
+    }
+  }
 
   // ouverture et fermeture des dropdowns
   eventDrop() {
+    let allLiIngr = document.querySelectorAll(".items-Ingredients");
+    let ulIngr = document.querySelector(".list-Ingredients");
+    let allLiAppr = document.querySelectorAll(".items-Appareils");
+    let ulAppr = document.querySelector(".list-Appareils");
+    let allLiUst = document.querySelectorAll(".items-Ustensiles");
+    let ulUst = document.querySelector(".list-Ustensiles");
     const btnDropIngr = document.querySelector(".btn-drop-Ingredients");
     const btnDropApp = document.querySelector(".btn-drop-Appareils");
     const btnDropUst = document.querySelector(".btn-drop-Ustensiles");
     const overlay = document.querySelector(".overlay");
-    const inpUst = document.getElementById("input-Ustensiles");
+
+    const searchIngr = document.getElementById("input-Ingredients");
+    const searchAppr = document.getElementById("input-Appareils");
+    const searchUst = document.getElementById("input-Ustensiles");
+
+    searchIngr.addEventListener("input", (e) => {
+      this.sortItem(allLiIngr, this.getUserRequest().inputIngr, ulIngr);
+    });
+    searchAppr.addEventListener("input", (e) => {
+      this.sortItem(allLiAppr, this.getUserRequest().inputAppr, ulAppr);
+    });
+    searchUst.addEventListener("input", (e) => {
+      this.sortItem(allLiUst, this.getUserRequest().inputUst, ulUst);
+    });
+
     btnDropIngr.addEventListener("click", () => {
       document
         .querySelector(".dropdown-Ingredients")
@@ -59,6 +116,7 @@ export class MainPageBuilder {
       document.querySelector(".dropdown-Ustensiles").classList.toggle("active");
       overlay.classList.toggle("overlay-active");
     });
+
     btnDropApp.addEventListener("click", () => {
       document.querySelector(".dropdown-Appareils").classList.toggle("active");
       overlay.classList.toggle("overlay-active");
@@ -118,12 +176,10 @@ export class MainPageBuilder {
         this.listenerItemsDrop();
       });
     }
-    console.log(this.getUserRequest());
   }
 
   listenerInput() {
     const searchBar = document.getElementById("recherche");
-    let request = this.getUserRequest();
 
     // console.log(request);
     searchBar.addEventListener("input", (e) => {
@@ -143,18 +199,23 @@ export class MainPageBuilder {
     let tags = document.querySelectorAll(".tag");
 
     let closeTag = document.querySelectorAll(".tag button");
-    tags.forEach((el) =>
-      el.addEventListener("click", () => {
+    tags.forEach((tag) =>
+      tag.addEventListener("click", () => {
         // console.log(Utils.removeAccents(el.children[0].innerHTML));
-        console.log(Utils.removeAccents(el.children[0].innerHTML));
-        el.style.display = "none";
+        // console.log(Utils.removeAccents(tag.children[0].innerHTML));
+        tag.style.display = "none";
+
         // request.includes(el.children[0].innerText);
-        if (request.includes(Utils.removeAccents(el.children[0].innerHTML))) {
-          console.log("ok");
-        }
+
+        request.split(" ").forEach((el) => {
+          if (tag.children[0].innerHTML.includes(el)) {
+            console.log(el);
+          }
+        });
       })
     );
   }
+
   // affiche les dropdowns sur la page
   printDropdown() {
     const dropContainer = document.querySelector(".dropdowns-container");
@@ -172,6 +233,7 @@ export class MainPageBuilder {
           this.recipesList.getAllUstensils(),
           el
         ).dropdown;
+
         // console.log(this.recipesList.getAllAppliance());
       } else {
         dropContainer.innerHTML += new Dropdown(
@@ -181,57 +243,45 @@ export class MainPageBuilder {
       }
     });
     this.eventDrop();
-    this.sortItemApp(this.recipesList.getAllAppliance());
-    this.sortItemUst(this.recipesList.getAllUstensils());
-    this.sortItemIng(this.recipesList.getAllIngredients());
-    // this.appInp(this.recipesList.getAllAppliance());
+
+    // this.sortItemApp(this.recipesList.getAllAppliance());
+    // this.sortItemUst(this.recipesList.getAllUstensils());
+    // this.sortItemIng(this.recipesList.getAllIngredients());
+    // this.appInp(this.recipesList.getAllAppliance())
+
     this.closeTags();
   }
 
-  sortItemIng(list) {
-    let inpVal = document.getElementById("input-Ingredients");
-    let sortedList = [];
-    inpVal.addEventListener("keydown", (e) => {
-      sortedList = list.filter((item) => {
-        if (Utils.removeAccents(item).includes(inpVal.value)) {
-          return true;
-        }
-      });
+  // sortItemUst(list) {
+  //   let inpVal = document.getElementById("input-Ustensiles");
+  //   let sortedList = [];
+  //   inpVal.addEventListener("keypress", (e) => {
+  //     sortedList = list.filter((item) => {
+  //       if (Utils.removeAccents(item).includes(inpVal.value)) {
+  //         return true;
+  //       }
+  //     });
 
-      console.log(sortedList);
-      return sortedList;
-    });
-  }
+  //     console.log(sortedList);
+  //     return sortedList;
+  //   });
+  // }
 
-  sortItemUst(list) {
-    let inpVal = document.getElementById("input-Ustensiles");
-    let sortedList = [];
-    inpVal.addEventListener("keydown", (e) => {
-      sortedList = list.filter((item) => {
-        if (Utils.removeAccents(item).includes(inpVal.value)) {
-          return true;
-        }
-      });
+  // sortItemApp(list) {
+  //   let inpVal = document.getElementById("input-Appareils");
+  //   let ul = document.querySelector(".list-Appareils");
+  //   let sortedList = [];
+  //   inpVal.addEventListener("keydown", (e) => {
+  //     sortedList = list.filter((item) => {
+  //       if (Utils.removeAccents(item).includes(inpVal.value)) {
+  //         return true;
+  //       }
+  //     });
 
-      console.log(sortedList);
-      return sortedList;
-    });
-  }
-
-  sortItemApp(list) {
-    let inpVal = document.getElementById("input-Appareils");
-    let sortedList = [];
-    inpVal.addEventListener("keydown", (e) => {
-      sortedList = list.filter((item) => {
-        if (Utils.removeAccents(item).includes(inpVal.value)) {
-          return true;
-        }
-      });
-
-      console.log(sortedList);
-      return sortedList;
-    });
-  }
+  //     console.log(sortedList);
+  //     return sortedList;
+  //   });
+  // }
 
   printPage() {
     this.printCard(this.recipesList.recipes);

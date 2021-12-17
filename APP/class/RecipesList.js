@@ -17,7 +17,7 @@ export class RecipesList {
     return [...AllIngredients];
   }
 
-  getAllAppliance(inp) {
+  getAllAppliance() {
     const appliances = new Set();
 
     for (let recipe of this.recipes) {

@@ -1,3 +1,6 @@
+import { MainPageBuilder } from "../class/MainPageBuilder.js";
+import { Utils } from "../utils/Utils.js";
+
 export class Dropdown {
   constructor(dropList, type) {
     this.dropList = dropList;
@@ -22,12 +25,30 @@ export class Dropdown {
     return htmlContent;
   }
 
+  // sortItem(list, input) {
+  //   // let ul = document.querySelector(".list-Ingredients");
+  //   // let li = document.querySelectorAll(".items-Ingredients");
+  //   // console.log(li);
+
+  //   let sortedList = [];
+
+  //   sortedList = list.filter((item) => {
+  //     if (Utils.removeAccents(item).includes(input)) {
+  //       return true;
+  //     }
+  //   });
+
+  //   // console.log(sortedList);
+  //   this.dropList = sortedList;
+  //   return this.dropList;
+  // }
+
   get dropdown() {
     return `
 
 <div class="dropdown dropdown-${this.type} ">
     <h3>${this.type}</h3>
-    <input type="text" class="input" id="input-${
+    <input   type="text" class="input" id="input-${
       this.type
     }" placeholder="Recherche un ${this.type}">
     <button class="btn-drop btn-drop-${
@@ -35,6 +56,7 @@ export class Dropdown {
     }"><i class="icone icone-ingr fas fa-chevron-down"
     }"></i></button>
 
+    
     <ul class="list list-${this.type} " >${this.listDropdown()}</ul>
 </div>
 `;
