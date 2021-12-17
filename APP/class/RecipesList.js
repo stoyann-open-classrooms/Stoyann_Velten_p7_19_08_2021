@@ -41,7 +41,7 @@ export class RecipesList {
   search(request) {
     let sortedRecipes = [];
 
-    // console.log(request.tags.split(" "));
+    console.log(request.tags.split(" "));
 
     if (request.tags.length > 0) {
       for (let i = 0; i < this.recipes.length; i++) {
@@ -49,9 +49,14 @@ export class RecipesList {
           this.recipes[i].stringifyRecipes.includes(
             Utils.removeAccents(request.tags)
           )
-        ) {
-          sortedRecipes.push(this.recipes[i]);
-        }
+        )
+          if (
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.userInput)
+            )
+          ) {
+            sortedRecipes.push(this.recipes[i]);
+          }
       }
 
       this.recipes = sortedRecipes;
@@ -72,6 +77,7 @@ export class RecipesList {
           sortedRecipes.push(this.recipes[i]);
         }
       }
+
       // callback();
 
       this.getAllAppliance();
