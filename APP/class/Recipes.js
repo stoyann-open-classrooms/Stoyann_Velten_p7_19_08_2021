@@ -22,6 +22,8 @@ export class Recipe {
     this.appliance = appliance;
     this.ustensils = ustensils;
   }
+
+  // permet de recuperer une recette en une chaine de carractere  json
   get stringifyRecipes() {
     return Utils.removeAccents(JSON.stringify(this, null, " \t"));
   }

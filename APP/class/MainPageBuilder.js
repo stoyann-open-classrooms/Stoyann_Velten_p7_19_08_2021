@@ -41,18 +41,13 @@ export class MainPageBuilder {
       <p class="message-exp">vous pouvez
       chercher « tarte aux pommes », « poisson », etc.</p>
 
-    <button  id ="close-msg"> <i class="far fa-window-close"></i></button>
+    <button   id ="close-msg"> <i class="far fa-window-close"></i></button>
 
       </div>`;
     }
     cardsContainer.innerHTML = htmlContent;
   }
   sortItem(list, input, ul) {
-    let allli = document.querySelectorAll(".items-Ingredients");
-    // console.log(li);
-
-    console.log(input);
-
     let sortedList = [];
 
     for (let i = 0; i < list.length; i++) {
@@ -139,10 +134,11 @@ export class MainPageBuilder {
     for (let i = 0; i < itemsIngr.length; i++) {
       itemsIngr[i].addEventListener("click", () => {
         this.tagSelecteed.push(Utils.removeAccents(itemsIngr[i].innerHTML));
-
+        console.log(itemsIngr[i]);
         let tag = `  <div class="tag   ingredients" id=${itemsIngr[i].id}">
         <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
         </div>`;
+
         containerTags.innerHTML += tag;
         this.printDropdown();
         this.listenerItemsDrop();
@@ -180,16 +176,14 @@ export class MainPageBuilder {
 
   listenerInput() {
     const searchBar = document.getElementById("recherche");
-
-    // console.log(request);
     searchBar.addEventListener("input", (e) => {
-      console.log(this.getUserRequest());
-
-      this.printCard(this.recipesList.search(this.getUserRequest()));
+      if (searchBar.value.length >= 2) {
+        this.printCard(this.recipesList.search(this.getUserRequest()));
+      } else {
+        this.printCard(this.recipesList.getAllRecipes());
+      }
       this.printDropdown();
       this.listenerItemsDrop();
-
-      //  return this.recipesList;
     });
   }
 
@@ -201,17 +195,20 @@ export class MainPageBuilder {
     let closeTag = document.querySelectorAll(".tag button");
     tags.forEach((tag) =>
       tag.addEventListener("click", () => {
-        // console.log(Utils.removeAccents(el.children[0].innerHTML));
-        // console.log(Utils.removeAccents(tag.children[0].innerHTML));
         tag.style.display = "none";
+        console.log(request);
+        console.log(Utils.removeAccents(tag.children[0].innerText));
+        // request.includes(el);
 
-        // request.includes(el.children[0].innerText);
+        if (Utils.removeAccents(tag.children[0].innerText).includes(request)) {
+          console.log("ok");
+        }
 
-        request.split(" ").forEach((el) => {
-          if (tag.children[0].innerHTML.includes(el)) {
-            console.log(el);
-          }
-        });
+        // request.split(" ").forEach((el) => {
+        //   if (tag.children[0].innerHTML.includes(el)) {
+        //     console.log(el);
+        //   }
+        // });
       })
     );
   }
@@ -251,37 +248,6 @@ export class MainPageBuilder {
 
     this.closeTags();
   }
-
-  // sortItemUst(list) {
-  //   let inpVal = document.getElementById("input-Ustensiles");
-  //   let sortedList = [];
-  //   inpVal.addEventListener("keypress", (e) => {
-  //     sortedList = list.filter((item) => {
-  //       if (Utils.removeAccents(item).includes(inpVal.value)) {
-  //         return true;
-  //       }
-  //     });
-
-  //     console.log(sortedList);
-  //     return sortedList;
-  //   });
-  // }
-
-  // sortItemApp(list) {
-  //   let inpVal = document.getElementById("input-Appareils");
-  //   let ul = document.querySelector(".list-Appareils");
-  //   let sortedList = [];
-  //   inpVal.addEventListener("keydown", (e) => {
-  //     sortedList = list.filter((item) => {
-  //       if (Utils.removeAccents(item).includes(inpVal.value)) {
-  //         return true;
-  //       }
-  //     });
-
-  //     console.log(sortedList);
-  //     return sortedList;
-  //   });
-  // }
 
   printPage() {
     this.printCard(this.recipesList.recipes);

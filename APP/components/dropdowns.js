@@ -25,24 +25,6 @@ export class Dropdown {
     return htmlContent;
   }
 
-  // sortItem(list, input) {
-  //   // let ul = document.querySelector(".list-Ingredients");
-  //   // let li = document.querySelectorAll(".items-Ingredients");
-  //   // console.log(li);
-
-  //   let sortedList = [];
-
-  //   sortedList = list.filter((item) => {
-  //     if (Utils.removeAccents(item).includes(input)) {
-  //       return true;
-  //     }
-  //   });
-
-  //   // console.log(sortedList);
-  //   this.dropList = sortedList;
-  //   return this.dropList;
-  // }
-
   get dropdown() {
     return `
 
