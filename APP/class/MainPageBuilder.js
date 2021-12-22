@@ -18,7 +18,8 @@ export class MainPageBuilder {
 
     return {
       userInput: searchBar.value.trim(),
-      tags: this.tagSelecteed.join(" ").trim(),
+      // tags: this.tagSelecteed.join(" ").trim(),
+      tags: this.tagSelecteed,
       inputIngr: searchIngr.value.trim(),
       inputAppr: searchAppr.value.trim(),
       inputUst: searchUst.value.trim(),
@@ -130,15 +131,17 @@ export class MainPageBuilder {
     let itemsAppr = document.querySelectorAll(".items-Appareils");
     let itemsUst = document.querySelectorAll(".items-Ustensiles");
     let containerTags = document.querySelector(".container-tags");
+    console.log(this.getUserRequest().tags);
 
     for (let i = 0; i < itemsIngr.length; i++) {
       itemsIngr[i].addEventListener("click", () => {
-        this.tagSelecteed.push(Utils.removeAccents(itemsIngr[i].innerHTML));
-        console.log(itemsIngr[i]);
         let tag = `  <div class="tag   ingredients" id=${itemsIngr[i].id}">
         <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
         </div>`;
 
+        this.getUserRequest().tags.push(
+          Utils.removeAccents(itemsIngr[i].innerHTML)
+        );
         containerTags.innerHTML += tag;
         this.printDropdown();
         this.listenerItemsDrop();
@@ -147,43 +150,64 @@ export class MainPageBuilder {
     }
 
     for (let i = 0; i < itemsAppr.length; i++) {
-      itemsAppr[i].addEventListener("click", () => {
-        this.tagSelecteed.push(Utils.removeAccents(itemsAppr[i].innerHTML));
+      itemsAppr[i].addEventListener("click", (e) => {
+        this.getUserRequest().tags.push(
+          Utils.removeAccents(itemsAppr[i].innerHTML)
+        );
         itemsAppr[i].classList.add("active-tags");
         let tag = `  <div class="tag  appareils" id="apparreil-${i}">
         <p class="tag-txt">${itemsAppr[i].innerHTML}</p><button class="closeBtn" id="apparreil-${i}" ><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
-        this.printCard(this.recipesList.search(this.getUserRequest()));
+
         this.printDropdown();
         this.listenerItemsDrop();
+        this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
       itemsUst[i].addEventListener("click", () => {
-        this.tagSelecteed.push(Utils.removeAccents(itemsUst[i].innerHTML));
+        this.getUserRequest().tags.push(
+          Utils.removeAccents(itemsUst[i].innerHTML)
+        );
         itemsUst[i].classList.add("active-tags");
         let tag = `  <div class="tag  ustensils" id="ustensils-${i}">
         <p class="tag-txt" >${itemsUst[i].innerHTML}</p><button class="closeBtn" id="ustensils-${i}"><i class="far fa-times-circle close-tag"></i></button>
     </div>`;
         containerTags.innerHTML += tag;
-        this.printCard(this.recipesList.search(this.getUserRequest()));
+
         this.printDropdown();
         this.listenerItemsDrop();
+        this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
+  }
+
+  listenerDrop() {
+    console.log(this.getUserRequest());
+    if (this.getUserRequest().tags.length > 0) {
+      this.printCard(this.recipesList.search(this.getUserRequest()));
+    } else {
+      this.printCard(this.recipesList.getAllRecipes());
+    }
+    this.printDropdown();
+    this.listenerItemsDrop();
   }
 
   listenerInput() {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", (e) => {
-      if (searchBar.value.length >= 2) {
+      if (searchBar.value.length >= 3) {
         this.printCard(this.recipesList.search(this.getUserRequest()));
-      } else {
+      } else if (
+        searchBar.value.length === 0 &&
+        this.getUserRequest().tags.length === 0
+      ) {
         this.printCard(this.recipesList.getAllRecipes());
       }
+
       this.printDropdown();
-      this.listenerItemsDrop();
+      // this.listenerItemsDrop();
     });
   }
 
@@ -241,18 +265,14 @@ export class MainPageBuilder {
     });
     this.eventDrop();
 
-    // this.sortItemApp(this.recipesList.getAllAppliance());
-    // this.sortItemUst(this.recipesList.getAllUstensils());
-    // this.sortItemIng(this.recipesList.getAllIngredients());
-    // this.appInp(this.recipesList.getAllAppliance())
-
     this.closeTags();
   }
 
   printPage() {
-    this.printCard(this.recipesList.recipes);
+    this.printCard(this.recipesList.getAllRecipes());
     this.listenerInput();
     this.printDropdown();
+    this.listenerDrop();
     this.listenerItemsDrop();
     searchBarInp();
   }

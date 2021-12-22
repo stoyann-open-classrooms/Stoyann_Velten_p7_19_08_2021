@@ -5,6 +5,7 @@ export class RecipesList {
     this.Allrecipes = recipes;
   }
   getAllRecipes() {
+    this.recipes = this.Allrecipes;
     return this.Allrecipes;
   }
   // retourne tous les ingredients de la liste recipes
@@ -48,11 +49,22 @@ export class RecipesList {
     let sortedRecipes = [];
 
     for (let i = 0; i < this.recipes.length; i++) {
-      if (
-        this.recipes[i].stringifyRecipes.includes(
-          Utils.removeAccents(request.tags)
-        )
-      )
+      if (request.tags.length > 0) {
+        console.log("ok");
+        for (let j = 0; j < request.tags.length; j++) {
+          if (
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.tags[j])
+            )
+          ) {
+            sortedRecipes.push(this.recipes[i]);
+          }
+        }
+        // this.recipes = sortedRecipes;
+        // console.log(this.recipes);
+      }
+      if (request.userInput != "") {
+        console.log(request);
         if (
           this.recipes[i].stringifyRecipes.includes(
             Utils.removeAccents(request.userInput)
@@ -60,11 +72,14 @@ export class RecipesList {
         ) {
           sortedRecipes.push(this.recipes[i]);
         }
+      }
     }
-    this.recipes = sortedRecipes;
-    this.getAllAppliance();
-    this.getAllIngredients();
-    this.getAllUstensils();
+    this.recipes = [...new Set(sortedRecipes)];
+    console.log(this.recipes);
+    // this.recipes = sortedRecipes;
+    // this.getAllAppliance();
+    // this.getAllIngredients();
+    // this.getAllUstensils();
     return this.recipes;
   }
 }
