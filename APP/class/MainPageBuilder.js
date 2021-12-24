@@ -190,8 +190,6 @@ export class MainPageBuilder {
     } else {
       this.printCard(this.recipesList.getAllRecipes());
     }
-    // this.printDropdown();
-    this.listenerItemsDrop();
   }
 
   listenerInput() {
@@ -205,9 +203,6 @@ export class MainPageBuilder {
       ) {
         this.printCard(this.recipesList.getAllRecipes());
       }
-
-      // this.printDropdown();
-      this.listenerItemsDrop();
     });
   }
 
