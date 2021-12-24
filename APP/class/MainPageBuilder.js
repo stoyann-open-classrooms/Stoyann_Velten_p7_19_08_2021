@@ -47,6 +47,7 @@ export class MainPageBuilder {
       </div>`;
     }
     cardsContainer.innerHTML = htmlContent;
+    this.printDropdown();
   }
   sortItem(list, input, ul) {
     let sortedList = [];
@@ -131,7 +132,6 @@ export class MainPageBuilder {
     let itemsAppr = document.querySelectorAll(".items-Appareils");
     let itemsUst = document.querySelectorAll(".items-Ustensiles");
     let containerTags = document.querySelector(".container-tags");
-    console.log(this.getUserRequest().tags);
 
     for (let i = 0; i < itemsIngr.length; i++) {
       itemsIngr[i].addEventListener("click", () => {
@@ -161,8 +161,8 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
 
         this.printDropdown();
-        this.listenerItemsDrop();
         this.printCard(this.recipesList.search(this.getUserRequest()));
+        this.listenerItemsDrop();
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
@@ -184,13 +184,13 @@ export class MainPageBuilder {
   }
 
   listenerDrop() {
-    console.log(this.getUserRequest());
+    // console.log(this.getUserRequest());
     if (this.getUserRequest().tags.length > 0) {
       this.printCard(this.recipesList.search(this.getUserRequest()));
     } else {
       this.printCard(this.recipesList.getAllRecipes());
     }
-    this.printDropdown();
+    // this.printDropdown();
     this.listenerItemsDrop();
   }
 
@@ -206,8 +206,8 @@ export class MainPageBuilder {
         this.printCard(this.recipesList.getAllRecipes());
       }
 
-      this.printDropdown();
-      // this.listenerItemsDrop();
+      // this.printDropdown();
+      this.listenerItemsDrop();
     });
   }
 
@@ -220,19 +220,25 @@ export class MainPageBuilder {
     tags.forEach((tag) =>
       tag.addEventListener("click", () => {
         tag.style.display = "none";
-        console.log(request);
-        console.log(Utils.removeAccents(tag.children[0].innerText));
+
         // request.includes(el);
-
-        if (Utils.removeAccents(tag.children[0].innerText).includes(request)) {
-          console.log("ok");
+        for (let i = 0; i < request.length; i++) {
+          if (
+            Utils.removeAccents(tag.children[0].innerText).includes(request[i])
+          ) {
+            request.splice(i);
+            console.log(request);
+            this.getUserRequest().tags = request;
+            if (
+              this.getUserRequest().tags.length === 0 &&
+              this.getUserRequest().userInput.length === 0
+            ) {
+              this.printCard(this.recipesList.getAllRecipes());
+            } else {
+              this.printCard(this.recipesList.search(this.getUserRequest()));
+            }
+          }
         }
-
-        // request.split(" ").forEach((el) => {
-        //   if (tag.children[0].innerHTML.includes(el)) {
-        //     console.log(el);
-        //   }
-        // });
       })
     );
   }
@@ -264,8 +270,8 @@ export class MainPageBuilder {
       }
     });
     this.eventDrop();
-
     this.closeTags();
+    this.listenerItemsDrop();
   }
 
   printPage() {
@@ -273,7 +279,7 @@ export class MainPageBuilder {
     this.listenerInput();
     this.printDropdown();
     this.listenerDrop();
-    this.listenerItemsDrop();
+
     searchBarInp();
   }
 }

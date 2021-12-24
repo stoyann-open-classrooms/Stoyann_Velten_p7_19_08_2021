@@ -50,7 +50,6 @@ export class RecipesList {
 
     for (let i = 0; i < this.recipes.length; i++) {
       if (request.tags.length > 0) {
-        console.log("ok");
         for (let j = 0; j < request.tags.length; j++) {
           if (
             this.recipes[i].stringifyRecipes.includes(
@@ -64,7 +63,6 @@ export class RecipesList {
         // console.log(this.recipes);
       }
       if (request.userInput != "") {
-        console.log(request);
         if (
           this.recipes[i].stringifyRecipes.includes(
             Utils.removeAccents(request.userInput)
@@ -76,10 +74,7 @@ export class RecipesList {
     }
     this.recipes = [...new Set(sortedRecipes)];
     console.log(this.recipes);
-    // this.recipes = sortedRecipes;
-    // this.getAllAppliance();
-    // this.getAllIngredients();
-    // this.getAllUstensils();
+
     return this.recipes;
   }
 }
