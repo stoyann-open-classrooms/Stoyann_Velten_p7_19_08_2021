@@ -138,7 +138,6 @@ export class MainPageBuilder {
         let tag = `  <div class="tag   ingredients" id=${itemsIngr[i].id}">
         <p class="tag-txt"">${itemsIngr[i].innerHTML} </p><button class="closeBtn" id="ingredients-${i}"><i class="far fa-times-circle close-tag"></i></button>
         </div>`;
-
         this.getUserRequest().tags.push(
           Utils.removeAccents(itemsIngr[i].innerHTML)
         );
@@ -161,8 +160,8 @@ export class MainPageBuilder {
         containerTags.innerHTML += tag;
 
         this.printDropdown();
-        this.printCard(this.recipesList.search(this.getUserRequest()));
         this.listenerItemsDrop();
+        this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
     for (let i = 0; i < itemsUst.length; i++) {
@@ -178,6 +177,7 @@ export class MainPageBuilder {
 
         this.printDropdown();
         this.listenerItemsDrop();
+
         this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
@@ -229,6 +229,7 @@ export class MainPageBuilder {
               this.getUserRequest().userInput.length === 0
             ) {
               this.printCard(this.recipesList.getAllRecipes());
+              console.log(this.recipesList.getAllRecipes());
             } else {
               this.printCard(this.recipesList.search(this.getUserRequest()));
             }
@@ -271,8 +272,8 @@ export class MainPageBuilder {
 
   printPage() {
     this.printCard(this.recipesList.getAllRecipes());
-    this.listenerInput();
     this.printDropdown();
+    this.listenerInput();
     this.listenerDrop();
 
     searchBarInp();

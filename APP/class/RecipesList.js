@@ -48,6 +48,7 @@ export class RecipesList {
   search(request) {
     let sortedRecipes = [];
 
+    console.log(request.tags);
     for (let i = 0; i < this.recipes.length; i++) {
       if (request.tags.length > 0) {
         for (let j = 0; j < request.tags.length; j++) {
@@ -59,8 +60,6 @@ export class RecipesList {
             sortedRecipes.push(this.recipes[i]);
           }
         }
-        // this.recipes = sortedRecipes;
-        // console.log(this.recipes);
       }
       if (request.userInput != "") {
         if (
