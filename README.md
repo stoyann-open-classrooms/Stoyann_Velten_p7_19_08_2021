@@ -1,10 +1,6 @@
 ## Openclassrooms - [Parcours développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
-![Logo de Fisheye](/SRC/readmeCover.png)
-
 ### Projet #7/14 de la formation [développeur Front-end](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
-
-[![logo openclassrooms](/SRC/readmeCover-2.png)](https://openclassrooms.com/fr/paths/314-developpeur-front-end#path-tabs)
 
 # _Développez un algorithme de recherche en JavaScript_
 
