@@ -790,4 +790,16 @@ header .header-logo h1 {
   width: 100%;
   margin-top: 1rem;
 }
+
+.message button {
+  color: #d04f4f;
+  position: absolute;
+  top: 13%;
+  right: 3%;
+}
+
+.message button i {
+  font-weight: bolder;
+  font-size: 2rem;
+}
 /*# sourceMappingURL=main.css.map */

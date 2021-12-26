@@ -52,24 +52,27 @@ export class RecipesList {
     let sortedRecipes = [];
 
     console.log(request.tags);
+    console.log(this.recipes);
     for (let i = 0; i < this.recipes.length; i++) {
       if (request.tags.length > 0) {
-        for (let j = 0; j < request.tags.length; j++) {
+        for (let j in request.tags) {
           if (
             this.recipes[i].stringifyRecipes.includes(
               Utils.removeAccents(request.tags[j])
             )
-          )
-            if (
-              this.recipes[i].stringifyRecipes.includes(
-                Utils.removeAccents(request.tags[j])
-              ) &&
-              this.recipes[i].stringifyRecipes.includes(
-                Utils.removeAccents(request.userInput)
-              )
-            ) {
-              sortedRecipes.push(this.recipes[i]);
-            }
+          ) {
+            sortedRecipes.push(this.recipes[i]);
+          }
+          if (
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.tags[j])
+            ) &&
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.userInput)
+            )
+          ) {
+            sortedRecipes.push(this.recipes[i]);
+          }
         }
       } else if (request.userInput != "") {
         if (

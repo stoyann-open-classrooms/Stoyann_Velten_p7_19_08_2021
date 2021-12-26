@@ -40,7 +40,9 @@ export class MainPageBuilder {
       <div class="message">
         <p class="message-txt">Aucune recette ne correspond à votre critère… </p>
         <p class="message-exp">vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>
-      </div>
+        <button> <i class="fa-solid fa-x"></i></button>
+      
+        </div>
       `;
     }
     cardsContainer.innerHTML = htmlContent;
@@ -85,7 +87,6 @@ export class MainPageBuilder {
     const btnDropApp = document.querySelector(".btn-drop-Appareils");
     const btnDropUst = document.querySelector(".btn-drop-Ustensiles");
     const overlay = document.querySelector(".overlay");
-
     const searchIngr = document.getElementById("input-Ingredients");
     const searchAppr = document.getElementById("input-Appareils");
     const searchUst = document.getElementById("input-Ustensiles");
@@ -141,7 +142,7 @@ export class MainPageBuilder {
         );
         containerTags.innerHTML += tag;
         this.printDropdown();
-        this.listenerItemsDrop();
+        // this.listenerItemsDrop();
         this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
@@ -195,7 +196,7 @@ export class MainPageBuilder {
       if (searchBar.value.length >= 3) {
         this.printCard(this.recipesList.search(this.getUserRequest()));
       } else if (
-        searchBar.value.length === 0 &&
+        searchBar.value.length < 3 &&
         this.getUserRequest().tags.length === 0
       ) {
         this.printCard(this.recipesList.getAllRecipes());
@@ -219,7 +220,7 @@ export class MainPageBuilder {
             Utils.removeAccents(tag.children[0].innerText).includes(request[i])
           ) {
             request.splice(i);
-            console.log(request);
+
             this.getUserRequest().tags = request;
             if (
               this.getUserRequest().tags.length === 0 &&
