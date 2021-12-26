@@ -47,6 +47,7 @@ export class MainPageBuilder {
       </div>`;
     }
     cardsContainer.innerHTML = htmlContent;
+
     this.printDropdown();
   }
   sortItem(list, input, ul) {
@@ -275,7 +276,6 @@ export class MainPageBuilder {
     this.printDropdown();
     this.listenerInput();
     this.listenerDrop();
-
     searchBarInp();
   }
 }

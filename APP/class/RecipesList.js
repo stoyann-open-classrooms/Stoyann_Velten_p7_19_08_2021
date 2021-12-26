@@ -45,6 +45,9 @@ export class RecipesList {
   }
 
   //fonction de recherche dans la liste recipes (retourne la listes des recettes trier)
+
+  // algo 1 = boucle for
+
   search(request) {
     let sortedRecipes = [];
 
@@ -56,12 +59,19 @@ export class RecipesList {
             this.recipes[i].stringifyRecipes.includes(
               Utils.removeAccents(request.tags[j])
             )
-          ) {
-            sortedRecipes.push(this.recipes[i]);
-          }
+          )
+            if (
+              this.recipes[i].stringifyRecipes.includes(
+                Utils.removeAccents(request.tags[j])
+              ) &&
+              this.recipes[i].stringifyRecipes.includes(
+                Utils.removeAccents(request.userInput)
+              )
+            ) {
+              sortedRecipes.push(this.recipes[i]);
+            }
         }
-      }
-      if (request.userInput != "") {
+      } else if (request.userInput != "") {
         if (
           this.recipes[i].stringifyRecipes.includes(
             Utils.removeAccents(request.userInput)
@@ -76,4 +86,19 @@ export class RecipesList {
 
     return this.recipes;
   }
+
+  // algo 1 = filter
+  // search(request) {
+  //   let sortedRecipes = [];
+  //   console.log(this.recipes);
+
+  //   sortedRecipes = this.recipes.filter((recipe) => {
+  //     recipe.stringifyRecipes.includes(Utils.removeAccents(request.userInput));
+  //   });
+
+  //   this.recipes = [...new Set(sortedRecipes)];
+  //   console.log(this.recipes);
+
+  //   return this.recipes;
+  // }
 }
