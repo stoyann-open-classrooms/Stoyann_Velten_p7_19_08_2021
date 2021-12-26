@@ -1,15 +1,14 @@
 .message {
-  background-color: $grey;
+  // background-color: $grey;
   width: 100%;
   color: $primary;
   position: relative;
-  padding: 1rem;
-  border-radius: 10px;
+
   margin-top: 2rem;
   animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   .message-txt {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
   }
@@ -17,15 +16,16 @@
     text-align: center;
     font-size: 1.4rem;
     width: 100%;
+    margin-top: 1rem;
   }
-  button {
-    color: $primary;
-    position: absolute;
-    top: 13%;
-    right: 3%;
-    i {
-      font-weight: bolder;
-      font-size: 2rem;
-    }
-  }
+  // button {
+  //   color: $primary;
+  //   position: absolute;
+  //   top: 13%;
+  //   right: 3%;
+  //   i {
+  //     font-weight: bolder;
+  //     font-size: 2rem;
+  //   }
+  // }
 }

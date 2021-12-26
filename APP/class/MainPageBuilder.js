@@ -18,7 +18,6 @@ export class MainPageBuilder {
 
     return {
       userInput: searchBar.value.trim(),
-      // tags: this.tagSelecteed.join(" ").trim(),
       tags: this.tagSelecteed,
       inputIngr: searchIngr.value.trim(),
       inputAppr: searchAppr.value.trim(),
@@ -37,14 +36,12 @@ export class MainPageBuilder {
     }
 
     if (recipesList.length === 0) {
-      htmlContent = `<div class="message">
-      <p class="message-txt">Aucune recette ne correspond à votre critère… </p>
-      <p class="message-exp">vous pouvez
-      chercher « tarte aux pommes », « poisson », etc.</p>
-
-    <button   id ="close-msg"> <i class="far fa-window-close"></i></button>
-
-      </div>`;
+      htmlContent = `
+      <div class="message">
+        <p class="message-txt">Aucune recette ne correspond à votre critère… </p>
+        <p class="message-exp">vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>
+      </div>
+      `;
     }
     cardsContainer.innerHTML = htmlContent;
 
@@ -185,7 +182,6 @@ export class MainPageBuilder {
   }
 
   listenerDrop() {
-    // console.log(this.getUserRequest());
     if (this.getUserRequest().tags.length > 0) {
       this.printCard(this.recipesList.search(this.getUserRequest()));
     } else {
@@ -257,8 +253,6 @@ export class MainPageBuilder {
           this.recipesList.getAllUstensils(),
           el
         ).dropdown;
-
-        // console.log(this.recipesList.getAllAppliance());
       } else {
         dropContainer.innerHTML += new Dropdown(
           this.recipesList.getAllAppliance(),
@@ -272,7 +266,6 @@ export class MainPageBuilder {
   }
 
   printPage() {
-    this.printCard(this.recipesList.getAllRecipes());
     this.printDropdown();
     this.listenerInput();
     this.listenerDrop();
