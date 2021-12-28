@@ -140,9 +140,10 @@ export class MainPageBuilder {
         this.getUserRequest().tags.push(
           Utils.removeAccents(itemsIngr[i].innerHTML)
         );
+
         containerTags.innerHTML += tag;
         this.printDropdown();
-        // this.listenerItemsDrop();
+
         this.printCard(this.recipesList.search(this.getUserRequest()));
       });
     }
@@ -174,7 +175,7 @@ export class MainPageBuilder {
     </div>`;
         containerTags.innerHTML += tag;
 
-        this.printDropdown();
+        // this.printDropdown();
         this.listenerItemsDrop();
 
         this.printCard(this.recipesList.search(this.getUserRequest()));

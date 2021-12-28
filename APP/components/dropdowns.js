@@ -8,6 +8,7 @@ export class Dropdown {
   }
 
   listDropdown() {
+    console.log();
     let htmlContent = ``;
     let v = 0;
 

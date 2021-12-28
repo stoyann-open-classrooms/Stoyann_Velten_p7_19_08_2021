@@ -51,27 +51,29 @@ export class RecipesList {
   search(request) {
     let sortedRecipes = [];
 
-    console.log(request.tags);
-    console.log(this.recipes);
     for (let i = 0; i < this.recipes.length; i++) {
       if (request.tags.length > 0) {
-        for (let j in request.tags) {
+        let tagOk = 0;
+
+        // verrifier si tous les tags sont dans les recette avant de
+        console.log(tagOk);
+        for (let tag in request.tags) {
           if (
             this.recipes[i].stringifyRecipes.includes(
-              Utils.removeAccents(request.tags[j])
-            )
-          ) {
-            sortedRecipes.push(this.recipes[i]);
-          }
-          if (
-            this.recipes[i].stringifyRecipes.includes(
-              Utils.removeAccents(request.tags[j])
+              Utils.removeAccents(request.tags[tag])
+            ) ||
+            (this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.tags[tag])
             ) &&
-            this.recipes[i].stringifyRecipes.includes(
-              Utils.removeAccents(request.userInput)
-            )
+              this.recipes[i].stringifyRecipes.includes(
+                Utils.removeAccents(request.userInput)
+              ))
           ) {
-            sortedRecipes.push(this.recipes[i]);
+            tagOk++;
+
+            if (request.tags.length === tagOk) {
+              sortedRecipes.push(this.recipes[i]);
+            }
           }
         }
       } else if (request.userInput != "") {
@@ -85,7 +87,8 @@ export class RecipesList {
       }
     }
     this.recipes = [...new Set(sortedRecipes)];
-    console.log(this.recipes);
+
+    console.log("coucou", this.recipes);
 
     return this.recipes;
   }
