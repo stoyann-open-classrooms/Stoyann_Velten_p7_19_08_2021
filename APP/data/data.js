@@ -1970,4 +1970,282 @@ export const RECIPES = [
     appliance: "Wook",
     ustensils: ["pinceau", "couteau", "plat"],
   },
+  {
+    id: 54,
+    name: "Nouilles de patates douces",
+    altText: "Steak de thon aux épices tout juste découper",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "nouilles",
+        unit: "150 g",
+      },
+      {
+        ingredient: "carottes",
+        quantity: 2,
+      },
+      {
+        ingredient: "gousse d'ail",
+        quantity: 1,
+      },
+      {
+        ingredient: "sauce de soja",
+        quantity: 1,
+        unit: "cuillère à café",
+      },
+      {
+        ingredient: "Poivron",
+        quantity: 1,
+      },
+      {
+        ingredient: "Oignon",
+        quantity: 1,
+      },
+      {
+        ingredient: "huile de sésame",
+        quantity: 1,
+        unit: "cuillère à café",
+      },
+      {
+        ingredient: "Sucre",
+        quantity: 1,
+        unit: "pincée",
+      },
+    ],
+    time: 30,
+    description:
+      " Faites bouillir de l’eau non salée dans une casserole. Versez-y les nouilles pendant 5 min en les mélangeant régulièrement. Faites cuire votre poivron, vos carottes en fines lamelles, et votre oignon émincé dans une poêle et remuez. Ajoutez l’ail pressé. Rincer les nouilles. Égouttez-les. Ajoutez 1 c. à café d’huile de sésame, 1 autre de sauce soja, 1 pincée de sucre. Mélangez le tout. Astuces : Les nouilles de patate douce sont cuisinées avec des légumes. Vous pouvez également les marier avec du bœuf ou du porc. ",
+    appliance: "casserole",
+    ustensils: ["poêle", "couteau", "plat", "cuillere"],
+  },
+  {
+    id: 55,
+    name: "Poé a la citrouille",
+    altText: "Un délicieux poé a la citrouille dans une verrine",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: " citrouille mûre",
+        quantity: 1,
+        unit: "kg",
+      },
+      {
+        ingredient: " lait de coco",
+        quantity: 1,
+        unit: "litre",
+      },
+      {
+        ingredient: " sucre en poudre",
+        quantity: 1,
+        unit: "Gr",
+      },
+      {
+        ingredient: " farine de manioc",
+        quantity: 500,
+        unit: "Gr",
+      },
+    ],
+    time: 60,
+    description:
+      " Epluchez votre citrouille au couteau ou avec un économat. Découpez votre citrouille en gros morceaux de 5 cm.Faites bouillir vos morceaux de citrouille dans une marmite remplie d'eau jusqu'à ce qu'ils deviennent mous. Vérifiez la cuisson avec la pointe d'un couteau. Une fois cuit, réservez-les dans un saladier, écrasez votre morceaux en purée et faites-les refroidir. Dans une casserole, faites bouillir votre lait de coco. Rajoutez le sucre en poudre. une fois prêt, laissez refroidir votre préparation.Mélangez votre purée de citrouille avec la farine de manioc (1 bol de farine de manioc pour 2 bols de purée de citrouille). Placez votre préparation dans un plat puis enfournez-le au four pendant 30 minutes à 180C°. Une fois cuit, coupez des cubes de 5 cm et trempez-les dans le lait de coco. Servez dans un ramequin accompagnée de jus de coco. Bon appétit ! A noter : en Polynésie, le poé est à la fois un accompagnement et un dessert. Vous pouvez également le réalisez avec d'autres fruits dont la banane poingo !",
+    appliance: "four",
+    ustensils: ["saladier", "casserole", "plat", "marmitte", "ramequin"],
+  },
+  {
+    id: 56,
+    name: "Brochette de cerf marinée",
+    altText: "Une delicieuse brochette de cerf marinée prête a être déguster",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: " viande de cerf coupés en cubes d’environ 4cm",
+        quantity: 800,
+        unit: "gr",
+      },
+      {
+        ingredient: "huile d’olive",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: " sauce soja",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "vinaigre de vin rouge",
+        quantity: 1,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "ketchup",
+        quantity: 3,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "gousses d’ail écrasées",
+        quantity: 2,
+      },
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "Poivre",
+      },
+    ],
+    time: 20,
+    description:
+      " Enfiler les morceaux de cerf sur un pic à brochette (en bois ou inox). Dans un plat, préparez votre marinade avec l’huile, la sauce soja, le vinaigre de vin, le ketchup et l’ail. Salez et poivrez a convenance.Enrobez toutes vos brochettes de cette préparation et laissez reposer pendant une heure. Faites cuire vos brochettes au barbecue ou à la plancha. Bon appétit !! ",
+    appliance: "plancha",
+    ustensils: ["pic à brochette ", "plat"],
+  },
+  {
+    id: 57,
+    name: "Sorbet a la mangue",
+    altText: "Une coupe de sorbet a la mangue dans un ramequin",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "  grosses mangues mures",
+        quantity: 3,
+      },
+      {
+        ingredient: "sucre",
+        quantity: 150,
+        unit: "gr",
+      },
+      {
+        ingredient: "eau",
+        quantity: 2,
+        unit: "Dl",
+      },
+    ],
+    time: 30,
+    description:
+      " Dans une casserole faire fondre le sucre dans de l'eau tiède en tournant avec une spatule, chauffer et retirer le sirop après 2 bouillons. Laisser refroidir, ajouter les mangues réduites en purée, mélanger et mettre au congélateur pendant 5 heures. Durant la congélation remuer à la fourchette 4 à 5 fois Lorsque le sorbet est a moitié pris l’enlever Battre au fouet Remettre au congélateur Et dégustez votre sorbet de mangue . Astuce : Vous pouvez rajouter de la pulpe du fruit de la passion.",
+    appliance: "casserole",
+    ustensils: ["spatule ", "fourchette", "fouet"],
+  },
+  {
+    id: 58,
+    name: "Roti de porc caramelisé",
+    altText: "tranche de roti de porc caramelisé prêt a être croquer",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "travers de porc",
+        quantity: 1,
+        unit: "Kg",
+      },
+      {
+        ingredient: "jus d’ananas",
+        quantity: 1,
+        unit: "L",
+      },
+      {
+        ingredient: "Miel",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "Sauce soja",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "vinaigre de Miel",
+        quantity: 1,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "Ketchup",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "ail",
+        quantity: 4,
+        unit: "gousse",
+      },
+      {
+        ingredient: "gingembre rapé",
+        quantity: 20,
+        unit: "Gr",
+      },
+      {
+        ingredient: "huile d'olive",
+      },
+      {
+        ingredient: "sel & poivre",
+      },
+    ],
+    time: 120,
+    description:
+      "Préparez votre travers de porc ou demandez à votre boucher d’entailler la couenne de Porc de façon à faire des losanges. Mettre le travers de porc dans une marmite d'eau chaude et laissez cuire pendant 30 minutes. Retirer le et laissez le égoutter sur une grille (15mns).Préparez la marinade : mettre tous les ingrédients dans un grand cul de poule, mélangez au fouet. Badigeonnez à l'aide d'un pinceau votre travers de Porc uniformément et garder le reste de la marinade. Enfournez le travers au four à 180°C côté couenne au dessus et laissez caraméliser. Retournez la pièce durant la cuisson, environ 10/12 minutes par côté. Arrosez avec le reste de la marinade tout au long de la cuisson à l’aide d’une louche. Quand les travers sont cuits, mettre le four à 200°C et laissez la couenne caraméliser à votre convenance. Bon appétit",
+    appliance: "four",
+    ustensils: ["grille ", "couteau", "cul de poule", "pinceau"],
+  },
+  {
+    id: 59,
+    name: "Pomme de terre sautée facon grand-mère",
+    altText: "tranche de roti de porc caramelisé prêt a être croquer",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "pommes de terre",
+        quantity: 1.5,
+        unit: "Kg",
+      },
+      {
+        ingredient: "echalottes",
+        quantity: 1,
+      },
+      {
+        ingredient: "gros sel",
+        quantity: 1,
+        unit: "cuillere a café",
+      },
+      {
+        ingredient: "beurre froid",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+    ],
+    time: 120,
+    description:
+      "Epluchez les pommes de terre puis découpez-le en morceaux assez gros et réguliers. Passez les morceaux de pomme de terre sous l’eau afin d’enlever l’amidon. Mettez les morceaux encore mouillés dans un torchon sec puis frottez-les.Faites chauffez l’huile dans une poêle à fond épais, ajoutez y le gros sel, puis les pommes de terre. Laissez le cuire à feux vif en les tournants régulièrement pendant 20 minutes. Elles doivent bien  colorer. Baissez le feu et laissez-le cuire encore 10 minutes. Ajoutez l’échalote ciselée et cuire encore 5 minutes. Ajoutez le beurre froid (cela va les faire croustiller), et laissez cuire encore 15 minutes en les mélangeant. Vérifiez la cuisson et servez-les immédiatement.   ",
+    appliance: "poêle",
+    ustensils: ["torchon", "couteau", "ciseaux", "cuillère en bois"],
+  },
+  {
+    id: 60,
+    name: "Magrets de canard au miel",
+    altText:
+      "Un magret de cannard coupé en tranche dans une assiette acompagnés de ces légumes.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "magret de canard",
+        quantity: 2,
+      },
+      {
+        ingredient: "vinaigre balsamique",
+        quantity: 3,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "miel",
+        quantity: 3,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "sel",
+      },
+    ],
+    time: 20,
+    description:
+      "Inciser les magrets côté peau en quadrillage sans couper la viande. Cuire les magrets à feu vif dans une cocotte en fonte, en commençant par le coté peau. Le temps de cuisson dépend du fait qu'on aime la viande plus ou moins saignante. Compter environ 5 min de chaque côté. Retirer régulièrement la graisse en cours de cuisson. Réserver les magrets au chaud (au four, couverts par une feuille d'aluminium). Déglacer la cocotte avec le miel et le vinaigre balsamique. Ne pas faire bouillir, la préparation tournerait au caramel. Bien poivrer. Mettre en saucière accompagnant le magret coupé en tranches. Comme accompagnement, je suggère des petits navets glacés (cuits à l'eau puis passés au beurre avec un peu de sucre).",
+    appliance: "cocotte",
+    ustensils: ["saucière", "four", "cuillère en bois"],
+  },
 ];
