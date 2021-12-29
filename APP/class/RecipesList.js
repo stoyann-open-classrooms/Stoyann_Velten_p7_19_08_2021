@@ -46,6 +46,7 @@ export class RecipesList {
 
   //fonction de recherche dans la liste recipes (retourne la listes des recettes trier)
 
+  // ================================ algo de recherche numero 1
   search(request) {
     let sortedRecipes = [];
 
@@ -57,23 +58,19 @@ export class RecipesList {
           if (
             this.recipes[i].stringifyRecipes.includes(
               Utils.removeAccents(request.tags[tag])
-            ) ||
-            (this.recipes[i].stringifyRecipes.includes(
-              Utils.removeAccents(request.tags[tag])
             ) &&
-              this.recipes[i].stringifyRecipes.includes(
-                Utils.removeAccents(request.userInput)
-              ))
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.userInput)
+            )
           ) {
             tagOk++;
-
+            console.log("coucou");
             if (request.tags.length === tagOk) {
               sortedRecipes.push(this.recipes[i]);
             }
           }
         }
-      }
-      if (request.userInput != "") {
+      } else if (request.userInput != "") {
         if (
           this.recipes[i].stringifyRecipes.includes(
             Utils.removeAccents(request.userInput)
@@ -87,47 +84,4 @@ export class RecipesList {
 
     return this.recipes;
   }
-
-  // search(request) {
-  //   let sortedRecipes = [];
-
-  //   for (let i = 0; i < this.recipes.length; i++) {
-  //     if (request.tags.length > 0) {
-  //       let tagOk = 0;
-
-  //       // verrifier si tous les tags sont dans les recette avant de
-
-  //       for (let tag in request.tags) {
-  //         if (
-  //           this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.tags[tag])
-  //           ) ||
-  //           (this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.tags[tag])
-  //           ) &&
-  //             this.recipes[i].stringifyRecipes.includes(
-  //               Utils.removeAccents(request.userInput)
-  //             ))
-  //         ) {
-  //           tagOk++;
-
-  //           if (request.tags.length === tagOk) {
-  //             sortedRecipes.push(this.recipes[i]);
-  //           }
-  //         }
-  //       }
-  //     } else if (request.userInput != "") {
-  //       if (
-  //         this.recipes[i].stringifyRecipes.includes(
-  //           Utils.removeAccents(request.userInput)
-  //         )
-  //       ) {
-  //         sortedRecipes.push(this.recipes[i]);
-  //       }
-  //     }
-  //   }
-  //   this.recipes = [...new Set(sortedRecipes)];
-
-  //   return this.recipes;
-  // }
 }
