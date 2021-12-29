@@ -44,48 +44,6 @@ export class RecipesList {
     return [...AllUstensils];
   }
 
-  //fonction de recherche dans la liste recipes (retourne la listes des recettes trier)
-
-  // ================================ algo de recherche numero 1
-
-  // search(request) {
-  //   let sortedRecipes = [];
-
-  //   for (let i = 0; i < this.recipes.length; i++) {
-  //     if (request.tags.length > 0) {
-  //       let verifTag = 0;
-
-  //       for (let tag in request.tags) {
-  //         if (
-  //           this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.tags[tag])
-  //           ) &&
-  //           this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.userInput)
-  //           )
-  //         ) {
-  //           verifTag++;
-
-  //           if (request.tags.length === verifTag) {
-  //             sortedRecipes.push(this.recipes[i]);
-  //           }
-  //         }
-  //       }
-  //     } else if (request.userInput != "") {
-  //       if (
-  //         this.recipes[i].stringifyRecipes.includes(
-  //           Utils.removeAccents(request.userInput)
-  //         )
-  //       ) {
-  //         sortedRecipes.push(this.recipes[i]);
-  //       }
-  //     }
-  //   }
-  //   this.recipes = [...new Set(sortedRecipes)];
-
-  //   return this.recipes;
-  // }
-
   // ================================ algo de recherche numero 2
 
   search(request) {
