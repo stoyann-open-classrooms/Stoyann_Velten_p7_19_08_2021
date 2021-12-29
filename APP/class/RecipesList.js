@@ -53,7 +53,7 @@ export class RecipesList {
 
   //   for (let i = 0; i < this.recipes.length; i++) {
   //     if (request.tags.length > 0) {
-  //       let tagOk = 0;
+  //       let verifTag = 0;
 
   //       for (let tag in request.tags) {
   //         if (
@@ -64,9 +64,9 @@ export class RecipesList {
   //             Utils.removeAccents(request.userInput)
   //           )
   //         ) {
-  //           tagOk++;
+  //           verifTag++;
 
-  //           if (request.tags.length === tagOk) {
+  //           if (request.tags.length === verifTag) {
   //             sortedRecipes.push(this.recipes[i]);
   //           }
   //         }
@@ -92,8 +92,6 @@ export class RecipesList {
     let sortedRecipes = [];
 
     if (request.tags.length > 0) {
-      let tagOk = 0;
-
       for (let tag in request.tags) {
         sortedRecipes = this.recipes.filter(
           (recipe) =>
