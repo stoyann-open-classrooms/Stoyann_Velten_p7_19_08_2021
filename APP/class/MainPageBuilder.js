@@ -195,7 +195,9 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", (e) => {
       if (searchBar.value.length >= 3) {
+        console.time(recherche);
         this.printCard(this.recipesList.search(this.getUserRequest()));
+        console.timeEnd(recherche);
       } else if (
         searchBar.value.length < 3 &&
         this.getUserRequest().tags.length === 0
