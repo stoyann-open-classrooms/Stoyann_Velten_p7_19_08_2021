@@ -46,41 +46,41 @@ export class RecipesList {
 
   // ================================ algo de recherche numero 2 boucle for
 
-  // search(request) {
-  //   let sortedRecipes = [];
+  search(request) {
+    let sortedRecipes = [];
 
-  //   for (let i = 0; i < this.recipes.length; i++) {
-  //     if (request.tags.length > 0) {
-  //       let verifTag = 0;
+    for (let i = 0; i < this.recipes.length; i++) {
+      if (request.tags.length > 0) {
+        let verifTag = 0;
 
-  //       for (let tag in request.tags) {
-  //         if (
-  //           this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.tags[tag])
-  //           ) &&
-  //           this.recipes[i].stringifyRecipes.includes(
-  //             Utils.removeAccents(request.userInput)
-  //           )
-  //         ) {
-  //           verifTag++;
+        for (let tag in request.tags) {
+          if (
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.tags[tag])
+            ) &&
+            this.recipes[i].stringifyRecipes.includes(
+              Utils.removeAccents(request.userInput)
+            )
+          ) {
+            verifTag++;
 
-  //           if (request.tags.length === verifTag) {
-  //             sortedRecipes.push(this.recipes[i]);
-  //           }
-  //         }
-  //       }
-  //     } else if (request.userInput != "") {
-  //       if (
-  //         this.recipes[i].stringifyRecipes.includes(
-  //           Utils.removeAccents(request.userInput)
-  //         )
-  //       ) {
-  //         sortedRecipes.push(this.recipes[i]);
-  //       }
-  //     }
-  //   }
-  //   this.recipes = [...new Set(sortedRecipes)];
+            if (request.tags.length === verifTag) {
+              sortedRecipes.push(this.recipes[i]);
+            }
+          }
+        }
+      } else if (request.userInput != "") {
+        if (
+          this.recipes[i].stringifyRecipes.includes(
+            Utils.removeAccents(request.userInput)
+          )
+        ) {
+          sortedRecipes.push(this.recipes[i]);
+        }
+      }
+    }
+    this.recipes = [...new Set(sortedRecipes)];
 
-  //   return this.recipes;
-  // }
+    return this.recipes;
+  }
 }
