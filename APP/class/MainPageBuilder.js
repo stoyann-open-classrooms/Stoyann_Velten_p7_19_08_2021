@@ -195,7 +195,9 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", (e) => {
       if (searchBar.value.length >= 3) {
+        console.time(recherche);
         this.printCard(this.recipesList.search(this.getUserRequest()));
+        console.timeEnd(recherche);
       } else if (
         searchBar.value.length < 3 &&
         this.getUserRequest().tags.length === 0
@@ -228,7 +230,7 @@ export class MainPageBuilder {
               this.getUserRequest().userInput.length === 0
             ) {
               this.printCard(this.recipesList.getAllRecipes());
-              console.log(this.recipesList.getAllRecipes());
+              // console.table(this.recipesList.getAllRecipes());
             } else {
               this.printCard(this.recipesList.search(this.getUserRequest()));
             }

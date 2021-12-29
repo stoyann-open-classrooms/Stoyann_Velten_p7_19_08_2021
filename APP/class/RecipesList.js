@@ -45,7 +45,6 @@ export class RecipesList {
   }
 
   // ================================ algo de recherche numero 2
-
   search(request) {
     let sortedRecipes = [];
 

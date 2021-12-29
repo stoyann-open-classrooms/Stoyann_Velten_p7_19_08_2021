@@ -2358,4 +2358,43 @@ export const RECIPES = [
     appliance: "four",
     ustensils: ["plat a gratin", "cocotte", "econome"],
   },
+  {
+    id: 63,
+    name: "Tarte au fruit de la Passion",
+    altText: "Une délicieuse tarte au fruits de la passion.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+      },
+      {
+        ingredient: "sucre",
+        quantity: 120,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+      },
+      {
+        ingredient: "beurre",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "fruit de la passion",
+      },
+      {
+        ingredient: "crème fraîche",
+        quantity: 2,
+        unit: "cuillère a soupe",
+      },
+    ],
+    time: 50,
+    description:
+      "préchauffer le four à 200°C (thermostat 6-7)Battre les oeufs et le sucre en mousse.Ajouter le beurre fondu refroidi, le jus des maracudja et la crème fraîche. Bien mélanger pour avoir une bonne crème. Verser la crème sur la pâte à tarte étalée dans un moule. Faire cuire 30 min puis laisser reposer au frais environ 1 h 30. Servir frais.",
+    appliance: "four",
+    ustensils: ["moule a tarte", "saladier", "fouet"],
+  },
 ];
