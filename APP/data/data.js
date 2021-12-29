@@ -2397,4 +2397,430 @@ export const RECIPES = [
     appliance: "four",
     ustensils: ["moule a tarte", "saladier", "fouet"],
   },
+  {
+    id: 64,
+    name: "Ambrevade au lait de coco",
+    altText: "Une délicieuse tarte au fruits de la passion.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "lait de coco",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "ambrevade",
+        quantity: 500,
+        unit: "gr",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 2,
+      },
+      {
+        ingredient: "poivre en grains",
+      },
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "grains de safran",
+      },
+    ],
+    time: 240,
+    description:
+      " Écosser les ambrevades. Les laisser dans l'eau toute une nuit les plonger dans de l'eau bouillante et les retirer lorsqu'ils sont mous Dans une sauteuse mettre le lait de coco,les oignons, le safran le poivre (écrasé ) et le sel porter à ébullition Y verser les ambrevades. Laisser réduire jusqu'à obtenir une sorte de purée.",
+    appliance: "sauteuse",
+    ustensils: ["cuillere en bois"],
+  },
+  {
+    id: 65,
+    name: "Ambrevade a l'antillaise",
+    altText: "Un saladier d'ambrevade",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "huile d'olive",
+        quantity: 1,
+        unit: "filet",
+      },
+      {
+        ingredient: "ambrevade",
+        quantity: 450,
+        unit: "gr",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 2,
+      },
+      {
+        ingredient: "bouquet garni",
+        quantity: 1,
+      },
+      {
+        ingredient: "sel",
+        quantity: 4,
+        unit: "gr",
+      },
+      {
+        ingredient: "melange 4 épices",
+        quantity: 1,
+        unit: "cuillere a café",
+      },
+      {
+        ingredient: "sucre de canne roux",
+        quantity: 2,
+        unit: "cuillere a café",
+      },
+      {
+        ingredient: "eau",
+        quantity: 1.4,
+        unit: "litre",
+      },
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+      {
+        ingredient: "persil",
+        quantity: 5,
+        unit: "feuille",
+      },
+    ],
+    time: 135,
+    description:
+      " Mettez les pois dans une casserole et couvrez-les d'eau. Faites bouillir les pois 25 minutes dès démarrage de l'ébulition. Au terme de cette première cuisson, arrêtez le feu. Egouttez les pois. Mixer finement l'oignon. Dans une casserole, mettez un filet d'huile d'olive à chauffer er versez-y l'oignon. Faites revenir sans arriver à coloration. Ajoutez le mélange 4 épices, le sucre, et le melange bouquet garni. Incorporez les pois et faites revenir le tout pendant 5 minutes. Ajoutez le persil haché, l'ail et couvrez d'eau. Recouvrez la casserole. C'est parti pour 1h45 de cuisson à feu moyen. Aprés 1h30 environ, ajoutez le sel et rectifiez l'assaisonement à votre goût. Laissez en core cuire 15 minutes. Au terme de ce temps, Ambrevade sont prête à être deguster.",
+    appliance: "casserole",
+    ustensils: ["cuillere en bois"],
+  },
+  {
+    id: 66,
+    name: "pâte à crèpes facile",
+    altText: "Des crêpes prêtent a être déguster",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+      },
+      {
+        ingredient: "lait",
+        quantity: 0.5,
+        unit: "l",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 1,
+        unit: "pincée",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 2,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "beurre fondu",
+        quantity: 50,
+        unit: "gr",
+      },
+    ],
+    time: 25,
+    description:
+      "Mettez la farine dans un saladier avec le sel et le sucre. Faites un puits au milieu et versez-y les œufs. Commencez à mélanger doucement. Quand le mélange devient épais, ajoutez le lait froid petit à petit. Quand tout le lait est mélangé, la pâte doit être assez fluide. Si elle vous paraît trop épaisse, rajoutez un peu de lait. Ajoutez ensuite le beurre fondu refroidi, mélangez bien. Faites cuire les crêpes dans une poêle chaude (par précaution légèrement huilée si votre poêle à crêpes n'est pas anti-adhésive). Versez une petite louche de pâte dans la poêle, faites un mouvement de rotation pour répartir la pâte sur toute la surface. Posez sur le feu et quand le tour de la crêpe se colore en roux clair, il est temps de la retourner. Laissez cuire environ une minute de ce côté et la crêpe est prête. Répétez jusqu'à épuisement de la pâte. ",
+    appliance: "poêle",
+    ustensils: ["cuillere en bois", "saladier", "louche"],
+  },
+  {
+    id: 67,
+    name: "Pâte brisée rapide",
+    altText: "Une pâte brisée prêtent à être garni",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 300,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 2,
+        unit: "cuillere à café",
+      },
+      {
+        ingredient: "sucre (si pâte sucrée)",
+        quantity: 3,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "eau",
+        quantity: 8,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "beurre pommade",
+        quantity: 150,
+        unit: "gr",
+      },
+    ],
+    time: 45,
+    description:
+      "Mélanger la farine et le sel dans un plat (et le sucre si sucre il y a). Ajouter le beurre puis l'incorporer à la farine en pétrissant rapidement et légèrement du bout des doigts. On doit obtenir une sorte de semoule grossière en 2 ou 3 min. Incorporer rapidement le lait ou l'eau. Il en faut très peu pour permettre à la pâte de se lier et de faire boule. Le lait ou l'eau ? C'est selon les goûts.Pour étaler sans problème, étaler la pâte sur du papier cuisson et cuire tel quel dans la platine.",
+    appliance: "plats",
+    ustensils: ["rouleaux a pâtisserie", "saladier", "cuillere"],
+  },
+  {
+    id: 68,
+    name: "Pâte feuilletée rapide",
+    altText: "Une pâte feuilletée tout juste sortie du four.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 3,
+        unit: "gr",
+      },
+      {
+        ingredient: "sucre ",
+        quantity: 4,
+        unit: "cuillere à café",
+      },
+      {
+        ingredient: "eau",
+        quantity: 90,
+        unit: "ml",
+      },
+
+      {
+        ingredient: "beurre froid",
+        quantity: 240,
+        unit: "gr",
+      },
+    ],
+    time: 30,
+    description:
+      "Dans le bol du robot, versez la farine, le beurre froid coupé en petits morceaux, le sel et le sucre en poudre. Mélangez les ingrédients avec la feuille. Ajoutez l'eau et, avec la feuille, mélangez les ingrédients pour obtenir une boule de pâte.Ne cherchez pas à incorporer le beurre complètement, il doit rester des morceaux apparents c'est ce qui permettra au feuilletage de se développer à la cuisson.Filmer le pâton au contact et réservez une heure au réfrigérateur. Ce temps de repos au froid peut être diminué à 30 minutes l'hiver, en fonction de la température de votre cuisine. Fleurez votre plan de travail et posez votre pâton de pâte feuilletée. Donnez lui une forme légèrement rectangulaire. Au rouleau, abaissez le pâton sur 60cm de longueur et 15cm de largeur Repliez le tiers supérieur de l'abaisse vers l'intérieur. Recouvrez avec le tiers inférieur.Tournez le pâton obtenu d'un quart de tour vers la droite. Vous venez de faire un tour simple. Faites en 4 supplémentaires en procédant de la même façon. Votre pâte feuilletée  est prête à être utilisée!",
+    appliance: "plats",
+    ustensils: ["rouleaux a pâtisserie", "robot", "papier cuisson"],
+  },
+  {
+    id: 69,
+    name: "poulet à la crème et champignons",
+    altText: "Un délicieux plât de poulet a la créme et au champignons.",
+    servings: 3,
+    ingredients: [
+      {
+        ingredient: "ail",
+        quantity: 1,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "champignons de Paris",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "farine",
+        quantity: 1,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "persil frais",
+        quantity: 1,
+        unit: "botte",
+      },
+
+      {
+        ingredient: " poulet",
+        quantity: 3,
+        unit: "cuisse",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+      },
+      {
+        ingredient: "crème fraîche épaisse",
+        quantity: 1,
+        unit: "pot",
+      },
+      {
+        ingredient: "fond de sauce volaille",
+        quantity: 1,
+        unit: "cube",
+      },
+    ],
+    time: 70,
+    description:
+      "Couper les cuisses de poulet en 2. Les faire revenir dans l'huile pendant 20 min puis ajouter l'oignon émincé, l'ail écrasé, une bonne pincée de persil frais et une cuillère à soupe de fond de sauce volaille. Mélanger le tout et faire revenir jusqu'à ce que les oignons soient translucides. Ajouter la boîte de champignons avec le jus (très important) et la deuxième cuillère à soupe de fond de volaille et laisser cuire a couvert avec environ 50 cl d'eau pendant 10 min. A part, mélanger la crème et la farine. Verser dans la marmite avec vos ingrédients. Laisser mijoter environ 15 min, le temps que la sauce devienne bien onctueuse.",
+    appliance: "marmitte",
+    ustensils: ["bol", "fouet"],
+  },
+  {
+    id: 70,
+    name: "Crevettes sautée ail et persil",
+    altText: "",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "ail",
+        quantity: 4,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "piment doux",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "persil frais",
+        quantity: 1,
+        unit: "bouquet",
+      },
+
+      {
+        ingredient: " huile d'olive",
+        quantity: 6,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "poivre",
+      },
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "crevette",
+        quantity: 400,
+        unit: "gr",
+      },
+    ],
+    time: 25,
+    description:
+      "CLavez et essuyez les crevettes. Faites chauffer 4 cuillères à soupe d'huile dans 1 grande poêle. Ajoutez les crevettes et faites les cuire 5 mn de chaque côté puis sortez les de la poêle. Passez l'ail au mixeur, le persil et le piment doux. Dans la poêle, versez le reste de d'huile puis ajoutez l'ail, le persil et le piment. Remuez bien, pour que l'ail soit cuit mais non brûlé. Remettez les crevettes à chauffer. Salez, poivrez et servez chaud.",
+    appliance: "poêle",
+    ustensils: ["mixer"],
+  },
+  {
+    id: 71,
+    name: "Pancakes à la japonaise",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "beurre",
+        quantity: 50,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Lait entier",
+        quantity: 50,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "sucre vanillé",
+        quantity: 1,
+        unit: "sachet",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 75,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "levure chimique",
+        quantity: 3,
+        unit: "cuillère à café",
+      },
+      {
+        ingredient: "sel",
+        quantity: 1,
+        unit: "pincée",
+      },
+    ],
+    time: 15,
+    description:
+      "Tamisez la farine et la levure dans un saladier. Ajoutez le sucre, le sucre vanillé et le sel. Creusez un puits, ajoutez les oeufs, le beurre fondu et un peu de lait puis travaillez la pâte. Mouillez progressivement avec le reste du lait jusqu'à ce que la pâte forme un ruban. Faites cuire les pancakes dans une petite poêle beurrée bien chaude. Versez une demi-louche de préparation et faites cuire 2 à 3 minutes le temps que des bulles se forment à la surface. Retournez et faites cuire 2 minutes sur l'autre face.",
+    appliance: "poêle",
+    ustensils: ["saladier", "louche"],
+  },
+  {
+    id: 72,
+    name: "Porc croustillants chinois",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "poitrine de porc",
+        quantity: 1.2,
+        unit: "kg",
+      },
+
+      {
+        ingredient: "vin Shaoxing ou saké",
+        quantity: 4,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "vinaigre de riz",
+        quantity: 4,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "cinq épices chinois",
+      },
+      {
+        ingredient: "gros sel",
+        quantity: 1.5,
+        unit: "kg",
+      },
+      {
+        ingredient: "blanc d'oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "vinnaigre",
+        quantity: 7,
+        unit: "cl",
+      },
+    ],
+    time: 190,
+    description:
+      "Désosser et retirer les cartilages de la poitrine à l'aide d'un couteau à désosser.Perforer la couenne de la poitrine de porc sur toute la surface jusqu'à obtenir une multitude de petits trous rapprochés. Utiliser la pointe du couteau ou un attendrisseur à viande. Ces petits trous vont permettre à la graisse de remonter en surface, griller la couenne pour la rendre croustillante et provoquer les boursouflures caractéristiques. De la même manière, perforer de nombreux trous la chair pour permettre à la marinade de pénétrer et assaisonner la viande. Il est également possible d'entailler la chair sur toute la longueur tous les 2 ou 3 cm environ, sans découper la dernière couche de graisse ni la couenne. Asperger la chair avec de l'alcool de riz (Shaoxing, Saké...). Saler au sel fin et saupoudrer de cinq-épices. Frotter avec la main pour recouvrir toute la surface. Placer la poitrine dans un bac, peau vers le haut. Saler légèrement et masser pour faire pénétrer. Badigeonner la couenne au vinaigre de riz à l'aide d'un pinceau. Pour une chair assaisonnée à coeur, placer au réfrigérateur et laisser mariner pendant une nuit. Ne pas recouvrir pour permettre à la couenne de sécher. Préparer la pâte de sel : Préchauffer le four à 180°C chaleur tournante. Préparer la croûte de sel en mélangeant dans une calotte le gros sel, le vinaigre et les blancs d'oeuf à l'aide d'une spatule. On doit obtenir une pâte granuleuse qui reste bien amalgamée. Recouvrir une plaque à rôtir avec du papier aluminium. Étaler une couche de croûte de sel sur ~ 1 cm d'épaisseur, sur une surface légèrement supérieure à la poitrine. Placer la poitrine au centre, couenne vers le haut. Recouvrir de pâte de sel, y compris de chaque côté. Façonner pour souder les bords et obtenir une coque hermétique. Enfourner la plaque et cuire à 180°C pendant 90 min. Casser la croûte, sortir la poitrine et retirer tout le sel en frottant avec du papier absorbant. Nettoyer la plaque à rôtir et la recouvrir d'une nouvelle feuille de papier aluminium. Y placer la poitrine couenne vers le haut. Enfourner à nouveau et cuire à 180/190°C en position grill pendant environ 60 minutes supplémentaires ou jusqu'à obtenir de nombreuses boursouflures et un résultat parfaitement croustillant. La couenne doit émettre un bruit sourd et craquant lorsque l'on tape sur sa surface avec un ustensile.Découper couenne vers le bas en tranche et servez.      ",
+    appliance: "poêle",
+    ustensils: ["couteau à désosser", "spatule"],
+  },
 ];
