@@ -2248,4 +2248,59 @@ export const RECIPES = [
     appliance: "cocotte",
     ustensils: ["saucière", "four", "cuillère en bois"],
   },
+  {
+    id: 61,
+    name: "Porc au sucre calédonien",
+    altText:
+      "Un magret de cannard coupé en tranche dans une assiette acompagnés de ces légumes.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "échine de porc",
+        quantity: 800,
+        unit: "Gr",
+      },
+      {
+        ingredient: "Oignons",
+        quantity: 2,
+      },
+      {
+        ingredient: "gousse d'ail",
+        quantity: 2,
+      },
+      {
+        ingredient: "sucre",
+        quantity: 80,
+        unit: "Gr",
+      },
+      {
+        ingredient: "eau",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "huile",
+        quantity: 2,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "eau chaude",
+        quantity: 30,
+        unit: "cl",
+      },
+      {
+        ingredient: "piment rouge",
+        quantity: 1,
+      },
+      {
+        ingredient: "poivron",
+        quantity: 0.5,
+      },
+    ],
+    time: 20,
+    description:
+      "Éplucher et émincer les deux oignons et l’ail. Émincer le poivron, si comme moi, il y a un morceau à liquider.Couper la viande en gros dés, en enlevant un peu de gras si nécessaire.Mettre le sucre dans une petite casserole et le mouiller avec les deux cuilleres à soupe d’eau. Réserver.Faire chauffer l’huile dans un faitout ou un wok. Y faire dorer les oignons, puis ajouter la viande, le poivron et l’ail et continuer la cuisson en remuant régulièrement. Pendant ce temps, mettre la casserole de sucre à chauffer à feu vif pour faire un caramel. Assaisonner la viande avec la sauce soja et le nuoc mam puis ajouter le caramel. Bien enrober la viande puis ajouter l’eau chaude et bien mélanger. Baisser le feu et laisser mijoter jusqu’à ce que la viande soit tendre. Pendant ce temps, éplucher les tiges d’oignons verts, les laver ainsi que le piment. Émincer le tout. Servir le porc au sucre agrémenté de l’oignon vert émincé et de rondelles de piment rouge, avec du riz.",
+    appliance: "wook",
+    ustensils: ["casserole", "couteau", "cuillère en bois"],
+  },
 ];
