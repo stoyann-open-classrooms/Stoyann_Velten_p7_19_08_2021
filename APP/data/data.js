@@ -2251,8 +2251,7 @@ export const RECIPES = [
   {
     id: 61,
     name: "Porc au sucre calédonien",
-    altText:
-      "Un magret de cannard coupé en tranche dans une assiette acompagnés de ces légumes.",
+    altText: "Une assiette de porc au sucre acompagnés de riz blanc.",
     servings: 4,
     ingredients: [
       {
@@ -2297,10 +2296,66 @@ export const RECIPES = [
         quantity: 0.5,
       },
     ],
-    time: 20,
+    time: 35,
     description:
       "Éplucher et émincer les deux oignons et l’ail. Émincer le poivron, si comme moi, il y a un morceau à liquider.Couper la viande en gros dés, en enlevant un peu de gras si nécessaire.Mettre le sucre dans une petite casserole et le mouiller avec les deux cuilleres à soupe d’eau. Réserver.Faire chauffer l’huile dans un faitout ou un wok. Y faire dorer les oignons, puis ajouter la viande, le poivron et l’ail et continuer la cuisson en remuant régulièrement. Pendant ce temps, mettre la casserole de sucre à chauffer à feu vif pour faire un caramel. Assaisonner la viande avec la sauce soja et le nuoc mam puis ajouter le caramel. Bien enrober la viande puis ajouter l’eau chaude et bien mélanger. Baisser le feu et laisser mijoter jusqu’à ce que la viande soit tendre. Pendant ce temps, éplucher les tiges d’oignons verts, les laver ainsi que le piment. Émincer le tout. Servir le porc au sucre agrémenté de l’oignon vert émincé et de rondelles de piment rouge, avec du riz.",
     appliance: "wook",
     ustensils: ["casserole", "couteau", "cuillère en bois"],
+  },
+  {
+    id: 62,
+    name: "Gratin de choucoute",
+    altText: "Un gratin de chouchoute tout juste sortie du four",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "chouchoute",
+        quantity: 1,
+        unit: "Kg",
+      },
+      {
+        ingredient: "lait",
+        quantity: 0.5,
+        unit: "litre",
+      },
+      {
+        ingredient: "gousse d'ail",
+        quantity: 3,
+      },
+      {
+        ingredient: "crème",
+        quantity: 25,
+        unit: "cl",
+      },
+      {
+        ingredient: "farine",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "beurre",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "persil chinois",
+        quantity: 1,
+        unit: "botte",
+      },
+      {
+        ingredient: "jaune d'oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "gruyère",
+        quantity: 50,
+        unit: "gr",
+      },
+    ],
+    time: 45,
+    description:
+      "La veille cuire vos chouchoutes à la cocotte vapeur, les éplucher et les laisser s’égoutter car elles sont pleines d’eau. Confectionner un roux blanc avec la farine et le beurre, pour cela faite fondre le beurre puis ajouter la farine et laisser cuire, ajouter la crème et lait, cuire avec un fouet jusqu’à épaississement. Ajouter à votre béchamel deux jaunes d’œuf plus le gruyère afin d’obtenir une sauce Mornay. Rectifier l’assaisonnement.Hacher vos gousses d’ail et votre persil chinois. Mélanger le tout dans un plat.Passer au four pour gratiner.",
+    appliance: "four",
+    ustensils: ["plat a gratin", "cocotte", "econome"],
   },
 ];
