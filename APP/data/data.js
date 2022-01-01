@@ -2823,4 +2823,187 @@ export const RECIPES = [
     appliance: "poêle",
     ustensils: ["couteau à désosser", "spatule"],
   },
+  {
+    id: 73,
+    name: "Sauce au poivre simple",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "Farine",
+        quantity: 30,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "beurre",
+        quantity: 40,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "bouillon de boeuf",
+        quantity: 1,
+        unit: "cube",
+      },
+
+      {
+        ingredient: "vinnaigre aromatisé",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+    ],
+    time: 30,
+    description:
+      "Faire un roux avec le beurre et la farine.Ajouter 1/4 l d'eau en une seule fois et bien mélanger. Ajouter le cube de bouillon, une cuillerée à soupe de vinaigre et une cuillerée à café de poivre mignonette. Faire épaissir. Ajouter du sel si nécessaire (inutile en principe, à cause du bouillon). Au moment de servir, ajouter du poivre moulu : non, ça ne fait pas double emploi avec le poivre mignonette ! Allez-y molo quand même...  ",
+    appliance: "casserole",
+    ustensils: ["cuillère en bois"],
+  },
+  {
+    id: 74,
+    name: "pesto vert",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Parmesan",
+        quantity: 2,
+        unit: "cuillère à soupe",
+      },
+
+      {
+        ingredient: "huile d'olive",
+      },
+
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "basilic",
+        quantity: 20,
+        unit: "feuilles",
+      },
+
+      {
+        ingredient: "pignon de pin",
+        quantity: 2,
+        unit: "cuilère a soupe",
+      },
+    ],
+    time: 10,
+    description:
+      " Choisir de belles feuilles de basilic. Dans un mixer à herbes, ajouter les gousses d'ail dégermées et les pignons de pin. Ajouter les feuilles de basilic lavées. Ajouter un filet d'huile d'olive. Commencer à mixer par petites séquences. Ajouter le parmesan et mixer jusqu'à la consistance souhaitée. Mettre en pot et garder au réfrigérateur 3 à 4 jours maxi ou congeler en petites pastilles.",
+    appliance: "mixer",
+    ustensils: ["mortier", "pilon", "rape"],
+  },
+  {
+    id: 75,
+    name: "sauce gribiche",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "jaune d'oeuf",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "huile",
+        quantity: 0.25,
+        unit: "litre",
+      },
+
+      {
+        ingredient: "moutarde",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "vinaigre",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "cornichons et câpres hachée   ",
+        quantity: 2,
+        unit: "cuilère a soupe",
+      },
+      {
+        ingredient: "persil, cerfeuil et estragon hachés",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+      {
+        ingredient: "julienne de blanc d'oeufs",
+      },
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 20,
+    description:
+      " Monter une mayonnaise à la moutarde classique comme montré sur la vidéo. Assaisonner la mayonnaise obtenue avec sel et poivre. Ajouter les herbes aromatiques ciselées. Ajouter la cuiller de vinaigre pour la détendre et les cornichons émincés. Ajouter les câpres concassées. Et en dernier incorporer les blancs d'oeufs taillés fin. Servir bien frais et ne pas conserver plus de 24 heures au réfrigérateur. ",
+    appliance: "Cul de poule",
+    ustensils: ["Couteau de chef", "Fouet", "Planche à découper"],
+  },
+  {
+    id: 76,
+    name: "Sauce ravigote",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "une échalote ciselée",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "oignon nouveaux",
+        quantity: 2,
+      },
+
+      {
+        ingredient: "ciboulette",
+      },
+      {
+        ingredient: "cestragon",
+      },
+      {
+        ingredient: "persil chinois",
+      },
+
+      {
+        ingredient: "câpres hachées",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "vinaigrette",
+      },
+      {
+        ingredient: "moutarde a l'ancienne",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 20,
+    description:
+      " Dans un récipient adapté, déposer la moutarde à l'ancienne. Ajouter le vinaigre de vin blanc. Assaisonner de sel et poivre du moulin. Ajouter l'huile en filet en fouettant. Ajouter les herbes ciselées, L'échalote et l'oignon ciselés,Les câpres concassés. Rectifier l'assaisonnement et mélanger.Dresser en saucière.  ",
+    appliance: "Cul de poule",
+    ustensils: ["Couteau de chef", "Fouet", "Planche à découper", "sauciere"],
+  },
 ];
