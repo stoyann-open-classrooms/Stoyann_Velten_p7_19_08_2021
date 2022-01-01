@@ -10,7 +10,7 @@
 
 ### La programmation orientée objet est utilisée
 
-# Plan de l'application :
+# Plan de l'application & algorigramme :
 
 ## ![Fiche investigation fonctionamitées #1](/Doc/algorigramme.jpg)
 
