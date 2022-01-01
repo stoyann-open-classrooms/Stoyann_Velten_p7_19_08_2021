@@ -195,19 +195,27 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", (e) => {
       if (searchBar.value.length >= 3) {
-        console.time(`recettes trouvée en`);
+        console.time(`en`);
         this.printCard(this.recipesList.search(this.getUserRequest()));
         console.log(
-          `%c${this.recipesList.recipes.length}`,
+          `%c${this.recipesList.recipes.length} recettes trouvées,`,
 
-          "font-size:20px ; color:red"
+          "font-size:15px ; color:red"
         );
-        console.timeEnd(`recettes trouvée en`);
+        console.timeEnd(`en`);
+        console.log(
+          `Avec la recherche :  "${this.getUserRequest().userInput}"`
+        );
       } else if (
         searchBar.value.length < 3 &&
         this.getUserRequest().tags.length === 0
       ) {
         this.printCard(this.recipesList.getAllRecipes());
+        console.log(
+          `%c Toutes les recettes (${this.recipesList.recipes.length}) sont affichées`,
+
+          "font-size:15px ; color:green"
+        );
       }
     });
   }

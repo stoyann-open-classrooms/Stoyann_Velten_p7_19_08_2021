@@ -6,7 +6,7 @@
 
 -
 
-## status du projet: 🛠️ En cours 🛠️
+## status du projet: ⌛️⏳ En attente d'évaluation ⌛️⏳
 
 ### La programmation orientée objet est utilisée
 
