@@ -315,7 +315,7 @@ export const RECIPES = [
   {
     id: 9,
     name: "Salade méditerannéene fraîche au chèvre",
-    cover: "salade-mediteranneene-fraiche-chevre.jpeg",
+
     altText:
       "Une assiette de salade méditerannéene au chèvre accompagnée de noix",
     servings: 4,
