@@ -195,9 +195,15 @@ export class MainPageBuilder {
     const searchBar = document.getElementById("recherche");
     searchBar.addEventListener("input", (e) => {
       if (searchBar.value.length >= 3) {
-        console.time(recherche);
+        console.time(`recettes trouvée en`);
         this.printCard(this.recipesList.search(this.getUserRequest()));
-        console.timeEnd(recherche);
+
+        console.log(
+          `%c${this.recipesList.recipes.length}`,
+
+          "font-size:20px ; color:red"
+        );
+        console.timeEnd(`recettes trouvée en`);
       } else if (
         searchBar.value.length < 3 &&
         this.getUserRequest().tags.length === 0
