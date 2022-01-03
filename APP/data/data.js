@@ -315,7 +315,7 @@ export const RECIPES = [
   {
     id: 9,
     name: "Salade méditerannéene fraîche au chèvre",
-    cover: "salade-mediteranneene-fraiche-chevre.jpeg",
+
     altText:
       "Une assiette de salade méditerannéene au chèvre accompagnée de noix",
     servings: 4,
@@ -2251,8 +2251,7 @@ export const RECIPES = [
   {
     id: 61,
     name: "Porc au sucre calédonien",
-    altText:
-      "Un magret de cannard coupé en tranche dans une assiette acompagnés de ces légumes.",
+    altText: "Une assiette de porc au sucre acompagnés de riz blanc.",
     servings: 4,
     ingredients: [
       {
@@ -2297,10 +2296,1270 @@ export const RECIPES = [
         quantity: 0.5,
       },
     ],
-    time: 20,
+    time: 35,
     description:
       "Éplucher et émincer les deux oignons et l’ail. Émincer le poivron, si comme moi, il y a un morceau à liquider.Couper la viande en gros dés, en enlevant un peu de gras si nécessaire.Mettre le sucre dans une petite casserole et le mouiller avec les deux cuilleres à soupe d’eau. Réserver.Faire chauffer l’huile dans un faitout ou un wok. Y faire dorer les oignons, puis ajouter la viande, le poivron et l’ail et continuer la cuisson en remuant régulièrement. Pendant ce temps, mettre la casserole de sucre à chauffer à feu vif pour faire un caramel. Assaisonner la viande avec la sauce soja et le nuoc mam puis ajouter le caramel. Bien enrober la viande puis ajouter l’eau chaude et bien mélanger. Baisser le feu et laisser mijoter jusqu’à ce que la viande soit tendre. Pendant ce temps, éplucher les tiges d’oignons verts, les laver ainsi que le piment. Émincer le tout. Servir le porc au sucre agrémenté de l’oignon vert émincé et de rondelles de piment rouge, avec du riz.",
     appliance: "wook",
     ustensils: ["casserole", "couteau", "cuillère en bois"],
+  },
+  {
+    id: 62,
+    name: "Gratin de choucoute",
+    altText: "Un gratin de chouchoute tout juste sortie du four",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "chouchoute",
+        quantity: 1,
+        unit: "Kg",
+      },
+      {
+        ingredient: "lait",
+        quantity: 0.5,
+        unit: "litre",
+      },
+      {
+        ingredient: "gousse d'ail",
+        quantity: 3,
+      },
+      {
+        ingredient: "crème",
+        quantity: 25,
+        unit: "cl",
+      },
+      {
+        ingredient: "farine",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "beurre",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "persil chinois",
+        quantity: 1,
+        unit: "botte",
+      },
+      {
+        ingredient: "jaune d'oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "gruyère",
+        quantity: 50,
+        unit: "gr",
+      },
+    ],
+    time: 45,
+    description:
+      "La veille cuire vos chouchoutes à la cocotte vapeur, les éplucher et les laisser s’égoutter car elles sont pleines d’eau. Confectionner un roux blanc avec la farine et le beurre, pour cela faite fondre le beurre puis ajouter la farine et laisser cuire, ajouter la crème et lait, cuire avec un fouet jusqu’à épaississement. Ajouter à votre béchamel deux jaunes d’œuf plus le gruyère afin d’obtenir une sauce Mornay. Rectifier l’assaisonnement.Hacher vos gousses d’ail et votre persil chinois. Mélanger le tout dans un plat.Passer au four pour gratiner.",
+    appliance: "four",
+    ustensils: ["plat a gratin", "cocotte", "econome"],
+  },
+  {
+    id: 63,
+    name: "Tarte au fruit de la Passion",
+    altText: "Une délicieuse tarte au fruits de la passion.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+      },
+      {
+        ingredient: "sucre",
+        quantity: 120,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+      },
+      {
+        ingredient: "beurre",
+        quantity: 60,
+        unit: "gr",
+      },
+      {
+        ingredient: "fruit de la passion",
+      },
+      {
+        ingredient: "crème fraîche",
+        quantity: 2,
+        unit: "cuillère a soupe",
+      },
+    ],
+    time: 50,
+    description:
+      "préchauffer le four à 200°C (thermostat 6-7)Battre les oeufs et le sucre en mousse.Ajouter le beurre fondu refroidi, le jus des maracudja et la crème fraîche. Bien mélanger pour avoir une bonne crème. Verser la crème sur la pâte à tarte étalée dans un moule. Faire cuire 30 min puis laisser reposer au frais environ 1 h 30. Servir frais.",
+    appliance: "four",
+    ustensils: ["moule a tarte", "saladier", "fouet"],
+  },
+  {
+    id: 64,
+    name: "Ambrevade au lait de coco",
+    altText: "Une délicieuse tarte au fruits de la passion.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "lait de coco",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "ambrevade",
+        quantity: 500,
+        unit: "gr",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 2,
+      },
+      {
+        ingredient: "poivre en grains",
+      },
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "grains de safran",
+      },
+    ],
+    time: 240,
+    description:
+      " Écosser les ambrevades. Les laisser dans l'eau toute une nuit les plonger dans de l'eau bouillante et les retirer lorsqu'ils sont mous Dans une sauteuse mettre le lait de coco,les oignons, le safran le poivre (écrasé ) et le sel porter à ébullition Y verser les ambrevades. Laisser réduire jusqu'à obtenir une sorte de purée.",
+    appliance: "sauteuse",
+    ustensils: ["cuillere en bois"],
+  },
+  {
+    id: 65,
+    name: "Ambrevade a l'antillaise",
+    altText: "Un saladier d'ambrevade",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "huile d'olive",
+        quantity: 1,
+        unit: "filet",
+      },
+      {
+        ingredient: "ambrevade",
+        quantity: 450,
+        unit: "gr",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 2,
+      },
+      {
+        ingredient: "bouquet garni",
+        quantity: 1,
+      },
+      {
+        ingredient: "sel",
+        quantity: 4,
+        unit: "gr",
+      },
+      {
+        ingredient: "melange 4 épices",
+        quantity: 1,
+        unit: "cuillere a café",
+      },
+      {
+        ingredient: "sucre de canne roux",
+        quantity: 2,
+        unit: "cuillere a café",
+      },
+      {
+        ingredient: "eau",
+        quantity: 1.4,
+        unit: "litre",
+      },
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+      {
+        ingredient: "persil",
+        quantity: 5,
+        unit: "feuille",
+      },
+    ],
+    time: 135,
+    description:
+      " Mettez les pois dans une casserole et couvrez-les d'eau. Faites bouillir les pois 25 minutes dès démarrage de l'ébulition. Au terme de cette première cuisson, arrêtez le feu. Egouttez les pois. Mixer finement l'oignon. Dans une casserole, mettez un filet d'huile d'olive à chauffer er versez-y l'oignon. Faites revenir sans arriver à coloration. Ajoutez le mélange 4 épices, le sucre, et le melange bouquet garni. Incorporez les pois et faites revenir le tout pendant 5 minutes. Ajoutez le persil haché, l'ail et couvrez d'eau. Recouvrez la casserole. C'est parti pour 1h45 de cuisson à feu moyen. Aprés 1h30 environ, ajoutez le sel et rectifiez l'assaisonement à votre goût. Laissez en core cuire 15 minutes. Au terme de ce temps, Ambrevade sont prête à être deguster.",
+    appliance: "casserole",
+    ustensils: ["cuillere en bois"],
+  },
+  {
+    id: 66,
+    name: "pâte à crèpes facile",
+    altText: "Des crêpes prêtent a être déguster",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+      },
+      {
+        ingredient: "lait",
+        quantity: 0.5,
+        unit: "l",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 1,
+        unit: "pincée",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 2,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "beurre fondu",
+        quantity: 50,
+        unit: "gr",
+      },
+    ],
+    time: 25,
+    description:
+      "Mettez la farine dans un saladier avec le sel et le sucre. Faites un puits au milieu et versez-y les œufs. Commencez à mélanger doucement. Quand le mélange devient épais, ajoutez le lait froid petit à petit. Quand tout le lait est mélangé, la pâte doit être assez fluide. Si elle vous paraît trop épaisse, rajoutez un peu de lait. Ajoutez ensuite le beurre fondu refroidi, mélangez bien. Faites cuire les crêpes dans une poêle chaude (par précaution légèrement huilée si votre poêle à crêpes n'est pas anti-adhésive). Versez une petite louche de pâte dans la poêle, faites un mouvement de rotation pour répartir la pâte sur toute la surface. Posez sur le feu et quand le tour de la crêpe se colore en roux clair, il est temps de la retourner. Laissez cuire environ une minute de ce côté et la crêpe est prête. Répétez jusqu'à épuisement de la pâte. ",
+    appliance: "poêle",
+    ustensils: ["cuillere en bois", "saladier", "louche"],
+  },
+  {
+    id: 67,
+    name: "Pâte brisée rapide",
+    altText: "Une pâte brisée prêtent à être garni",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 300,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 2,
+        unit: "cuillere à café",
+      },
+      {
+        ingredient: "sucre (si pâte sucrée)",
+        quantity: 3,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "eau",
+        quantity: 8,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "beurre pommade",
+        quantity: 150,
+        unit: "gr",
+      },
+    ],
+    time: 45,
+    description:
+      "Mélanger la farine et le sel dans un plat (et le sucre si sucre il y a). Ajouter le beurre puis l'incorporer à la farine en pétrissant rapidement et légèrement du bout des doigts. On doit obtenir une sorte de semoule grossière en 2 ou 3 min. Incorporer rapidement le lait ou l'eau. Il en faut très peu pour permettre à la pâte de se lier et de faire boule. Le lait ou l'eau ? C'est selon les goûts.Pour étaler sans problème, étaler la pâte sur du papier cuisson et cuire tel quel dans la platine.",
+    appliance: "plats",
+    ustensils: ["rouleaux a pâtisserie", "saladier", "cuillere"],
+  },
+  {
+    id: 68,
+    name: "Pâte feuilletée rapide",
+    altText: "Une pâte feuilletée tout juste sortie du four.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel",
+        quantity: 3,
+        unit: "gr",
+      },
+      {
+        ingredient: "sucre ",
+        quantity: 4,
+        unit: "cuillere à café",
+      },
+      {
+        ingredient: "eau",
+        quantity: 90,
+        unit: "ml",
+      },
+
+      {
+        ingredient: "beurre froid",
+        quantity: 240,
+        unit: "gr",
+      },
+    ],
+    time: 30,
+    description:
+      "Dans le bol du robot, versez la farine, le beurre froid coupé en petits morceaux, le sel et le sucre en poudre. Mélangez les ingrédients avec la feuille. Ajoutez l'eau et, avec la feuille, mélangez les ingrédients pour obtenir une boule de pâte.Ne cherchez pas à incorporer le beurre complètement, il doit rester des morceaux apparents c'est ce qui permettra au feuilletage de se développer à la cuisson.Filmer le pâton au contact et réservez une heure au réfrigérateur. Ce temps de repos au froid peut être diminué à 30 minutes l'hiver, en fonction de la température de votre cuisine. Fleurez votre plan de travail et posez votre pâton de pâte feuilletée. Donnez lui une forme légèrement rectangulaire. Au rouleau, abaissez le pâton sur 60cm de longueur et 15cm de largeur Repliez le tiers supérieur de l'abaisse vers l'intérieur. Recouvrez avec le tiers inférieur.Tournez le pâton obtenu d'un quart de tour vers la droite. Vous venez de faire un tour simple. Faites en 4 supplémentaires en procédant de la même façon. Votre pâte feuilletée  est prête à être utilisée!",
+    appliance: "plats",
+    ustensils: ["rouleaux a pâtisserie", "robot", "papier cuisson"],
+  },
+  {
+    id: 69,
+    name: "poulet à la crème et champignons",
+    altText: "Un délicieux plât de poulet a la créme et au champignons.",
+    servings: 3,
+    ingredients: [
+      {
+        ingredient: "ail",
+        quantity: 1,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "champignons de Paris",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "farine",
+        quantity: 1,
+        unit: "cuillere à soupe",
+      },
+      {
+        ingredient: "persil frais",
+        quantity: 1,
+        unit: "botte",
+      },
+
+      {
+        ingredient: " poulet",
+        quantity: 3,
+        unit: "cuisse",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+      },
+      {
+        ingredient: "crème fraîche épaisse",
+        quantity: 1,
+        unit: "pot",
+      },
+      {
+        ingredient: "fond de sauce volaille",
+        quantity: 1,
+        unit: "cube",
+      },
+    ],
+    time: 70,
+    description:
+      "Couper les cuisses de poulet en 2. Les faire revenir dans l'huile pendant 20 min puis ajouter l'oignon émincé, l'ail écrasé, une bonne pincée de persil frais et une cuillère à soupe de fond de sauce volaille. Mélanger le tout et faire revenir jusqu'à ce que les oignons soient translucides. Ajouter la boîte de champignons avec le jus (très important) et la deuxième cuillère à soupe de fond de volaille et laisser cuire a couvert avec environ 50 cl d'eau pendant 10 min. A part, mélanger la crème et la farine. Verser dans la marmite avec vos ingrédients. Laisser mijoter environ 15 min, le temps que la sauce devienne bien onctueuse.",
+    appliance: "marmitte",
+    ustensils: ["bol", "fouet"],
+  },
+  {
+    id: 70,
+    name: "Crevettes sautée ail et persil",
+    altText: "",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "ail",
+        quantity: 4,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "piment doux",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "persil frais",
+        quantity: 1,
+        unit: "bouquet",
+      },
+
+      {
+        ingredient: " huile d'olive",
+        quantity: 6,
+        unit: "cuillere a soupe",
+      },
+      {
+        ingredient: "poivre",
+      },
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "crevette",
+        quantity: 400,
+        unit: "gr",
+      },
+    ],
+    time: 25,
+    description:
+      "CLavez et essuyez les crevettes. Faites chauffer 4 cuillères à soupe d'huile dans 1 grande poêle. Ajoutez les crevettes et faites les cuire 5 mn de chaque côté puis sortez les de la poêle. Passez l'ail au mixeur, le persil et le piment doux. Dans la poêle, versez le reste de d'huile puis ajoutez l'ail, le persil et le piment. Remuez bien, pour que l'ail soit cuit mais non brûlé. Remettez les crevettes à chauffer. Salez, poivrez et servez chaud.",
+    appliance: "poêle",
+    ustensils: ["mixer"],
+  },
+  {
+    id: 71,
+    name: "Pancakes à la japonaise",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "farine",
+        quantity: 250,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "beurre",
+        quantity: 50,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Lait entier",
+        quantity: 50,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "sucre vanillé",
+        quantity: 1,
+        unit: "sachet",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 75,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "levure chimique",
+        quantity: 3,
+        unit: "cuillère à café",
+      },
+      {
+        ingredient: "sel",
+        quantity: 1,
+        unit: "pincée",
+      },
+    ],
+    time: 15,
+    description:
+      "Tamisez la farine et la levure dans un saladier. Ajoutez le sucre, le sucre vanillé et le sel. Creusez un puits, ajoutez les oeufs, le beurre fondu et un peu de lait puis travaillez la pâte. Mouillez progressivement avec le reste du lait jusqu'à ce que la pâte forme un ruban. Faites cuire les pancakes dans une petite poêle beurrée bien chaude. Versez une demi-louche de préparation et faites cuire 2 à 3 minutes le temps que des bulles se forment à la surface. Retournez et faites cuire 2 minutes sur l'autre face.",
+    appliance: "poêle",
+    ustensils: ["saladier", "louche"],
+  },
+  {
+    id: 72,
+    name: "Porc croustillants chinois",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "poitrine de porc",
+        quantity: 1.2,
+        unit: "kg",
+      },
+
+      {
+        ingredient: "vin Shaoxing ou saké",
+        quantity: 4,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "vinaigre de riz",
+        quantity: 4,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "sel",
+      },
+      {
+        ingredient: "cinq épices chinois",
+      },
+      {
+        ingredient: "gros sel",
+        quantity: 1.5,
+        unit: "kg",
+      },
+      {
+        ingredient: "blanc d'oeuf",
+        quantity: 2,
+      },
+      {
+        ingredient: "vinnaigre",
+        quantity: 7,
+        unit: "cl",
+      },
+    ],
+    time: 190,
+    description:
+      "Désosser et retirer les cartilages de la poitrine à l'aide d'un couteau à désosser.Perforer la couenne de la poitrine de porc sur toute la surface jusqu'à obtenir une multitude de petits trous rapprochés. Utiliser la pointe du couteau ou un attendrisseur à viande. Ces petits trous vont permettre à la graisse de remonter en surface, griller la couenne pour la rendre croustillante et provoquer les boursouflures caractéristiques. De la même manière, perforer de nombreux trous la chair pour permettre à la marinade de pénétrer et assaisonner la viande. Il est également possible d'entailler la chair sur toute la longueur tous les 2 ou 3 cm environ, sans découper la dernière couche de graisse ni la couenne. Asperger la chair avec de l'alcool de riz (Shaoxing, Saké...). Saler au sel fin et saupoudrer de cinq-épices. Frotter avec la main pour recouvrir toute la surface. Placer la poitrine dans un bac, peau vers le haut. Saler légèrement et masser pour faire pénétrer. Badigeonner la couenne au vinaigre de riz à l'aide d'un pinceau. Pour une chair assaisonnée à coeur, placer au réfrigérateur et laisser mariner pendant une nuit. Ne pas recouvrir pour permettre à la couenne de sécher. Préparer la pâte de sel : Préchauffer le four à 180°C chaleur tournante. Préparer la croûte de sel en mélangeant dans une calotte le gros sel, le vinaigre et les blancs d'oeuf à l'aide d'une spatule. On doit obtenir une pâte granuleuse qui reste bien amalgamée. Recouvrir une plaque à rôtir avec du papier aluminium. Étaler une couche de croûte de sel sur ~ 1 cm d'épaisseur, sur une surface légèrement supérieure à la poitrine. Placer la poitrine au centre, couenne vers le haut. Recouvrir de pâte de sel, y compris de chaque côté. Façonner pour souder les bords et obtenir une coque hermétique. Enfourner la plaque et cuire à 180°C pendant 90 min. Casser la croûte, sortir la poitrine et retirer tout le sel en frottant avec du papier absorbant. Nettoyer la plaque à rôtir et la recouvrir d'une nouvelle feuille de papier aluminium. Y placer la poitrine couenne vers le haut. Enfourner à nouveau et cuire à 180/190°C en position grill pendant environ 60 minutes supplémentaires ou jusqu'à obtenir de nombreuses boursouflures et un résultat parfaitement croustillant. La couenne doit émettre un bruit sourd et craquant lorsque l'on tape sur sa surface avec un ustensile.Découper couenne vers le bas en tranche et servez.      ",
+    appliance: "poêle",
+    ustensils: ["couteau à désosser", "spatule"],
+  },
+  {
+    id: 73,
+    name: "Sauce au poivre simple",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 8,
+    ingredients: [
+      {
+        ingredient: "Farine",
+        quantity: 30,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "beurre",
+        quantity: 40,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "bouillon de boeuf",
+        quantity: 1,
+        unit: "cube",
+      },
+
+      {
+        ingredient: "vinnaigre aromatisé",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+    ],
+    time: 30,
+    description:
+      "Faire un roux avec le beurre et la farine.Ajouter 1/4 l d'eau en une seule fois et bien mélanger. Ajouter le cube de bouillon, une cuillerée à soupe de vinaigre et une cuillerée à café de poivre mignonette. Faire épaissir. Ajouter du sel si nécessaire (inutile en principe, à cause du bouillon). Au moment de servir, ajouter du poivre moulu : non, ça ne fait pas double emploi avec le poivre mignonette ! Allez-y molo quand même...  ",
+    appliance: "casserole",
+    ustensils: ["cuillère en bois"],
+  },
+  {
+    id: 74,
+    name: "pesto vert",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Parmesan",
+        quantity: 2,
+        unit: "cuillère à soupe",
+      },
+
+      {
+        ingredient: "huile d'olive",
+      },
+
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "basilic",
+        quantity: 20,
+        unit: "feuilles",
+      },
+
+      {
+        ingredient: "pignon de pin",
+        quantity: 2,
+        unit: "cuilère a soupe",
+      },
+    ],
+    time: 10,
+    description:
+      " Choisir de belles feuilles de basilic. Dans un mixer à herbes, ajouter les gousses d'ail dégermées et les pignons de pin. Ajouter les feuilles de basilic lavées. Ajouter un filet d'huile d'olive. Commencer à mixer par petites séquences. Ajouter le parmesan et mixer jusqu'à la consistance souhaitée. Mettre en pot et garder au réfrigérateur 3 à 4 jours maxi ou congeler en petites pastilles.",
+    appliance: "mixer",
+    ustensils: ["mortier", "pilon", "rape"],
+  },
+  {
+    id: 75,
+    name: "sauce gribiche",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "jaune d'oeuf",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "huile",
+        quantity: 0.25,
+        unit: "litre",
+      },
+
+      {
+        ingredient: "moutarde",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "vinaigre",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "cornichons et câpres hachée   ",
+        quantity: 2,
+        unit: "cuilère a soupe",
+      },
+      {
+        ingredient: "persil, cerfeuil et estragon hachés",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+      {
+        ingredient: "julienne de blanc d'oeufs",
+      },
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 20,
+    description:
+      " Monter une mayonnaise à la moutarde classique comme montré sur la vidéo. Assaisonner la mayonnaise obtenue avec sel et poivre. Ajouter les herbes aromatiques ciselées. Ajouter la cuiller de vinaigre pour la détendre et les cornichons émincés. Ajouter les câpres concassées. Et en dernier incorporer les blancs d'oeufs taillés fin. Servir bien frais et ne pas conserver plus de 24 heures au réfrigérateur. ",
+    appliance: "Cul de poule",
+    ustensils: ["Couteau de chef", "Fouet", "Planche à découper"],
+  },
+  {
+    id: 76,
+    name: "Sauce ravigote",
+    altText: "Une assiette de pancakes à la japonaise.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "une échalote ciselée",
+        quantity: 1,
+      },
+
+      {
+        ingredient: "oignon nouveaux",
+        quantity: 2,
+      },
+
+      {
+        ingredient: "ciboulette",
+      },
+      {
+        ingredient: "estragon",
+      },
+      {
+        ingredient: "persil chinois",
+      },
+
+      {
+        ingredient: "câpres hachées",
+        quantity: 1,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "vinaigrette",
+      },
+      {
+        ingredient: "moutarde a l'ancienne",
+        quantity: 1,
+        unit: "cuilère a soupe",
+      },
+
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 20,
+    description:
+      " Dans un récipient adapté, déposer la moutarde à l'ancienne. Ajouter le vinaigre de vin blanc. Assaisonner de sel et poivre du moulin. Ajouter l'huile en filet en fouettant. Ajouter les herbes ciselées, L'échalote et l'oignon ciselés,Les câpres concassés. Rectifier l'assaisonnement et mélanger.Dresser en saucière.  ",
+    appliance: "Cul de poule",
+    ustensils: ["Couteau de chef", "Fouet", "Planche à découper", "sauciere"],
+  },
+  {
+    id: 77,
+    name: "Flan de courgettes au jambon",
+    altText: "Un délicieux plat de flan de courgettes au jambon.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 500,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Oeuf",
+        quantity: 4,
+      },
+
+      {
+        ingredient: "lait",
+        quantity: 1,
+        unit: "verre",
+      },
+      {
+        ingredient: "crème fraiche",
+        quantity: 12,
+        unit: "cl",
+      },
+      {
+        ingredient: "gruyère rapé",
+        quantity: 100,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Maîzena",
+        quantity: 2,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "jambon",
+        quantity: 2,
+        unit: "tranche",
+      },
+
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 45,
+    description:
+      " Laver les courgettes, les couper en dés, les cuire à la vapeur (tendres mais fermes) et les égoutter.Délayer la maïzena dans le lait, ajouter la crème fraîche, les œufs battus, le jambon, le gruyère ou le parmesan. Saler, poivrer et incorporer les courgettes. Verser dans un plat à gratin beurré et cuire au four pendant 30 minutes à 210°C soit thermostat 7. Servir chaud.",
+    appliance: "four",
+    ustensils: ["Plat à gratin", "passoire"],
+  },
+  {
+    id: 78,
+    name: "Ratatouille",
+    altText: "Un jolie plat de ratatouille prêt à être déguster.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "Aubergine",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "Poivron vert",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "poivron rouge",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "tomate",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "bouquet garnie",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "huile d'olive",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 80,
+    description:
+      "Lavez et détaillez les courgettes, l'aubergine, le poivron vert et le rouge, en cubes de taille moyenne. Coupez les tomates en quartiers et émincez l'oignon. Dans une poêle, versez un peu d'huile d'olive et faites-y revenir les uns après les autres les différents légumes pendant 5 minutes pour qu'ils colorent. Commencez par les poivrons, puis les aubergines, les courgettes et enfin les oignons et les tomates que vous cuirez ensemble. Après avoir fait cuire les légumes, ajoutez-les tous aux tomates et aux oignons, baissez le feu puis mélangez. Ajoutez un beau bouquet garni de thym, de romarin et de laurier, salez, poivrez, puis couvrez pour laisser mijoter 40 minutes en remuant régulièrement. À environ 10 minutes du terme de la cuisson, ajoutez les deux belles gousses d'ail écrasées puis couvrez de nouveau. N'hésitez pas à goûter et à assaisonner de nouveau selon vos goûts. Dégustez avec des grillades ou un barbecue.",
+    appliance: "cocotte",
+    ustensils: ["Plat à gratin", "couteau"],
+  },
+  {
+    id: 79,
+    name: "Beignets aux courgettes",
+    altText: "Une pile de  beignet de courgettes.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "farine",
+        quantity: 2,
+        unit: "verre",
+      },
+      {
+        ingredient: "eau",
+        quantity: 1,
+        unit: "verre",
+      },
+
+      {
+        ingredient: "levure",
+        quantity: 0.5,
+        unit: "sachet",
+      },
+
+      {
+        ingredient: "gousse d'ail mixer avec du persil",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "muscade",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "huile de friture",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 30,
+    description:
+      " Faire cuire les courgettes en rondelles à la vapeur pendant 20 mn environ. Dans un saladier mettre tous les autres ingrédients. Ecraser les courgettes avec une fourchette. Ajouter les courgettes dans le saladier et mélanger.  Faire chauffer l'huile puis y couler les beignets avec une cuillère.",
+    appliance: "wook",
+    ustensils: ["saladier", "cuiseur vapeur"],
+  },
+  {
+    id: 80,
+    name: "Croque monsieur d'aubergines",
+    altText: "Une pile de  beignet de courgettes.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "Aubergine",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "farine",
+        quantity: 1,
+        unit: "cuillère à dessert",
+      },
+      {
+        ingredient: "herbe de provence",
+      },
+      {
+        ingredient: "crème liquide",
+        quantity: 10,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "gruyère",
+        quantity: 50,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 30,
+    description:
+      "Couper les aubergines en tranches de 1 cm d'épaisseur, dans le sens de la longueur. Mélanger la moutarde avec la crème dans un bol. Etalez cette prépération sur une face des aubergines. Faire des lamelles de fromage que vous placez sur les aubergines pour recouvrir toute la surface. Couper les tomates en tranches de 5 mm d'épaisseur. Mettre 1 ou 2 tranches de tomate sur les aubergines. Saupoudrez d'herbes de Provence. Passez au four à 180°C (themostat 6) pendant 30 mn (à voir en fait selon la cuisson désirée).",
+    appliance: "four",
+    ustensils: ["bol", "couteau"],
+  },
+  {
+    id: 81,
+    name: "Tarte salée au Boursin",
+    altText: "Une belle part de tarte salée au Boursin.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "courgette",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "pâte feuilletée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+      {
+        ingredient: "Boursin ail et fine herbes",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "boeuf hachée",
+        quantity: 200,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "gruyère râpé",
+        quantity: 100,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "crème fraîche",
+        quantity: 15,
+        unit: "cl",
+      },
+    ],
+    time: 17,
+    description:
+      "Dans un premier temps faîtes revenir la viande hachée dans une sauteuse.Pendant ce temps lavez et épluchez les courgettes (laissez la moitié de la peau), ajoutez-les à la viande hachée en les coupant en petits morceaux. Faites de même avec les tomates en laissant la peau. Laissez cuire environ 15 minutes à couvert. Faites préchauffer votre four à 200°C (thermostat 6/7)et faîtes précuire quelques minutes la pâte préalablement étalée dans le plat à tarte. Pendant ce temps mettez dans un bol le demi Boursin, la crème fraiche et écrasez grossièrement le Boursin, ajoutez le tout dans la sauteuse et mélangez. Laissez 5 minutes sans couvrir en remuant de temps à autre. Sortez la pâte précuite et versez la préparation dans votre plat à tarte. ",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "sauteuse"],
+  },
+  {
+    id: 82,
+    name: "La tarte salée ensoleillée",
+    altText: "Une tarte ensoleillée prête a être déguster.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "courgette",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+      {
+        ingredient: "lait",
+        quantity: 7,
+        unit: "cl",
+      },
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "sel",
+      },
+
+      {
+        ingredient: "huile d'olive",
+      },
+      {
+        ingredient: "herbes de provences",
+      },
+      {
+        ingredient: "thon au naturel",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "anchois",
+        quantity: 5,
+        unit: "filet",
+      },
+    ],
+    time: 45,
+    description:
+      "Préchauffer le four à 200°C (thermostat 6-7). Mettre la pate brisée dans le plat à tarte, la piquer à l'aide d'une fourchette et la recouvrir de tranches de courgettes puis de tranches de tomate.Egoutter le thon et le mélanger aux oeufs et au lait. Incorporer l'oignon finement haché, les anchois écrasés, du sel, du poivre et des herbes de Provence. Verser cette préparation sur les légumes, arroser d'un filet d'huile d'olive et enfourner pour 30 minutes de cuisson. ",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "saladier"],
+  },
+  {
+    id: 83,
+    name: "Tarte à la citrouille salée",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "citrouille",
+        quantity: 500,
+        unit: "gr",
+      },
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "sel",
+      },
+
+      {
+        ingredient: "huile d'olive",
+        quantity: 1,
+        unit: "cuillère à soupe",
+      },
+
+      {
+        ingredient: "crème epaisse",
+        quantity: 25,
+        unit: "cl",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+    ],
+    time: 55,
+    description:
+      "Faire cuire la citrouille dans de l'eau, une fois cuite égoutter les morceaux et les laisser refroidir un peu, puis les écraser grossièrement à la fourchette. Faire revenir, dans un fond d'huile, l'oignon coupé finement. Dès que l'oignon a légèrement caramélisé, y rajouter la citrouille. Saler et poivrer. Dans un saladier battre un oeuf et y ajouter la crème fraîche, et enfin la préparation oignon + citrouille.Répartir la préparation sur la pâte brisée.Enfourner pendant 25 min à 180°C (thermostat 6).",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "saladier"],
+  },
+  {
+    id: 84,
+    name: "Génoise inratable",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "levure chimique",
+        quantity: 0.5,
+        unit: "sachet",
+      },
+
+      {
+        ingredient: "farine T45",
+        quantity: 125,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 125,
+        unit: "gr",
+      },
+    ],
+    time: 30,
+    description:
+      "Pour réaliser cette recette, il faut avoir un robot qui permette d'ajouter des ingrédients au fur et à mesure sans devoir tout arrêter et ouvrir un couvercle à chaque fois. Le secret de la réussite de cette génoise, c'est la rapidité d'exécution. Préparez donc tout ce dont vous aurez besoin avant de vous lancer, beurrez le moule (j'ai utilisé un moule de 25 cm de diamètre) pesez les ingrédients. Préchauffez le four à 180° (th6). Mélangez la levure à la farine. Séparez les blancs des jaunes d'œufs, et montez les blancs en neige avec une pincée de sel. Quand ils sont fermes, ajoutez le sucre et battez encore. Baissez la vitesse du robot et ajoutez d'un coup les 4 jaunes, puis tout de suite la farine et la levure en pluie. Arrêtez très rapidement le robot pour que la préparation n'ait pas le temps de retomber, versez dans le moule, lissez la surface et enfournez immédiatement pour 20 minutes. Dans mon four à gaz, j'ai mis th. 4. Démoulez tiède et attendez que le gâteau soit refroidi pour le couper en deux et le garnir",
+    appliance: "four",
+    ustensils: ["robot", "moule", "spatule"],
+  },
+  {
+    id: 85,
+    name: "Gateau qui pleure au chocolat",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "genoise",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "chantilly",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "chocolat noir",
+        quantity: 200,
+        unit: "gr (1 plaque)",
+      },
+      {
+        ingredient: "crème liquide",
+        quantity: 250,
+        unit: "ml",
+      },
+    ],
+    time: 60,
+    description:
+      "Préchauffez votre four à 180 degrés. Génoise : Tout d’abord commencer par beurrer le moule. Dans un saladier y déposer les oeuf, les 150g de sucre en poudre, fouetter le tout jusqu’à ce que le mélange devienne plus blanc et mousseux. Y ajoutez 200ml de lait et mélanger. Une fois mélangé, y ajouter 80ml d’huile, mélanger à nouveau, et ajouter ensuite le sucre vanillé. Tamiser ensuite 30g de cacao et l'ajouter à la préparation. Une fois le cacao bien incorporé au mélange, ajouter 190g de farine avec la levure chimique tout en la tamisant aussi pour éviter les grumeaux. Mélanger le tout jusqu’à obtenir une pâte lisse et homogène. Incorporer ensuite la préparation dans le moule et enfourner au four pendant 20 minutes à 180 degrés. Une fois le gâteau cuit, vous allez porter à ébullition 200ml de lait avec 15g de cacao. Ce mélange va servir pour imbiber le gâteau. Piquer le gâteau à l’aide d’un fourchette ensuite et verser votre mélange sur le gâteau une première fois. Attendre que le gâteau absorbe le mélange et répéter cette opération 4 fois. Ganache: Porter à ébullition les 250g de crème liquide en y rajoutant 200g de chocolat (noir ou au lait selon les goûts). Mélanger le tout jusqu’à ce que le chocolat se dilue complètement, laissez maintenant refroidir complètement votre ganache avant de la verser sur le gâteau. Une fois votre ganache totalement refroidie, la verser sur votre gâteau en la répartissant bien partout.Ajouter  ensuite de la chantilly sur votre gâteau. Bien étaler la chantilly à l’aide d’une spatule pour que se soit bien lisse. Ensuite placer votre gâteau au frais. Placer maintenant votre gâteau au frigo pendant 4h minimum avant de servir.",
+    appliance: "four",
+    ustensils: ["casserole", "moule", "spatule"],
+  },
+  {
+    id: 86,
+    name: "crème chantilly",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "sucre glace",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "créme fraiche liquide (non allégée)",
+        quantity: 50,
+        unit: "cl",
+      },
+    ],
+    time: 5,
+    description:
+      "Ne sortir la crème fraîche qu'au moment de faire la Chantilly. Verser la crème dans un saladier. Ajouter le sucre glace.Battre la crème à l'aide d'un fouet électrique. Changer de vitesse (du plus lent au plus rapide) progressivement, toutes les 30 secondes environ.Laisser reposer au réfrigérateur 2 heures au minimum. Ne sortir qu'au moment de servir. Servir de préférence à l'aide d'une poche à douille (qui permet de donner une jolie apparence 'striée' à la crème).",
+    appliance: "batteur",
+    ustensils: ["cul de poule"],
+  },
+  {
+    id: 87,
+    name: "Milkshake aux biscuits Oreo",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "biscuit Oréo",
+        quantity: 12,
+        unit: "unité",
+      },
+      {
+        ingredient: "glace vanille",
+        quantity: 6,
+        unit: "boule",
+      },
+    ],
+    time: 5,
+    description:
+      "Écrasez grossièrement,4 biscuits Oréos. Réservez. Mixez le lait, les boules de glace à la vanille et les 8 autres biscuits Oréos dans un blender.Versez dans les verres. Parsemez avec les biscuits Oréos écrasés.Dégustez sans attendre. ",
+    appliance: "blender",
+    ustensils: ["verres"],
+  },
+  {
+    id: 88,
+    name: "Sucettes de pastèque glacées",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 10,
+    ingredients: [
+      {
+        ingredient: "pastéque",
+        quantity: 1,
+        unit: "unité",
+      },
+    ],
+    time: 10,
+    description:
+      "Coupez la pastèque en deux, puis coupez chaque moitié en tranches épaisses d’1 cm environ. Détaillez chaque tranche en parts triangulaires.Entaillez la peau de chaque part avec un petit couteau et plantez-y un bâtonnet de glace en bois.Placez une nuit au réfrigérateur. ",
+    appliance: "réfrigérateur",
+    ustensils: ["battonet en bois"],
+  },
+  {
+    id: 89,
+    name: "Smoothie concombre et pastèque",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 1,
+    ingredients: [
+      {
+        ingredient: "concombre",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "pastéque",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "citron vert",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "miel",
+        quantity: 1,
+        unit: "cuilère à soupe",
+      },
+    ],
+    time: 5,
+    description:
+      "Retirez la peau et les graines de la pastèque puis épluchez le concombre et pressez le jus du citron. Dans un blender, mixez la pastèque, le concombre, le jus de citron et le miel avec 4 glaçons.Servez frais.",
+    appliance: "blender",
+    ustensils: ["verres"],
   },
 ];
