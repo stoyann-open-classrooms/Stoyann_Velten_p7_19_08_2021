@@ -2975,7 +2975,7 @@ export const RECIPES = [
         ingredient: "ciboulette",
       },
       {
-        ingredient: "cestragon",
+        ingredient: "estragon",
       },
       {
         ingredient: "persil chinois",
@@ -3005,5 +3005,561 @@ export const RECIPES = [
       " Dans un récipient adapté, déposer la moutarde à l'ancienne. Ajouter le vinaigre de vin blanc. Assaisonner de sel et poivre du moulin. Ajouter l'huile en filet en fouettant. Ajouter les herbes ciselées, L'échalote et l'oignon ciselés,Les câpres concassés. Rectifier l'assaisonnement et mélanger.Dresser en saucière.  ",
     appliance: "Cul de poule",
     ustensils: ["Couteau de chef", "Fouet", "Planche à découper", "sauciere"],
+  },
+  {
+    id: 77,
+    name: "Flan de courgettes au jambon",
+    altText: "Un délicieux plat de flan de courgettes au jambon.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 500,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Oeuf",
+        quantity: 4,
+      },
+
+      {
+        ingredient: "lait",
+        quantity: 1,
+        unit: "verre",
+      },
+      {
+        ingredient: "crème fraiche",
+        quantity: 12,
+        unit: "cl",
+      },
+      {
+        ingredient: "gruyère rapé",
+        quantity: 100,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "Maîzena",
+        quantity: 2,
+        unit: "cuillère a soupe",
+      },
+
+      {
+        ingredient: "jambon",
+        quantity: 2,
+        unit: "tranche",
+      },
+
+      {
+        ingredient: "sel et poivre.",
+      },
+    ],
+    time: 45,
+    description:
+      " Laver les courgettes, les couper en dés, les cuire à la vapeur (tendres mais fermes) et les égoutter.Délayer la maïzena dans le lait, ajouter la crème fraîche, les œufs battus, le jambon, le gruyère ou le parmesan. Saler, poivrer et incorporer les courgettes. Verser dans un plat à gratin beurré et cuire au four pendant 30 minutes à 210°C soit thermostat 7. Servir chaud.",
+    appliance: "four",
+    ustensils: ["Plat à gratin", "passoire"],
+  },
+  {
+    id: 78,
+    name: "Ratatouille",
+    altText: "Un jolie plat de ratatouille prêt à être déguster.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "Aubergine",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "Poivron vert",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "poivron rouge",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "tomate",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "ail",
+        quantity: 2,
+        unit: "gousse",
+      },
+
+      {
+        ingredient: "bouquet garnie",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "huile d'olive",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 80,
+    description:
+      "Lavez et détaillez les courgettes, l'aubergine, le poivron vert et le rouge, en cubes de taille moyenne. Coupez les tomates en quartiers et émincez l'oignon. Dans une poêle, versez un peu d'huile d'olive et faites-y revenir les uns après les autres les différents légumes pendant 5 minutes pour qu'ils colorent. Commencez par les poivrons, puis les aubergines, les courgettes et enfin les oignons et les tomates que vous cuirez ensemble. Après avoir fait cuire les légumes, ajoutez-les tous aux tomates et aux oignons, baissez le feu puis mélangez. Ajoutez un beau bouquet garni de thym, de romarin et de laurier, salez, poivrez, puis couvrez pour laisser mijoter 40 minutes en remuant régulièrement. À environ 10 minutes du terme de la cuisson, ajoutez les deux belles gousses d'ail écrasées puis couvrez de nouveau. N'hésitez pas à goûter et à assaisonner de nouveau selon vos goûts. Dégustez avec des grillades ou un barbecue.",
+    appliance: "cocotte",
+    ustensils: ["Plat à gratin", "couteau"],
+  },
+  {
+    id: 79,
+    name: "Beignets aux courgettes",
+    altText: "Une pile de  beignet de courgettes.",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "Courgette",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "farine",
+        quantity: 2,
+        unit: "verre",
+      },
+      {
+        ingredient: "eau",
+        quantity: 1,
+        unit: "verre",
+      },
+
+      {
+        ingredient: "levure",
+        quantity: 0.5,
+        unit: "sachet",
+      },
+
+      {
+        ingredient: "gousse d'ail mixer avec du persil",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "muscade",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "huile de friture",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 30,
+    description:
+      " Faire cuire les courgettes en rondelles à la vapeur pendant 20 mn environ. Dans un saladier mettre tous les autres ingrédients. Ecraser les courgettes avec une fourchette. Ajouter les courgettes dans le saladier et mélanger.  Faire chauffer l'huile puis y couler les beignets avec une cuillère.",
+    appliance: "wook",
+    ustensils: ["saladier", "cuiseur vapeur"],
+  },
+  {
+    id: 80,
+    name: "Croque monsieur d'aubergines",
+    altText: "Une pile de  beignet de courgettes.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "Aubergine",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "farine",
+        quantity: 1,
+        unit: "cuillère à dessert",
+      },
+      {
+        ingredient: "herbe de provence",
+      },
+      {
+        ingredient: "crème liquide",
+        quantity: 10,
+        unit: "cl",
+      },
+
+      {
+        ingredient: "gruyère",
+        quantity: 50,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "sel et poivre",
+      },
+    ],
+    time: 30,
+    description:
+      "Couper les aubergines en tranches de 1 cm d'épaisseur, dans le sens de la longueur. Mélanger la moutarde avec la crème dans un bol. Etalez cette prépération sur une face des aubergines. Faire des lamelles de fromage que vous placez sur les aubergines pour recouvrir toute la surface. Couper les tomates en tranches de 5 mm d'épaisseur. Mettre 1 ou 2 tranches de tomate sur les aubergines. Saupoudrez d'herbes de Provence. Passez au four à 180°C (themostat 6) pendant 30 mn (à voir en fait selon la cuisson désirée).",
+    appliance: "four",
+    ustensils: ["bol", "couteau"],
+  },
+  {
+    id: 81,
+    name: "Tarte salée au Boursin",
+    altText: "Une belle part de tarte salée au Boursin.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "courgette",
+        quantity: 3,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "pâte feuilletée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+      {
+        ingredient: "Boursin ail et fine herbes",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "boeuf hachée",
+        quantity: 200,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "gruyère râpé",
+        quantity: 100,
+        unit: "gr",
+      },
+
+      {
+        ingredient: "crème fraîche",
+        quantity: 15,
+        unit: "cl",
+      },
+    ],
+    time: 17,
+    description:
+      "Dans un premier temps faîtes revenir la viande hachée dans une sauteuse.Pendant ce temps lavez et épluchez les courgettes (laissez la moitié de la peau), ajoutez-les à la viande hachée en les coupant en petits morceaux. Faites de même avec les tomates en laissant la peau. Laissez cuire environ 15 minutes à couvert. Faites préchauffer votre four à 200°C (thermostat 6/7)et faîtes précuire quelques minutes la pâte préalablement étalée dans le plat à tarte. Pendant ce temps mettez dans un bol le demi Boursin, la crème fraiche et écrasez grossièrement le Boursin, ajoutez le tout dans la sauteuse et mélangez. Laissez 5 minutes sans couvrir en remuant de temps à autre. Sortez la pâte précuite et versez la préparation dans votre plat à tarte. ",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "sauteuse"],
+  },
+  {
+    id: 82,
+    name: "La tarte salée ensoleillée",
+    altText: "Une tarte ensoleillée prête a être déguster.",
+    servings: 2,
+    ingredients: [
+      {
+        ingredient: "courgette",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "Tomate",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+      {
+        ingredient: "lait",
+        quantity: 7,
+        unit: "cl",
+      },
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "sel",
+      },
+
+      {
+        ingredient: "huile d'olive",
+      },
+      {
+        ingredient: "herbes de provences",
+      },
+      {
+        ingredient: "thon au naturel",
+        quantity: 1,
+        unit: "boite",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 2,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "anchois",
+        quantity: 5,
+        unit: "filet",
+      },
+    ],
+    time: 45,
+    description:
+      "Préchauffer le four à 200°C (thermostat 6-7). Mettre la pate brisée dans le plat à tarte, la piquer à l'aide d'une fourchette et la recouvrir de tranches de courgettes puis de tranches de tomate.Egoutter le thon et le mélanger aux oeufs et au lait. Incorporer l'oignon finement haché, les anchois écrasés, du sel, du poivre et des herbes de Provence. Verser cette préparation sur les légumes, arroser d'un filet d'huile d'olive et enfourner pour 30 minutes de cuisson. ",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "saladier"],
+  },
+  {
+    id: 83,
+    name: "Tarte à la citrouille salée",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "citrouille",
+        quantity: 500,
+        unit: "gr",
+      },
+      {
+        ingredient: "pâte brisée",
+        quantity: 1,
+        unit: "rouleau",
+      },
+
+      {
+        ingredient: "poivre",
+      },
+
+      {
+        ingredient: "sel",
+      },
+
+      {
+        ingredient: "huile d'olive",
+        quantity: 1,
+        unit: "cuillère à soupe",
+      },
+
+      {
+        ingredient: "crème epaisse",
+        quantity: 25,
+        unit: "cl",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "oignon",
+        quantity: 1,
+        unit: "unité",
+      },
+    ],
+    time: 55,
+    description:
+      "Faire cuire la citrouille dans de l'eau, une fois cuite égoutter les morceaux et les laisser refroidir un peu, puis les écraser grossièrement à la fourchette. Faire revenir, dans un fond d'huile, l'oignon coupé finement. Dès que l'oignon a légèrement caramélisé, y rajouter la citrouille. Saler et poivrer. Dans un saladier battre un oeuf et y ajouter la crème fraîche, et enfin la préparation oignon + citrouille.Répartir la préparation sur la pâte brisée.Enfourner pendant 25 min à 180°C (thermostat 6).",
+    appliance: "four",
+    ustensils: ["bol", "plat à tarte", "saladier"],
+  },
+  {
+    id: 84,
+    name: "Génoise inratable",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "levure chimique",
+        quantity: 0.5,
+        unit: "sachet",
+      },
+
+      {
+        ingredient: "farine T45",
+        quantity: 125,
+        unit: "gr",
+      },
+      {
+        ingredient: "oeuf",
+        quantity: 4,
+        unit: "unité",
+      },
+      {
+        ingredient: "sucre",
+        quantity: 125,
+        unit: "gr",
+      },
+    ],
+    time: 30,
+    description:
+      "Pour réaliser cette recette, il faut avoir un robot qui permette d'ajouter des ingrédients au fur et à mesure sans devoir tout arrêter et ouvrir un couvercle à chaque fois. Le secret de la réussite de cette génoise, c'est la rapidité d'exécution. Préparez donc tout ce dont vous aurez besoin avant de vous lancer, beurrez le moule (j'ai utilisé un moule de 25 cm de diamètre) pesez les ingrédients. Préchauffez le four à 180° (th6). Mélangez la levure à la farine. Séparez les blancs des jaunes d'œufs, et montez les blancs en neige avec une pincée de sel. Quand ils sont fermes, ajoutez le sucre et battez encore. Baissez la vitesse du robot et ajoutez d'un coup les 4 jaunes, puis tout de suite la farine et la levure en pluie. Arrêtez très rapidement le robot pour que la préparation n'ait pas le temps de retomber, versez dans le moule, lissez la surface et enfournez immédiatement pour 20 minutes. Dans mon four à gaz, j'ai mis th. 4. Démoulez tiède et attendez que le gâteau soit refroidi pour le couper en deux et le garnir",
+    appliance: "four",
+    ustensils: ["robot", "moule", "spatule"],
+  },
+  {
+    id: 85,
+    name: "Gateau qui pleure au chocolat",
+    altText: "Une tarte a la citrouille salée très appetisante.",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "genoise",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "chantilly",
+        quantity: 1,
+        unit: "unité",
+      },
+
+      {
+        ingredient: "chocolat noir",
+        quantity: 200,
+        unit: "gr (1 plaque)",
+      },
+      {
+        ingredient: "crème liquide",
+        quantity: 250,
+        unit: "ml",
+      },
+    ],
+    time: 60,
+    description:
+      "Préchauffez votre four à 180 degrés. Génoise : Tout d’abord commencer par beurrer le moule. Dans un saladier y déposer les oeuf, les 150g de sucre en poudre, fouetter le tout jusqu’à ce que le mélange devienne plus blanc et mousseux. Y ajoutez 200ml de lait et mélanger. Une fois mélangé, y ajouter 80ml d’huile, mélanger à nouveau, et ajouter ensuite le sucre vanillé. Tamiser ensuite 30g de cacao et l'ajouter à la préparation. Une fois le cacao bien incorporé au mélange, ajouter 190g de farine avec la levure chimique tout en la tamisant aussi pour éviter les grumeaux. Mélanger le tout jusqu’à obtenir une pâte lisse et homogène. Incorporer ensuite la préparation dans le moule et enfourner au four pendant 20 minutes à 180 degrés. Une fois le gâteau cuit, vous allez porter à ébullition 200ml de lait avec 15g de cacao. Ce mélange va servir pour imbiber le gâteau. Piquer le gâteau à l’aide d’un fourchette ensuite et verser votre mélange sur le gâteau une première fois. Attendre que le gâteau absorbe le mélange et répéter cette opération 4 fois. Ganache: Porter à ébullition les 250g de crème liquide en y rajoutant 200g de chocolat (noir ou au lait selon les goûts). Mélanger le tout jusqu’à ce que le chocolat se dilue complètement, laissez maintenant refroidir complètement votre ganache avant de la verser sur le gâteau. Une fois votre ganache totalement refroidie, la verser sur votre gâteau en la répartissant bien partout.Ajouter  ensuite de la chantilly sur votre gâteau. Bien étaler la chantilly à l’aide d’une spatule pour que se soit bien lisse. Ensuite placer votre gâteau au frais. Placer maintenant votre gâteau au frigo pendant 4h minimum avant de servir.",
+    appliance: "four",
+    ustensils: ["casserole", "moule", "spatule"],
+  },
+  {
+    id: 86,
+    name: "crème chantilly",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 6,
+    ingredients: [
+      {
+        ingredient: "sucre glace",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "créme fraiche liquide (non allégée)",
+        quantity: 50,
+        unit: "cl",
+      },
+    ],
+    time: 5,
+    description:
+      "Ne sortir la crème fraîche qu'au moment de faire la Chantilly. Verser la crème dans un saladier. Ajouter le sucre glace.Battre la crème à l'aide d'un fouet électrique. Changer de vitesse (du plus lent au plus rapide) progressivement, toutes les 30 secondes environ.Laisser reposer au réfrigérateur 2 heures au minimum. Ne sortir qu'au moment de servir. Servir de préférence à l'aide d'une poche à douille (qui permet de donner une jolie apparence 'striée' à la crème).",
+    appliance: "batteur",
+    ustensils: ["cul de poule"],
+  },
+  {
+    id: 87,
+    name: "Milkshake aux biscuits Oreo",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 4,
+    ingredients: [
+      {
+        ingredient: "biscuit Oréo",
+        quantity: 12,
+        unit: "unité",
+      },
+      {
+        ingredient: "glace vanille",
+        quantity: 6,
+        unit: "boule",
+      },
+    ],
+    time: 5,
+    description:
+      "Écrasez grossièrement,4 biscuits Oréos. Réservez. Mixez le lait, les boules de glace à la vanille et les 8 autres biscuits Oréos dans un blender.Versez dans les verres. Parsemez avec les biscuits Oréos écrasés.Dégustez sans attendre. ",
+    appliance: "blender",
+    ustensils: ["verres"],
+  },
+  {
+    id: 88,
+    name: "Sucettes de pastèque glacées",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 10,
+    ingredients: [
+      {
+        ingredient: "pastéque",
+        quantity: 1,
+        unit: "unité",
+      },
+    ],
+    time: 10,
+    description:
+      "Coupez la pastèque en deux, puis coupez chaque moitié en tranches épaisses d’1 cm environ. Détaillez chaque tranche en parts triangulaires.Entaillez la peau de chaque part avec un petit couteau et plantez-y un bâtonnet de glace en bois.Placez une nuit au réfrigérateur. ",
+    appliance: "réfrigérateur",
+    ustensils: ["battonet en bois"],
+  },
+  {
+    id: 89,
+    name: "Smoothie concombre et pastèque",
+    altText: "Un ramequin de chantilly maisons",
+    servings: 1,
+    ingredients: [
+      {
+        ingredient: "concombre",
+        quantity: 1,
+        unit: "unité",
+      },
+      {
+        ingredient: "pastéque",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "citron vert",
+        quantity: 0.5,
+        unit: "unité",
+      },
+      {
+        ingredient: "miel",
+        quantity: 1,
+        unit: "cuilère à soupe",
+      },
+    ],
+    time: 5,
+    description:
+      "Retirez la peau et les graines de la pastèque puis épluchez le concombre et pressez le jus du citron. Dans un blender, mixez la pastèque, le concombre, le jus de citron et le miel avec 4 glaçons.Servez frais.",
+    appliance: "blender",
+    ustensils: ["verres"],
   },
 ];
