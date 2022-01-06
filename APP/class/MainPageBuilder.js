@@ -28,7 +28,7 @@ export class MainPageBuilder {
   // // affiche les recettes de la liste en parametre
   printCard(recipesList) {
     const cardsContainer = document.querySelector(".cards-container");
-
+    console.log("hello print d");
     let htmlContent = ``;
 
     for (let i = 0; i < recipesList.length; i++) {
@@ -231,8 +231,9 @@ export class MainPageBuilder {
           if (
             Utils.removeAccents(tag.children[0].innerText).includes(request[i])
           ) {
-            request.splice(i);
-
+            request.splice(i, 1);
+            console.log(this.getUserRequest().tags);
+            // a voir
             this.getUserRequest().tags = request;
             if (
               this.getUserRequest().tags.length === 0 &&
@@ -241,6 +242,9 @@ export class MainPageBuilder {
               this.printCard(this.recipesList.getAllRecipes());
               console.log(this.recipesList.getAllRecipes());
             } else {
+              console.log("ok");
+              console.log(this.getUserRequest().tags);
+              console.log(this.recipesList.search(this.getUserRequest()));
               this.printCard(this.recipesList.search(this.getUserRequest()));
             }
           }
